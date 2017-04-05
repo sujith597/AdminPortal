@@ -1,0 +1,28 @@
+{
+  "name": "requirejspoc",
+  "version": "1.0.0",
+  "description": "Admin Protal for securities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sujith597/AdminProtal.git"
+  },
+  "author": "sujith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sujith597/AdminProtal/issues"
+  },
+  "homepage": "https://github.com/sujith597/AdminProtal#readme",
+  "devDependencies": {
+    "browser-sync": "^2.12.10",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-uglify": "^1.5.3"
+  }
+}

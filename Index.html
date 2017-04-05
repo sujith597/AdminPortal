@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Security Portal Login</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="bower_components/nprogress/nprogress.css" rel="stylesheet">
+    <link href="bower_components/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="bower_components/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <link href="bower_components/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
+    <link href="bower_components/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <link href="Assets/Css/custom.css" rel="stylesheet">
+</head>
+<body class="nav-md" ng-app="SecurityApp">
+
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a ui-sref="Home" class="site_title"><i class="fa fa-paw"></i> <span>Securitry Managment System</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="profile clearfix">
+                        <div class="profile_pic">
+                            <img src="Assets/Images/img.jpg" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Welcome,</span>
+                            <h2>John Doe</h2>
+                        </div>
+                    </div>
+                    <br />
+                   
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>Menu</h3>
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a ui-sref="UsersManagement"><i class="fa fa-user"></i> Users Management<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a ui-sref="AddUser">Add User</a></li>
+                                        <li><a ui-sref="SubMenu2">Users Sub Menu2</a></li>
+                                        <li><a ui-sref="SubMenu3">Users Sub Menu3</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a ui-sref="ClientsManagement"><i class="fa fa-edit"></i> Client Management<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a ui-sref="AddClient">Add Client</a></li>
+                                        <li><a ui-sref="AddUserToClient">Add user to client</a></li>
+                                        <li><a ui-sref="SubMenu4">Client Sub Menu</a></li>
+                                    </ul>
+                                </li>
+                             
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /sidebar menu -->
+                    
+                    
+                    <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small">
+                        <a data-toggle="tooltip" data-placement="top" title="Settings">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Lock">
+                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <!-- /menu footer buttons -->
+                </div>
+            </div>
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <ul class="nav navbar-nav navbar-right"></ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main">
+                
+                <div ui-view></div>
+            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    Copyright 2017. All rights reserved <a href="https://colorlib.com">www.yoursite.com</a>
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+        </div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="bower_components/nprogress/nprogress.js"></script>
+    <script src="bower_components/Chart.js/dist/Chart.min.js"></script>
+    <script src="bower_components/gauge.js/dist/gauge.min.js"></script>
+    <script src="bower_components/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="bower_components/iCheck/icheck.min.js"></script>
+    <script src="bower_components/skycons/skycons.js"></script>
+    <script src="bower_components/Flot/jquery.flot.js"></script>
+    <script src="bower_components/Flot/jquery.flot.pie.js"></script>
+    <script src="bower_components/Flot/jquery.flot.time.js"></script>
+    <script src="bower_components/Flot/jquery.flot.stack.js"></script>
+    <script src="bower_components/Flot/jquery.flot.resize.js"></script>
+    <script src="bower_components/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="bower_components/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="bower_components/flot.curvedlines/curvedLines.js"></script>
+    <script src="bower_components/DateJS/build/date.js"></script>
+    <script src="bower_components/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="bower_components/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="bower_components/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+
+    <script src="Assets/Scripts/custom.js"></script>
+    <script src="index.js"></script>
+    <script src="App/Dashboard/DashboardController.js"></script>
+   
+</body>
+</html>
