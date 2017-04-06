@@ -1,7 +1,7 @@
-﻿var securityApp = angular.module('SecurityApp', ['ui.router']);
+﻿var securityApp = angular.module('SecurityApp', ['ui.router', 'ui.grid', 'ui.grid.selection', 'ui.grid.exporter', 'ui.grid.pagination']);
 
 securityApp.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/Home');
 
     $stateProvider
         .state('Home',
@@ -13,7 +13,8 @@ securityApp.config(function ($stateProvider, $urlRouterProvider) {
         .state('UsersManagement',
         {
             url: '/UsersManagement',
-            templateUrl: 'App/UsersManagement/UsersManagement.html'
+            templateUrl: 'App/UsersManagement/UsersManagement.html',
+            controller: 'UserManagementController'
         })
         .state('AddUser',
         {

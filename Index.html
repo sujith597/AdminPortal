@@ -10,6 +10,8 @@
     <link href="bower_components/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <link href="bower_components/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
     <link href="bower_components/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <link href="Assets/Css/ui-grid.css" rel="stylesheet" />
+
     <link href="Assets/Css/custom.css" rel="stylesheet">
 </head>
 <body class="nav-md" ng-app="SecurityApp">
@@ -32,7 +34,7 @@
                         </div>
                     </div>
                     <br />
-                   
+
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <h3>Menu</h3>
@@ -53,13 +55,11 @@
                                         <li><a ui-sref="SubMenu4">Client Sub Menu</a></li>
                                     </ul>
                                 </li>
-                             
+
                             </ul>
                         </div>
                     </div>
                     <!-- /sidebar menu -->
-                    
-                    
                     <!-- /menu footer buttons -->
                     <div class="sidebar-footer hidden-small">
                         <a data-toggle="tooltip" data-placement="top" title="Settings">
@@ -92,7 +92,7 @@
             <!-- /top navigation -->
             <!-- page content -->
             <div class="right_col" role="main">
-                
+
                 <div ui-view></div>
             </div>
             <!-- /page content -->
@@ -130,14 +130,20 @@
     <script src="bower_components/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
     <script src="bower_components/moment/min/moment.min.js"></script>
 
-
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="Assets/Scripts/ui-grid.min.js"></script>
+<script src="bower_components/pdfmake/build/pdfmake.js"></script>
+    <script src="bower_components/pdfmake/build/vfs_fonts.js"></script>   
 
     <script src="Assets/Scripts/custom.js"></script>
     <script src="index.js"></script>
+
     <script src="App/Dashboard/DashboardController.js"></script>
-   
+    <script src="App/UsersManagement/UsersManagementController.js"></script>
+    <script src="App/UsersManagement/UserManagementService.js"></script>
+
+
 </body>
 </html>
