@@ -38,20 +38,23 @@
             { name: 'gender', field: 'gender' },
             { name: 'company', field: 'company' },
             {
-                name: 'Action',
+                name: 'Actions',
                 cellTemplate:
-                    '<div class="ui-grid-cell-contents"><button type="button" class="btn btn-warning" ng-click="grid.appScope.EditUser(row.entity)">Edit User</button>' +
-                        '<button type="button" class="btn btn-danger" ng-click="grid.appScope.DeleteUser(row.entity)">Delete User</button> </div>'
-    }
+                        '<center><div class="ui-grid-cell"><div class="ui-grid-cell-contents" style="text-align:center">' +
+                            '<button href="#" class="btn btn-primary btn-xs" ng-click="grid.appScope.EditUser(row.entity)"><i class="fa fa-folder"></i> View </button>' +
+                        ' <button href="#" class="btn btn-info btn-xs" ng-click="grid.appScope.EditUser(row.entity)"><i class="fa fa-pencil"></i> Edit </button>' +
+                        '<button href="#" class="btn btn-danger btn-xs" data-title="Delete"  data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i> Delete </button>' +
+                            '</div></div></center>'
+            }
         ];
     });
 
-    $scope.EditUser = function(user) {
+    $scope.EditUser = function (user) {
         alert("HI");
     };
 
-    $scope.DeleteUser = function(user) {
-        alert("Deletre");
+    $scope.DeleteUser = function () {
+        alert("Delete");
 
     };
     $scope.updateUsersGrid = function () {

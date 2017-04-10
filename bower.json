@@ -79,7 +79,7 @@
     "angular": "^1.6.4"
   },
   "dependencies": {
-    "ngAnimate": "*",
-    "pdfmake": "^0.1.27"
+    "pdfmake": "^0.1.27",
+    "ngAnimate": "*"
   }
 }
