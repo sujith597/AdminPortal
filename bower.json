@@ -80,6 +80,7 @@
   },
   "dependencies": {
     "pdfmake": "^0.1.27",
-    "ngAnimate": "*"
+    "ngAnimate": "*",
+    "ng-notify": "^0.8.0"
   }
 }

@@ -1,4 +1,4 @@
-﻿var securityApp = angular.module('SecurityApp', ['ngAnimate', 'ui.router', 'ui.grid', 'ui.grid.selection', 'ui.grid.exporter', 'ui.grid.pagination']);
+﻿var securityApp = angular.module('SecurityApp', ['ngAnimate', 'ui.router', 'ui.grid', 'ui.grid.selection', 'ui.grid.exporter', 'ui.grid.pagination','ngNotify']);
 
 securityApp.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/Home');
@@ -19,7 +19,8 @@ securityApp.config(function ($stateProvider, $urlRouterProvider) {
         .state('AddUser',
         {
             url: '/AddUser',
-            templateUrl: 'App/UsersManagement/AddUser.html'
+            templateUrl: 'App/UsersManagement/AddUser.html',
+            controller: 'AddUserController'
         })
         .state('ClientsManagement',
         {

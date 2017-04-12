@@ -5112,6 +5112,187 @@ ul.notifications {
     .sample-show-hide.ng-hide {
         opacity: 0;
     }
+
+    /* ---------------------------------------------------------------------- */
+/*  Form Wizard
+ /* ---------------------------------------------------------------------- */
+.swMain > ul {
+  display: table;
+  list-style: none;
+  margin: 0 0 40px 0;
+  padding: 10px 0;
+  position: relative;
+  width: 100%;
+  background: #f7f7f8;
+  border-radius: 5px;
+}
+
+.swMain > ul li {
+  display: table-cell;
+  text-align: center;
+  width: 1%;
+}
+
+.swMain > ul li > a:before {
+  border-top: 4px solid #c8c7cc;
+  content: "";
+  display: block;
+  font-size: 0;
+  height: 1px;
+  overflow: hidden;
+  position: relative;
+  top: 21px;
+  width: 100%;
+  z-index: 1;
+}
+
+.swMain > ul li:first-child > a:before {
+  left: 50%;
+  max-width: 51%;
+}
+
+.swMain > ul li:last-child > a:before {
+  max-width: 50%;
+  width: 50%;
+}
+
+.swMain > ul li > a.selected:before, .swMain li > a.done:before {
+  border-color: #58748B;
+}
+
+.swMain > ul .stepNumber {
+  background-color: #ffffff;
+  border: 5px solid #c8c7cc;
+  border-radius: 100% 100% 100% 100%;
+  color: #546474;
+  display: inline-block;
+  font-size: 15px;
+  height: 40px;
+  line-height: 30px;
+  position: relative;
+  text-align: center;
+  width: 40px;
+  z-index: 2;
+}
+
+.swMain > ul li > a.selected .stepNumber {
+  border-color: #58748B;
+}
+
+.swMain ul li > a.done .stepNumber, .swMain > ul li:last-child > a.selected .stepNumber {
+  border-color: #58748B;
+  background-color: #58748B;
+  color: #fff;
+  text-indent: -9999px;
+}
+
+.swMain ul li > a.done .stepNumber:before, .swMain > ul li:last-child > a.selected .stepNumber:before {
+  content: "\f00c";
+  display: inline;
+  float: right;
+  font-family: FontAwesome;
+  font-weight: 300;
+  height: auto;
+  text-shadow: none;
+  margin-right: 7px;
+  text-indent: 0;
+}
+
+.swMain ul li > a.done.wait .stepNumber {
+  background-color: #F6F6F6 !important;
+  color: #CCCCCC !important;
+  text-indent: -0px !important;
+}
+
+.swMain ul li > a.done.wait .stepNumber:before {
+  content: "" !important;
+}
+
+.swMain > ul li .stepDesc {
+  color: #8e8e93;
+  display: block;
+  font-size: 14px;
+  margin-top: 4px;
+  max-width: 100%;
+  table-layout: fixed;
+  text-align: center;
+  word-wrap: break-word;
+  z-index: 104;
+}
+
+.swMain > ul li > a.selected .stepDesc, .swMain li > a.done .stepDesc {
+  color: #2B3D53;
+}
+
+.swMain > ul li > a:hover {
+  text-decoration: none;
+}
+
+.swMain > ul li > a.disabled {
+  cursor: default;
+}
+
+.swMain .progress {
+  margin-bottom: 30px;
+}
+
+.swMain .stepContainer {
+  height: auto !important;
+}
+
+.swMain .loader {
+  display: none;
+}
+
+.swMain [class^="button"], .swMain [class*=" button"] {
+  display: none;
+}
+
+.swMain .close {
+  display: none;
+}
+.has-error .error {
+    color: #a94442;
+}
+fieldset {
+    background: #ffffff;
+    border: 1px solid #e6e8e8;
+    border-radius: 5px;
+    margin: 20px 0 20px 0;
+    padding: 25px;
+    position: relative;
+}
+    fieldset legend {
+        background: inherit;
+        font-family: "Lato", sans-serif;
+        color: #58748B;
+        font-size: 15px;
+        /* left: 10px; */
+        padding: 0 10px;
+        position: absolute;
+        top: -12px;
+        font-weight: 400;
+        width: auto !important;
+        border: none !important;
+    }
+.accordion .panel-heading {
+    padding: 0;
+    background-image: none;
+    height: auto;
+    min-height: 0;
+    -moz-box-shadow: 0, 0, 0, transparent;
+    -webkit-box-shadow: 0, 0, 0, transparent;
+    box-shadow: 0, 0, 0, transparent;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+.panel-default>.panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+
 /* CSS3 Checkbox */
 /*
 .checkbox-input { display:block;position:relative; }
