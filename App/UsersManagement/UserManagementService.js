@@ -2,7 +2,7 @@
     this.getAllUsers = function () {
         var defer = $q.defer();
 
-        $http.get('App/UsersManagement/Users.json')
+        $http.get('App/UsersManagement/Users.txt')
             .then(function (data) {
                 defer.resolve(data.data);
             });
