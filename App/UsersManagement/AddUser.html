@@ -9,508 +9,1700 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div>
-                    <!-- start: WIZARD FORM -->
-                    <form name="Form" id="form" novalidate>
-                        <div id="wizard" class="swMain">
-                            <!-- start: WIZARD SEPS -->
-                            <ul>
-                                <li ng-click="form.goTo(Form, 1)">
-                                    <a href ng-class="{'selected' : currentStep >= 1, 'done' : currentStep > 1}">
-                                        <div class="stepNumber">
-                                            1
-                                        </div> <span class="stepDesc text-small"> Personal Information </span>
-                                    </a>
-                                </li>
-                                <li ng-click="form.goTo(Form, 2)">
-                                    <a href ng-class="{'selected' : currentStep >= 2, 'done' : currentStep > 2}">
-                                        <div class="stepNumber">
-                                            2
-                                        </div> <span class="stepDesc text-small"> Create an account </span>
-                                    </a>
-                                </li>
-                                <li ng-click="form.goTo(Form, 3)">
-                                    <a href ng-class="{'selected' : currentStep >= 3, 'done' : currentStep > 3}">
-                                        <div class="stepNumber">
-                                            3
-                                        </div> <span class="stepDesc text-small"> Billing details </span>
-                                    </a>
-                                </li>
-                                <li ng-click="form.goTo(Form, 4)">
-                                    <a href ng-class="{'selected' : currentStep >= 4, 'done' : currentStep > 4}">
-                                        <div class="stepNumber">
-                                            4
-                                        </div> <span class="stepDesc text-small"> Complete </span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <!-- end: WIZARD SEPS -->
-                            <!-- start: WIZARD STEP 1 -->
-                            <div id="step-1" ng-show="currentStep == 1">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <fieldset>
-                                            <legend>
-                                                Personal Information
-                                            </legend>
-                                            <h2 class="StepTitle"><i class="ti-face-smile fa-2x text-primary block margin-bottom-10"></i> Enter your personal information</h2>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group" ng-class="{'has-error':Form.firstName.$dirty && Form.firstName.$invalid, 'has-success':Form.firstName.$valid}">
-                                                        <label> First Name <span class="symbol required"></span> </label>
-                                                        <input type="text" placeholder="Enter your First Name" class="form-control" name="firstName" ng-model="myModel.firstName" ng-required="currentStep == 1" />
-                                                        <span class="error text-small block" ng-if="Form.firstName.$dirty && Form.firstName.$invalid">First Name is required</span>
-                                                        <span class="success text-small" ng-if="Form.firstName.$valid">Thank You!</span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group" ng-class="{'has-error':Form.lastName.$dirty && Form.lastName.$invalid, 'has-success':Form.lastName.$valid}">
-                                                        <label class="control-label"> Last Name <span class="symbol required"></span> </label>
-                                                        <input type="text" placeholder="Enter your Last Name" class="form-control" name="lastName" ng-model="myModel.lastName" ng-required="currentStep == 1" />
-                                                        <span class="error text-small block" ng-if="Form.lastName.$dirty && Form.lastName.$invalid">Last Name is required</span>
-                                                        <span class="success text-small" ng-if="Form.lastName.$valid">Wonderful!</span>
+                    <form action="#" role="form" id="form">
+                        <!-- start: WIZARD FORM -->
+                        <uib-tabset class="tabbable">
+
+                            <!-- start: TAB Personal Information -->
+                            <uib-tab heading="Personal Information" active="editActive">
+
+                                <fieldset>
+                                    <legend>
+                                        Personal Information
+                                    </legend>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="block">
+                                                        Enrollment Type
+                                                    </label>
+                                                    <div class="clip-radio radio-primary">
+                                                        <input type="radio" id="generalEnrollment" name="enrollment" value="General" ng-model="userInfo.general">
+                                                        <label for="generalEnrollment">
+                                                            General
+                                                        </label>
+                                                        <input type="radio" id="staff" name="enrollment" value="Staff" ng-model="userInfo.staff">
+                                                        <label for="staff">
+                                                            staff
+                                                        </label>
+                                                        <input type="radio" id="Manual" name="enrollment" value="Manual" ng-model="userInfo.manual">
+                                                        <label for="staff">
+                                                            Manual
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="block"> Gender </label>
-                                                        <div class="clip-radio radio-primary">
-                                                            <input type="radio" id="wz-female" name="gender" value="female" ng-model="myModel.gender">
-                                                            <label for="wz-female"> Female </label>
-                                                            <input type="radio" id="wz-male" name="gender" value="male" ng-model="myModel.gender">
-                                                            <label for="wz-male"> Male </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label> Choose your country or region </label>
-                                                        <span class="clip-select">
-                                                            <select class="form-control" name="country" ng-model="myModel.country">
-                                                                <option value="">&nbsp;</option>
-                                                                <option value="AL">Alabama</option>
-                                                                <option value="AK">Alaska</option>
-                                                                <option value="AZ">Arizona</option>
-                                                                <option value="AR">Arkansas</option>
-                                                                <option value="CA">California</option>
-                                                                <option value="CO">Colorado</option>
-                                                                <option value="CT">Connecticut</option>
-                                                                <option value="DE">Delaware</option>
-                                                                <option value="FL">Florida</option>
-                                                                <option value="GA">Georgia</option>
-                                                                <option value="HI">Hawaii</option>
-                                                                <option value="ID">Idaho</option>
-                                                                <option value="IL">Illinois</option>
-                                                                <option value="IN">Indiana</option>
-                                                                <option value="IA">Iowa</option>
-                                                                <option value="KS">Kansas</option>
-                                                                <option value="KY">Kentucky</option>
-                                                                <option value="LA">Louisiana</option>
-                                                                <option value="ME">Maine</option>
-                                                                <option value="MD">Maryland</option>
-                                                                <option value="MA">Massachusetts</option>
-                                                                <option value="MI">Michigan</option>
-                                                                <option value="MN">Minnesota</option>
-                                                                <option value="MS">Mississippi</option>
-                                                                <option value="MO">Missouri</option>
-                                                                <option value="MT">Montana</option>
-                                                                <option value="NE">Nebraska</option>
-                                                                <option value="NV">Nevada</option>
-                                                                <option value="NH">New Hampshire</option>
-                                                                <option value="NJ">New Jersey</option>
-                                                                <option value="NM">New Mexico</option>
-                                                                <option value="NY">New York</option>
-                                                                <option value="NC">North Carolina</option>
-                                                                <option value="ND">North Dakota</option>
-                                                                <option value="OH">Ohio</option>
-                                                                <option value="OK">Oklahoma</option>
-                                                                <option value="OR">Oregon</option>
-                                                                <option value="PA">Pennsylvania</option>
-                                                                <option value="RI">Rhode Island</option>
-                                                                <option value="SC">South Carolina</option>
-                                                                <option value="SD">South Dakota</option>
-                                                                <option value="TN">Tennessee</option>
-                                                                <option value="TX">Texas</option>
-                                                                <option value="UT">Utah</option>
-                                                                <option value="VT">Vermont</option>
-                                                                <option value="VA">Virginia</option>
-                                                                <option value="WA">Washington</option>
-                                                                <option value="WV">West Virginia</option>
-                                                                <option value="WI">Wisconsin</option>
-                                                                <option value="WY">Wyoming</option>
-                                                            </select>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <p>
-                                                <a href uib-popover="Your personal information is not required for unlawful purposes, but only in order to proceed in this tutorial" popover-placement="top" popover-title="Don't worry!"> Why do you need my personal information? </a>
-                                            </p>
-                                        </fieldset>
-                                        <fieldset>
-                                            <legend>
-                                                Security question
-                                            </legend>
-                                            <p>
-                                                Enter security questions in case you lose access to your account. <span class="text-small block">Be sure to pick questions that you will remember the answers to.</span>
-                                            </p>
-                                            <uib-accordion close-others="oneAtATime" class="accordion">
-                                                <uib-accordion-group is-open="question1.open">
-                                                    <uib-accordion-heading>
-                                                        What was the name of your first stuffed animal? <i class="pull-right" ng-class="{'ti-angle-down': question1.open, 'ti-angle-right': !question1.open}"></i>
-                                                    </uib-accordion-heading>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" name="stuffedAnimal" ng-model="myModel.stuffedAnimal" placeholder="Enter the the name of your first stuffed animal">
-                                                    </div>
-                                                </uib-accordion-group>
-                                                <uib-accordion-group is-open="question2.open">
-                                                    <uib-accordion-heading>
-                                                        What is your grandfather's first name? <i class="pull-right" ng-class="{'ti-angle-down': question2.open, 'ti-angle-right': !question2.open}"></i>
-                                                    </uib-accordion-heading>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" name="grandfatherName" ng-model="myModel.grandfatherName" placeholder="Enter your grandfather's first name">
-                                                    </div>
-                                                </uib-accordion-group>
-                                                <uib-accordion-group is-open="question3.open">
-                                                    <uib-accordion-heading>
-                                                        In what city your grandmother live? <i class="pull-right" ng-class="{'ti-angle-down': question3.open, 'ti-angle-right': !question3.open}"></i>
-                                                    </uib-accordion-heading>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" name="grandmotherCity" ng-model="myModel.grandmotherCity" placeholder="Enter your grandfather's first name">
-                                                    </div>
-                                                </uib-accordion-group>
-                                            </uib-accordion>
-                                        </fieldset>
-                                        <div class="form-group">
-                                            <button class="btn btn-primary btn-o next-step btn-wide pull-right" ng-click="form.next(Form)">
-                                                Next <i class="fa fa-arrow-circle-right"></i>
-                                            </button>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <fieldset>
-                                            <legend>
-                                                Personal Information
-                                            </legend>
-                                            <h2 class="StepTitle"><i class="ti-face-smile fa-2x text-primary block margin-bottom-10"></i> Enter your personal information</h2>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group" ng-class="{'has-error':Form.firstName.$dirty && Form.firstName.$invalid, 'has-success':Form.firstName.$valid}">
-                                                        <label> First Name <span class="symbol required"></span> </label>
-                                                        <input type="text" placeholder="Enter your First Name" class="form-control" name="firstName" ng-model="myModel.firstName" ng-required="currentStep == 1" />
-                                                        <span class="error text-small block" ng-if="Form.firstName.$dirty && Form.firstName.$invalid">First Name is required</span>
-                                                        <span class="success text-small" ng-if="Form.firstName.$valid">Thank You!</span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group" ng-class="{'has-error':Form.lastName.$dirty && Form.lastName.$invalid, 'has-success':Form.lastName.$valid}">
-                                                        <label class="control-label"> Last Name <span class="symbol required"></span> </label>
-                                                        <input type="text" placeholder="Enter your Last Name" class="form-control" name="lastName" ng-model="myModel.lastName" ng-required="currentStep == 1" />
-                                                        <span class="error text-small block" ng-if="Form.lastName.$dirty && Form.lastName.$invalid">Last Name is required</span>
-                                                        <span class="success text-small" ng-if="Form.lastName.$valid">Wonderful!</span>
-                                                    </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        First Name
+                                                    </label>
+                                                    <input type="text" placeholder="Enter first name" class="form-control" name="firstname" ng-model="userInfo.firstName">
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="block"> Gender </label>
-                                                        <div class="clip-radio radio-primary">
-                                                            <input type="radio" id="wz-female" name="gender" value="female" ng-model="myModel.gender">
-                                                            <label for="wz-female"> Female </label>
-                                                            <input type="radio" id="wz-male" name="gender" value="male" ng-model="myModel.gender">
-                                                            <label for="wz-male"> Male </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label> Choose your country or region </label>
-                                                        <span class="clip-select">
-                                                            <select class="form-control" name="country" ng-model="myModel.country">
-                                                                <option value="">&nbsp;</option>
-                                                                <option value="AL">Alabama</option>
-                                                                <option value="AK">Alaska</option>
-                                                                <option value="AZ">Arizona</option>
-                                                                <option value="AR">Arkansas</option>
-                                                                <option value="CA">California</option>
-                                                                <option value="CO">Colorado</option>
-                                                                <option value="CT">Connecticut</option>
-                                                                <option value="DE">Delaware</option>
-                                                                <option value="FL">Florida</option>
-                                                                <option value="GA">Georgia</option>
-                                                                <option value="HI">Hawaii</option>
-                                                                <option value="ID">Idaho</option>
-                                                                <option value="IL">Illinois</option>
-                                                                <option value="IN">Indiana</option>
-                                                                <option value="IA">Iowa</option>
-                                                                <option value="KS">Kansas</option>
-                                                                <option value="KY">Kentucky</option>
-                                                                <option value="LA">Louisiana</option>
-                                                                <option value="ME">Maine</option>
-                                                                <option value="MD">Maryland</option>
-                                                                <option value="MA">Massachusetts</option>
-                                                                <option value="MI">Michigan</option>
-                                                                <option value="MN">Minnesota</option>
-                                                                <option value="MS">Mississippi</option>
-                                                                <option value="MO">Missouri</option>
-                                                                <option value="MT">Montana</option>
-                                                                <option value="NE">Nebraska</option>
-                                                                <option value="NV">Nevada</option>
-                                                                <option value="NH">New Hampshire</option>
-                                                                <option value="NJ">New Jersey</option>
-                                                                <option value="NM">New Mexico</option>
-                                                                <option value="NY">New York</option>
-                                                                <option value="NC">North Carolina</option>
-                                                                <option value="ND">North Dakota</option>
-                                                                <option value="OH">Ohio</option>
-                                                                <option value="OK">Oklahoma</option>
-                                                                <option value="OR">Oregon</option>
-                                                                <option value="PA">Pennsylvania</option>
-                                                                <option value="RI">Rhode Island</option>
-                                                                <option value="SC">South Carolina</option>
-                                                                <option value="SD">South Dakota</option>
-                                                                <option value="TN">Tennessee</option>
-                                                                <option value="TX">Texas</option>
-                                                                <option value="UT">Utah</option>
-                                                                <option value="VT">Vermont</option>
-                                                                <option value="VA">Virginia</option>
-                                                                <option value="WA">Washington</option>
-                                                                <option value="WV">West Virginia</option>
-                                                                <option value="WI">Wisconsin</option>
-                                                                <option value="WY">Wyoming</option>
-                                                            </select>
-                                                        </span>
-                                                    </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Middle Name
+                                                    </label>
+                                                    <input type="text" placeholder="Enter Middle name" class="form-control" name="middleName" ng-model="userInfo.middleName">
                                                 </div>
                                             </div>
-                                            <p>
-                                                <a href uib-popover="Your personal information is not required for unlawful purposes, but only in order to proceed in this tutorial" popover-placement="top" popover-title="Don't worry!"> Why do you need my personal information? </a>
-                                            </p>
-                                        </fieldset>
-                                        <fieldset>
-                                            <legend>
-                                                Security question
-                                            </legend>
-                                            <p>
-                                                Enter security questions in case you lose access to your account. <span class="text-small block">Be sure to pick questions that you will remember the answers to.</span>
-                                            </p>
-                                            <uib-accordion close-others="oneAtATime" class="accordion">
-                                                <uib-accordion-group is-open="question1.open">
-                                                    <uib-accordion-heading>
-                                                        What was the name of your first stuffed animal? <i class="pull-right" ng-class="{'ti-angle-down': question1.open, 'ti-angle-right': !question1.open}"></i>
-                                                    </uib-accordion-heading>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" name="stuffedAnimal" ng-model="myModel.stuffedAnimal" placeholder="Enter the the name of your first stuffed animal">
-                                                    </div>
-                                                </uib-accordion-group>
-                                                <uib-accordion-group is-open="question2.open">
-                                                    <uib-accordion-heading>
-                                                        What is your grandfather's first name? <i class="pull-right" ng-class="{'ti-angle-down': question2.open, 'ti-angle-right': !question2.open}"></i>
-                                                    </uib-accordion-heading>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" name="grandfatherName" ng-model="myModel.grandfatherName" placeholder="Enter your grandfather's first name">
-                                                    </div>
-                                                </uib-accordion-group>
-                                                <uib-accordion-group is-open="question3.open">
-                                                    <uib-accordion-heading>
-                                                        In what city your grandmother live? <i class="pull-right" ng-class="{'ti-angle-down': question3.open, 'ti-angle-right': !question3.open}"></i>
-                                                    </uib-accordion-heading>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" name="grandmotherCity" ng-model="myModel.grandmotherCity" placeholder="Enter your grandfather's first name">
-                                                    </div>
-                                                </uib-accordion-group>
-                                            </uib-accordion>
-                                        </fieldset>
-                                        <div class="form-group">
-                                            <button class="btn btn-primary btn-o next-step btn-wide pull-right" ng-click="form.next(Form)">
-                                                Next <i class="fa fa-arrow-circle-right"></i>
-                                            </button>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Last Name
+                                                    </label>
+                                                    <input type="text" placeholder="Enter last name" class="form-control" name="lastname" ng-model="userInfo.lastName">
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end: WIZARD STEP 1 -->
-                            <!-- start: WIZARD STEP 2 -->
-                            <div id="step-2" ng-show="currentStep == 2">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="padding-30">
-                                            <h2 class="StepTitle">Create an account <span class="text-large block">to manage everything you do with ng-Clip</span></h2>
-                                            <p>
-                                                You’ll enjoy personal services and great benefits including:
-                                            </p>
-                                            <p class="text-small">
-                                                <ul class="no-margin">
-                                                    <li>
-                                                        Access to exclusive releases and limited products.
-                                                    </li>
-                                                    <li>
-                                                        ng-Clip services, benefits and promotions.
-                                                    </li>
-                                                </ul>
-                                            </p>
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Email Address
+                                                    </label>
+                                                    <input type="email" placeholder="email address" class="form-control" name="email" ng-model="userInfo.email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Data of Birth
+                                                    </label>
+                                                    <input type="text" ng-model="userInfo.dateOfBirth" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened" ng-init="inputopened = false" ng-click="inputopened = !inputopened" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Phone
+                                                    </label>
+                                                    <input type="text" placeholder="enter phone number" class="form-control" name="phone" ng-model="userInfo.phone">
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <fieldset>
-                                            <legend>
-                                                Account Credential
-                                            </legend>
-                                            <div class="form-group" ng-class="{'has-error':Form.email.$dirty && Form.email.$invalid, 'has-success':Form.email.$valid}">
-                                                <label class="control-label"> Email <span class="symbol required"></span> </label>
-                                                <input type="email" placeholder="Enter a valid E-mail" class="form-control" name="email" ng-model="myModel.email" ng-required="currentStep == 2">
-                                                <span class="error text-small block" ng-if="Form.email.$dirty && Form.email.$error.required">Email is required.</span>
-                                                <span class="error text-small block" ng-if="Form.email.$error.email">Please, enter a valid email address.</span>
-                                                <span class="success text-small" ng-if="Form.email.$valid">It's a valid e-mail!</span>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group" ng-class="{'has-error':Form.password.$dirty && Form.password.$invalid, 'has-success':Form.password.$valid}">
-                                                        <label class="control-label"> Password <span class="symbol required"></span> </label>
-                                                        <input type="password" placeholder="Enter a Password" class="form-control" name="password" ng-model="myModel.password" ng-required="currentStep == 2" />
-                                                        <span class="error text-small block" ng-if="Form.password.$dirty && Form.password.$error.required">Password is required.</span>
-                                                        <span class="success text-small block" ng-if="Form.password.$valid">Ok!</span>
+                                        <div class="col-md-12">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Nationality
+                                                    </label>
+                                                    <input type="text" placeholder="INDIAN" class="form-control" name="url" ng-model="userInfo.nationality" disabled="true">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Religion
+                                                    </label>
+                                                    <input type="text" placeholder="Enter religion" class="form-control" name="url" ng-model="userInfo.religion">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="block">
+                                                        Gender
+                                                    </label>
+                                                    <div class="clip-radio radio-primary">
+                                                        <input type="radio" id="us-female" name="gender" value="female" ng-model="userInfo.gender">
+                                                        <label for="us-female">
+                                                            Female
+                                                        </label>
+                                                        <input type="radio" id="us-male" name="gender" value="male" ng-model="userInfo.gender">
+                                                        <label for="us-male">
+                                                            Male
+                                                        </label>
+                                                        <input type="radio" id="us-Transgender" name="Transgender" value="transgender" ng-model="userInfo.gender">
+                                                        <label for="us-male">
+                                                            Transgender
+                                                        </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group" ng-class="{'has-error':Form.password2.$dirty && Form.password2.$error.compareTo || Form.password2.$dirty && Form.password2.$invalid, 'has-success':Form.password2.$valid}">
-                                                        <label class="control-label"> Repeat Password <span class="symbol required"></span> </label>
-                                                        <input type="password" placeholder="Repeat Password" class="form-control" name="password2" ng-model="myModel.password2" compare-to="myModel.password" ng-required="currentStep == 2" />
-                                                        <span class="error text-small block" ng-if="Form.password2.$dirty && Form.password2.$error.required">Repeat password is required!</span>
-                                                        <span class="error text-small block" ng-if="Form.password2.$dirty && Form.password2.$error.compareTo">Passwords do not match!</span>
-                                                        <span class="success text-small block" ng-if="Form.password2.$valid">Passwords match!</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                        <div class="form-group">
-                                            <button class="btn btn-primary btn-o back-step btn-wide pull-left" ng-click="form.prev(Form)">
-                                                <i class="fa fa-circle-arrow-left"></i> Back
-                                            </button>
-                                            <button class="btn btn-primary btn-o next-step btn-wide pull-right" ng-click="form.next(Form)">
-                                                Next <i class="fa fa-arrow-circle-right"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end: WIZARD STEP 2 -->
-                            <!-- start: WIZARD STEP 3 -->
-                            <div id="step-3" ng-show="currentStep == 3">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="padding-30">
-                                            <h2 class="StepTitle">Enter billing details</h2>
-                                            <p class="text-large">
-                                                You will need to enter your billing address and select your payment method.
-                                            </p>
-                                            <p class="text-small">
-                                                You can use most major credit card, as well as PayPal.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <fieldset>
-                                            <legend>
-                                                Payment Method
-                                            </legend>
-                                            <label> Payment type </label>
-                                            <div class="form-group">
-                                                <div class="btn-group">
-                                                    <label class="btn btn-primary btn-sm" ng-model="myModel.paymentMethod" uib-btn-radio="'creditcard'"> <i class="fa fa-cc-visa"></i> <i class="fa fa-cc-mastercard"></i> Credit Card </label>
-                                                    <label class="btn btn-primary btn-sm" ng-model="myModel.paymentMethod" uib-btn-radio="'paypal'"> <i class="fa fa-cc-paypal"></i> PayPal </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label> Card Number </label>
-                                                <input type="text" class="form-control" name="cardNumber" ng-model="myModel.cardNumber" placeholder="Enter Your Card Number">
-                                            </div>
-                                            <label> Expires </label>
-                                            <div class="row">
-                                                <div class="col-md-4 col-sm-6">
-                                                    <div class="form-group">
-                                                        <select class="cs-select cs-skin-slide" ng-model="myModel.expiresMonth">
-                                                            <option value="" disabled>Month</option>
-                                                            <option value="January">January</option>
-                                                            <option value="February">February</option>
-                                                            <option value="March">March</option>
-                                                            <option value="April">April</option>
-                                                            <option value="May">May</option>
-                                                            <option value="June">June</option>
-                                                            <option value="July">July</option>
-                                                            <option value="August">August</option>
-                                                            <option value="September">September</option>
-                                                            <option value="October">October</option>
-                                                            <option value="November">November</option>
-                                                            <option value="December">December</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 col-sm-6">
-                                                    <div class="form-group">
-                                                        <select class="cs-select cs-skin-slide" ng-model="myModel.expiresYear">
-                                                            <option value="" disabled>Year</option>
-                                                            <option value="2015">2015</option>
-                                                            <option value="2016">2016</option>
-                                                            <option value="2017">2017</option>
-                                                            <option value="2018">2018</option>
-                                                            <option value="2019">2019</option>
-                                                            <option value="2020">2020</option>
-                                                        </select>
+                                                <div class="form-group">
+                                                    <label class="block">
+                                                        Marital Status
+                                                    </label>
+                                                    <div class="clip-radio radio-primary">
+                                                        <input type="radio" id="us-Single" name="maritalStatus" value="single" ng-model="userInfo.maritalStatus">
+                                                        <label for="us-Single">
+                                                            Single
+                                                        </label>
+                                                        <input type="radio" id="us-Married" name="maritalStatus" value="married" ng-model="userInfo.maritalStatus">
+                                                        <label for="us-Married">
+                                                            Married
+                                                        </label>
+                                                        <input type="radio" id="us-Divorcee" name="maritalStatus" value="divorcee" ng-model="userInfo.maritalStatus">
+                                                        <label for="us-Divorcee">
+                                                            Divorcee
+                                                        </label>
+                                                        <input type="radio" id="us-Widower" name="maritalStatus" value="widower" ng-model="userInfo.maritalStatus">
+                                                        <label for="us-Widower">
+                                                            Widower
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-xs-12">
-                                                    <label> Security code </label>
-                                                    <div class="row">
-                                                        <div class="col-xs-3">
-                                                            <div class="form-group">
-                                                                <input type="text" class="form-control" name="securityCode" placeholder="Security code" ng-model="myModel.securityCode">
+                                            <div class="col-md-6" style="padding: 0% 0% 0% 20%">
+                                                <div class="form-group">
+                                                    <label>
+                                                        Image Upload
+                                                    </label>
+                                                    <div flow-init flow-object="obj.flow">
+                                                        <div class="user-image">
+                                                            <div class="thumbnail margin-bottom-5">
+                                                                <img src="assets/images/default-user.png" alt="" ng-if="!obj.flow.files.length && noImage">
+                                                                <img ng-src="{{userInfo.avatar}}" alt="" ng-if="!obj.flow.files.length && !noImage">
+                                                                <img flow-img="obj.flow.files[0]" ng-if="obj.flow.files.length">
                                                             </div>
                                                         </div>
-                                                        <span class="help-inline col-xs-4"> <a href uib-popover="The security code is a three-digit number on the back of your credit card, immediately following your main card number." popover-placement="top" popover-title="How to find the security code"><i class="ti-help-alt text-large text-primary"></i></a> </span>
+                                                        <div class="user-image-buttons-edit" ng-if="obj.flow.files.length">
+                                                            <span class="btn btn-primary btn-file">
+                                                                <i class="fa fa-pencil"></i>
+                                                                <input type="file" flow-btn />
+                                                            </span>
+                                                            <span class="btn btn-danger" ng-click="obj.flow.cancel()"> <i class="fa fa-times"></i></span>
+                                                        </div>
+                                                        <div class="user-image-buttons-edit" ng-if="!obj.flow.files.length">
+                                                            <span class="btn btn-primary btn-file">
+
+                                                                <i class="fa fa-pencil"></i>
+                                                                <input type="file" flow-btn />
+                                                            </span>
+                                                            <span class="btn btn-danger" ng-if="!noImage" ng-click="removeImage()"><i class="fa fa-times"></i> </span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </fieldset>
-                                        <div class="form-group">
-                                            <button class="btn btn-primary btn-o back-step btn-wide pull-left" ng-click="form.prev(Form)">
-                                                <i class="fa fa-circle-arrow-left"></i> Back
-                                            </button>
-                                            <button class="btn btn-primary btn-o next-step btn-wide pull-right" ng-click="form.next(Form)">
-                                                Next <i class="fa fa-arrow-circle-right"></i>
-                                            </button>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Qualification
+                                                </label>
+                                                <input type="text" placeholder="Enter qualification" class="form-control" name="url" ng-model="userInfo.qualification">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Mother tongue
+                                                </label>
+                                                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.motherTongue">
+                                                    <option></option>
+                                                    <option value="telugu">Telugu</option>
+                                                    <option value="hindi">Hindi</option>
+                                                    <option value="urdu">Urdu</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Languages known
+                                                </label>
+                                                <input id="tags_1" type="text" class="tags form-control" value="hindi, telugu, urdu" ng-model="userInfo.languagesKnown" />
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Designation
+                                                </label>
+                                                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.designation">
+                                                    <option></option>
+                                                    <option value="AK">Designation 1</option>
+                                                    <option value="HI">Designation 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Data of Interview
+                                                </label>
+                                                <input type="text" ng-model="userInfo.dateOfInterview" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened" ng-init="inputopened = false" ng-click="inputopened = !inputopened" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Data of Join
+                                                </label>
+                                                <input type="text" ng-model="userInfo.dateOfJoin" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened" ng-init="inputopened = false" ng-click="inputopened = !inputopened" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Father Name
+                                                </label>
+                                                <input type="text" placeholder="" class="form-control" name="url" ng-model="userInfo.fatherName">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Father Occupation
+                                                </label>
+                                                <input type="text" placeholder="" class="form-control" name="url" ng-model="userInfo.fatherOccupation">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Mother Name
+                                                </label>
+                                                <input type="text" placeholder="" class="form-control" name="url" ng-model="userInfo.motherName">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Spouse Name
+                                                </label>
+                                                <input type="text" placeholder="" class="form-control" name="url" ng-model="userInfo.spouseName">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>
+                                        Additional Information
+                                    </legend>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Branch
+                                                </label>
+                                                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.branch">
+                                                    <option></option>
+                                                    <option value="AK">Hyderabad</option>
+                                                    <option value="HI">Bangalore</option>
+                                                    <option value="CA">Delhi</option>
+                                                    <option value="NV">Noida</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Division
+                                                </label>
+                                                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.division">
+                                                    <option></option>
+                                                    <option value="AK">Hyderabad</option>
+                                                    <option value="HI">Bangalore</option>
+                                                    <option value="CA">Delhi</option>
+                                                    <option value="NV">Noida</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Department
+                                                </label>
+                                                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.department">
+                                                    <option></option>
+                                                    <option value="AK">Hyderabad</option>
+                                                    <option value="HI">Bangalore</option>
+                                                    <option value="CA">Delhi</option>
+                                                    <option value="NV">Noida</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Reporting Manager
+                                                </label>
+                                                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.division">
+                                                    <option></option>
+                                                    <option value="AK">Manager 1</option>
+                                                    <option value="HI">Manager 2</option>
+                                                    <option value="CA">Manager 3</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Site Posted to
+                                                </label>
+                                                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.sitePostedTo">
+                                                    <option></option>
+                                                    <option value="AK">Manager 1</option>
+                                                    <option value="HI">Manager 2</option>
+                                                    <option value="CA">Manager 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Gross Salary
+                                                </label>
+                                                <input type="text" placeholder="Enter employee gross salary" class="form-control" name="grossSalary" ng-model="userInfo.grossSalary">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    PSARA Emp Code
+                                                </label>
+                                                <input type="text" placeholder="Enter employee PSARA Code" class="form-control" name="psaraCode" ng-model="userInfo.psaraCode">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    ID Card Issued Date
+                                                </label>
+                                                <input type="text" ng-model="userInfo.idCardIssuedDate" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened" ng-init="inputopened = false" ng-click="inputopened = !inputopened" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    ID Card Valid Till
+                                                </label>
+                                                <input type="text" ng-model="userInfo.idCardValidTillDate" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened" ng-init="inputopened = false" ng-click="inputopened = !inputopened" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Previous Employee
+                                                </label>
+                                                <input id="tags_1" type="text" class="tags form-control" value="" ng-model="userInfo.previousEmployee" />
+                                                <div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <!-- end: WIZARD STEP 3 -->
-                            <!-- start: WIZARD STEP 4 -->
-                            <div id="step-4" ng-show="currentStep == 4">
+                                </fieldset>
+
+                            </uib-tab>
+                            <!-- end: TAB Personal Information -->
+                            <!-- start: TAB Address and Physical Details -->
+                            <uib-tab heading="Physical & Address Details">
+                                <fieldset>
+                                    <legend>
+                                        Physical Standard
+                                    </legend>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Height
+                                                    </label>
+                                                    <input type="text" placeholder="Enter Height" class="form-control" name="height" ng-model="userInfo.height">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Weigth
+                                                    </label>
+                                                    <input type="text" placeholder="Enter Weigth" class="form-control" name="weight" ng-model="userInfo.weigth">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Chest UnExpand
+                                                    </label>
+                                                    <input type="text" placeholder="Enter measures of Chest unexpanded" class="form-control" name="chestUnexpanded" ng-model="userInfo.chestUnExpanded">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Chest Expand
+                                                    </label>
+                                                    <input type="text" placeholder="Enter measures of chest expanded" class="form-control" name="chestExpanded" ng-model="userInfo.chestExpanded">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Hair Color
+                                                    </label>
+                                                    <input type="text" placeholder="Enter Hair Color" class="form-control" name="hairColor" ng-model="userInfo.hariColor">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Eyes Color
+                                                    </label>
+                                                    <input type="text" placeholder="Enter Eyes color" class="form-control" name="eyesColor" ng-model="userInfo.eyesColor">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>
+                                        Address Details
+                                    </legend>
+                                    <div class="row">
+                                        <div class="col-md-offset-6">
+                                            <input type="checkbox" ng-model="confirmed" ng-change="change(confirmed)" name="addressdetails" />
+                                            <label for="addressdetails">
+                                                Check it if Permanenet and Temporary address are same.
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Address Line 1
+                                                </label>
+                                                <input type="text" placeholder="Enter Address Line 1" class="form-control" name="addressLine1" ng-model="userInfo.address.tmp.addressLine1">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Address Line 2
+                                                </label>
+                                                <input type="text" placeholder="Enter Address Line 2" class="form-control" name="addressLine2" ng-model="userInfo.address.tmp.addressLine2">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Land Mark
+                                                </label>
+                                                <input type="text" placeholder="Enter Land Makr" class="form-control" name="landMakr" ng-model="userInfo.address.tmp.landMark">
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Post Office
+                                                    </label>
+                                                    <input type="text" placeholder="Enter Post Office" class="form-control" name="PostOffice" ng-model="userInfo.address.tmp.postOffice">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Police Station
+                                                    </label>
+                                                    <input type="text" placeholder="Enter Police Station" class="form-control" name="policeStation" ng-model="userInfo.address.tmp.policeStation">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        State
+                                                    </label>
+                                                    <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.address.tmp.state">
+                                                        <option></option>
+                                                        <option value="telugu">Telugu</option>
+                                                        <option value="hindi">Hindi</option>
+                                                        <option value="urdu">Urdu</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        District
+                                                    </label>
+                                                    <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.address.tmp.district">
+                                                        <option></option>
+                                                        <option value="telugu">Telugu</option>
+                                                        <option value="hindi">Hindi</option>
+                                                        <option value="urdu">Urdu</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Pincode
+                                                    </label>
+                                                    <input type="text" placeholder="Enter Pin code" class="form-control" name="pinCode" ng-model="userInfo.address.tmp.pinCode">
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="col-md-6" ng-hide="confirmed">
+
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Address Line 1
+                                                </label>
+                                                <input type="text" placeholder="Enter Address Line 1" class="form-control" name="addressLine1" ng-model="userInfo.address.per.addressLine1">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Address Line 2
+                                                </label>
+                                                <input type="text" placeholder="Enter Address Line 2" class="form-control" name="addressLine2" ng-model="userInfo.address.per.addressLine2">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Land Mark
+                                                </label>
+                                                <input type="text" placeholder="Enter Land Makr" class="form-control" name="landMakr" ng-model="userInfo.address.per.landMark">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label">
+                                                            Post Office
+                                                        </label>
+                                                        <input type="text" placeholder="Enter Post Office" class="form-control" name="PostOffice" ng-model="userInfo.address.per.postOffice">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label">
+                                                            Police Station
+                                                        </label>
+                                                        <input type="text" placeholder="Enter Police Station" class="form-control" name="policeStation" ng-model="userInfo.address.per.policeStation">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label">
+                                                            State
+                                                        </label>
+                                                        <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.address.per.state">
+                                                            <option></option>
+                                                            <option value="telugu">Telugu</option>
+                                                            <option value="hindi">Hindi</option>
+                                                            <option value="urdu">Urdu</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label">
+                                                            District
+                                                        </label>
+                                                        <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.address.per.district">
+                                                            <option></option>
+                                                            <option value="telugu">Telugu</option>
+                                                            <option value="hindi">Hindi</option>
+                                                            <option value="urdu">Urdu</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label">
+                                                            Pincode
+                                                        </label>
+                                                        <input type="text" placeholder="Enter Pin code" class="form-control" name="pinCode" ng-model="userInfo.address.per.pinCode">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>
+                                        Employee Info
+                                    </legend>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Ref Name & Address
+                                                </label>
+                                                <textarea type="text" cols="5" placeholder="Enter reference and address" class="form-control" name="refNameAndAddress" ng-model="userInfo.refNameAndAddress" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Ref Name & Address2
+                                                </label>
+                                                <textarea type="text" cols="5" placeholder="Enter reference and address2" class="form-control" name="refNameAndAddress2" ng-model="userInfo.refNameAndAddress2" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Blood Group
+                                                </label>
+                                                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.bloodGroup">
+                                                    <option></option>
+                                                    <option value="telugu">Telugu</option>
+                                                    <option value="hindi">Hindi</option>
+                                                    <option value="urdu">Urdu</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Physical Remarks
+                                                </label>
+                                                <input type="text" placeholder="Enter Physical remarks" class="form-control" name="physicalRemarks" ng-model="userInfo.physicalRemarks">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Identification Marks 1
+                                                    </label>
+                                                    <input type="text" placeholder="Enter Identifiation marks1" class="form-control" name="identificationMarks1" ng-model="userInfo.identificationMarks1">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Identification Marks 2
+                                                    </label>
+                                                    <input type="text" placeholder="Enter Identification Marks " class="form-control" name="identificationMarks2" ng-model="userInfo.identificationMarks2">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Remarks
+                                                </label>
+                                                <textarea type="text" cols="5" placeholder="Enter remarks" class="form-control" name="remarks" ng-model="userInfo.remarks" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Applicant Category
+                                                </label>
+                                                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.applicantCategory">
+                                                    <option></option>
+                                                    <option value="telugu">Telugu</option>
+                                                    <option value="hindi">Hindi</option>
+                                                    <option value="urdu">Urdu</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label"> Specially Abled</label>
+                                                <input type="checkbox" ng-model="speciallyAbled" name="speciallyAbled" />
+
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </uib-tab>
+                            <!-- end: TAB -->
+                            <!-- start: TAB Address and Physical Details -->
+                            <uib-tab heading="Bank/PF/ESI">
+                                <fieldset>
+                                    <legend>
+                                        Bank Details
+                                    </legend>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Bank Account No
+                                                    </label>
+                                                    <input type="text" placeholder="Enter Bank Account Number" class="form-control" name="bankAccountNumber" ng-model="userInfo.bankDetails.bankAccountNumber">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Bank Name
+                                                    </label>
+                                                    <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.bankDetails.bankName">
+                                                        <option></option>
+                                                        <option value="AK">Hyderabad</option>
+                                                        <option value="HI">Bangalore</option>
+                                                        <option value="CA">Delhi</option>
+                                                        <option value="NV">Noida</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Branch Name
+                                                    </label>
+                                                    <input type="text" placeholder="Enter branch name" class="form-control" name="branchName" ng-model="userInfo.bankDetails.branchName">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Branch Code
+                                                    </label>
+                                                    <input type="text" placeholder="Enter branch code" class="form-control" name="weight" ng-model="userInfo.bankDetails.branchCode">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Branch App No
+                                                    </label>
+                                                    <input type="text" placeholder="Enter bank app no" class="form-control" name="weight" ng-model="userInfo.bankDetails.bankAppNo">
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Bank Code No
+                                                    </label>
+                                                    <input type="text" placeholder="Enter Bank Code No" class="form-control" name="bankCodeNo" ng-model="userInfo.bankDetails.bankCodeNo">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Bank Card Reference
+                                                    </label>
+                                                    <input type="text" placeholder="Enter Bank Card Reference" class="form-control" name="bankCardRefernce" ng-model="userInfo.bankDetails.bankCardRefernce">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        IFSC Code
+                                                    </label>
+                                                    <input type="text" placeholder="Enter IFSC Code" class="form-control" name="ifscCode" ng-model="userInfo.bankDetails.ifscCode">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Region Code
+                                                    </label>
+                                                    <input type="text" placeholder="Enter Region Code" class="form-control" name="regionCode" ng-model="userInfo.bankDetails.regionCode">
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Ins Debt Amount
+                                                    </label>
+                                                    <input type="text" placeholder="Enter Ins Debt Amount" class="form-control" name="insDebtAmount" ng-model="userInfo.bankDetails.insDebtAmount">
+                                                </div>
+
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Insurance Nominee
+                                                    </label>
+                                                    <input type="text" placeholder="Enter Insurance nominee" class="form-control" name="insuranceNominee" ng-model="userInfo.bankDetails.insuranceNominee">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Nominee DOB
+                                                    </label>
+                                                    <input type="text" placeholder="Enter nominee Date of birth" class="form-control" name="nomineeDOB" ng-model="userInfo.bankDetails.nomineeDOB">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Insurance Cover
+                                                    </label>
+                                                    <input type="text" placeholder="Enter insurance cover" class="form-control" name="insuranceCover" ng-model="userInfo.bankDetails.insuranceCover">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Nominee RelationShip
+                                                    </label>
+                                                    <input type="text" placeholder="Enter nominee relationship" class="form-control" name="nomineeRelationShip" ng-model="userInfo.bankDetails.nomineeRelationShip">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        UAN No
+                                                    </label>
+                                                    <input type="text" placeholder="Enter UAN no" class="form-control" name="UANNo" ng-model="userInfo.bankDetails.UANNo">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>
+                                        PF Details
+                                    </legend>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="checkbox" ng-model="userInfo.PF.PFDeduct" name="PFDeduct" />
+                                            <label for="PFDeduct">
+                                                PF Deduct
+                                            </label>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    EPF No
+                                                </label>
+                                                <input type="text" placeholder="Enter EPF No" class="form-control" name="epfNo" ng-model="userInfo.PF.epfNo">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" ng-hide="confirmed">
+                                            <input type="checkbox" ng-model="userInfo.PF.PTDeduct" name="PTDeduct" />
+                                            <label for="PTDeduct">
+                                                PT Deduct
+                                            </label>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    PF Enroll Date
+                                                </label>
+                                                <input type="text" placeholder="Enter PF Enroll Date" class="form-control" name="pfEnrollDate" ng-model="userInfo.PF.pfEnrollDate">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>
+                                        ESI Details
+                                    </legend>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="checkbox" ng-model="userInfo.ESI.ESIDeduct" name="ESIDeduct" />
+                                            <label for="ESIDeduct">
+                                                ESI Deduct
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        ESI No
+                                                    </label>
+                                                    <input type="text" placeholder="Enter ESI No" class="form-control" name="esiNo" ng-model="userInfo.ESI.esiNo">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6" ng-hide="confirmed">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        ESI Disp Name
+                                                    </label>
+                                                    <input type="text" placeholder="Enter ESI disp Name" class="form-control" name="esiDispName" ng-model="userInfo.ESI.esiDispName">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>
+                                        Salary Details
+                                    </legend>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Additional Amount
+                                                    </label>
+                                                    <input type="text" placeholder="Enter Additional Amount" class="form-control" name="additionalAmount" ng-model="userInfo.Salary.additionalAmount">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6" ng-hide="confirmed">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Food Allowance
+                                                    </label>
+                                                    <input type="text" placeholder="Enter Food Allowance" class="form-control" name="foodAllowance" ng-model="userInfo.Salary.foodAllowance">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>
+                                        Salary Structure
+                                    </legend>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    No.Of Days
+                                                </label>
+                                                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.SalaryStructure.noOfDays">
+                                                    <option></option>
+                                                    <option value="telugu">Telugu</option>
+                                                    <option value="hindi">Hindi</option>
+                                                    <option value="urdu">Urdu</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Basic
+                                                </label>
+                                                <input type="text" placeholder="Enter Basic Amount" class="form-control" name="basicAmount" ng-model="userInfo.SalaryStructure.Basic" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    HRA
+                                                </label>
+                                                <input type="text" placeholder="Enter HRA" class="form-control" name="HRA" ng-model="userInfo.SalaryStructure.HRA" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    CCA
+                                                </label>
+                                                <input type="text" placeholder="Enter CCA" class="form-control" name="CCA" ng-model="userInfo.SalaryStructure.CCA">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Gratutity
+                                                </label>
+                                                <input type="text" placeholder="Enter Gratutity" class="form-control" name="Gratutity" ng-model="userInfo.SalaryStructure.gratutity" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    WA
+                                                </label>
+                                                <input type="text" placeholder="Enter WA" class="form-control" name="WA" ng-model="userInfo.SalaryStructure.WA" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    NFHs
+                                                </label>
+                                                <input type="text" placeholder="Enter NFHs" class="form-control" name="NFHs" ng-model="userInfo.SalaryStructure.NFHs">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    RC
+                                                </label>
+                                                <input type="text" placeholder="Enter RC" class="form-control" name="RC" ng-model="userInfo.SalaryStructure.RC">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    OT Rate
+                                                </label>
+                                                <input type="text" placeholder="Enter OT Rate" class="form-control" name="otRate" ng-model="userInfo.SalaryStructure.OTRate" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Travelling Allowance
+                                                </label>
+                                                <input type="text" placeholder="Enter Travelling Allowance" class="form-control" name="TA" ng-model="userInfo.SalaryStructure.travellingAllowance" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Mobile Allowance
+                                                </label>
+                                                <input type="text" placeholder="Enter Mobile allowance" class="form-control" name="mobileAllowance" ng-model="userInfo.SalaryStructure.mobileAllowance">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    DA
+                                                </label>
+                                                <input type="text" placeholder="Enter DA" class="form-control" name="da" ng-model="userInfo.SalaryStructure.DA" />
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Conveyance
+                                                </label>
+                                                <input type="text" placeholder="Enter Conveyance" class="form-control" name="Conveyance" ng-model="userInfo.SalaryStructure.Conveyance" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    LA
+                                                </label>
+                                                <input type="text" placeholder="Enter LA" class="form-control" name="LA" ng-model="userInfo.SalaryStructure.LA">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Bonus
+                                                </label>
+                                                <input type="text" placeholder="Enter Bonus" class="form-control" name="bonus" ng-model="userInfo.SalaryStructure.bonus" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    OA
+                                                </label>
+                                                <input type="text" placeholder="Enter OA" class="form-control" name="OA" ng-model="userInfo.SalaryStructure.OA" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Spl. Allowance
+                                                </label>
+                                                <input type="text" placeholder="Enter Spl. Allowance" class="form-control" name="splAllowance" ng-model="userInfo.SalaryStructure.splAllowance">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    CS
+                                                </label>
+                                                <input type="text" placeholder="Enter CS" class="form-control" name="CS" ng-model="userInfo.SalaryStructure.CS">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Nots
+                                                </label>
+                                                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.SalaryStructure.Nots">
+                                                    <option></option>
+                                                    <option value="telugu">Telugu</option>
+                                                    <option value="hindi">Hindi</option>
+                                                    <option value="urdu">Urdu</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Performace Allowance
+                                                </label>
+                                                <input type="text" placeholder="Enter Performance allowance" class="form-control" name="performanceAllowance" ng-model="userInfo.SalaryStructure.performanceAllowance" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Medical Allowance
+                                                </label>
+                                                <input type="text" placeholder="Enter Medical Allowance" class="form-control" name="medical Allowance" ng-model="userInfo.SalaryStructure.medicalAllowance" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </uib-tab>
+                            <!-- end: TAB -->
+                            <!-- start: TAB PROJECTS -->
+                            <uib-tab heading="Records">
+                                <fieldset>
+                                    <legend>
+                                        Government Proofs
+                                    </legend>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <input type="checkbox" ng-model="userInfo.Proofs.Gov.aadharCard" name="aadharCard" />
+                                                <label for="aadharCard">
+                                                    Aadhar Card
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.aadharCard">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Number
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="addressLine2" ng-model="userInfo.Proofs.Gov.aadharCardNumber">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.aadharCard">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        KYC Name
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="aadharCardName" ng-model="userInfo.Proofs.Gov.aadharCardName">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <input type="checkbox" ng-model="userInfo.Proofs.Gov.drivingLicense" name="drivingLicense" />
+                                                <label for="drivingLicense">
+                                                    Driving License
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.drivingLicense">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Number
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="drivingLicenseid" ng-model="userInfo.Proofs.Gov.drivingLicenseNumber">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.drivingLicense">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        KYC Name
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="voterIDName" ng-model="userInfo.Proofs.Gov.drivingLicenseName">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <input type="checkbox" ng-model="userInfo.Proofs.Gov.voterID" name="voterID" />
+                                                <label for="voterID">
+                                                    Voter ID
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.voterID">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Number
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="voterIDid" ng-model="userInfo.Proofs.Gov.voterIDNumber">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.voterID">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        KYC Name
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="voterIDName" ng-model="userInfo.Proofs.Gov.voterIDName">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <input type="checkbox" ng-model="userInfo.Proofs.Gov.rationCard" name="rationCard" />
+                                                <label for="rationCard">
+                                                    Ration Card
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.rationCard">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Number
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="rationCardID" ng-model="userInfo.Proofs.Gov.rationCardNumber">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.rationCard">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        KYC Name
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="rationCardName" ng-model="userInfo.Proofs.Gov.rationCardName">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <input type="checkbox" ng-model="userInfo.Proofs.Gov.pancard" name="pancard" />
+                                                <label for="pancard">
+                                                    Pan Card
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.pancard">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Number
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="pancardID" ng-model="userInfo.Proofs.Gov.pancardNumber">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.pancard">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        KYC Name
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="apancardName" ng-model="userInfo.Proofs.Gov.pancardName">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <input type="checkbox" ng-model="userInfo.Proofs.Gov.bankPassBook" name="bankPassBook" />
+                                                <label for="bankPassBook">
+                                                    Bank Pass Book
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.bankPassBook">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Number
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="bankPassBookId" ng-model="userInfo.Proofs.Gov.bankPassBookNumber">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.bankPassBook">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        KYC Name
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="bankPassBookName" ng-model="userInfo.Proofs.Gov.bankPassBookName">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <input type="checkbox" ng-model="userInfo.Proofs.Gov.electricityBill" name="electricityBill" />
+                                                <label for="electricityBill">
+                                                    Electricity Bill
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.electricityBill">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Number
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="electricityBill2" ng-model="userInfo.Proofs.Gov.electricityBillNumber">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.electricityBill">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        KYC Name
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="electricityBillName" ng-model="userInfo.Proofs.Gov.electricityBillName">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <input type="checkbox" ng-model="userInfo.Proofs.Gov.esicCard" name="esicCard" />
+                                                <label for="esicCard">
+                                                    ESIC Card
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.esicCard">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Number
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="addressLine2" ng-model="userInfo.Proofs.Gov.esicCardNumber">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.esicCard">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        KYC Name
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="aadharCardName" ng-model="userInfo.Proofs.Gov.esicCardName">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <input type="checkbox" ng-model="userInfo.Proofs.Gov.otherCards" name="otherCards" />
+                                                <label for="otherCards">
+                                                    Other Cards
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.otherCards">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Number
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="otherCardsid" ng-model="userInfo.Proofs.Gov.otherCardsNumber">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.otherCards">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        KYC Name
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="otherCardsName" ng-model="userInfo.Proofs.Gov.otherCardsName">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <input type="checkbox" ng-model="userInfo.Proofs.Gov.ExService" name="ExService" />
+                                                <label for="ExService">
+                                                    Ex-Service
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.ExService">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Service No.
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="serviceNo" ng-model="userInfo.Proofs.Gov.ExServiceNumber">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Date Of Enrollment
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="dateOfEnrollment" ng-model="userInfo.Proofs.Gov.ExServicedateOfEnrollment">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Crops
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="crops" ng-model="userInfo.Proofs.Gov.ExServiceCrops">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Medical Category
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="medicalCategory" ng-model="userInfo.Proofs.Gov.ExServicemedicalCategory">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Conduct
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="conduct" ng-model="userInfo.Proofs.Gov.ExServiceconduct">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" ng-show="userInfo.Proofs.Gov.ExService">
+                                                <input type="checkbox" ng-model="userInfo.Proofs.Gov.EMPExService" name="EMPExService" />
+                                                <label for="EMPExService">
+                                                    EMP Ex-Service
+                                                </label>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Rank
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="rank" ng-model="userInfo.Proofs.Gov.ExServiceRank">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Date Of Discharge
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="dateOfDischarge" ng-model="userInfo.Proofs.Gov.ExServicedateOfDischarge">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Trade
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="trade" ng-model="userInfo.Proofs.Gov.ExServiceTrade">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Reason Of Discharge
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="reason of Discharge" ng-model="userInfo.Proofs.Gov.ExServiceReasonOfDischarge">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>Family Details</legend>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Name
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="familyMember.name" ng-model="userInfo.Proofs.familyMember.name">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Date Of Birth
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="familyMember.dob" ng-model="userInfo.Proofs.familyMember.dob" data-inputmask="'mask': '99/99/9999'">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Occupation
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="familyMember.occupasion" ng-model="userInfo.Proofs.familyMember.occupasion">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Relationship
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="familyMember.relationship" ng-model="userInfo.Proofs.familyMember.relationship">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Age
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="familyMember.age" ng-model="userInfo.Proofs.familyMember.age">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <input type="checkbox" ng-model="userInfo.Proofs.familyMember.pfNominee" name="pfNominee" />
+                                                    <label for="pfNominee">
+                                                        PM Nominee
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <input type="checkbox" ng-model="userInfo.Proofs.familyMember.esiNominee" name="esiNominee" />
+                                                    <label for="esiNominee">
+                                                        ESI Nominee
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <input type="checkbox" ng-model="userInfo.Proofs.familyMember.residingWithEmployee" name="residingWithEmployee" />
+                                                    <label for="residingWithEmployee">
+                                                        Residing With Employee
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3" ng-hide="userInfo.Proofs.familyMember.residingWithEmployee">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        If No- Address
+                                                    </label>
+                                                    <textarea cols="5" placeholder="" class="form-control" name="familyMember.placeOfResidence" ng-model="userInfo.Proofs.familyMember.placeOfResidence" />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-offset-9">
+                                            <button class="btn btn-lg btn-success" ng-click="addFamilyMember()"> Add Family Member</button>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <hr />
+                                        <table class="table table-striped table-responsive" ng-show="userInfo.FamilyDetails.length >0">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Name</th>
+                                                    <th>Date Of Birth</th>
+                                                    <th>Age</th>
+                                                    <th>Relationship</th>
+                                                    <th>Occupation</th>
+                                                    <th>PF Nominee</th>
+                                                    <th>ESI Nominee </th>
+                                                    <th>Residing with Him/Her </th>
+                                                    <th>If No - Place of Residence </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="familyMember in userInfo.FamilyDetails">
+                                                    <td>{{familyMember.no}}</td>
+                                                    <td>{{familyMember.name}}</td>
+                                                    <td>{{familyMember.dob}}</td>
+                                                    <td>{{familyMember.age}}</td>
+                                                    <td>{{familyMember.relationship}}</td>
+                                                    <td>{{familyMember.occupasion}}</td>
+                                                    <td>{{familyMember.pfNominee}}</td>
+                                                    <td>{{familyMember.esiNominee}}</td>
+                                                    <td>{{familyMember.residingWithEmployee}}</td>
+                                                    <td>{{familyMember.placeOfResidence}}</td>
+                                                    <td><button href="#" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" ng-click="removeFamilyMember(familyMember)"><i class="fa fa-trash-o"></i> Delete </button></td>
+                                                </tr>
+                                                <tr></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </fieldset>
+                            <fieldset>
+                                <legend>Education Details</legend>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="text-center">
-                                            <h1 class=" ti-check block text-primary"></h1>
-                                            <h2 class="StepTitle">Congratulations!</h2>
-                                            <p class="text-large">
-                                                Your tutorial is complete.
-                                            </p>
-                                            <p class="text-small">
-                                                Thank you for your registration. Your transaction has been completed, and a receipt for your purchase has been emailed to you.  You may log into your account to view details of this transaction.
-                                            </p>
-                                            <a class="btn btn-primary btn-o" href ng-click="form.goTo(Form, 1)"> Back to first step </a>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Qualification
+                                                </label>
+                                                <input type="text" placeholder="" class="form-control" name="qualification.name" ng-model="userInfo.Proofs.qualification.name">
+                                            </div>
                                         </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Description
+                                                </label>
+                                                <input type="text" placeholder="" class="form-control" name="qualification.Description" ng-model="userInfo.Proofs.qualification.description">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Board/Univesity
+                                                </label>
+                                                <input type="text" placeholder="" class="form-control" name="qualification.board" ng-model="userInfo.Proofs.qualification.board">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Year Of Study
+                                                </label>
+                                                <input type="text" placeholder="" class="form-control" name="qualification.yearOfStudy" ng-model="userInfo.Proofs.qualification.yearOfStudy">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label class="block">
+                                                    Result
+                                                </label>
+                                                <div class="clip-radio radio-primary">
+                                                    <input type="radio" id="resultSuccess" name="examResult" value="pass" ng-model="userInfo.Proofs.qualification.result">
+                                                    <label for="us-Single">
+                                                        Pass
+                                                    </label>
+                                                    <input type="radio" id="resultfail" name="examResult" value="fail" ng-model="userInfo.Proofs.qualification.result">
+                                                    <label for="us-Married">
+                                                        Fail
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Percentage Of Marks
+                                                </label>
+                                                <input type="text" placeholder="" class="form-control" name="qualification.percentageOfMarks" ng-model="userInfo.Proofs.qualification.percentageOfMarks">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Name & Address of School/College
+                                                </label>
+                                                <textarea cols="5" placeholder="" class="form-control" name="qualification.placeOfResidence" ng-model="userInfo.Proofs.qualification.nameAndAddressOfSchool" />
+                                            </div>
+                                        </div>
+
                                     </div>
+                                    <div class="col-lg-offset-9">
+                                        <button class="btn btn-lg btn-success" ng-click="addQualification()"> Add Qualification</button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr />
+                                    <table class="table table-striped table-responsive" ng-show="userInfo.Qualificaitons.length >0">
+                                        <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Board</th>
+                                            <th>Year of study</th>
+                                            <th>Result</th>
+                                            <th>Percentage Of Marks</th>
+                                            <th>Name and Address Of School </th>
+                                            <th>Delete</th>
+                                                    
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="qualification in userInfo.Qualificaitons">
+                                            <td>{{qualification.no}}</td>
+                                            <td>{{qualification.name}}</td>
+                                            <td>{{qualification.description}}</td>
+                                            <td>{{qualification.board}}</td>
+                                            <td>{{qualification.yearOfStudy}}</td>
+                                            <td>{{qualification.result}}</td>
+                                            <td>{{qualification.percentageOfMarks}}</td>
+                                            <td>{{qualification.nameAndAddressOfSchool}}</td>
+                                            <td><button href="#" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" ng-click="removeQualification(qualification)"><i class="fa fa-trash-o"></i> Delete </button></td>
+                                        </tr>
+                                        <tr></tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                            </div>
-                            <!-- end: WIZARD STEP 4 -->
-                        </div>
-                      <!-- <pre class="code margin-top-20">{{ myModel | json }}</pre>--> 
+
+                            </fieldset>
+                                <fieldset>
+                                    <legend>Previous Experiences</legend>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                       Company Name
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="previousExperience.companyName" ng-model="userInfo.Proofs.previousExperience.companyName">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Region Code
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="previousExperience.regionCode" ng-model="userInfo.Proofs.previousExperience.regionCode">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Employer Code
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="previousExperience.employerCode" ng-model="userInfo.Proofs.previousExperience.employerCode">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Extension
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="previousExperience.extension" ng-model="userInfo.Proofs.previousExperience.extension">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Designation
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="previousExperience.Designation" ng-model="userInfo.Proofs.previousExperience.Designation">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        year Of Experience
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="previousExperience.yearsOfExperience" ng-model="userInfo.Proofs.previousExperience.yearsOfExperience">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        PF No
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="previousExperience.PFNo" ng-model="userInfo.Proofs.previousExperience.PFNo">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        ESI No
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="previousExperience.ESINo" ng-model="userInfo.Proofs.previousExperience.ESINo">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Date Of Resigned
+                                                    </label>
+                                                    <input type="text" placeholder="" class="form-control" name="previousExperience.dateOfResigned" ng-model="userInfo.Proofs.previousExperience.dateOfResigned">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">
+                                                        Name & Address of Company
+                                                    </label>
+                                                    <textarea cols="5" placeholder="" class="form-control" name="previousExperience.nameAndAddress" ng-model="userInfo.Proofs.previousExperience.nameAndAddress" />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-offset-9">
+                                            <button class="btn btn-lg btn-success" ng-click="addPreviousExperience()"> Add Qualification</button>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <hr />
+                                        <table class="table table-striped table-responsive" ng-show="userInfo.PreviousExperiences.length >0">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Name</th>
+                                                    <th>Region Code</th>
+                                                    <th>Exmploer Code</th>
+                                                    <th>Extension</th>
+                                                    <th>Designation</th>
+                                                    <th>years Of Experience</th>
+                                                    <th>PF No.</th>
+                                                    <th>ESI No.</th>
+                                                    <th>Date of Resigned</th>
+                                                    <th>Name & Address of Company</th>
+                                                    <th>Delete</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="previous in userInfo.PreviousExperiences">
+                                                    <td>{{previous.no}}</td>
+                                                    <td>{{previous.companyName}}</td>
+                                                    <td>{{previous.regionCode}}</td>
+                                                    <td>{{previous.employerCode}}</td>
+                                                    <td>{{previous.extension}}</td>
+                                                    <td>{{previous.Designation}}</td>
+                                                    <td>{{previous.yearsOfExperience}}</td>
+                                                    <td>{{previous.PFNo}}</td>
+                                                    <td>{{previous.ESINo}}</td>
+                                                    <td>{{previous.dateOfResigned}}</td>
+                                                    <td>{{previous.nameAndAddress}}</td>
+                                                    <td><button href="#" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" ng-click="removePreviousExp(previous)"><i class="fa fa-trash-o"></i> Delete </button></td>
+                                                </tr>
+                                                <tr></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </fieldset>
+                            </uib-tab>
+                            <!-- end: TAB PROJECTS -->
+                        </uib-tabset>
+                        <!-- end: WIZARD FORM -->
                     </form>
-                    <!-- end: WIZARD FORM -->
                 </div>
             </div>
         </div>

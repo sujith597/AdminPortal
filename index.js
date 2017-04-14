@@ -1,4 +1,4 @@
-﻿var securityApp = angular.module('SecurityApp', ['ngAnimate', 'ui.router', 'ui.grid', 'ui.grid.selection', 'ui.grid.exporter', 'ui.grid.pagination','ngNotify']);
+﻿var securityApp = angular.module('SecurityApp', ['ngAnimate', 'ui.bootstrap', 'ui.router', 'ui.grid', 'ui.grid.selection', 'ui.grid.exporter', 'ui.grid.pagination', 'ngNotify', 'flow.provider']);
 
 securityApp.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/Home');

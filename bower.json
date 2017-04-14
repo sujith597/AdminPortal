@@ -81,6 +81,10 @@
   "dependencies": {
     "pdfmake": "^0.1.27",
     "ngAnimate": "*",
-    "ng-notify": "^0.8.0"
+    "ng-notify": "^0.8.0",
+    "angular-bootstrap": "^2.5.0",
+    "ng-flow": "^2.7.4",
+    "flow.js": "^2.11.2",
+    "angularjs-imageupload-directive": "*"
   }
 }
