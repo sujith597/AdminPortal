@@ -1,0 +1,268 @@
+﻿<div class="">
+    <div class="page-title">
+        <div class="title_left">
+            <h3>Add Client</h3>
+        </div>
+        <div class="title_right">
+            <div class="col-md-5 col-sm-5 col-xs-12 pull-right">
+                <button type="button" class="btn btn-round btn-success" ng-click="addClient()">Save Client Information</button>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div>
+                    <form action="#" role="form" id="form">
+                        <fieldset>
+                            <legend>
+                                Client Information
+                            </legend>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Name
+                                            </label>
+                                            <input type="text" placeholder="Enter client name" class="form-control" name="name" ng-model="clientInfo.name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Short Name
+                                            </label>
+                                            <input type="text" placeholder="Enter Short name" class="form-control" name="shortName" ng-model="clientInfo.shortName">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Segment
+                                            </label>
+                                            <select class="select2_single form-control" tabindex="-1" ng-model="clientInfo.clientSegment">
+                                                <option></option>
+                                                <option value="telugu">Segment 1</option>
+                                                <option value="hindi">Segment 2</option>
+                                                <option value="urdu">Segment 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Contact person
+                                            </label>
+                                            <input type="text" placeholder="Enter Contact Person Name" class="form-control" name="nameContactPerson" ng-model="clientInfo.contactPersonName">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Person Designation
+                                            </label>
+                                            <select class="select2_single form-control" tabindex="-1" ng-model="clientInfo.contactPersonDesignation">
+                                                <option></option>
+                                                <option value="telugu">Designation 1</option>
+                                                <option value="hindi">Designation 2</option>
+                                                <option value="urdu">Designation 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Phone No's
+                                            </label>
+                                            <input type="text" placeholder="enter phone number" class="form-control" name="phone" ng-model="clientInfo.phoneNo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Email Id
+                                            </label>
+                                            <input type="email" placeholder="Enter Email Id" class="form-control" name="clientEmailId" ng-model="clientInfo.email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Landline No.
+                                            </label>
+                                            <input type="text" placeholder="Enter Land line Number" class="form-control" name="landlineNumber" ng-model="clientInfo.landlineNo">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Fax No.
+                                            </label>
+                                            <input type="text" placeholder="Enter Fax No" class="form-control" name="faxNo" ng-model="clientInfo.faxNo">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>
+                                Billing Details
+                            </legend>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Line One
+                                            </label>
+                                            <input type="text" placeholder="Enter Line One" class="form-control" name="line one" ng-model="clientInfo.lineOne">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Line Two
+                                            </label>
+                                            <input type="text" placeholder="Enter Line Two" class="form-control" name="lineTwo" ng-model="clientInfo.lineTwo">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Line Three
+                                            </label>
+                                            <input type="text" placeholder="Enter Line Three" class="form-control" name="lineThree" ng-model="clientInfo.lineThree">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Line Four
+                                            </label>
+                                            <input type="text" placeholder="Enter Line Four" class="form-control" name="lineFour" ng-model="clientInfo.lineFour">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Line Five
+                                            </label>
+                                            <input type="text" placeholder="Enter Line Five" class="form-control" name="lineFive" ng-model="clientInfo.lineFive">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Line Six
+                                            </label>
+                                            <input type="text" placeholder="Enter Line Six" class="form-control" name="lineSix" ng-model="clientInfo.lineSix">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+
+                                    <div class="col-md-4">
+
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Location
+                                            </label>
+                                            <input type="text" placeholder="enter Locaiton" class="form-control" name="location" ng-model="clientInfo.location">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Sub Unit
+                                            </label>
+                                            <select class="select2_single form-control" tabindex="-1" ng-model="clientInfo.subUnit">
+                                                <option></option>
+                                                <option value="telugu">Unit 1</option>
+                                                <option value="hindi">Unit 2</option>
+                                                <option value="urdu">Unit 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Description
+                                            </label>
+                                            <textarea cols="4" placeholder="Enter Descreiption if Any" class="form-control" name="description" ng-model="clientInfo.description" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="block">
+                                                Main Unit
+                                            </label>
+                                            <div class="clip-radio radio-primary">
+                                                <input type="radio" id="mainUnityes" name="mainUnityes" value="yes" ng-model="userInfo.mainUnit">
+                                                <label for="mainUnityes">
+                                                    Yes
+                                                </label>
+                                                <input type="radio" id="mainUnitNo" name="mainUnitNo" value="no" ng-model="userInfo.mainUnit">
+                                                <label for="mainUnitNo">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="block">
+                                                Invoice
+                                            </label>
+                                            <div class="clip-radio radio-primary">
+                                                <input type="radio" id="invoiceyes" name="invoiceyes" value="yes" ng-model="userInfo.invoice">
+                                                <label for="Invoiceyes">
+                                                    Yes
+                                                </label>
+                                                <input type="radio" id="InvoiceNo" name="InvoiceNo" value="no" ng-model="userInfo.invoice">
+                                                <label for="InvoiceNo">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="block">
+                                                Paysheet
+                                            </label>
+                                            <div class="clip-radio radio-primary">
+                                                <input type="radio" id="paysheetyes" name="paysheetyes" value="yes" ng-model="userInfo.paysheet">
+                                                <label for="paysheetyes">
+                                                    Yes
+                                                </label>
+                                                <input type="radio" id="paysheetNo" name="paysheetNo" value="no" ng-model="userInfo.paysheet">
+                                                <label for="paysheetNo">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

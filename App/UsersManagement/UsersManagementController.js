@@ -1,4 +1,4 @@
-﻿securityApp.controller('UserManagementController', function ($scope, UserManagementService) {
+﻿securityApp.controller('UserManagementController', function ($scope,$window,$location, UserManagementService) {
     $scope.userSearchText;
     var usersList;
     $scope.usersGrid = {
@@ -66,6 +66,10 @@
         } else {
             $scope.usersGrid.data = usersList;
         }
+    };
+
+    $scope.goToAddUser = function() {
+        $location.path('/AddUser');
     };
 
 });

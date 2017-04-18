@@ -25,12 +25,14 @@ securityApp.config(function ($stateProvider, $urlRouterProvider) {
         .state('ClientsManagement',
         {
             url: '/ClientsManagement',
-            templateUrl: 'App/ClientsManagement/ClientsManagement.html'
+            templateUrl: 'App/ClientsManagement/ClientsManagement.html',
+            controller: 'ClientManagementController'
         })
         .state('AddClient',
         {
             url: '/AddClient',
-            templateUrl: 'App/ClientsManagement/AddClient.html'
+            templateUrl: 'App/ClientsManagement/AddClient.html',
+            controller : ''
         })
         .state('AddUserToClient',
         {

@@ -207,4 +207,8 @@
     $scope.clear = function () {
         $scope.dt = null;
     };
+
+    $scope.addUser = function() {
+        alert("Add user call");
+    };
 });
