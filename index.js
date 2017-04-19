@@ -22,9 +22,15 @@ securityApp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'App/UsersManagement/AddUser.html',
             controller: 'AddUserController'
         })
+        .state('EditUser',
+        {
+            url: '/EditUser',
+            templateUrl: 'App/UsersManagement/AddUser.html',
+            controller: 'AddUserController'
+        })
         .state('ViewUser',
         {
-            url: '/ViewUser',
+            url: '/ViewUser/:UserId',
             templateUrl: 'App/UsersManagement/ViewUser.html',
             controller: 'ViewUserController'
         })

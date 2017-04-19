@@ -32,25 +32,29 @@
 
     UserManagementService.getAllUsers().then(function (data) {
         usersList = data;
+        var EmpId = 0;
         $scope.usersGrid.data = data;
+        var newColumn = {
+            name: 'Actions',
+            cellTemplate:
+                '<center><div class="ui-grid-cell"><div class="ui-grid-cell-contents" style="text-align:center">' +
+                    '<button href="#" class="btn btn-primary btn-xs" ng-click="grid.appScope.ViewUser(row.entity)"><i class="fa fa-folder"></i> View </button>' +
+                    ' <button href="#" class="btn btn-info btn-xs" ng-click="grid.appScope.EditUser(row.entity)"><i class="fa fa-pencil"></i> Edit </button>' +
+                    '<button href="#" class="btn btn-danger btn-xs" data-title="Delete"  data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i> Delete </button>' +
+                    '</div></div></center>'
+        };
+       
         $scope.usersGrid.columnDefs = [
-            { name: 'name', field: 'name' },
+          { name: 'name', field: 'name' },
             { name: 'gender', field: 'gender' },
-            { name: 'company', field: 'company' },
-            {
-                name: 'Actions',
-                cellTemplate:
-                        '<center><div class="ui-grid-cell"><div class="ui-grid-cell-contents" style="text-align:center">' +
-                            '<button href="#" class="btn btn-primary btn-xs" ng-click="grid.appScope.ViewUser(row.entity)"><i class="fa fa-folder"></i> View </button>' +
-                        ' <button href="#" class="btn btn-info btn-xs" ng-click="grid.appScope.EditUser(row.entity)"><i class="fa fa-pencil"></i> Edit </button>' +
-                        '<button href="#" class="btn btn-danger btn-xs" data-title="Delete"  data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i> Delete </button>' +
-                            '</div></div></center>'
-            }
+            { name: 'company', field: 'company' }
+            
         ];
+        $scope.usersGrid.columnDefs.push(newColumn);
     });
 
     $scope.ViewUser = function (user){
-        $location.path('/ViewUser');
+        $location.path('/ViewUser/'+user.name);
     };
     $scope.EditUser = function (user) {
         alert("HI");

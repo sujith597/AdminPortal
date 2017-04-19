@@ -17,4 +17,13 @@
         return defer.promise;
     };
 
+    this.getUserInformation = function(userId) {
+        var defer = $q.defer();
+        $http.get('App/UsersManagement/GetUserInformation/'+ userId)
+           .then(function (data) {
+               defer.resolve(data.data);
+           });
+        return defer.promise;
+
+    }
 });

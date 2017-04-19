@@ -23,7 +23,7 @@
             $scope.userInfo.addressDetails.peraddressLine2 = $scope.userInfo.addressDetails.tmpaddressLine2;
             $scope.userInfo.addressDetails.perlandMark = $scope.userInfo.addressDetails.tmplandMark;
             $scope.userInfo.addressDetails.perpostOffice = $scope.userInfo.addressDetails.tmppostOffice;
-            $scope.userInfo.addressDetails.perpoliceStation = scope.userInfo.addressDetails.tmppoliceStation;
+            $scope.userInfo.addressDetails.perpoliceStation = $scope.userInfo.addressDetails.tmppoliceStation;
             $scope.userInfo.addressDetails.perstate = $scope.userInfo.addressDetails.tmpstate;
             $scope.userInfo.addressDetails.perdistrict = $scope.userInfo.addressDetails.tmpdistrict;
             $scope.userInfo.addressDetails.perpinCode = $scope.userInfo.addressDetails.tmppinCode;

@@ -32,15 +32,15 @@
                                                         Enrollment Type
                                                     </label>
                                                     <div class="clip-radio radio-primary">
-                                                        <input type="radio" id="generalEnrollment" name="enrollment" ng-value="General" ng-model="userInfo.personalInformation.enrollment">
+                                                        <input type="radio" id="generalEnrollment" name="enrollment" value="General" ng-model="userInfo.personalInformation.enrollment">
                                                         <label for="generalEnrollment">
                                                             General
                                                         </label>
-                                                        <input type="radio" id="staff" name="enrollment" ng-value="Staff" ng-model="userInfo.personalInformation.enrollment">
+                                                        <input type="radio" id="staff" name="enrollment" value="Staff" ng-model="userInfo.personalInformation.enrollment">
                                                         <label for="staff">
                                                             staff
                                                         </label>
-                                                        <input type="radio" id="Manual" name="enrollment" ng-value="Manual" ng-model="userInfo.personalInformation.enrollment">
+                                                        <input type="radio" id="Manual" name="enrollment" value="Manual" ng-model="userInfo.personalInformation.enrollment">
                                                         <label for="staff">
                                                             Manual
                                                         </label>
@@ -322,7 +322,7 @@
                                                 <label class="control-label">
                                                     Reporting Manager
                                                 </label>
-                                                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.additionalInformation.division">
+                                                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.additionalInformation.reportingManager">
                                                     <option></option>
                                                     <option value="AK">Manager 1</option>
                                                     <option value="HI">Manager 2</option>
