@@ -4,50 +4,47 @@
     };
     $scope.obj = new Flow();
    
-    $scope.userInfo = {
-        firstName: 'Peter',
-        lastName: 'Clark',
-        url: 'www.example.com',
-        email: 'peter@example.com',
-        phone: '(641)-734-4763',
-        gender: 'male',
-        zipCode: '12345',
-        city: 'London (UK)',
-        avatar: 'assets/images/avatar-1-xl.jpg',
-        twitter: '',
-        github: '',
-        facebook: '',
-        linkedin: '',
-        google: '',
-        skype: 'peterclark82'
-    };
-    $scope.userInfo.address = {};
-    $scope.userInfo.address.tmp = {};
-    $scope.userInfo.address.per = {};
-    $scope.userInfo.FamilyDetails = [];
-    $scope.userInfo.Qualificaitons = [];
-    $scope.userInfo.PreviousExperiences = [];
+    $scope.userInfo = {};
+    $scope.personalInformation = {};
+    
+    $scope.userInfo.familyDetails = [];
+    $scope.userInfo.educationDetails = [];
+    $scope.userInfo.previousExperiences = [];
+    $scope.userInfoLists = {};
+    $scope.userInfoLists.Proofs = {};
+    $scope.userInfoLists.Proofs.familyMember = {};
+    $scope.userInfoLists.Proofs.qualification = {};
+    $scope.userInfoLists.Proofs.previousExperience = {};
 
-    $scope.userInfo.Proofs = {};
-    $scope.userInfo.Proofs.familyMember = {};
-    $scope.userInfo.Proofs.qualification = {};
-    $scope.userInfo.Proofs.previousExperience = {};
-
-    $scope.userInfo.Proofs.familyMember.residingWithEmployee = true;
+    $scope.userInfoLists.Proofs.familyMember.residingWithEmployee = true;
     $scope.change = function(value) {
         if (value) {
-            $scope.userInfo.address.per = angular.copy($scope.userInfo.address.tmp);
+            $scope.userInfo.addressDetails.peraddressLine1 = $scope.userInfo.addressDetails.tmpaddressLine1;
+            $scope.userInfo.addressDetails.peraddressLine2 = $scope.userInfo.addressDetails.tmpaddressLine2;
+            $scope.userInfo.addressDetails.perlandMark = $scope.userInfo.addressDetails.tmplandMark;
+            $scope.userInfo.addressDetails.perpostOffice = $scope.userInfo.addressDetails.tmppostOffice;
+            $scope.userInfo.addressDetails.perpoliceStation = scope.userInfo.addressDetails.tmppoliceStation;
+            $scope.userInfo.addressDetails.perstate = $scope.userInfo.addressDetails.tmpstate;
+            $scope.userInfo.addressDetails.perdistrict = $scope.userInfo.addressDetails.tmpdistrict;
+            $scope.userInfo.addressDetails.perpinCode = $scope.userInfo.addressDetails.tmppinCode;
         } else {
-            $scope.userInfo.address.per = {};
+            $scope.userInfo.addressDetails.peraddressLine1 = "";
+            $scope.userInfo.addressDetails.peraddressLine2 = "";
+            $scope.userInfo.addressDetails.perlandMark = "";
+            $scope.userInfo.addressDetails.perpostOffice = "";
+            $scope.userInfo.addressDetails.perpoliceStation = "";
+            $scope.userInfo.addressDetails.perstate = "";
+            $scope.userInfo.addressDetails.perdistrict = "";
+            $scope.userInfo.addressDetails.perpinCode = "";
         }
 
     };
 
     $scope.addFamilyMember = function () {
-        if ($scope.userInfo.Proofs.familyMember.name) {
-            $scope.userInfo.Proofs.familyMember.no = $scope.userInfo.FamilyDetails.length + 1;
-            $scope.userInfo.FamilyDetails.push($scope.userInfo.Proofs.familyMember);
-            $scope.userInfo.Proofs.familyMember = {};
+        if ($scope.userInfoLists.Proofs.familyMember.name) {
+            $scope.userInfoLists.Proofs.familyMember.no = $scope.userInfo.familyDetails.length + 1;
+            $scope.userInfo.familyDetails.push($scope.userInfoLists.Proofs.familyMember);
+            $scope.userInfoLists.Proofs.familyMember = {};
         } else {
             ngNotify.set('please enter Family Member which is mandatory feild', {
                 theme: 'pure',
@@ -59,10 +56,10 @@
         }
     };
     $scope.addQualification = function () {
-        if ($scope.userInfo.Proofs.qualification.name) {
-            $scope.userInfo.Proofs.qualification.no = $scope.userInfo.Qualificaitons.length + 1;
-            $scope.userInfo.Qualificaitons.push($scope.userInfo.Proofs.qualification);
-            $scope.userInfo.Proofs.qualification = {};
+        if ($scope.userInfoLists.Proofs.qualification.name) {
+            $scope.userInfoLists.Proofs.qualification.no = $scope.userInfo.educationDetails.length + 1;
+            $scope.userInfo.educationDetails.push($scope.userInfoLists.Proofs.qualification);
+            $scope.userInfoLists.Proofs.qualification = {};
         } else {
             ngNotify.set('please enter Qualificaiton Name which is mandatory feild', {
                 theme: 'pure',
@@ -74,10 +71,10 @@
         }
     };
     $scope.addPreviousExperience = function () {
-        if ($scope.userInfo.Proofs.previousExperience.companyName) {
-            $scope.userInfo.Proofs.previousExperience.no = $scope.userInfo.PreviousExperiences.length + 1;
-            $scope.userInfo.PreviousExperiences.push($scope.userInfo.Proofs.previousExperience);
-            $scope.userInfo.Proofs.previousExperience = {};
+        if ($scope.userInfoLists.Proofs.previousExperience.companyName) {
+            $scope.userInfoLists.Proofs.previousExperience.no = $scope.userInfo.previousExperiences.length + 1;
+            $scope.userInfo.previousExperiences.push($scope.userInfoLists.Proofs.previousExperience);
+            $scope.userInfoLists.Proofs.previousExperience = {};
         } else {
             ngNotify.set('please enter Company Name and Address which is mandatory feild', {
                 theme: 'pure',
@@ -90,17 +87,17 @@
     };
 
     $scope.removeFamilyMember = function(familymem) {
-        $scope.userInfo.FamilyDetails = _.reject($scope.userInfo.FamilyDetails, function (family) {
+        $scope.userInfo.familyDetails = _.reject($scope.userInfo.familyDetails, function (family) {
             return familymem.no == family.no;
         });
     };
     $scope.removeQualification = function (qua) {
-        $scope.userInfo.Qualificaitons = _.reject($scope.userInfo.Qualificaitons, function (qualificaiton) {
+        $scope.userInfo.educationDetails = _.reject($scope.userInfo.educationDetails, function (qualificaiton) {
             return qua.no == qualificaiton.no;
         });
     };
     $scope.removePreviousExp = function (exp) {
-        $scope.userInfo.PreviousExperiences = _.reject($scope.userInfo.PreviousExperiences, function (experioence) {
+        $scope.userInfo.previousExperiences = _.reject($scope.userInfo.previousExperiences, function (experioence) {
             return exp.no == experioence.no;
         });
     };
@@ -209,6 +206,25 @@
     };
 
     $scope.addUser = function() {
-        alert("Add user call");
+        UserManagementService.addUser($scope.userInfo).then(function(result) {
+            if (result) {
+                ngNotify.set('User added successfully',
+                {
+                    theme: 'pure',
+                    position: 'top',
+                    type: 'success',
+                    button: 'true',
+                    sticky: 'false',
+                });
+            } else {
+                ngNotify.set('User addition failed', {
+                    theme: 'pure',
+                    position: 'top',
+                    type: 'error',
+                    button: 'true',
+                    sticky: 'false',
+                });
+            }
+        });
     };
 });

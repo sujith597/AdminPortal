@@ -9,5 +9,12 @@
 
         return defer.promise;
     };
+    this.addUser = function(userInfo) {
+        var defer = $q.defer();
+        $http.post('App/UsersManagement/someUrl', userInfo).then(function () {
+            defer.resolve(true);
+        });
+        return defer.promise;
+    };
 
 });

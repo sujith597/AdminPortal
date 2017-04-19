@@ -1,4 +1,4 @@
-﻿securityApp.controller('UserManagementController', function ($scope,$window,$location, UserManagementService) {
+﻿securityApp.controller('UserManagementController', function ($scope, $window, $location, UserManagementService) {
     $scope.userSearchText;
     var usersList;
     $scope.usersGrid = {
@@ -41,7 +41,7 @@
                 name: 'Actions',
                 cellTemplate:
                         '<center><div class="ui-grid-cell"><div class="ui-grid-cell-contents" style="text-align:center">' +
-                            '<button href="#" class="btn btn-primary btn-xs" ng-click="grid.appScope.EditUser(row.entity)"><i class="fa fa-folder"></i> View </button>' +
+                            '<button href="#" class="btn btn-primary btn-xs" ng-click="grid.appScope.ViewUser(row.entity)"><i class="fa fa-folder"></i> View </button>' +
                         ' <button href="#" class="btn btn-info btn-xs" ng-click="grid.appScope.EditUser(row.entity)"><i class="fa fa-pencil"></i> Edit </button>' +
                         '<button href="#" class="btn btn-danger btn-xs" data-title="Delete"  data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i> Delete </button>' +
                             '</div></div></center>'
@@ -49,6 +49,9 @@
         ];
     });
 
+    $scope.ViewUser = function (user){
+        $location.path('/ViewUser');
+    };
     $scope.EditUser = function (user) {
         alert("HI");
     };
@@ -68,7 +71,7 @@
         }
     };
 
-    $scope.goToAddUser = function() {
+    $scope.goToAddUser = function () {
         $location.path('/AddUser');
     };
 
