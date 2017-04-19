@@ -998,140 +998,64 @@
                                     <h4 class="panel-title">Police Records</h4>
                                 </div>
                                 <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="col-md-4">
-                                                <input type="checkbox" ng-model="userInfo.policeRecords.policeVerification" name="policeVerificationNo" />
-                                                <label for="policeVerificationNo">
-                                                    Police Verification
-                                                </label>
-                                            </div>
-                                            <div class="col-md-4" ng-show="userInfo.policeRecords.policeVerification">
-                                                <div class="form-group">
-                                                    <label class="control-label">
-                                                        Verification No
-                                                    </label>
-                                                   
-                                                    <span>{{userInfo.policeRecords.policeVerificationNo}}</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4" ng-show="userInfo.policeRecords.policeVerification">
-                                                <div class="form-group">
-                                                    <label class="control-label">
-                                                        Nearest Police Station
-                                                    </label>
-                                                  
-                                                    <span>{{userInfo.policeRecords.nearestPoliceStation}}</span>
-                                                </div>
-                                            </div>
+                                    <div class="x_content">
+                                        <div class="col-lg-3">
+                                            <!-- required for floating -->
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs tabs-left">
+                                                <li class="active">
+                                                    <a href="#home" target="_self" data-toggle="tab">Police Verification</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#profile" target="_self" data-toggle="tab">Criminal Offence</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#messages" target="_self" data-toggle="tab">Criminal Proceeding</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#settings" target="_self" data-toggle="tab">Criminal Arrest Warrant</a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <div class="col-md-12">
-                                            <div class="col-md-3">
-                                                <input type="checkbox" ng-model="userInfo.policeRecords.criminalOffenceYesNo" name="criminalOffence" />
-                                                <label for="criminalOffence">
-                                                    Criminal Offence
-                                                </label>
-                                            </div>
-                                            <div class="col-md-3" ng-show="userInfo.policeRecords.criminalOffenceYesNo">
-                                                <div class="form-group">
-                                                    <label class="control-label">
-                                                        Court Name
-                                                    </label>
-                                                   
-                                                    <span>{{userInfo.policeRecords.criminalOffenceCourtName}}</span>
+                                        <div class="col-lg-9">
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <div class="tab-pane active" id="home">
+                                                    <p class="lead"></p>
+                                                    <p>
+                                                        Police Verification : {{userInfo.policeRecords.policeVerification}}<br />
+                                                        Verification No : {{userInfo.policeRecords.policeVerificationNo}} <br />
+                                                        Nearest Police Station : {{userInfo.policeRecords.nearestPoliceStation}}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="profile">
+                                                    <p class="lead"></p>
+                                                    <p>
+                                                        Criminal Offence : {{userInfo.policeRecords.criminalOffenceYesNo}}<br />
+                                                        Court Name: {{userInfo.policeRecords.criminalOffenceCourtName}}<br />
+                                                        Case No: {{userInfo.policeRecords.criminalOffenceCaseNo}} <br />
+                                                        Offence : {{userInfo.policeRecords.criminalOffence}}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="messages">
+                                                    <p class="lead"></p>
+                                                    <p>
+                                                        Criminal Proceeding : {{userInfo.policeRecords.criminalProceedingYesNo}}<br />
+                                                        Court Name: {{userInfo.policeRecords.criminalProceedingCourtName}}<br />
+                                                        Case No: {{userInfo.policeRecords.criminalProceedingCaseNo}} <br />
+                                                        Offence : {{userInfo.policeRecords.criminalProceedingOffence}}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settings">
+                                                    <p class="lead"></p>
+                                                    <p>
+                                                        Criminal Arrest Warrant : {{userInfo.policeRecords.criminalArrestWarrantYesNo}}<br />
+                                                        Court Name: {{userInfo.policeRecords.criminalArrestWarrantCourtName}}<br />
+                                                        Case No: {{userInfo.policeRecords.criminalArrestWarrantCaseNo}} <br />
+                                                        Offence : {{userInfo.policeRecords.criminalArrestWarrantOffence}}
+                                                    </p>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3" ng-show="userInfo.policeRecords.criminalOffenceYesNo">
-                                                <div class="form-group">
-                                                    <label class="control-label">
-                                                        Case No
-                                                    </label>
-                                                    
-                                                    <span>{{userInfo.policeRecords.criminalOffenceCaseNo}}</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3" ng-show="userInfo.policeRecords.criminalOffenceYesNo">
-                                                <div class="form-group">
-                                                    <label class="control-label">
-                                                        Offence
-                                                    </label>
-                                                  
-                                                    <span>{{userInfo.policeRecords.criminalOffence}}</span>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="col-md-3">
-                                                <input type="checkbox" ng-model="userInfo.policeRecords.criminalProceedingYesNo" name="criminalproceeding" />
-                                                <label for="criminalproceeding">
-                                                    Criminal Proceeding
-                                                </label>
-                                            </div>
-                                            <div class="col-md-3" ng-show="userInfo.policeRecords.criminalProceedingYesNo">
-                                                <div class="form-group">
-                                                    <label class="control-label">
-                                                        Court Name
-                                                    </label>
-                                                    
-                                                    <span>{{userInfo.policeRecords.criminalProceedingCourtName}}</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3" ng-show="userInfo.policeRecords.criminalProceedingYesNo">
-                                                <div class="form-group">
-                                                    <label class="control-label">
-                                                        Case No
-                                                    </label>
-                                                    
-                                                    <span>{{userInfo.policeRecords.criminalProceedingCaseNo}}</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3" ng-show="userInfo.policeRecords.criminalProceedingYesNo">
-                                                <div class="form-group">
-                                                    <label class="control-label">
-                                                        Offence
-                                                    </label>
-                                                    
-                                                    <span>{{userInfo.policeRecords.criminalProceedingOffence}}</span>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="col-md-3">
-                                                <input type="checkbox" ng-model="userInfo.policeRecords.criminalArrestWarrantYesNo" name="criminalArrestWarrant" />
-                                                <label for="criminalOffence">
-                                                    Criminal Arrest Warrant
-                                                </label>
-                                            </div>
-                                            <div class="col-md-3" ng-show="userInfo.policeRecords.criminalArrestWarrantYesNo">
-                                                <div class="form-group">
-                                                    <label class="control-label">
-                                                        Court Name
-                                                    </label>
-                                                    
-                                                    <span>{{userInfo.policeRecords.criminalArrestWarrantCourtName}}</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3" ng-show="userInfo.policeRecords.criminalArrestWarrantYesNo">
-                                                <div class="form-group">
-                                                    <label class="control-label">
-                                                        Case No
-                                                    </label>
-                                                    
-                                                    <span>{{userInfo.policeRecords.criminalArrestWarrantCaseNo}}</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3" ng-show="userInfo.policeRecords.criminalArrestWarrantYesNo">
-                                                <div class="form-group">
-                                                    <label class="control-label">
-                                                        Offence
-                                                    </label>
-                                                    
-                                                    <span>{{userInfo.policeRecords.criminalArrestWarrantOffence}}</span>
-                                                </div>
-                                            </div>
-
                                         </div>
                                     </div>
                                 </div>

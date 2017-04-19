@@ -41,7 +41,7 @@
                 name: 'Actions',
                 cellTemplate:
                         '<center><div class="ui-grid-cell"><div class="ui-grid-cell-contents" style="text-align:center">' +
-                            '<button href="#" class="btn btn-primary btn-xs" ng-click="grid.appScope.EditClient(row.entity)"><i class="fa fa-folder"></i> View </button>' +
+                            '<button href="#" class="btn btn-primary btn-xs" ng-click="grid.appScope.ViewClient(row.entity)"><i class="fa fa-folder"></i> View </button>' +
                         ' <button href="#" class="btn btn-info btn-xs" ng-click="grid.appScope.EditClient(row.entity)"><i class="fa fa-pencil"></i> Edit </button>' +
                         '<button href="#" class="btn btn-danger btn-xs" data-title="Delete"  data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i> Delete </button>' +
                             '</div></div></center>'
@@ -50,11 +50,22 @@
     });
 
     $scope.EditClient = function (user) {
-        alert("HI");
+        $location.path('/EditClient/' + user.name);
     };
-
+    $scope.ViewClient = function (user) {
+        $location.path('/ViewClient/' + user.name);
+    };
     $scope.DeleteClient = function () {
-        alert("Delete");
+        ClientManagementService.deleteClient($scope.selectedUser.name).then(function () {
+            ngNotify.set('Client deleted successfully',
+                    {
+                        theme: 'pure',
+                        position: 'top',
+                        type: 'success',
+                        button: 'true',
+                        sticky: 'false',
+                    });
+        });
 
     };
     $scope.updateClientsGrid = function () {

@@ -1,6 +1,7 @@
-﻿securityApp.controller('UserManagementController', function ($scope, $window, $location, UserManagementService) {
+﻿securityApp.controller('UserManagementController', function ($scope, $window, $location,ngNotify, UserManagementService) {
     $scope.userSearchText;
     var usersList;
+    $scope.selectedUser = {};
     $scope.usersGrid = {
         enableSorting: true,
         paginationPageSizes: [25, 50, 100],
@@ -40,7 +41,7 @@
                 '<center><div class="ui-grid-cell"><div class="ui-grid-cell-contents" style="text-align:center">' +
                     '<button href="#" class="btn btn-primary btn-xs" ng-click="grid.appScope.ViewUser(row.entity)"><i class="fa fa-folder"></i> View </button>' +
                     ' <button href="#" class="btn btn-info btn-xs" ng-click="grid.appScope.EditUser(row.entity)"><i class="fa fa-pencil"></i> Edit </button>' +
-                    '<button href="#" class="btn btn-danger btn-xs" data-title="Delete"  data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i> Delete </button>' +
+                    '<button href="#" class="btn btn-danger btn-xs" ng-click="selectedUser = row.entity" data-title="Delete"  data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i> Delete </button>' +
                     '</div></div></center>'
         };
        
@@ -57,12 +58,20 @@
         $location.path('/ViewUser/'+user.name);
     };
     $scope.EditUser = function (user) {
-        alert("HI");
+        $location.path('/EditUser/' + user.name);
     };
 
     $scope.DeleteUser = function () {
-        alert("Delete");
-
+        UserManagementService.deleteUser($scope.selectedUser.name).then(function() {
+            ngNotify.set('User deleted successfully',
+                    {
+                        theme: 'pure',
+                        position: 'top',
+                        type: 'success',
+                        button: 'true',
+                        sticky: 'false',
+                    });
+        });
     };
     $scope.updateUsersGrid = function () {
         if ($scope.userSearchText) {

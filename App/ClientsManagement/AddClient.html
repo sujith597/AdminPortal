@@ -26,7 +26,7 @@
                                             <label class="control-label">
                                                 Name
                                             </label>
-                                            <input type="text" placeholder="Enter client name" class="form-control" name="name" ng-model="clientInfo.name">
+                                            <input type="text" placeholder="Enter client name" class="form-control" name="name" ng-model="clientInfo.clientInformation.name">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -34,7 +34,7 @@
                                             <label class="control-label">
                                                 Short Name
                                             </label>
-                                            <input type="text" placeholder="Enter Short name" class="form-control" name="shortName" ng-model="clientInfo.shortName">
+                                            <input type="text" placeholder="Enter Short name" class="form-control" name="shortName" ng-model="clientInfo.clientInformation.shortName">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -42,7 +42,7 @@
                                             <label class="control-label">
                                                 Segment
                                             </label>
-                                            <select class="select2_single form-control" tabindex="-1" ng-model="clientInfo.clientSegment">
+                                            <select class="select2_single form-control" tabindex="-1" ng-model="clientInfo.clientInformation.clientSegment">
                                                 <option></option>
                                                 <option value="telugu">Segment 1</option>
                                                 <option value="hindi">Segment 2</option>
@@ -57,7 +57,7 @@
                                             <label class="control-label">
                                                 Contact person
                                             </label>
-                                            <input type="text" placeholder="Enter Contact Person Name" class="form-control" name="nameContactPerson" ng-model="clientInfo.contactPersonName">
+                                            <input type="text" placeholder="Enter Contact Person Name" class="form-control" name="nameContactPerson" ng-model="clientInfo.clientInformation.contactPersonName">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -65,7 +65,7 @@
                                             <label class="control-label">
                                                 Person Designation
                                             </label>
-                                            <select class="select2_single form-control" tabindex="-1" ng-model="clientInfo.contactPersonDesignation">
+                                            <select class="select2_single form-control" tabindex="-1" ng-model="clientInfo.clientInformation.contactPersonDesignation">
                                                 <option></option>
                                                 <option value="telugu">Designation 1</option>
                                                 <option value="hindi">Designation 2</option>
@@ -78,7 +78,7 @@
                                             <label class="control-label">
                                                 Phone No's
                                             </label>
-                                            <input type="text" placeholder="enter phone number" class="form-control" name="phone" ng-model="clientInfo.phoneNo">
+                                            <input type="text" placeholder="enter phone number" class="form-control" name="phone" ng-model="clientInfo.clientInformation.phoneNo">
                                         </div>
                                     </div>
                                 </div>
@@ -88,7 +88,7 @@
                                             <label class="control-label">
                                                 Email Id
                                             </label>
-                                            <input type="email" placeholder="Enter Email Id" class="form-control" name="clientEmailId" ng-model="clientInfo.email">
+                                            <input type="email" placeholder="Enter Email Id" class="form-control" name="clientEmailId" ng-model="clientInfo.clientInformation.email">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -96,7 +96,7 @@
                                             <label class="control-label">
                                                 Landline No.
                                             </label>
-                                            <input type="text" placeholder="Enter Land line Number" class="form-control" name="landlineNumber" ng-model="clientInfo.landlineNo">
+                                            <input type="text" placeholder="Enter Land line Number" class="form-control" name="landlineNumber" ng-model="clientInfo.clientInformation.landlineNo">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -104,7 +104,7 @@
                                             <label class="control-label">
                                                 Fax No.
                                             </label>
-                                            <input type="text" placeholder="Enter Fax No" class="form-control" name="faxNo" ng-model="clientInfo.faxNo">
+                                            <input type="text" placeholder="Enter Fax No" class="form-control" name="faxNo" ng-model="clientInfo.clientInformation.faxNo">
                                         </div>
                                     </div>
                                 </div>
@@ -123,7 +123,7 @@
                                             <label class="control-label">
                                                 Line One
                                             </label>
-                                            <input type="text" placeholder="Enter Line One" class="form-control" name="line one" ng-model="clientInfo.lineOne">
+                                            <input type="text" placeholder="Enter Line One" class="form-control" name="line one" ng-model="clientInfo.billingDetails.lineOne">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -131,7 +131,7 @@
                                             <label class="control-label">
                                                 Line Two
                                             </label>
-                                            <input type="text" placeholder="Enter Line Two" class="form-control" name="lineTwo" ng-model="clientInfo.lineTwo">
+                                            <input type="text" placeholder="Enter Line Two" class="form-control" name="lineTwo" ng-model="clientInfo.billingDetails.lineTwo">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -139,7 +139,7 @@
                                             <label class="control-label">
                                                 Line Three
                                             </label>
-                                            <input type="text" placeholder="Enter Line Three" class="form-control" name="lineThree" ng-model="clientInfo.lineThree">
+                                            <input type="text" placeholder="Enter Line Three" class="form-control" name="lineThree" ng-model="clientInfo.billingDetails.lineThree">
                                         </div>
                                     </div>
                                 </div>
@@ -149,7 +149,7 @@
                                             <label class="control-label">
                                                 Line Four
                                             </label>
-                                            <input type="text" placeholder="Enter Line Four" class="form-control" name="lineFour" ng-model="clientInfo.lineFour">
+                                            <input type="text" placeholder="Enter Line Four" class="form-control" name="lineFour" ng-model="clientInfo.billingDetails.lineFour">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -157,7 +157,7 @@
                                             <label class="control-label">
                                                 Line Five
                                             </label>
-                                            <input type="text" placeholder="Enter Line Five" class="form-control" name="lineFive" ng-model="clientInfo.lineFive">
+                                            <input type="text" placeholder="Enter Line Five" class="form-control" name="lineFive" ng-model="clientInfo.billingDetails.lineFive">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -165,7 +165,7 @@
                                             <label class="control-label">
                                                 Line Six
                                             </label>
-                                            <input type="text" placeholder="Enter Line Six" class="form-control" name="lineSix" ng-model="clientInfo.lineSix">
+                                            <input type="text" placeholder="Enter Line Six" class="form-control" name="lineSix" ng-model="clientInfo.billingDetails.lineSix">
                                         </div>
                                     </div>
                                 </div>
@@ -177,7 +177,7 @@
                                             <label class="control-label">
                                                 Location
                                             </label>
-                                            <input type="text" placeholder="enter Locaiton" class="form-control" name="location" ng-model="clientInfo.location">
+                                            <input type="text" placeholder="enter Locaiton" class="form-control" name="location" ng-model="clientInfo.billingDetails.location">
                                         </div>
 
                                     </div>
@@ -186,7 +186,7 @@
                                             <label class="control-label">
                                                 Sub Unit
                                             </label>
-                                            <select class="select2_single form-control" tabindex="-1" ng-model="clientInfo.subUnit">
+                                            <select class="select2_single form-control" tabindex="-1" ng-model="clientInfo.billingDetails.subUnit">
                                                 <option></option>
                                                 <option value="telugu">Unit 1</option>
                                                 <option value="hindi">Unit 2</option>
@@ -199,7 +199,7 @@
                                             <label class="control-label">
                                                 Description
                                             </label>
-                                            <textarea cols="4" placeholder="Enter Descreiption if Any" class="form-control" name="description" ng-model="clientInfo.description" />
+                                            <textarea cols="4" placeholder="Enter Descreiption if Any" class="form-control" name="description" ng-model="clientInfo.billingDetails.description" />
                                         </div>
                                     </div>
                                 </div>
@@ -210,11 +210,11 @@
                                                 Main Unit
                                             </label>
                                             <div class="clip-radio radio-primary">
-                                                <input type="radio" id="mainUnityes" name="mainUnityes" value="yes" ng-model="userInfo.mainUnit">
+                                                <input type="radio" id="mainUnityes" name="mainUnityes" value="yes" ng-model="clientInfo.billingDetails.mainUnit">
                                                 <label for="mainUnityes">
                                                     Yes
                                                 </label>
-                                                <input type="radio" id="mainUnitNo" name="mainUnitNo" value="no" ng-model="userInfo.mainUnit">
+                                                <input type="radio" id="mainUnitNo" name="mainUnitNo" value="no" ng-model="clientInfo.billingDetails.mainUnit">
                                                 <label for="mainUnitNo">
                                                     No
                                                 </label>
@@ -227,11 +227,11 @@
                                                 Invoice
                                             </label>
                                             <div class="clip-radio radio-primary">
-                                                <input type="radio" id="invoiceyes" name="invoiceyes" value="yes" ng-model="userInfo.invoice">
+                                                <input type="radio" id="invoiceyes" name="invoiceyes" value="yes" ng-model="clientInfo.billingDetails.invoice">
                                                 <label for="Invoiceyes">
                                                     Yes
                                                 </label>
-                                                <input type="radio" id="InvoiceNo" name="InvoiceNo" value="no" ng-model="userInfo.invoice">
+                                                <input type="radio" id="InvoiceNo" name="InvoiceNo" value="no" ng-model="clientInfo.billingDetails.invoice">
                                                 <label for="InvoiceNo">
                                                     No
                                                 </label>
@@ -244,11 +244,11 @@
                                                 Paysheet
                                             </label>
                                             <div class="clip-radio radio-primary">
-                                                <input type="radio" id="paysheetyes" name="paysheetyes" value="yes" ng-model="userInfo.paysheet">
+                                                <input type="radio" id="paysheetyes" name="paysheetyes" value="yes" ng-model="clientInfo.billingDetails.paysheet">
                                                 <label for="paysheetyes">
                                                     Yes
                                                 </label>
-                                                <input type="radio" id="paysheetNo" name="paysheetNo" value="no" ng-model="userInfo.paysheet">
+                                                <input type="radio" id="paysheetNo" name="paysheetNo" value="no" ng-model="clientInfo.billingDetails.paysheet">
                                                 <label for="paysheetNo">
                                                     No
                                                 </label>

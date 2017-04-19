@@ -24,7 +24,7 @@ securityApp.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('EditUser',
         {
-            url: '/EditUser',
+            url: '/EditUser/:UserId',
             templateUrl: 'App/UsersManagement/AddUser.html',
             controller: 'AddUserController'
         })
@@ -44,7 +44,19 @@ securityApp.config(function ($stateProvider, $urlRouterProvider) {
         {
             url: '/AddClient',
             templateUrl: 'App/ClientsManagement/AddClient.html',
-            controller : ''
+            controller: 'AddClientController'
+        })
+        .state('EditClient',
+        {
+            url: '/EditClient/:ClientId',
+            templateUrl: 'App/ClientsManagement/AddClient.html',
+            controller: 'AddClientController'
+        })
+        .state('ViewClient',
+        {
+            url: '/ViewClient/:ClientId',
+            templateUrl: 'App/ClientsManagement/ViewClient.html',
+            controller: 'ViewClientController'
         })
         .state('AddUserToClient',
         {

@@ -1,12 +1,14 @@
-﻿securityApp.controller('AddUserController', function ($scope, UserManagementService, ngNotify, flowFactory) {
+﻿securityApp.controller('AddUserController', function ($scope,$state, $stateParams,$location, UserManagementService, ngNotify, flowFactory) {
     $scope.removeImage = function () {
         $scope.noImage = true;
     };
-    $scope.obj = new Flow();
-   
+    $scope.editMode = false;
+    if ($state.current.name == "EditUser" && $stateParams.UserId) {
+        $scope.userId = $stateParams.UserId;
+        $scope.editMode = true;
+    }
     $scope.userInfo = {};
     $scope.personalInformation = {};
-    
     $scope.userInfo.familyDetails = [];
     $scope.userInfo.educationDetails = [];
     $scope.userInfo.previousExperiences = [];
@@ -15,8 +17,8 @@
     $scope.userInfoLists.Proofs.familyMember = {};
     $scope.userInfoLists.Proofs.qualification = {};
     $scope.userInfoLists.Proofs.previousExperience = {};
-
     $scope.userInfoLists.Proofs.familyMember.residingWithEmployee = true;
+    
     $scope.change = function(value) {
         if (value) {
             $scope.userInfo.addressDetails.peraddressLine1 = $scope.userInfo.addressDetails.tmpaddressLine1;
@@ -101,6 +103,85 @@
             return exp.no == experioence.no;
         });
     };
+    
+
+    $scope.addUser = function () {
+        if ($scope.editMode) {
+            UserManagementService.updateUserInfo($scope.userInfo).then(function (result) {
+                if (result) {
+                    ngNotify.set('User updated successfully',
+                    {
+                        theme: 'pure',
+                        position: 'top',
+                        type: 'success',
+                        button: 'true',
+                        sticky: 'false',
+                    });
+                    $location.path('/UsersManagement');
+                } else {
+                    ngNotify.set('User addition failed',
+                    {
+                        theme: 'pure',
+                        position: 'top',
+                        type: 'error',
+                        button: 'true',
+                        sticky: 'false',
+                    });
+                }
+            });
+        } else {
+
+            UserManagementService.addUser($scope.userInfo).then(function(result) {
+                if (result) {
+                    ngNotify.set('User added successfully',
+                    {
+                        theme: 'pure',
+                        position: 'top',
+                        type: 'success',
+                        button: 'true',
+                        sticky: 'false',
+                    });
+                    $location.path('/UsersManagement');
+                } else {
+                    ngNotify.set('User addition failed',
+                    {
+                        theme: 'pure',
+                        position: 'top',
+                        type: 'error',
+                        button: 'true',
+                        sticky: 'false',
+                    });
+                }
+            });
+        }
+    };
+
+    if ($scope.editMode) {
+        UserManagementService.getUserInformation($scope.userId).then(function (result) {
+            if (result) {
+                $scope.userInfo = result;
+            } else {
+                ngNotify.set('Unable to get user details', {
+                    theme: 'pure',
+                    position: 'top',
+                    type: 'error',
+                    button: 'true',
+                    sticky: 'false',
+                });
+            }
+        });
+    }
+
+
+
+
+
+
+
+
+
+
+    $scope.obj = new Flow();
     if ($scope.userInfo.avatar == '') {
         $scope.noImage = true;
     }
@@ -205,26 +286,4 @@
         $scope.dt = null;
     };
 
-    $scope.addUser = function() {
-        UserManagementService.addUser($scope.userInfo).then(function(result) {
-            if (result) {
-                ngNotify.set('User added successfully',
-                {
-                    theme: 'pure',
-                    position: 'top',
-                    type: 'success',
-                    button: 'true',
-                    sticky: 'false',
-                });
-            } else {
-                ngNotify.set('User addition failed', {
-                    theme: 'pure',
-                    position: 'top',
-                    type: 'error',
-                    button: 'true',
-                    sticky: 'false',
-                });
-            }
-        });
-    };
 });
