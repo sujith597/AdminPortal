@@ -85,6 +85,7 @@
     "angular-bootstrap": "^2.5.0",
     "ng-flow": "^2.7.4",
     "flow.js": "^2.11.2",
-    "angularjs-imageupload-directive": "*"
+    "angularjs-imageupload-directive": "*",
+    "ngstorage": "^0.3.11"
   }
 }

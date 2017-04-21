@@ -1,142 +1,148 @@
-﻿<div class="">
-    <div class="page-title">
-        <div class="title_left">
-            <h3>View Client information</h3>
+﻿<div class="darkBackGround">
+    <div ng-include="'App/Partials/Header.html'"></div>
+
+    <div class="right_col" role="main">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>View Client information</h3>
+            </div>
         </div>
-    </div>
-    <div class="clearfix"></div>
-    <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="x_panel">
-                <div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="user-left">
-                                <div class="center">
-                                    <h4>{{clientInfo.clientInformation.name}}</h4>
-                                    
-                                </div>
-                                <table class="table table-condensed">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="3">Details</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Client Short Name</td>
-                                            <td><span class="label label-sm label-success">{{clientInfo.clientInformation.shortName}}</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Client Segment</td>
-                                            <td><span class="label label-sm label-info">{{clientInfo.clientInformation.clientSegment}}</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Contact person Name</td>
-                                            <td>{{clientInfo.clientInformation.contactPersonName}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Contact Person Designation</td>
-                                            <td>{{clientInfo.clientInformation.contactPersonDesignation}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Phone No.</td>
-                                            <td>{{clientInfo.clientInformation.phoneNo}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Email Id</td>
-                                            <td>
-                                                {{clientInfo.clientInformation.email}}
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Landline No.</td>
-                                            <td>{{clientInfo.clientInformation.landlineNo}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Fax No.</td>
-                                            <td>{{clientInfo.clientInformation.faxNo}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="text-right">
-                                    <a class="btn btn-primary btn-o btn-wide" href="#" ng-click="editActive = true">
-                                        Edit Account
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="user-left">
+                                    <div class="center">
+                                        <h4>{{clientInfo.clientInformation.name}}</h4>
 
-                            <div class="panel panel-white space20">
-
-                                <div class="panel-body">
+                                    </div>
                                     <table class="table table-condensed">
                                         <thead>
                                             <tr>
-                                                <th colspan="3">Billing Information</th>
+                                                <th colspan="3">Details</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Branch</td>
-                                                <td>{{clientInfo.billingDetails.lineOne}}</td>
+                                                <td>Client Short Name</td>
+                                                <td><span class="label label-sm label-success">{{clientInfo.clientInformation.shortName}}</span></td>
                                             </tr>
                                             <tr>
-                                                <td>Division</td>
-                                                <td>{{clientInfo.billingDetails.lineTwo}}</td>
+                                                <td>Client Segment</td>
+                                                <td><span class="label label-sm label-info">{{clientInfo.clientInformation.clientSegment}}</span></td>
                                             </tr>
                                             <tr>
-                                                <td>Department</td>
-                                                <td>{{clientInfo.billingDetails.lineThree}}</td>
+                                                <td>Contact person Name</td>
+                                                <td>{{clientInfo.clientInformation.contactPersonName}}</td>
                                             </tr>
                                             <tr>
-                                                <td>Reporting Manager</td>
-                                                <td>{{clientInfo.billingDetails.lineFour}}</td>
+                                                <td>Contact Person Designation</td>
+                                                <td>{{clientInfo.clientInformation.contactPersonDesignation}}</td>
                                             </tr>
                                             <tr>
-                                                <td>Site Posted To</td>
-                                                <td>{{clientInfo.billingDetails.lineFive}}</td>
+                                                <td>Phone No.</td>
+                                                <td>{{clientInfo.clientInformation.phoneNo}}</td>
                                             </tr>
-                                        <tr>
-                                            <td>Gross Salary</td>
-                                            <td>{{clientInfo.billingDetails.lineSix}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>PSARA Code</td>
-                                            <td>{{clientInfo.billingDetails.location}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>ID Card Issued Date</td>
-                                            <td>{{clientInfo.billingDetails.subUnit}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>ID Card Valid Till Date</td>
-                                            <td>{{clientInfo.billingDetails.description}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Previous Employee</td>
-                                            <td>{{clientInfo.billingDetails.mainUnit}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Previous Employee</td>
-                                            <td>{{clientInfo.billingDetails.invoice}}</td>
-                                        </tr>
                                             <tr>
-                                                <td>Previous Employee</td>
-                                                <td>{{clientInfo.billingDetails.paysheet}}</td>
+                                                <td>Email Id</td>
+                                                <td>
+                                                    {{clientInfo.clientInformation.email}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Landline No.</td>
+                                                <td>{{clientInfo.clientInformation.landlineNo}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Fax No.</td>
+                                                <td>{{clientInfo.clientInformation.faxNo}}</td>
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <div class="text-right">
+                                        <a class="btn btn-primary btn-o btn-wide" href="#" ng-click="editActive = true">
+                                            Edit Account
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="col-md-8">
 
-                           
+
+                                <div class="panel panel-white space20">
+
+                                    <div class="panel-body">
+                                        <table class="table table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="3">Billing Information</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Branch</td>
+                                                    <td>{{clientInfo.billingDetails.lineOne}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Division</td>
+                                                    <td>{{clientInfo.billingDetails.lineTwo}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Department</td>
+                                                    <td>{{clientInfo.billingDetails.lineThree}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Reporting Manager</td>
+                                                    <td>{{clientInfo.billingDetails.lineFour}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Site Posted To</td>
+                                                    <td>{{clientInfo.billingDetails.lineFive}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gross Salary</td>
+                                                    <td>{{clientInfo.billingDetails.lineSix}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>PSARA Code</td>
+                                                    <td>{{clientInfo.billingDetails.location}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ID Card Issued Date</td>
+                                                    <td>{{clientInfo.billingDetails.subUnit}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ID Card Valid Till Date</td>
+                                                    <td>{{clientInfo.billingDetails.description}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Previous Employee</td>
+                                                    <td>{{clientInfo.billingDetails.mainUnit}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Previous Employee</td>
+                                                    <td>{{clientInfo.billingDetails.invoice}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Previous Employee</td>
+                                                    <td>{{clientInfo.billingDetails.paysheet}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div ng-include="'App/Partials/Footer.html'"></div>
 </div>

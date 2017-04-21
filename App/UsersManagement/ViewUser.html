@@ -1,1069 +1,1075 @@
-﻿<div class="">
-    <div class="page-title">
-        <div class="title_left">
-            <h3>View User information</h3>
+﻿<div class="darkBackGround">
+<div ng-include="'App/Partials/Header.html'"></div>
+
+<div class="right_col" role="main">
+<div class="page-title">
+    <div class="title_left">
+        <h3>View User information</h3>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="row">
+<div class="col-md-12 col-sm-12 col-xs-12">
+<div class="x_panel">
+<div>
+<div class="row">
+<div class="col-md-4">
+    <div class="user-left">
+        <div class="center">
+            <h4>{{userInfo.personalInformation.firstName}} {{userInfo.personalInformation.middleName}} {{userInfo.personalInformation.lastName}}</h4>
+            <div flow-init="{singleFile:true}" flow-name="obj.flow" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
+                <div class="user-image">
+                    <div class="thumbnail">
+                        <img ng-src={{userInfo.personalInformation.avatar}} alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th colspan="3">Contact Information</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Enrollment Type</td>
+                <td><span class="label label-sm label-success">{{userInfo.personalInformation.enrollment}}</span></td>
+            </tr>
+            <tr>
+                <td>Designation</td>
+                <td><span class="label label-sm label-info">{{userInfo.personalInformation.designation}}</span></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>{{userInfo.personalInformation.gender}}</td>
+            </tr>
+            <tr>
+                <td>Qualification</td>
+                <td>{{userInfo.personalInformation.qualification}}</td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>{{userInfo.personalInformation.email}}</td>
+            </tr>
+            <tr>
+                <td>Date Of Birth:</td>
+                <td>
+                    {{userInfo.personalInformation.email}}
+                </td>
+            </tr>
+            <tr>
+                <td>phone:</td>
+                <td>{{userInfo.personalInformation.phone}}</td>
+            </tr>
+            <tr>
+                <td>Date Of Birth:</td>
+                <td>{{userInfo.personalInformation.dateOfBirth}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th colspan="3">Other information</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Father Name</td>
+                <td>{{userInfo.personalInformation.fatherName}}</td>
+            </tr>
+            <tr>
+                <td>Father Occupation</td>
+                <td>{{userInfo.personalInformation.fatherOccupation}}</td>
+            </tr>
+            <tr>
+                <td>Mother Name</td>
+                <td>{{userInfo.personalInformation.motherName}}</td>
+            </tr>
+            <tr>
+                <td>Spouse Name</td>
+                <td>{{userInfo.personalInformation.spouseName}}</td>
+            </tr>
+            <tr>
+                <td>Mother Tongue</td>
+                <td>{{userInfo.personalInformation.motherTongue}}</td>
+            </tr>
+            <tr>
+                <td>Languages known</td>
+                <td>{{userInfo.personalInformation.languagesKnown}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th colspan="3">Employment Information</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Date Of Interview</td>
+                <td>{{userInfo.personalInformation.dateOfInterview}}</td>
+            </tr>
+            <tr>
+                <td>Date of Join</td>
+                <td>{{userInfo.personalInformation.dateOfJoin}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="text-right">
+            <a class="btn btn-primary btn-o btn-wide" href="#" ng-click="editActive = true">
+                Edit Account
+            </a>
         </div>
     </div>
-    <div class="clearfix"></div>
-    <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="x_panel">
-                <div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="user-left">
-                                <div class="center">
-                                    <h4>{{userInfo.personalInformation.firstName}} {{userInfo.personalInformation.middleName}} {{userInfo.personalInformation.lastName}}</h4>
-                                    <div flow-init="{singleFile:true}" flow-name="obj.flow" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
-                                        <div class="user-image">
-                                            <div class="thumbnail">
-                                                <img ng-src={{userInfo.personalInformation.avatar}} alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <table class="table table-condensed">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="3">Contact Information</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Enrollment Type</td>
-                                            <td><span class="label label-sm label-success">{{userInfo.personalInformation.enrollment}}</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Designation</td>
-                                            <td><span class="label label-sm label-info">{{userInfo.personalInformation.designation}}</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Gender</td>
-                                            <td>{{userInfo.personalInformation.gender}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Qualification</td>
-                                            <td>{{userInfo.personalInformation.qualification}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Email:</td>
-                                            <td>{{userInfo.personalInformation.email}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Date Of Birth:</td>
-                                            <td>
-                                                {{userInfo.personalInformation.email}}
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>phone:</td>
-                                            <td>{{userInfo.personalInformation.phone}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Date Of Birth:</td>
-                                            <td>{{userInfo.personalInformation.dateOfBirth}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <table class="table table-condensed">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="3">Other information</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Father Name</td>
-                                            <td>{{userInfo.personalInformation.fatherName}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Father Occupation</td>
-                                            <td>{{userInfo.personalInformation.fatherOccupation}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Mother Name</td>
-                                            <td>{{userInfo.personalInformation.motherName}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Spouse Name</td>
-                                            <td>{{userInfo.personalInformation.spouseName}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Mother Tongue</td>
-                                            <td>{{userInfo.personalInformation.motherTongue}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Languages known</td>
-                                            <td>{{userInfo.personalInformation.languagesKnown}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <table class="table table-condensed">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="3">Employment Information</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Date Of Interview</td>
-                                            <td>{{userInfo.personalInformation.dateOfInterview}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Date of Join</td>
-                                            <td>{{userInfo.personalInformation.dateOfJoin}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="text-right">
-                                    <a class="btn btn-primary btn-o btn-wide" href="#" ng-click="editActive = true">
-                                        Edit Account
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="row space20">
-                                <div class="col-sm-3">
-                                    <button class="btn btn-icon margin-bottom-5 margin-bottom-5 btn-block fa-hover" ng-click="showAdditionalDetails = true;showPhysicalAndAddressDetails = false; showBankPFESIDetails = false;showRecords= false">
-                                        <i class="fa fa-user-circle"></i> <br />
-                                        Additional Information
-                                    </button>
-                                </div>
-                                <div class="col-sm-3">
-                                    <button class="btn btn-icon margin-bottom-5 btn-block fa-hover" ng-click="showAdditionalDetails = false;showPhysicalAndAddressDetails = true; showBankPFESIDetails = false;showRecords= false">
-                                        <i class="fa fa-address-book"></i> <br />
-                                        Physical & Address
-                                    </button>
-                                </div>
-                                <div class="col-sm-3">
-                                    <button class="btn btn-icon margin-bottom-5 btn-block fa-hover" ng-click="showAdditionalDetails = false;showPhysicalAndAddressDetails = false; showBankPFESIDetails = true;showRecords= false">
-                                        <i class="fa fa-bank"></i> <bR />
-                                        Bank/PF/ESI
-                                    </button>
-                                </div>
-                                <div class="col-sm-3">
-                                    <button class="btn btn-icon margin-bottom-5 btn-block fa-hover" ng-click="showAdditionalDetails = false;showPhysicalAndAddressDetails = false; showBankPFESIDetails = false;showRecords= true">
-                                        <i class="fa fa-file"></i> <br />Records
-                                    </button>
-                                </div>
-                            </div>
+</div>
+<div class="col-md-8">
+<div class="row space20">
+    <div class="col-sm-3">
+        <button class="btn btn-icon margin-bottom-5 margin-bottom-5 btn-block fa-hover" ng-click="showAdditionalDetails = true;showPhysicalAndAddressDetails = false; showBankPFESIDetails = false;showRecords= false">
+            <i class="fa fa-user-circle"></i> <br />
+            Additional Information
+        </button>
+    </div>
+    <div class="col-sm-3">
+        <button class="btn btn-icon margin-bottom-5 btn-block fa-hover" ng-click="showAdditionalDetails = false;showPhysicalAndAddressDetails = true; showBankPFESIDetails = false;showRecords= false">
+            <i class="fa fa-address-book"></i> <br />
+            Physical & Address
+        </button>
+    </div>
+    <div class="col-sm-3">
+        <button class="btn btn-icon margin-bottom-5 btn-block fa-hover" ng-click="showAdditionalDetails = false;showPhysicalAndAddressDetails = false; showBankPFESIDetails = true;showRecords= false">
+            <i class="fa fa-bank"></i> <bR />
+            Bank/PF/ESI
+        </button>
+    </div>
+    <div class="col-sm-3">
+        <button class="btn btn-icon margin-bottom-5 btn-block fa-hover" ng-click="showAdditionalDetails = false;showPhysicalAndAddressDetails = false; showBankPFESIDetails = false;showRecords= true">
+            <i class="fa fa-file"></i> <br />Records
+        </button>
+    </div>
+</div>
 
-                            <div class="panel panel-white space20" ng-show="showAdditionalDetails">
+<div class="panel panel-white space20" ng-show="showAdditionalDetails">
 
-                                <div class="panel-body">
-                                    <table class="table table-condensed">
-                                        <thead>
-                                        <tr>
-                                            <th colspan="3">Additional Information</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>Branch</td>
-                                            <td>{{userInfo.additionalInformation.branch}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Division</td>
-                                            <td>{{userInfo.additionalInformation.division}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Department</td>
-                                            <td>{{userInfo.additionalInformation.department}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Reporting Manager</td>
-                                            <td>{{userInfo.additionalInformation.reportingManager}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Site Posted To</td>
-                                            <td>{{userInfo.additionalInformation.sitePostedTo}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Gross Salary</td>
-                                            <td>{{userInfo.additionalInformation.grossSalary}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>PSARA Code</td>
-                                            <td>{{userInfo.additionalInformation.psaraCode}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>ID Card Issued Date</td>
-                                            <td>{{userInfo.additionalInformation.idCardIssuedDate}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>ID Card Valid Till Date</td>
-                                            <td>{{userInfo.additionalInformation.idCardValidTillDate}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Previous Employee</td>
-                                            <td>{{userInfo.additionalInformation.previousEmployee}}</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            
-                            <div class="panel panel-white space20" ng-show="showPhysicalAndAddressDetails">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">Physical Standard</h4>
-                                </div>
-                                <div class="panel-body">
-                                    <table class="table table-condensed">
-                                        <tbody>
-                                        <tr>
-                                            <td>Height</td>
-                                            <td>{{userInfo.physicalStandard.height}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Weight</td>
-                                            <td>{{userInfo.physicalStandard.weigth}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Chest Unexpanded</td>
-                                            <td>{{userInfo.physicalStandard.chestUnExpanded}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Chest Expanded</td>
-                                            <td>{{userInfo.physicalStandard.chestExpanded}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Hair Color</td>
-                                            <td>{{userInfo.physicalStandard.hariColor}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Eyes Color</td>
-                                            <td>{{userInfo.physicalStandard.eyesColor}}</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            
-                            <div class="panel panel-white space20" ng-show="showPhysicalAndAddressDetails">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">Address Details</h4>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="col-md-6">
-                                        <form>
-                                            <legend><span class="glyphicon glyphicon-globe"></span> Temporary Address</legend>
-                                            <address>
-                                                <strong>{{userInfo.personalInformation.firstName}} {{userInfo.personalInformation.middleName}}</strong><br>
-                                                {{userInfo.addressDetails.tmpaddressLine1}}, {{userInfo.addressDetails.tmpaddressLine2}}<br>
-                                               
-                                                {{userInfo.addressDetails.tmpdistrict}}, {{userInfo.addressDetails.tmpstate}}<br>
-                                                <abbr title="PinCode">
-                                                    PinCode:
-                                                </abbr>
-                                                {{userInfo.addressDetails.tmppinCode}}
-                                                <abbr title="PinCode">
-                                                    LandMark:
-                                                </abbr>
-                                                {{userInfo.addressDetails.tmplandMark}}
-                                            </address>
-                                            <address>
-                                                <strong>Post Office</strong><br>
-                                                {{userInfo.addressDetails.tmppostOffice}}
-                                            </address>
-                                            <address>
-                                                <strong>Police Station</strong><br>
-                                                {{userInfo.addressDetails.tmppoliceStation}}
-                                            </address>
-                                        </form>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <form>
-                                            <legend><span class="glyphicon glyphicon-globe"></span> Permanent Address</legend>
-                                            <address>
-                                                <strong>{{userInfo.personalInformation.firstName}} {{userInfo.personalInformation.middleName}}</strong><br>
-                                                {{userInfo.addressDetails.peraddressLine1}}, {{userInfo.addressDetails.peraddressLine2}}<br>
+    <div class="panel-body">
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th colspan="3">Additional Information</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Branch</td>
+                <td>{{userInfo.additionalInformation.branch}}</td>
+            </tr>
+            <tr>
+                <td>Division</td>
+                <td>{{userInfo.additionalInformation.division}}</td>
+            </tr>
+            <tr>
+                <td>Department</td>
+                <td>{{userInfo.additionalInformation.department}}</td>
+            </tr>
+            <tr>
+                <td>Reporting Manager</td>
+                <td>{{userInfo.additionalInformation.reportingManager}}</td>
+            </tr>
+            <tr>
+                <td>Site Posted To</td>
+                <td>{{userInfo.additionalInformation.sitePostedTo}}</td>
+            </tr>
+            <tr>
+                <td>Gross Salary</td>
+                <td>{{userInfo.additionalInformation.grossSalary}}</td>
+            </tr>
+            <tr>
+                <td>PSARA Code</td>
+                <td>{{userInfo.additionalInformation.psaraCode}}</td>
+            </tr>
+            <tr>
+                <td>ID Card Issued Date</td>
+                <td>{{userInfo.additionalInformation.idCardIssuedDate}}</td>
+            </tr>
+            <tr>
+                <td>ID Card Valid Till Date</td>
+                <td>{{userInfo.additionalInformation.idCardValidTillDate}}</td>
+            </tr>
+            <tr>
+                <td>Previous Employee</td>
+                <td>{{userInfo.additionalInformation.previousEmployee}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-                                                {{userInfo.addressDetails.perdistrict}}, {{userInfo.addressDetails.perstate}}<br>
-                                                <abbr title="PinCode">
-                                                    PinCode:
-                                                </abbr>
-                                                {{userInfo.addressDetails.perpinCode}}<br />
-                                                <abbr title="PinCode">
-                                                    LandMark:
-                                                </abbr>
-                                                {{userInfo.addressDetails.perlandMark}}
-                                            </address>
-                                            <address>
-                                                <strong>Post Office</strong><br>
-                                                {{userInfo.addressDetails.perpostOffice}}
-                                            </address>
-                                            <address>
-                                                <strong>Police Station</strong><br>
-                                                {{userInfo.addressDetails.perpoliceStation}}
-                                            </address>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        <div class="panel panel-white space20" ng-show="showPhysicalAndAddressDetails">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">Employee Reference Information</h4>
-                            </div>
-                            <div class="panel-body">
-                                <table class="table table-condensed">
-                                    <tbody>
-                                    <tr>
-                                        <td>Reference  Name and Address</td>
-                                        <td>{{userInfo.employeeinfo.refNameAndAddress}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Reference Name and Address 2</td>
-                                        <td>{{userInfo.employeeinfo.refNameAndAddress2}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Blood Group</td>
-                                        <td>{{userInfo.employeeinfo.bloodGroup}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Physical Remarks</td>
-                                        <td>{{userInfo.employeeinfo.physicalRemarks}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Identification Mark 1</td>
-                                        <td>{{userInfo.employeeinfo.identificationMarks1}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Identification Mark 2</td>
-                                        <td>{{userInfo.employeeinfo.identificationMarks2}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Remarks</td>
-                                        <td>{{userInfo.employeeinfo.remarks}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Specially Abled</td>
-                                        <td>{{userInfo.employeeinfo.speciallyAbled}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Applicant Category</td>
-                                        <td>{{userInfo.employeeinfo.applicantCategory}}</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                            
-                        <div class="panel panel-white space20" ng-show="userInfo.familyDetails.length >0 && showPhysicalAndAddressDetails" >
-                            <div class="panel-heading">
-                                <h4 class="panel-title">Family Details</h4>
-                            </div>
-                            <div class="panel-body">
-                                <table class="table table-striped table-responsive jambo_table">
-                                    <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Name</th>
-                                        <th>Date Of Birth</th>
-                                        <th>Age</th>
-                                        <th>Relationship</th>
-                                        <th>Occupation</th>
-                                        <th>PF Nominee</th>
-                                        <th>ESI Nominee </th>
-                                        <th>Residing with Him/Her </th>
-                                        <th>If No - Place of Residence </th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr ng-repeat="familyMember in userInfo.familyDetails">
-                                        <td>{{familyMember.no}}</td>
-                                        <td>{{familyMember.name}}</td>
-                                        <td>{{familyMember.dob}}</td>
-                                        <td>{{familyMember.age}}</td>
-                                        <td>{{familyMember.relationship}}</td>
-                                        <td>{{familyMember.occupasion}}</td>
-                                        <td>{{familyMember.pfNominee}}</td>
-                                        <td>{{familyMember.esiNominee}}</td>
-                                        <td>{{familyMember.residingWithEmployee}}</td>
-                                        <td>{{familyMember.placeOfResidence}}</td>
-                                    </tr>
-                                    <tr></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                            
-                        <div class="panel panel-white space20" ng-show="showBankPFESIDetails">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">Bank Details</h4>
-                            </div>
-                            <div class="panel-body">
-                                <table class="table table-condensed">
-                                    <tbody>
-                                    <tr>
-                                        <td>Bank Account Number</td>
-                                        <td>{{userInfo.bankDetails.bankAccountNumber}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bank Name</td>
-                                        <td>{{userInfo.bankDetails.bankName}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Branch Name</td>
-                                        <td>{{userInfo.bankDetails.branchName}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Branch Code</td>
-                                        <td>{{userInfo.bankDetails.branchCode}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bank App No</td>
-                                        <td>{{userInfo.bankDetails.bankAppNo}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bank Code No</td>
-                                        <td>{{userInfo.bankDetails.bankCodeNo}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bank Card Reference</td>
-                                        <td>{{userInfo.bankDetails.bankCardRefernce}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>IFSC Code</td>
-                                        <td>{{userInfo.bankDetails.ifscCode}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Region Code</td>
-                                        <td>{{userInfo.bankDetails.regionCode}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>InDebt Amount</td>
-                                        <td>{{userInfo.bankDetails.insDebtAmount}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Insurance Nominee</td>
-                                        <td>{{userInfo.bankDetails.insuranceNominee}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nominee DOB</td>
-                                        <td>{{userInfo.bankDetails.nomineeDOB}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Insurance Cover</td>
-                                        <td>{{userInfo.bankDetails.insuranceCover}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nominee RelationShip</td>
-                                        <td>{{userInfo.bankDetails.nomineeRelationShip}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>UAN No</td>
-                                        <td>{{userInfo.bankDetails.UANNo}}</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="panel panel-white space20" ng-show="showBankPFESIDetails">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">PF/ESI/Salary Details</h4>
-                            </div>
-                            <div class="panel-body">
-                                <table class="table table-condensed">
-                                    <tbody>
-                                    <tr>
-                                        <td>PF Deduct</td>
-                                        <td>{{userInfo.PF.PFDeduct}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>EPF No</td>
-                                        <td>{{userInfo.PF.epfNo}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>PT Deduct</td>
-                                        <td>{{userInfo.PF.PTDeduct}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>PF Enrollment Date</td>
-                                        <td>{{userInfo.PF.pfEnrollDate}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>ESI Deduct</td>
-                                        <td>{{userInfo.ESI.ESIDeduct}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>ESI No</td>
-                                        <td>{{userInfo.ESI.esiNo}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>ESI Display Name</td>
-                                        <td>{{userInfo.ESI.esiDispName}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Salary Additional Amount</td>
-                                        <td>{{userInfo.salaryDetails.additionalAmount}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Salary Food Allowance</td>
-                                        <td>{{userInfo.salaryDetails.foodAllowance}}</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="panel panel-white space20" ng-show="showBankPFESIDetails">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">Salary Structure</h4>
-                            </div>
-                            <div class="panel-body">
-                                    
-                                <table class="table table-condensed">
-                                    <tbody>
-                                    <tr>
-                                        <td>Bank Account Number</td>
-                                        <td>{{userInfo.SalaryStructure.noOfDays}}</td>
-                                        <td>Bank Account Number</td>
-                                        <td>{{userInfo.SalaryStructure.Basic}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bank Name</td>
-                                        <td>{{userInfo.SalaryStructure.HRA}}</td>
-                                        <td>Bank Account Number</td>
-                                        <td>{{userInfo.SalaryStructure.CCA}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Branch Name</td>
-                                        <td>{{userInfo.SalaryStructure.gratutity}}</td>
-                                        <td>Bank Account Number</td>
-                                        <td>{{userInfo.SalaryStructure.WA}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Branch Code</td>
-                                        <td>{{userInfo.SalaryStructure.NFHs}}</td>
-                                        <td>Bank Account Number</td>
-                                        <td>{{userInfo.SalaryStructure.RC}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bank App No</td>
-                                        <td>{{userInfo.SalaryStructure.Nots}}</td>
-                                        <td>Bank Account Number</td>
-                                        <td>{{userInfo.SalaryStructure.CS}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bank Code No</td>
-                                        <td>{{userInfo.SalaryStructure.splAllowance}}</td>
-                                        <td>Bank Account Number</td>
-                                        <td>{{userInfo.SalaryStructure.OA}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bank Card Reference</td>
-                                        <td>{{userInfo.SalaryStructure.bonus}}</td>
-                                        <td>Bank Account Number</td>
-                                        <td>{{userInfo.SalaryStructure.LA}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>IFSC Code</td>
-                                        <td>{{userInfo.SalaryStructure.Conveyance}}</td>
-                                        <td>Bank Account Number</td>
-                                        <td>{{userInfo.SalaryStructure.DA}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Region Code</td>
-                                        <td>{{userInfo.SalaryStructure.mobileAllowance}}</td>
-                                        <td>Bank Account Number</td>
-                                        <td>{{userInfo.SalaryStructure.travellingAllowance}}</td>
-                                    </tr>
+<div class="panel panel-white space20" ng-show="showPhysicalAndAddressDetails">
+    <div class="panel-heading">
+        <h4 class="panel-title">Physical Standard</h4>
+    </div>
+    <div class="panel-body">
+        <table class="table table-condensed">
+            <tbody>
+            <tr>
+                <td>Height</td>
+                <td>{{userInfo.physicalStandard.height}}</td>
+            </tr>
+            <tr>
+                <td>Weight</td>
+                <td>{{userInfo.physicalStandard.weigth}}</td>
+            </tr>
+            <tr>
+                <td>Chest Unexpanded</td>
+                <td>{{userInfo.physicalStandard.chestUnExpanded}}</td>
+            </tr>
+            <tr>
+                <td>Chest Expanded</td>
+                <td>{{userInfo.physicalStandard.chestExpanded}}</td>
+            </tr>
+            <tr>
+                <td>Hair Color</td>
+                <td>{{userInfo.physicalStandard.hariColor}}</td>
+            </tr>
+            <tr>
+                <td>Eyes Color</td>
+                <td>{{userInfo.physicalStandard.eyesColor}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-                                    </tbody>
-                                </table>
-                                    
+<div class="panel panel-white space20" ng-show="showPhysicalAndAddressDetails">
+    <div class="panel-heading">
+        <h4 class="panel-title">Address Details</h4>
+    </div>
+    <div class="panel-body">
+        <div class="col-md-6">
+            <form>
+                <legend><span class="glyphicon glyphicon-globe"></span> Temporary Address</legend>
+                <address>
+                    <strong>{{userInfo.personalInformation.firstName}} {{userInfo.personalInformation.middleName}}</strong><br>
+                    {{userInfo.addressDetails.tmpaddressLine1}}, {{userInfo.addressDetails.tmpaddressLine2}}<br>
 
-                            </div>
-                        </div>
-                        <div class="panel panel-white space20" ng-show="showRecords">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">Government Proofs</h4>
-                        </div>
-                        <div class="panel-body">
-                        <div class="" role="tabpanel" data-example-id="togglable-tabs">
-                            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
-                                <li role="presentation" class="active">
-                                    <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" target="_self" aria-expanded="true">Aadhar</a>
-                                </li>
-                                <li role="presentation" class="">
-                                    <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" target="_self" aria-expanded="false">Driving License</a>
-                                </li>
-                                <li role="presentation" class="">
-                                    <a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" target="_self" aria-expanded="false">Voter</a>
-                                </li>
-                                <li role="presentation" class="">
-                                    <a href="#tab_content4" role="tab" id="profile-tab3" data-toggle="tab" target="_self" aria-expanded="false">Ration </a>
-                                </li>
-                                <li role="presentation" class="">
-                                    <a href="#tab_content5" role="tab" id="profile-tab4" data-toggle="tab" target="_self" aria-expanded="false">PAN</a>
-                                </li>
-                                 
-                            </ul>
-                            <div id="myTabContent" class="tab-content">
-                                <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
-                                    <div class="col-md-12">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    Aadhar Card Number
-                                                </label>
-                                                <span >{{userInfo.govProofs.aadharCardNumber}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    KYC Name
-                                                </label>
-                                             
-                                                <span>{{userInfo.govProofs.aadharCardNumber}}</span>
-                                            </div>
-                                        </div>
+                    {{userInfo.addressDetails.tmpdistrict}}, {{userInfo.addressDetails.tmpstate}}<br>
+                    <abbr title="PinCode">
+                        PinCode:
+                    </abbr>
+                    {{userInfo.addressDetails.tmppinCode}}
+                    <abbr title="PinCode">
+                        LandMark:
+                    </abbr>
+                    {{userInfo.addressDetails.tmplandMark}}
+                </address>
+                <address>
+                    <strong>Post Office</strong><br>
+                    {{userInfo.addressDetails.tmppostOffice}}
+                </address>
+                <address>
+                    <strong>Police Station</strong><br>
+                    {{userInfo.addressDetails.tmppoliceStation}}
+                </address>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form>
+                <legend><span class="glyphicon glyphicon-globe"></span> Permanent Address</legend>
+                <address>
+                    <strong>{{userInfo.personalInformation.firstName}} {{userInfo.personalInformation.middleName}}</strong><br>
+                    {{userInfo.addressDetails.peraddressLine1}}, {{userInfo.addressDetails.peraddressLine2}}<br>
 
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
-                                    <div class="col-md-12">
+                    {{userInfo.addressDetails.perdistrict}}, {{userInfo.addressDetails.perstate}}<br>
+                    <abbr title="PinCode">
+                        PinCode:
+                    </abbr>
+                    {{userInfo.addressDetails.perpinCode}}<br />
+                    <abbr title="PinCode">
+                        LandMark:
+                    </abbr>
+                    {{userInfo.addressDetails.perlandMark}}
+                </address>
+                <address>
+                    <strong>Post Office</strong><br>
+                    {{userInfo.addressDetails.perpostOffice}}
+                </address>
+                <address>
+                    <strong>Police Station</strong><br>
+                    {{userInfo.addressDetails.perpoliceStation}}
+                </address>
+            </form>
+        </div>
+    </div>
+</div>
 
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    Driving License Number
-                                                </label>
-                                                            
-                                                <span>{{userInfo.govProofs.drivingLicenseNumber}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    KYC Name
-                                                </label>
-                                                            
-                                                <span>{{userInfo.govProofs.drivingLicenseName}}</span>
-                                            </div>
-                                        </div>
+<div class="panel panel-white space20" ng-show="showPhysicalAndAddressDetails">
+    <div class="panel-heading">
+        <h4 class="panel-title">Employee Reference Information</h4>
+    </div>
+    <div class="panel-body">
+        <table class="table table-condensed">
+            <tbody>
+            <tr>
+                <td>Reference  Name and Address</td>
+                <td>{{userInfo.employeeinfo.refNameAndAddress}}</td>
+            </tr>
+            <tr>
+                <td>Reference Name and Address 2</td>
+                <td>{{userInfo.employeeinfo.refNameAndAddress2}}</td>
+            </tr>
+            <tr>
+                <td>Blood Group</td>
+                <td>{{userInfo.employeeinfo.bloodGroup}}</td>
+            </tr>
+            <tr>
+                <td>Physical Remarks</td>
+                <td>{{userInfo.employeeinfo.physicalRemarks}}</td>
+            </tr>
+            <tr>
+                <td>Identification Mark 1</td>
+                <td>{{userInfo.employeeinfo.identificationMarks1}}</td>
+            </tr>
+            <tr>
+                <td>Identification Mark 2</td>
+                <td>{{userInfo.employeeinfo.identificationMarks2}}</td>
+            </tr>
+            <tr>
+                <td>Remarks</td>
+                <td>{{userInfo.employeeinfo.remarks}}</td>
+            </tr>
+            <tr>
+                <td>Specially Abled</td>
+                <td>{{userInfo.employeeinfo.speciallyAbled}}</td>
+            </tr>
+            <tr>
+                <td>Applicant Category</td>
+                <td>{{userInfo.employeeinfo.applicantCategory}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
-                                    <div class="col-md-12">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    Voter ID Number
-                                                </label>
-                                                            
-                                                <span>{{userInfo.govProofs.voterIDNumber}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    KYC Name
-                                                </label>
-                                                            
-                                                <span>{{userInfo.govProofs.voterIDName}}</span>
-                                            </div>
-                                        </div>
+<div class="panel panel-white space20" ng-show="userInfo.familyDetails.length >0 && showPhysicalAndAddressDetails">
+    <div class="panel-heading">
+        <h4 class="panel-title">Family Details</h4>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-responsive jambo_table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Date Of Birth</th>
+                <th>Age</th>
+                <th>Relationship</th>
+                <th>Occupation</th>
+                <th>PF Nominee</th>
+                <th>ESI Nominee </th>
+                <th>Residing with Him/Her </th>
+                <th>If No - Place of Residence </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="familyMember in userInfo.familyDetails">
+                <td>{{familyMember.no}}</td>
+                <td>{{familyMember.name}}</td>
+                <td>{{familyMember.dob}}</td>
+                <td>{{familyMember.age}}</td>
+                <td>{{familyMember.relationship}}</td>
+                <td>{{familyMember.occupasion}}</td>
+                <td>{{familyMember.pfNominee}}</td>
+                <td>{{familyMember.esiNominee}}</td>
+                <td>{{familyMember.residingWithEmployee}}</td>
+                <td>{{familyMember.placeOfResidence}}</td>
+            </tr>
+            <tr></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="tab_content4" aria-labelledby="profile-tab">
-                                    <div class="col-md-12">
+<div class="panel panel-white space20" ng-show="showBankPFESIDetails">
+    <div class="panel-heading">
+        <h4 class="panel-title">Bank Details</h4>
+    </div>
+    <div class="panel-body">
+        <table class="table table-condensed">
+            <tbody>
+            <tr>
+                <td>Bank Account Number</td>
+                <td>{{userInfo.bankDetails.bankAccountNumber}}</td>
+            </tr>
+            <tr>
+                <td>Bank Name</td>
+                <td>{{userInfo.bankDetails.bankName}}</td>
+            </tr>
+            <tr>
+                <td>Branch Name</td>
+                <td>{{userInfo.bankDetails.branchName}}</td>
+            </tr>
+            <tr>
+                <td>Branch Code</td>
+                <td>{{userInfo.bankDetails.branchCode}}</td>
+            </tr>
+            <tr>
+                <td>Bank App No</td>
+                <td>{{userInfo.bankDetails.bankAppNo}}</td>
+            </tr>
+            <tr>
+                <td>Bank Code No</td>
+                <td>{{userInfo.bankDetails.bankCodeNo}}</td>
+            </tr>
+            <tr>
+                <td>Bank Card Reference</td>
+                <td>{{userInfo.bankDetails.bankCardRefernce}}</td>
+            </tr>
+            <tr>
+                <td>IFSC Code</td>
+                <td>{{userInfo.bankDetails.ifscCode}}</td>
+            </tr>
+            <tr>
+                <td>Region Code</td>
+                <td>{{userInfo.bankDetails.regionCode}}</td>
+            </tr>
+            <tr>
+                <td>InDebt Amount</td>
+                <td>{{userInfo.bankDetails.insDebtAmount}}</td>
+            </tr>
+            <tr>
+                <td>Insurance Nominee</td>
+                <td>{{userInfo.bankDetails.insuranceNominee}}</td>
+            </tr>
+            <tr>
+                <td>Nominee DOB</td>
+                <td>{{userInfo.bankDetails.nomineeDOB}}</td>
+            </tr>
+            <tr>
+                <td>Insurance Cover</td>
+                <td>{{userInfo.bankDetails.insuranceCover}}</td>
+            </tr>
+            <tr>
+                <td>Nominee RelationShip</td>
+                <td>{{userInfo.bankDetails.nomineeRelationShip}}</td>
+            </tr>
+            <tr>
+                <td>UAN No</td>
+                <td>{{userInfo.bankDetails.UANNo}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="panel panel-white space20" ng-show="showBankPFESIDetails">
+    <div class="panel-heading">
+        <h4 class="panel-title">PF/ESI/Salary Details</h4>
+    </div>
+    <div class="panel-body">
+        <table class="table table-condensed">
+            <tbody>
+            <tr>
+                <td>PF Deduct</td>
+                <td>{{userInfo.PF.PFDeduct}}</td>
+            </tr>
+            <tr>
+                <td>EPF No</td>
+                <td>{{userInfo.PF.epfNo}}</td>
+            </tr>
+            <tr>
+                <td>PT Deduct</td>
+                <td>{{userInfo.PF.PTDeduct}}</td>
+            </tr>
+            <tr>
+                <td>PF Enrollment Date</td>
+                <td>{{userInfo.PF.pfEnrollDate}}</td>
+            </tr>
+            <tr>
+                <td>ESI Deduct</td>
+                <td>{{userInfo.ESI.ESIDeduct}}</td>
+            </tr>
+            <tr>
+                <td>ESI No</td>
+                <td>{{userInfo.ESI.esiNo}}</td>
+            </tr>
+            <tr>
+                <td>ESI Display Name</td>
+                <td>{{userInfo.ESI.esiDispName}}</td>
+            </tr>
+            <tr>
+                <td>Salary Additional Amount</td>
+                <td>{{userInfo.salaryDetails.additionalAmount}}</td>
+            </tr>
+            <tr>
+                <td>Salary Food Allowance</td>
+                <td>{{userInfo.salaryDetails.foodAllowance}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="panel panel-white space20" ng-show="showBankPFESIDetails">
+    <div class="panel-heading">
+        <h4 class="panel-title">Salary Structure</h4>
+    </div>
+    <div class="panel-body">
 
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    Ration Card Number
-                                                </label>
-                                                            
-                                                <span>{{userInfo.govProofs.rationCardNumber}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    KYC Name
-                                                </label>
-                                                            
-                                                <span>{{userInfo.govProofs.rationCardName}}</span>
-                                            </div>
-                                        </div>
+        <table class="table table-condensed">
+            <tbody>
+            <tr>
+                <td>Bank Account Number</td>
+                <td>{{userInfo.SalaryStructure.noOfDays}}</td>
+                <td>Bank Account Number</td>
+                <td>{{userInfo.SalaryStructure.Basic}}</td>
+            </tr>
+            <tr>
+                <td>Bank Name</td>
+                <td>{{userInfo.SalaryStructure.HRA}}</td>
+                <td>Bank Account Number</td>
+                <td>{{userInfo.SalaryStructure.CCA}}</td>
+            </tr>
+            <tr>
+                <td>Branch Name</td>
+                <td>{{userInfo.SalaryStructure.gratutity}}</td>
+                <td>Bank Account Number</td>
+                <td>{{userInfo.SalaryStructure.WA}}</td>
+            </tr>
+            <tr>
+                <td>Branch Code</td>
+                <td>{{userInfo.SalaryStructure.NFHs}}</td>
+                <td>Bank Account Number</td>
+                <td>{{userInfo.SalaryStructure.RC}}</td>
+            </tr>
+            <tr>
+                <td>Bank App No</td>
+                <td>{{userInfo.SalaryStructure.Nots}}</td>
+                <td>Bank Account Number</td>
+                <td>{{userInfo.SalaryStructure.CS}}</td>
+            </tr>
+            <tr>
+                <td>Bank Code No</td>
+                <td>{{userInfo.SalaryStructure.splAllowance}}</td>
+                <td>Bank Account Number</td>
+                <td>{{userInfo.SalaryStructure.OA}}</td>
+            </tr>
+            <tr>
+                <td>Bank Card Reference</td>
+                <td>{{userInfo.SalaryStructure.bonus}}</td>
+                <td>Bank Account Number</td>
+                <td>{{userInfo.SalaryStructure.LA}}</td>
+            </tr>
+            <tr>
+                <td>IFSC Code</td>
+                <td>{{userInfo.SalaryStructure.Conveyance}}</td>
+                <td>Bank Account Number</td>
+                <td>{{userInfo.SalaryStructure.DA}}</td>
+            </tr>
+            <tr>
+                <td>Region Code</td>
+                <td>{{userInfo.SalaryStructure.mobileAllowance}}</td>
+                <td>Bank Account Number</td>
+                <td>{{userInfo.SalaryStructure.travellingAllowance}}</td>
+            </tr>
 
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="tab_content5" aria-labelledby="profile-tab">
-                                    <div class="col-md-12">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    PAN Card Number
-                                                </label>
-                                                            
-                                                <span>{{userInfo.govProofs.pancardNumber}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    KYC Name
-                                                </label>
-                                                            
-                                                <span>{{userInfo.govProofs.pancardName}}</span>
-                                            </div>
-                                        </div>
+            </tbody>
+        </table>
 
-                                    </div>
-                                </div>
-                               
-                            </div>
-                        </div>
-                        <br /><hr />
-                        <div class="" role="tabpanel" data-example-id="togglable-tabs">
-                            <ul id="myTab2" class="nav nav-tabs bar_tabs" role="tablist">
-                                <li role="presentation" class="">
-                                    <a href="#tab_content6" role="tab" id="profile-tab5" data-toggle="tab" target="_self" aria-expanded="false">Bank Book</a>
-                                </li>
-                                <li role="presentation" class="">
-                                    <a href="#tab_content7" role="tab" id="profile-tab6" data-toggle="tab" target="_self" aria-expanded="false">Electricity </a>
-                                </li>
-                                <li role="presentation" class="">
-                                    <a href="#tab_content8" role="tab" id="profile-tab7" data-toggle="tab" target="_self" aria-expanded="false">ESIC</a>
-                                </li>
-                                <li role="presentation" class="">
-                                    <a href="#tab_content9" role="tab" id="profile-tab8" data-toggle="tab" target="_self" aria-expanded="false">Ex-Service</a>
-                                </li>
-                                <li role="presentation" class="">
-                                    <a href="#tab_content10" role="tab" id="profile-tab9" data-toggle="tab" target="_self" aria-expanded="false">Other</a>
-                                </li>
-                            </ul>
-                            <div id="myTabContent2" class="tab-content">
-                                <div role="tabpanel" class="tab-pane fade" id="tab_content6" aria-labelledby="profile-tab">
-                                    <div class="col-md-12">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    Bank Pass Book Number
-                                                </label>
 
-                                                <span>{{userInfo.govProofs.bankPassBookNumber}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    KYC Name
-                                                </label>
+    </div>
+</div>
+<div class="panel panel-white space20" ng-show="showRecords">
+<div class="panel-heading">
+    <h4 class="panel-title">Government Proofs</h4>
+</div>
+<div class="panel-body">
+<div class="" role="tabpanel" data-example-id="togglable-tabs">
+    <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" target="_self" aria-expanded="true">Aadhar</a>
+        </li>
+        <li role="presentation" class="">
+            <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" target="_self" aria-expanded="false">Driving License</a>
+        </li>
+        <li role="presentation" class="">
+            <a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" target="_self" aria-expanded="false">Voter</a>
+        </li>
+        <li role="presentation" class="">
+            <a href="#tab_content4" role="tab" id="profile-tab3" data-toggle="tab" target="_self" aria-expanded="false">Ration </a>
+        </li>
+        <li role="presentation" class="">
+            <a href="#tab_content5" role="tab" id="profile-tab4" data-toggle="tab" target="_self" aria-expanded="false">PAN</a>
+        </li>
 
-                                                <span>{{userInfo.govProofs.bankPassBookName}}</span>
-                                            </div>
-                                        </div>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            Aadhar Card Number
+                        </label>
+                        <span>{{userInfo.govProofs.aadharCardNumber}}</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            KYC Name
+                        </label>
 
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="tab_content7" aria-labelledby="profile-tab">
-                                    <div class="col-md-12">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    Electricity Bill Number
-                                                </label>
+                        <span>{{userInfo.govProofs.aadharCardNumber}}</span>
+                    </div>
+                </div>
 
-                                                <span>{{userInfo.govProofs.electricityBillNumber}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    KYC Name
-                                                </label>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+            <div class="col-md-12">
 
-                                                <span>{{userInfo.govProofs.electricityBillName}}</span>
-                                            </div>
-                                        </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            Driving License Number
+                        </label>
 
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="tab_content8" aria-labelledby="profile-tab">
-                                    <div class="col-md-12">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    ESIC Card Number
-                                                </label>
+                        <span>{{userInfo.govProofs.drivingLicenseNumber}}</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            KYC Name
+                        </label>
 
-                                                <span>{{userInfo.govProofs.esicCardNumber}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    KYC Name
-                                                </label>
+                        <span>{{userInfo.govProofs.drivingLicenseName}}</span>
+                    </div>
+                </div>
 
-                                                <span>{{userInfo.govProofs.esicCardName}}</span>
-                                            </div>
-                                        </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            Voter ID Number
+                        </label>
 
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="tab_content9" aria-labelledby="profile-tab">
-                                    <div class="col-md-12">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    Service No.
-                                                </label>
+                        <span>{{userInfo.govProofs.voterIDNumber}}</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            KYC Name
+                        </label>
 
-                                                <span>{{userInfo.govProofs.ExServiceNumber}}</span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    Date Of Enrollment
-                                                </label>
+                        <span>{{userInfo.govProofs.voterIDName}}</span>
+                    </div>
+                </div>
 
-                                                <span>{{userInfo.govProofs.ExServicedateOfEnrollment}}</span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    Crops
-                                                </label>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="tab_content4" aria-labelledby="profile-tab">
+            <div class="col-md-12">
 
-                                                <span>{{userInfo.govProofs.ExServiceCrops}}</span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    Medical Category
-                                                </label>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            Ration Card Number
+                        </label>
 
-                                                <span>{{userInfo.govProofs.ExServicemedicalCategory}}</span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    Conduct
-                                                </label>
+                        <span>{{userInfo.govProofs.rationCardNumber}}</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            KYC Name
+                        </label>
 
-                                                <span>{{userInfo.govProofs.ExServiceconduct}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <input type="checkbox" ng-model="userInfo.govProofs.EMPExService" name="EMPExService" />
-                                            <label for="EMPExService">
-                                                EMP Ex-Service
-                                            </label>
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    Rank
-                                                </label>
+                        <span>{{userInfo.govProofs.rationCardName}}</span>
+                    </div>
+                </div>
 
-                                                <span>{{userInfo.govProofs.ExServiceRank}}</span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    Date Of Discharge
-                                                </label>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="tab_content5" aria-labelledby="profile-tab">
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            PAN Card Number
+                        </label>
 
-                                                <span>{{userInfo.govProofs.ExServicedateOfDischarge}}</span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    Trade
-                                                </label>
+                        <span>{{userInfo.govProofs.pancardNumber}}</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            KYC Name
+                        </label>
 
-                                                <span>{{userInfo.govProofs.ExServiceTrade}}</span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    Reason Of Discharge
-                                                </label>
+                        <span>{{userInfo.govProofs.pancardName}}</span>
+                    </div>
+                </div>
 
-                                                <span>{{userInfo.govProofs.ExServiceReasonOfDischarge}}</span>
-                                            </div>
-                                        </div>
+            </div>
+        </div>
 
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="tab_content10" aria-labelledby="profile-tab">
-                                    <div class="col-md-12">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    Other Card Number
-                                                </label>
+    </div>
+</div>
+<br /><hr />
+<div class="" role="tabpanel" data-example-id="togglable-tabs">
+    <ul id="myTab2" class="nav nav-tabs bar_tabs" role="tablist">
+        <li role="presentation" class="">
+            <a href="#tab_content6" role="tab" id="profile-tab5" data-toggle="tab" target="_self" aria-expanded="false">Bank Book</a>
+        </li>
+        <li role="presentation" class="">
+            <a href="#tab_content7" role="tab" id="profile-tab6" data-toggle="tab" target="_self" aria-expanded="false">Electricity </a>
+        </li>
+        <li role="presentation" class="">
+            <a href="#tab_content8" role="tab" id="profile-tab7" data-toggle="tab" target="_self" aria-expanded="false">ESIC</a>
+        </li>
+        <li role="presentation" class="">
+            <a href="#tab_content9" role="tab" id="profile-tab8" data-toggle="tab" target="_self" aria-expanded="false">Ex-Service</a>
+        </li>
+        <li role="presentation" class="">
+            <a href="#tab_content10" role="tab" id="profile-tab9" data-toggle="tab" target="_self" aria-expanded="false">Other</a>
+        </li>
+    </ul>
+    <div id="myTabContent2" class="tab-content">
+        <div role="tabpanel" class="tab-pane fade" id="tab_content6" aria-labelledby="profile-tab">
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            Bank Pass Book Number
+                        </label>
 
-                                                <span>{{userInfo.govProofs.otherCardsNumber}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label">
-                                                    KYC Name
-                                                </label>
+                        <span>{{userInfo.govProofs.bankPassBookNumber}}</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            KYC Name
+                        </label>
 
-                                                <span>{{userInfo.govProofs.otherCardsName}}</span>
-                                            </div>
-                                        </div>
+                        <span>{{userInfo.govProofs.bankPassBookName}}</span>
+                    </div>
+                </div>
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                        </div>
-                            
-                        <div class="panel panel-white space20" ng-show="userInfo.educationDetails.length >0 && showRecords">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">Educaiton Details</h4>
-                            </div>
-                            <div class="panel-body">
-                                <table class="table table-striped table-responsive jambo_table">
-                                    <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Name</th>
-                                        <th>Description</th>
-                                        <th>Board</th>
-                                        <th>Year of study</th>
-                                        <th>Result</th>
-                                        <th>Percentage Of Marks</th>
-                                        <th>Name and Address Of School </th>
-                                        <th>Delete</th>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="tab_content7" aria-labelledby="profile-tab">
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            Electricity Bill Number
+                        </label>
 
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr ng-repeat="qualification in userInfo.educationDetails">
-                                        <td>{{qualification.no}}</td>
-                                        <td>{{qualification.name}}</td>
-                                        <td>{{qualification.description}}</td>
-                                        <td>{{qualification.board}}</td>
-                                        <td>{{qualification.yearOfStudy}}</td>
-                                        <td>{{qualification.result}}</td>
-                                        <td>{{qualification.percentageOfMarks}}</td>
-                                        <td>{{qualification.nameAndAddressOfSchool}}</td>
-                                        <td><button href="#" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" ng-click="removeQualification(qualification)"><i class="fa fa-trash-o"></i> Delete </button></td>
-                                    </tr>
-                                    <tr></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="panel panel-white space20" ng-show="userInfo.previousExperiences.length >0 && showRecords">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">Previous Experience</h4>
-                            </div>
-                            <div class="panel-body">
-                                <table class="table table-striped table-responsive jambo_table">
-                                    <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Name</th>
-                                        <th>Region Code</th>
-                                        <th>Exmploer Code</th>
-                                        <th>Extension</th>
-                                        <th>Designation</th>
-                                        <th>years Of Experience</th>
-                                        <th>PF No.</th>
-                                        <th>ESI No.</th>
-                                        <th>Date of Resigned</th>
-                                        <th>Name & Address of Company</th>
-                                        <th>Delete</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr ng-repeat="previous in userInfo.previousExperiences">
-                                        <td>{{previous.no}}</td>
-                                        <td>{{previous.companyName}}</td>
-                                        <td>{{previous.regionCode}}</td>
-                                        <td>{{previous.employerCode}}</td>
-                                        <td>{{previous.extension}}</td>
-                                        <td>{{previous.Designation}}</td>
-                                        <td>{{previous.yearsOfExperience}}</td>
-                                        <td>{{previous.PFNo}}</td>
-                                        <td>{{previous.ESINo}}</td>
-                                        <td>{{previous.dateOfResigned}}</td>
-                                        <td>{{previous.nameAndAddress}}</td>
-                                        <td><button href="#" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" ng-click="removePreviousExp(previous)"><i class="fa fa-trash-o"></i> Delete </button></td>
-                                    </tr>
-                                    <tr></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                            
-                            <div class="panel panel-white space20" ng-show="showRecords">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">Police Records</h4>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="x_content">
-                                        <div class="col-lg-3">
-                                            <!-- required for floating -->
-                                            <!-- Nav tabs -->
-                                            <ul class="nav nav-tabs tabs-left">
-                                                <li class="active">
-                                                    <a href="#home" target="_self" data-toggle="tab">Police Verification</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#profile" target="_self" data-toggle="tab">Criminal Offence</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#messages" target="_self" data-toggle="tab">Criminal Proceeding</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#settings" target="_self" data-toggle="tab">Criminal Arrest Warrant</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <!-- Tab panes -->
-                                            <div class="tab-content">
-                                                <div class="tab-pane active" id="home">
-                                                    <p class="lead"></p>
-                                                    <p>
-                                                        Police Verification : {{userInfo.policeRecords.policeVerification}}<br />
-                                                        Verification No : {{userInfo.policeRecords.policeVerificationNo}} <br />
-                                                        Nearest Police Station : {{userInfo.policeRecords.nearestPoliceStation}}
-                                                    </p>
-                                                </div>
-                                                <div class="tab-pane" id="profile">
-                                                    <p class="lead"></p>
-                                                    <p>
-                                                        Criminal Offence : {{userInfo.policeRecords.criminalOffenceYesNo}}<br />
-                                                        Court Name: {{userInfo.policeRecords.criminalOffenceCourtName}}<br />
-                                                        Case No: {{userInfo.policeRecords.criminalOffenceCaseNo}} <br />
-                                                        Offence : {{userInfo.policeRecords.criminalOffence}}
-                                                    </p>
-                                                </div>
-                                                <div class="tab-pane" id="messages">
-                                                    <p class="lead"></p>
-                                                    <p>
-                                                        Criminal Proceeding : {{userInfo.policeRecords.criminalProceedingYesNo}}<br />
-                                                        Court Name: {{userInfo.policeRecords.criminalProceedingCourtName}}<br />
-                                                        Case No: {{userInfo.policeRecords.criminalProceedingCaseNo}} <br />
-                                                        Offence : {{userInfo.policeRecords.criminalProceedingOffence}}
-                                                    </p>
-                                                </div>
-                                                <div class="tab-pane" id="settings">
-                                                    <p class="lead"></p>
-                                                    <p>
-                                                        Criminal Arrest Warrant : {{userInfo.policeRecords.criminalArrestWarrantYesNo}}<br />
-                                                        Court Name: {{userInfo.policeRecords.criminalArrestWarrantCourtName}}<br />
-                                                        Case No: {{userInfo.policeRecords.criminalArrestWarrantCaseNo}} <br />
-                                                        Offence : {{userInfo.policeRecords.criminalArrestWarrantOffence}}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <span>{{userInfo.govProofs.electricityBillNumber}}</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            KYC Name
+                        </label>
+
+                        <span>{{userInfo.govProofs.electricityBillName}}</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="tab_content8" aria-labelledby="profile-tab">
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            ESIC Card Number
+                        </label>
+
+                        <span>{{userInfo.govProofs.esicCardNumber}}</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            KYC Name
+                        </label>
+
+                        <span>{{userInfo.govProofs.esicCardName}}</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="tab_content9" aria-labelledby="profile-tab">
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            Service No.
+                        </label>
+
+                        <span>{{userInfo.govProofs.ExServiceNumber}}</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Date Of Enrollment
+                        </label>
+
+                        <span>{{userInfo.govProofs.ExServicedateOfEnrollment}}</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Crops
+                        </label>
+
+                        <span>{{userInfo.govProofs.ExServiceCrops}}</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Medical Category
+                        </label>
+
+                        <span>{{userInfo.govProofs.ExServicemedicalCategory}}</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Conduct
+                        </label>
+
+                        <span>{{userInfo.govProofs.ExServiceconduct}}</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" ng-model="userInfo.govProofs.EMPExService" name="EMPExService" />
+                    <label for="EMPExService">
+                        EMP Ex-Service
+                    </label>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Rank
+                        </label>
+
+                        <span>{{userInfo.govProofs.ExServiceRank}}</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Date Of Discharge
+                        </label>
+
+                        <span>{{userInfo.govProofs.ExServicedateOfDischarge}}</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Trade
+                        </label>
+
+                        <span>{{userInfo.govProofs.ExServiceTrade}}</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Reason Of Discharge
+                        </label>
+
+                        <span>{{userInfo.govProofs.ExServiceReasonOfDischarge}}</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="tab_content10" aria-labelledby="profile-tab">
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            Other Card Number
+                        </label>
+
+                        <span>{{userInfo.govProofs.otherCardsNumber}}</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">
+                            KYC Name
+                        </label>
+
+                        <span>{{userInfo.govProofs.otherCardsName}}</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="panel panel-white space20" ng-show="userInfo.educationDetails.length >0 && showRecords">
+    <div class="panel-heading">
+        <h4 class="panel-title">Educaiton Details</h4>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-responsive jambo_table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Board</th>
+                <th>Year of study</th>
+                <th>Result</th>
+                <th>Percentage Of Marks</th>
+                <th>Name and Address Of School </th>
+                <th>Delete</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="qualification in userInfo.educationDetails">
+                <td>{{qualification.no}}</td>
+                <td>{{qualification.name}}</td>
+                <td>{{qualification.description}}</td>
+                <td>{{qualification.board}}</td>
+                <td>{{qualification.yearOfStudy}}</td>
+                <td>{{qualification.result}}</td>
+                <td>{{qualification.percentageOfMarks}}</td>
+                <td>{{qualification.nameAndAddressOfSchool}}</td>
+                <td><button href="#" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" ng-click="removeQualification(qualification)"><i class="fa fa-trash-o"></i> Delete </button></td>
+            </tr>
+            <tr></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="panel panel-white space20" ng-show="userInfo.previousExperiences.length >0 && showRecords">
+    <div class="panel-heading">
+        <h4 class="panel-title">Previous Experience</h4>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-responsive jambo_table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Region Code</th>
+                <th>Exmploer Code</th>
+                <th>Extension</th>
+                <th>Designation</th>
+                <th>years Of Experience</th>
+                <th>PF No.</th>
+                <th>ESI No.</th>
+                <th>Date of Resigned</th>
+                <th>Name & Address of Company</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="previous in userInfo.previousExperiences">
+                <td>{{previous.no}}</td>
+                <td>{{previous.companyName}}</td>
+                <td>{{previous.regionCode}}</td>
+                <td>{{previous.employerCode}}</td>
+                <td>{{previous.extension}}</td>
+                <td>{{previous.Designation}}</td>
+                <td>{{previous.yearsOfExperience}}</td>
+                <td>{{previous.PFNo}}</td>
+                <td>{{previous.ESINo}}</td>
+                <td>{{previous.dateOfResigned}}</td>
+                <td>{{previous.nameAndAddress}}</td>
+                <td><button href="#" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" ng-click="removePreviousExp(previous)"><i class="fa fa-trash-o"></i> Delete </button></td>
+            </tr>
+            <tr></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="panel panel-white space20" ng-show="showRecords">
+    <div class="panel-heading">
+        <h4 class="panel-title">Police Records</h4>
+    </div>
+    <div class="panel-body">
+        <div class="x_content">
+            <div class="col-lg-3">
+                <!-- required for floating -->
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs tabs-left">
+                    <li class="active">
+                        <a href="#home" target="_self" data-toggle="tab">Police Verification</a>
+                    </li>
+                    <li>
+                        <a href="#profile" target="_self" data-toggle="tab">Criminal Offence</a>
+                    </li>
+                    <li>
+                        <a href="#messages" target="_self" data-toggle="tab">Criminal Proceeding</a>
+                    </li>
+                    <li>
+                        <a href="#settings" target="_self" data-toggle="tab">Criminal Arrest Warrant</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-9">
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="home">
+                        <p class="lead"></p>
+                        <p>
+                            Police Verification : {{userInfo.policeRecords.policeVerification}}<br />
+                            Verification No : {{userInfo.policeRecords.policeVerificationNo}} <br />
+                            Nearest Police Station : {{userInfo.policeRecords.nearestPoliceStation}}
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="profile">
+                        <p class="lead"></p>
+                        <p>
+                            Criminal Offence : {{userInfo.policeRecords.criminalOffenceYesNo}}<br />
+                            Court Name: {{userInfo.policeRecords.criminalOffenceCourtName}}<br />
+                            Case No: {{userInfo.policeRecords.criminalOffenceCaseNo}} <br />
+                            Offence : {{userInfo.policeRecords.criminalOffence}}
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="messages">
+                        <p class="lead"></p>
+                        <p>
+                            Criminal Proceeding : {{userInfo.policeRecords.criminalProceedingYesNo}}<br />
+                            Court Name: {{userInfo.policeRecords.criminalProceedingCourtName}}<br />
+                            Case No: {{userInfo.policeRecords.criminalProceedingCaseNo}} <br />
+                            Offence : {{userInfo.policeRecords.criminalProceedingOffence}}
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="settings">
+                        <p class="lead"></p>
+                        <p>
+                            Criminal Arrest Warrant : {{userInfo.policeRecords.criminalArrestWarrantYesNo}}<br />
+                            Court Name: {{userInfo.policeRecords.criminalArrestWarrantCourtName}}<br />
+                            Case No: {{userInfo.policeRecords.criminalArrestWarrantCaseNo}} <br />
+                            Offence : {{userInfo.policeRecords.criminalArrestWarrantOffence}}
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div ng-include="'App/Partials/Footer.html'"></div>
 </div>

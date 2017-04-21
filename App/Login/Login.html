@@ -1,0 +1,42 @@
+﻿
+    <div class="login">
+        <a class="hiddenanchor" id="signup"></a>
+        <a class="hiddenanchor" id="signin"></a>
+        <div class="login_wrapper">
+            <div class="animate form login_form">
+                <section class="login_content">
+                    <form name ="form"  novalidate>
+                        <h1>FMS Login</h1>
+                        <div>
+                            <input type="text" ng-model="userName" class="form-control" placeholder="Username" required />
+                        </div>
+                        <div>
+                            <input type="password" ng-model="passWord"  class="form-control" placeholder="Password" required />
+                        </div>
+                        <div>
+                            <button class="btn btn-info submit" ng-disable="loading" ng-click="validateUser()" ui-sref="Home">Log in</button>
+                          </div>
+                        <div class="clearfix"></div>
+                        <div class="separator">
+                           
+                            <div class="clearfix"></div>
+                            <br />
+                            <div>
+                                <h1><i class="fa fa-paw"></i> FMS India</h1>
+                                <p>©2017 All Rights Reserved. FMS India! . Privacy and Terms</p>
+                            </div>
+                        </div>
+                        <p>
+                            <a class="btn btn-primary social-login-btn social-facebook" href="/auth/facebook"><i class="fa fa-facebook"></i></a>
+                            <a class="btn btn-primary social-login-btn social-twitter" href="/auth/twitter"><i class="fa fa-twitter"></i></a>
+                       
+                            <a class="btn btn-primary social-login-btn social-linkedin" href="/auth/linkedin"><i class="fa fa-linkedin"></i></a>
+                            <a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
+                        </p>
+                    </form>
+                </section>
+            </div>
+            
+        </div>
+    </div>
+

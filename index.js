@@ -1,9 +1,15 @@
-﻿var securityApp = angular.module('SecurityApp', ['ngAnimate', 'ui.bootstrap', 'ui.router', 'ui.grid', 'ui.grid.selection', 'ui.grid.exporter', 'ui.grid.pagination', 'ngNotify', 'flow.provider']);
+﻿var securityApp = angular.module('SecurityApp', ['ngAnimate', 'ngLoadScript', 'ui.bootstrap', 'ui.router', 'ui.grid', 'ui.grid.selection', 'ui.grid.exporter', 'ui.grid.pagination', 'ngNotify', 'flow.provider', 'ngStorage']);
 
 securityApp.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/Home');
+    $urlRouterProvider.otherwise('/Login');
 
     $stateProvider
+        .state('Login',
+        {
+            url: '/Login',
+            templateUrl: 'App/Login/Login.html',
+            controller: 'LoginController'
+        })
         .state('Home',
         {
             url: '/Home',
