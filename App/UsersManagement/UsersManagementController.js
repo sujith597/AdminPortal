@@ -46,10 +46,12 @@
         };
        
         $scope.usersGrid.columnDefs = [
-          { name: 'name', field: 'name' },
-            { name: 'gender', field: 'gender' },
-            { name: 'company', field: 'company' }
-            
+          { name: 'Employee Id', field: 'EmpId' },
+            { name: 'Employee Name', field: 'EmployeeName' },
+            { name: 'SitePosted To', field: 'SitePostedTo' },
+        { name: 'Status', feild: 'Status' },
+            { name: 'Designation', feild: 'Designation' },
+            { name: 'Date Of Joining', feild: 'DateOfJoining' }
         ];
         $scope.usersGrid.columnDefs.push(newColumn);
     });

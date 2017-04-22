@@ -4,7 +4,10 @@
     this.getAllUsers = function () {
         var defer = $q.defer();
 
-        $http.get('App/UsersManagement/Users.txt')
+        $http({
+            method: 'GET',
+            url: 'http://fmsapi.sujithkumar.in/api/Employee/GetAll'
+            })
             .then(function (data) {
                 defer.resolve(data.data);
             });
