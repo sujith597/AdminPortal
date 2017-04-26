@@ -9,9 +9,9 @@
     }
     $scope.userInfo = {};
     $scope.personalInformation = {};
-    $scope.userInfo.familyDetails = [];
-    $scope.userInfo.educationDetails = [];
-    $scope.userInfo.previousExperiences = [];
+    $scope.userInfo.EmployeeFamilyDetails = [];
+    $scope.userInfo.EmployeeEducationDetails = [];
+    $scope.userInfo.EmployeePreviousExperience = [];
     $scope.userInfoLists = {};
     $scope.userInfoLists.Proofs = {};
     $scope.userInfoLists.Proofs.familyMember = {};
@@ -21,31 +21,31 @@
     
     $scope.change = function(value) {
         if (value) {
-            $scope.userInfo.addressDetails.peraddressLine1 = $scope.userInfo.addressDetails.tmpaddressLine1;
-            $scope.userInfo.addressDetails.peraddressLine2 = $scope.userInfo.addressDetails.tmpaddressLine2;
-            $scope.userInfo.addressDetails.perlandMark = $scope.userInfo.addressDetails.tmplandMark;
-            $scope.userInfo.addressDetails.perpostOffice = $scope.userInfo.addressDetails.tmppostOffice;
-            $scope.userInfo.addressDetails.perpoliceStation = $scope.userInfo.addressDetails.tmppoliceStation;
-            $scope.userInfo.addressDetails.perstate = $scope.userInfo.addressDetails.tmpstate;
-            $scope.userInfo.addressDetails.perdistrict = $scope.userInfo.addressDetails.tmpdistrict;
-            $scope.userInfo.addressDetails.perpinCode = $scope.userInfo.addressDetails.tmppinCode;
+            $scope.userInfo.EmployeeAddressDetails.peraddressLine1 = $scope.userInfo.EmployeeAddressDetails.tmpaddressLine1;
+            $scope.userInfo.EmployeeAddressDetails.peraddressLine2 = $scope.userInfo.EmployeeAddressDetails.tmpaddressLine2;
+            $scope.userInfo.EmployeeAddressDetails.perlandMark = $scope.userInfo.EmployeeAddressDetails.tmplandMark;
+            $scope.userInfo.EmployeeAddressDetails.perpostOffice = $scope.userInfo.EmployeeAddressDetails.tmppostOffice;
+            $scope.userInfo.EmployeeAddressDetails.perpoliceStation = $scope.userInfo.EmployeeAddressDetails.tmppoliceStation;
+            $scope.userInfo.EmployeeAddressDetails.perstate = $scope.userInfo.EmployeeAddressDetails.tmpstate;
+            $scope.userInfo.EmployeeAddressDetails.perdistrict = $scope.userInfo.EmployeeAddressDetails.tmpdistrict;
+            $scope.userInfo.EmployeeAddressDetails.perpinCode = $scope.userInfo.EmployeeAddressDetails.tmppinCode;
         } else {
-            $scope.userInfo.addressDetails.peraddressLine1 = "";
-            $scope.userInfo.addressDetails.peraddressLine2 = "";
-            $scope.userInfo.addressDetails.perlandMark = "";
-            $scope.userInfo.addressDetails.perpostOffice = "";
-            $scope.userInfo.addressDetails.perpoliceStation = "";
-            $scope.userInfo.addressDetails.perstate = "";
-            $scope.userInfo.addressDetails.perdistrict = "";
-            $scope.userInfo.addressDetails.perpinCode = "";
+            $scope.userInfo.EmployeeAddressDetails.peraddressLine1 = "";
+            $scope.userInfo.EmployeeAddressDetails.peraddressLine2 = "";
+            $scope.userInfo.EmployeeAddressDetails.perlandMark = "";
+            $scope.userInfo.EmployeeAddressDetails.perpostOffice = "";
+            $scope.userInfo.EmployeeAddressDetails.perpoliceStation = "";
+            $scope.userInfo.EmployeeAddressDetails.perstate = "";
+            $scope.userInfo.EmployeeAddressDetails.perdistrict = "";
+            $scope.userInfo.EmployeeAddressDetails.perpinCode = "";
         }
 
     };
 
     $scope.addFamilyMember = function () {
-        if ($scope.userInfoLists.Proofs.familyMember.name) {
-            $scope.userInfoLists.Proofs.familyMember.no = $scope.userInfo.familyDetails.length + 1;
-            $scope.userInfo.familyDetails.push($scope.userInfoLists.Proofs.familyMember);
+        if ($scope.userInfoLists.Proofs.familyMember.Name) {
+            $scope.userInfoLists.Proofs.familyMember.no = $scope.userInfo.EmployeeFamilyDetails.length + 1;
+            $scope.userInfo.EmployeeFamilyDetails.push($scope.userInfoLists.Proofs.familyMember);
             $scope.userInfoLists.Proofs.familyMember = {};
         } else {
             ngNotify.set('please enter Family Member which is mandatory feild', {
@@ -58,9 +58,9 @@
         }
     };
     $scope.addQualification = function () {
-        if ($scope.userInfoLists.Proofs.qualification.name) {
-            $scope.userInfoLists.Proofs.qualification.no = $scope.userInfo.educationDetails.length + 1;
-            $scope.userInfo.educationDetails.push($scope.userInfoLists.Proofs.qualification);
+        if ($scope.userInfoLists.Proofs.qualification.Qualification) {
+            $scope.userInfoLists.Proofs.qualification.no = $scope.userInfo.EmployeeEducationDetails.length + 1;
+            $scope.userInfo.EmployeeEducationDetails.push($scope.userInfoLists.Proofs.qualification);
             $scope.userInfoLists.Proofs.qualification = {};
         } else {
             ngNotify.set('please enter Qualificaiton Name which is mandatory feild', {
@@ -73,9 +73,9 @@
         }
     };
     $scope.addPreviousExperience = function () {
-        if ($scope.userInfoLists.Proofs.previousExperience.companyName) {
-            $scope.userInfoLists.Proofs.previousExperience.no = $scope.userInfo.previousExperiences.length + 1;
-            $scope.userInfo.previousExperiences.push($scope.userInfoLists.Proofs.previousExperience);
+        if ($scope.userInfoLists.Proofs.previousExperience.CompanyName) {
+            $scope.userInfoLists.Proofs.previousExperience.no = $scope.userInfo.EmployeePreviousExperience.length + 1;
+            $scope.userInfo.EmployeePreviousExperience.push($scope.userInfoLists.Proofs.previousExperience);
             $scope.userInfoLists.Proofs.previousExperience = {};
         } else {
             ngNotify.set('please enter Company Name and Address which is mandatory feild', {
@@ -89,17 +89,17 @@
     };
 
     $scope.removeFamilyMember = function(familymem) {
-        $scope.userInfo.familyDetails = _.reject($scope.userInfo.familyDetails, function (family) {
+        $scope.userInfo.EmployeeFamilyDetails = _.reject($scope.userInfo.EmployeeFamilyDetails, function (family) {
             return familymem.no == family.no;
         });
     };
     $scope.removeQualification = function (qua) {
-        $scope.userInfo.educationDetails = _.reject($scope.userInfo.educationDetails, function (qualificaiton) {
+        $scope.userInfo.EmployeeEducationDetails = _.reject($scope.userInfo.EmployeeEducationDetails, function (qualificaiton) {
             return qua.no == qualificaiton.no;
         });
     };
     $scope.removePreviousExp = function (exp) {
-        $scope.userInfo.previousExperiences = _.reject($scope.userInfo.previousExperiences, function (experioence) {
+        $scope.userInfo.EmployeePreviousExperience = _.reject($scope.userInfo.EmployeePreviousExperience, function (experioence) {
             return exp.no == experioence.no;
         });
     };

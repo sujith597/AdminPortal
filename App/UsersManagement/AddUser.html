@@ -35,15 +35,15 @@
                 Enrollment Type
             </label>
             <div class="clip-radio radio-primary">
-                <input type="radio" id="generalEnrollment" name="enrollment" value="General" ng-model="userInfo.personalInformation.enrollment">
+                <input type="radio" id="generalEnrollment" name="enrollment" value="General" ng-model="userInfo.EmployeePersonalInfo.Title">
                 <label for="generalEnrollment">
                     General
                 </label>
-                <input type="radio" id="staff" name="enrollment" value="Staff" ng-model="userInfo.personalInformation.enrollment">
+                <input type="radio" id="staff" name="enrollment" value="Staff" ng-model="userInfo.EmployeePersonalInfo.Title">
                 <label for="staff">
                     staff
                 </label>
-                <input type="radio" id="Manual" name="enrollment" value="Manual" ng-model="userInfo.personalInformation.enrollment">
+                <input type="radio" id="Manual" name="enrollment" value="Manual" ng-model="userInfo.EmployeePersonalInfo.Title">
                 <label for="staff">
                     Manual
                 </label>
@@ -57,7 +57,7 @@
             <label class="control-label">
                 First Name
             </label>
-            <input type="text" placeholder="Enter first name" class="form-control" name="firstname" ng-model="userInfo.personalInformation.firstName">
+            <input type="text" placeholder="Enter first name" class="form-control" name="firstname" ng-model="userInfo.EmployeePersonalInfo.FirstName">
         </div>
     </div>
     <div class="col-md-4">
@@ -65,7 +65,7 @@
             <label class="control-label">
                 Middle Name
             </label>
-            <input type="text" placeholder="Enter Middle name" class="form-control" name="middleName" ng-model="userInfo.personalInformation.middleName">
+            <input type="text" placeholder="Enter Middle name" class="form-control" name="middleName" ng-model="userInfo.EmployeePersonalInfo.MiddleName">
         </div>
     </div>
     <div class="col-md-4">
@@ -73,7 +73,7 @@
             <label class="control-label">
                 Last Name
             </label>
-            <input type="text" placeholder="Enter last name" class="form-control" name="lastname" ng-model="userInfo.personalInformation.lastName">
+            <input type="text" placeholder="Enter last name" class="form-control" name="lastname" ng-model="userInfo.EmployeePersonalInfo.LastName">
         </div>
     </div>
 </div>
@@ -83,7 +83,7 @@
             <label class="control-label">
                 Email Address
             </label>
-            <input type="email" placeholder="email address" class="form-control" name="email" ng-model="userInfo.personalInformation.email">
+            <input type="email" placeholder="email address" class="form-control" name="email" ng-model="userInfo.EmployeePersonalInfo.Email">
         </div>
     </div>
     <div class="col-md-4">
@@ -91,7 +91,7 @@
             <label class="control-label">
                 Data of Birth
             </label>
-            <input type="text" ng-model="userInfo.personalInformation.dateOfBirth" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened4" ng-init="inputopened4 = false" ng-click="inputopened4 = !inputopened4" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
+            <input type="text" ng-model="userInfo.EmployeePersonalInfo.DateOfBirth" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened4" ng-init="inputopened4 = false" ng-click="inputopened4 = !inputopened4" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
         </div>
     </div>
     <div class="col-md-4">
@@ -99,7 +99,7 @@
             <label class="control-label">
                 Phone
             </label>
-            <input type="text" placeholder="enter phone number" class="form-control" name="phone" ng-model="userInfo.personalInformation.phone">
+            <input type="text" placeholder="enter phone number" class="form-control" name="phone" ng-model="userInfo.EmployeePersonalInfo.PhoneNo">
         </div>
     </div>
 </div>
@@ -109,28 +109,28 @@
             <label class="control-label">
                 Nationality
             </label>
-            <input type="text" placeholder="INDIAN" class="form-control" name="url" ng-model="userInfo.personalInformation.nationality" disabled="true">
+            <input type="text" placeholder="INDIAN" class="form-control" name="url" ng-model="userInfo.EmployeePersonalInfo.Nationality" disabled="true">
         </div>
         <div class="form-group">
             <label class="control-label">
                 Religion
             </label>
-            <input type="text" placeholder="Enter religion" class="form-control" name="url" ng-model="userInfo.personalInformation.religion">
+            <input type="text" placeholder="Enter religion" class="form-control" name="url" ng-model="userInfo.EmployeePersonalInfo.Religion">
         </div>
         <div class="form-group">
             <label class="block">
                 Gender
             </label>
             <div class="clip-radio radio-primary">
-                <input type="radio" id="us-female" name="gender" value="female" ng-model="userInfo.personalInformation.gender">
+                <input type="radio" id="us-female" name="gender" value="female" ng-model="userInfo.EmployeePersonalInfo.Gender">
                 <label for="us-female">
                     Female
                 </label>
-                <input type="radio" id="us-male" name="gender" value="male" ng-model="userInfo.personalInformation.gender">
+                <input type="radio" id="us-male" name="gender" value="male" ng-model="userInfo.EmployeePersonalInfo.Gender">
                 <label for="us-male">
                     Male
                 </label>
-                <input type="radio" id="us-Transgender" name="Transgender" value="transgender" ng-model="userInfo.personalInformation.gender">
+                <input type="radio" id="us-Transgender" name="Transgender" value="transgender" ng-model="userInfo.EmployeePersonalInfo.Gender">
                 <label for="us-male">
                     Transgender
                 </label>
@@ -141,19 +141,19 @@
                 Marital Status
             </label>
             <div class="clip-radio radio-primary">
-                <input type="radio" id="us-Single" name="maritalStatus" ng-value="single" ng-model="userInfo.personalInformation.maritalStatus">
+                <input type="radio" id="us-Single" name="maritalStatus" ng-value="single" ng-model="userInfo.EmployeePersonalInfo.MaritalStatus">
                 <label for="us-Single">
                     Single
                 </label>
-                <input type="radio" id="us-Married" name="maritalStatus" ng-value="married" ng-model="userInfo.personalInformation.maritalStatus">
+                <input type="radio" id="us-Married" name="maritalStatus" ng-value="married" ng-model="userInfo.EmployeePersonalInfo.MaritalStatus">
                 <label for="us-Married">
                     Married
                 </label>
-                <input type="radio" id="us-Divorcee" name="maritalStatus" ng-value="divorcee" ng-model="userInfo.personalInformation.maritalStatus">
+                <input type="radio" id="us-Divorcee" name="maritalStatus" ng-value="divorcee" ng-model="userInfo.EmployeePersonalInfo.MaritalStatus">
                 <label for="us-Divorcee">
                     Divorcee
                 </label>
-                <input type="radio" id="us-Widower" name="maritalStatus" ng-value="widower" ng-model="userInfo.personalInformation.maritalStatus">
+                <input type="radio" id="us-Widower" name="maritalStatus" ng-value="widower" ng-model="userInfo.EmployeePersonalInfo.MaritalStatus">
                 <label for="us-Widower">
                     Widower
                 </label>
@@ -169,7 +169,7 @@
                 <div class="user-image">
                     <div class="thumbnail margin-bottom-5">
                         <img src="assets/images/default-user.png" alt="" ng-if="!obj.flow.files.length && noImage">
-                        <img ng-src="{{userInfo.personalInformation.avatar}}" alt="" ng-if="!obj.flow.files.length && !noImage">
+                        <img ng-src="{{userInfo.EmployeePersonalInfo.avatar}}" alt="" ng-if="!obj.flow.files.length && !noImage">
                         <img flow-img="obj.flow.files[0]" ng-if="obj.flow.files.length">
                     </div>
                 </div>
@@ -198,13 +198,13 @@
         <label class="control-label">
             Qualification
         </label>
-        <input type="text" placeholder="Enter qualification" class="form-control" name="url" ng-model="userInfo.personalInformation.qualification">
+        <input type="text" placeholder="Enter qualification" class="form-control" name="url" ng-model="userInfo.EmployeePersonalInfo.Qualification">
     </div>
     <div class="form-group">
         <label class="control-label">
             Mother tongue
         </label>
-        <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.personalInformation.motherTongue">
+        <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.EmployeePersonalInfo.MotherTounge">
             <option></option>
             <option value="telugu">Telugu</option>
             <option value="hindi">Hindi</option>
@@ -215,7 +215,7 @@
         <label class="control-label">
             Languages known
         </label>
-        <input id="tags_1" type="text" class="tags form-control" value="hindi, telugu, urdu" ng-model="userInfo.personalInformation.languagesKnown" />
+        <input id="tags_1" type="text" class="tags form-control" value="hindi, telugu, urdu" ng-model="userInfo.EmployeePersonalInfo.LanguagesKnown" />
 
     </div>
 </div>
@@ -224,7 +224,7 @@
         <label class="control-label">
             Designation
         </label>
-        <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.personalInformation.designation">
+        <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.EmployeePersonalInfo.Designation">
             <option></option>
             <option value="AK">Designation 1</option>
             <option value="HI">Designation 2</option>
@@ -234,13 +234,13 @@
         <label class="control-label">
             Data of Interview
         </label>
-        <input type="text" ng-model="userInfo.personalInformation.dateOfInterview" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened2" ng-init="inputopened2 = false" ng-click="inputopened2 = !inputopened2" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
+        <input type="text" ng-model="userInfo.EmployeePersonalInfo.DateOfInterview" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened2" ng-init="inputopened2 = false" ng-click="inputopened2 = !inputopened2" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
     </div>
     <div class="form-group">
         <label class="control-label">
             Data of Join
         </label>
-        <input type="text" ng-model="userInfo.personalInformation.dateOfJoin" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened3" ng-init="inputopened3 = false" ng-click="inputopened3 = !inputopened3" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
+        <input type="text" ng-model="userInfo.EmployeePersonalInfo.DateOfJoining" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened3" ng-init="inputopened3 = false" ng-click="inputopened3 = !inputopened3" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
     </div>
 </div>
 
@@ -249,7 +249,7 @@
         <label class="control-label">
             Father Name
         </label>
-        <input type="text" placeholder="" class="form-control" name="url" ng-model="userInfo.personalInformation.fatherName">
+        <input type="text" placeholder="" class="form-control" name="url" ng-model="userInfo.EmployeePersonalInfo.FatherName">
     </div>
 </div>
 <div class="col-md-3">
@@ -257,7 +257,7 @@
         <label class="control-label">
             Father Occupation
         </label>
-        <input type="text" placeholder="" class="form-control" name="url" ng-model="userInfo.personalInformation.fatherOccupation">
+        <input type="text" placeholder="" class="form-control" name="url" ng-model="userInfo.EmployeePersonalInfo.FatherOccupation">
     </div>
 </div>
 <div class="col-md-3">
@@ -265,7 +265,7 @@
         <label class="control-label">
             Mother Name
         </label>
-        <input type="text" placeholder="" class="form-control" name="url" ng-model="userInfo.personalInformation.motherName">
+        <input type="text" placeholder="" class="form-control" name="url" ng-model="userInfo.EmployeePersonalInfo.MotherName">
     </div>
 </div>
 <div class="col-md-3">
@@ -273,7 +273,7 @@
         <label class="control-label">
             Spouse Name
         </label>
-        <input type="text" placeholder="" class="form-control" name="url" ng-model="userInfo.personalInformation.spouseName">
+        <input type="text" placeholder="" class="form-control" name="url" ng-model="userInfo.EmployeePersonalInfo.SpouseName">
     </div>
 </div>
 
@@ -289,7 +289,7 @@
                 <label class="control-label">
                     Branch
                 </label>
-                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.additionalInformation.branch">
+                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.EmployeePersonalInfo.Branch">
                     <option></option>
                     <option value="AK">Hyderabad</option>
                     <option value="HI">Bangalore</option>
@@ -301,7 +301,7 @@
                 <label class="control-label">
                     Division
                 </label>
-                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.additionalInformation.division">
+                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.EmployeePersonalInfo.Division">
                     <option></option>
                     <option value="AK">Hyderabad</option>
                     <option value="HI">Bangalore</option>
@@ -313,7 +313,7 @@
                 <label class="control-label">
                     Department
                 </label>
-                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.additionalInformation.department">
+                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.EmployeePersonalInfo.Department">
                     <option></option>
                     <option value="AK">Hyderabad</option>
                     <option value="HI">Bangalore</option>
@@ -325,7 +325,7 @@
                 <label class="control-label">
                     Reporting Manager
                 </label>
-                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.additionalInformation.reportingManager">
+                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.EmployeePersonalInfo.ReportingManager">
                     <option></option>
                     <option value="AK">Manager 1</option>
                     <option value="HI">Manager 2</option>
@@ -336,7 +336,7 @@
                 <label class="control-label">
                     Site Posted to
                 </label>
-                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.additionalInformation.sitePostedTo">
+                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.EmployeePersonalInfo.SitePostedTo">
                     <option></option>
                     <option value="AK">Manager 1</option>
                     <option value="HI">Manager 2</option>
@@ -349,31 +349,31 @@
                 <label class="control-label">
                     Gross Salary
                 </label>
-                <input type="text" placeholder="Enter employee gross salary" class="form-control" name="grossSalary" ng-model="userInfo.additionalInformation.grossSalary">
+                <input type="text" placeholder="Enter employee gross salary" class="form-control" name="grossSalary" ng-model="userInfo.EmployeePersonalInfo.GrossSalary">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     PSARA Emp Code
                 </label>
-                <input type="text" placeholder="Enter employee PSARA Code" class="form-control" name="psaraCode" ng-model="userInfo.additionalInformation.psaraCode">
+                <input type="text" placeholder="Enter employee PSARA Code" class="form-control" name="psaraCode" ng-model="userInfo.EmployeePersonalInfo.PSARAEmpCode">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     ID Card Issued Date
                 </label>
-                <input type="text" ng-model="userInfo.additionalInformation.idCardIssuedDate" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened" ng-init="inputopened = false" ng-click="inputopened = !inputopened" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
+                <input type="text" ng-model="userInfo.EmployeePersonalInfo.IdCardIssuedDate" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened" ng-init="inputopened = false" ng-click="inputopened = !inputopened" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
             </div>
             <div class="form-group">
                 <label class="control-label">
                     ID Card Valid Till
                 </label>
-                <input type="text" ng-model="userInfo.additionalInformation.idCardValidTillDate" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened" ng-init="inputopened = false" ng-click="inputopened = !inputopened" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
+                <input type="text" ng-model="userInfo.EmployeePersonalInfo.IdCardValidTill" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened" ng-init="inputopened = false" ng-click="inputopened = !inputopened" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Previous Employee
                 </label>
-                <input id="tags_1" type="text" class="tags form-control" value="" ng-model="userInfo.additionalInformation.previousEmployee" />
+                <input id="tags_1" type="text" class="tags form-control" value="" ng-model="userInfo.EmployeePersonalInfo.PreviousEmployer" />
                 <div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>
             </div>
         </div>
@@ -395,13 +395,13 @@
                     <label class="control-label">
                         Height
                     </label>
-                    <input type="text" placeholder="Enter Height" class="form-control" name="height" ng-model="userInfo.physicalStandard.height">
+                    <input type="text" placeholder="Enter Height" class="form-control" name="height" ng-model="userInfo.EmployeePhysicalStandard.Height">
                 </div>
                 <div class="form-group">
                     <label class="control-label">
                         Weigth
                     </label>
-                    <input type="text" placeholder="Enter Weigth" class="form-control" name="weight" ng-model="userInfo.physicalStandard.weigth">
+                    <input type="text" placeholder="Enter Weigth" class="form-control" name="weight" ng-model="userInfo.EmployeePhysicalStandard.Weight">
                 </div>
             </div>
             <div class="col-md-4">
@@ -409,13 +409,13 @@
                     <label class="control-label">
                         Chest UnExpand
                     </label>
-                    <input type="text" placeholder="Enter measures of Chest unexpanded" class="form-control" name="chestUnexpanded" ng-model="userInfo.physicalStandard.chestUnExpanded">
+                    <input type="text" placeholder="Enter measures of Chest unexpanded" class="form-control" name="chestUnexpanded" ng-model="userInfo.EmployeePhysicalStandard.ChestUnExpand">
                 </div>
                 <div class="form-group">
                     <label class="control-label">
                         Chest Expand
                     </label>
-                    <input type="text" placeholder="Enter measures of chest expanded" class="form-control" name="chestExpanded" ng-model="userInfo.physicalStandard.chestExpanded">
+                    <input type="text" placeholder="Enter measures of chest expanded" class="form-control" name="chestExpanded" ng-model="userInfo.EmployeePhysicalStandard.ChestExpand">
                 </div>
             </div>
             <div class="col-md-4">
@@ -423,13 +423,13 @@
                     <label class="control-label">
                         Hair Color
                     </label>
-                    <input type="text" placeholder="Enter Hair Color" class="form-control" name="hairColor" ng-model="userInfo.physicalStandard.hariColor">
+                    <input type="text" placeholder="Enter Hair Color" class="form-control" name="hairColor" ng-model="userInfo.EmployeePhysicalStandard.HairColour">
                 </div>
                 <div class="form-group">
                     <label class="control-label">
                         Eyes Color
                     </label>
-                    <input type="text" placeholder="Enter Eyes color" class="form-control" name="eyesColor" ng-model="userInfo.physicalStandard.eyesColor">
+                    <input type="text" placeholder="Enter Eyes color" class="form-control" name="eyesColor" ng-model="userInfo.EmployeePhysicalStandard.EyeColour">
                 </div>
             </div>
         </div>
@@ -441,8 +441,8 @@
     </legend>
     <div class="row">
         <div class="col-md-offset-6">
-            <input type="checkbox" ng-model="confirmed" ng-change="change(confirmed)" name="addressdetails" />
-            <label for="addressdetails">
+            <input type="checkbox" ng-model="confirmed" ng-change="change(confirmed)" name="EmployeeAddressDetails" />
+            <label for="EmployeeAddressDetails">
                 Check it if Permanenet and Temporary address are same.
             </label>
         </div>
@@ -452,19 +452,19 @@
                 <label class="control-label">
                     Address Line 1
                 </label>
-                <input type="text" placeholder="Enter Address Line 1" class="form-control" name="addressLine1" ng-model="userInfo.addressDetails.tmpaddressLine1">
+                <input type="text" placeholder="Enter Address Line 1" class="form-control" name="addressLine1" ng-model="userInfo.EmployeeAddressDetails.tmpaddressLine1">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Address Line 2
                 </label>
-                <input type="text" placeholder="Enter Address Line 2" class="form-control" name="addressLine2" ng-model="userInfo.addressDetails.tmpaddressLine2">
+                <input type="text" placeholder="Enter Address Line 2" class="form-control" name="addressLine2" ng-model="userInfo.EmployeeAddressDetails.tmpaddressLine2">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Land Mark
                 </label>
-                <input type="text" placeholder="Enter Land Makr" class="form-control" name="landMakr" ng-model="userInfo.addressDetails.tmplandMark">
+                <input type="text" placeholder="Enter Land Makr" class="form-control" name="landMakr" ng-model="userInfo.EmployeeAddressDetails.tmplandMark">
             </div>
 
             <div class="col-md-6">
@@ -472,7 +472,7 @@
                     <label class="control-label">
                         Post Office
                     </label>
-                    <input type="text" placeholder="Enter Post Office" class="form-control" name="PostOffice" ng-model="userInfo.addressDetails.tmppostOffice">
+                    <input type="text" placeholder="Enter Post Office" class="form-control" name="PostOffice" ng-model="userInfo.EmployeeAddressDetails.tmppostOffice">
                 </div>
             </div>
             <div class="col-md-6">
@@ -480,7 +480,7 @@
                     <label class="control-label">
                         Police Station
                     </label>
-                    <input type="text" placeholder="Enter Police Station" class="form-control" name="policeStation" ng-model="userInfo.addressDetails.tmppoliceStation">
+                    <input type="text" placeholder="Enter Police Station" class="form-control" name="policeStation" ng-model="userInfo.EmployeeAddressDetails.tmppoliceStation">
                 </div>
             </div>
 
@@ -489,7 +489,7 @@
                     <label class="control-label">
                         State
                     </label>
-                    <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.addressDetails.tmpstate">
+                    <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.EmployeeAddressDetails.tmpstate">
                         <option></option>
                         <option value="telugu">Telugu</option>
                         <option value="hindi">Hindi</option>
@@ -502,7 +502,7 @@
                     <label class="control-label">
                         District
                     </label>
-                    <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.addressDetails.tmpdistrict">
+                    <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.EmployeeAddressDetails.tmpdistrict">
                         <option></option>
                         <option value="telugu">Telugu</option>
                         <option value="hindi">Hindi</option>
@@ -515,7 +515,7 @@
                     <label class="control-label">
                         Pincode
                     </label>
-                    <input type="text" placeholder="Enter Pin code" class="form-control" name="pinCode" ng-model="userInfo.addressDetails.tmppinCode">
+                    <input type="text" placeholder="Enter Pin code" class="form-control" name="pinCode" ng-model="userInfo.EmployeeAddressDetails.tmppinCode">
                 </div>
             </div>
 
@@ -528,19 +528,19 @@
                 <label class="control-label">
                     Address Line 1
                 </label>
-                <input type="text" placeholder="Enter Address Line 1" class="form-control" name="addressLine1" ng-model="userInfo.addressDetails.peraddressLine1">
+                <input type="text" placeholder="Enter Address Line 1" class="form-control" name="addressLine1" ng-model="userInfo.EmployeeAddressDetails.peraddressLine1">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Address Line 2
                 </label>
-                <input type="text" placeholder="Enter Address Line 2" class="form-control" name="addressLine2" ng-model="userInfo.addressDetails.peraddressLine2">
+                <input type="text" placeholder="Enter Address Line 2" class="form-control" name="addressLine2" ng-model="userInfo.EmployeeAddressDetails.peraddressLine2">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Land Mark
                 </label>
-                <input type="text" placeholder="Enter Land Makr" class="form-control" name="landMakr" ng-model="userInfo.addressDetails.perlandMark">
+                <input type="text" placeholder="Enter Land Makr" class="form-control" name="landMakr" ng-model="userInfo.EmployeeAddressDetails.perlandMark">
             </div>
             <div class="col-md-12">
                 <div class="col-md-6">
@@ -548,7 +548,7 @@
                         <label class="control-label">
                             Post Office
                         </label>
-                        <input type="text" placeholder="Enter Post Office" class="form-control" name="PostOffice" ng-model="userInfo.addressDetails.perpostOffice">
+                        <input type="text" placeholder="Enter Post Office" class="form-control" name="PostOffice" ng-model="userInfo.EmployeeAddressDetails.perpostOffice">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -556,7 +556,7 @@
                         <label class="control-label">
                             Police Station
                         </label>
-                        <input type="text" placeholder="Enter Police Station" class="form-control" name="policeStation" ng-model="userInfo.addressDetails.perpoliceStation">
+                        <input type="text" placeholder="Enter Police Station" class="form-control" name="policeStation" ng-model="userInfo.EmployeeAddressDetails.perpoliceStation">
                     </div>
                 </div>
             </div>
@@ -566,7 +566,7 @@
                         <label class="control-label">
                             State
                         </label>
-                        <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.addressDetails.perstate">
+                        <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.EmployeeAddressDetails.perstate">
                             <option></option>
                             <option value="telugu">Telugu</option>
                             <option value="hindi">Hindi</option>
@@ -579,7 +579,7 @@
                         <label class="control-label">
                             District
                         </label>
-                        <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.addressDetails.perdistrict">
+                        <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.EmployeeAddressDetails.perdistrict">
                             <option></option>
                             <option value="telugu">Telugu</option>
                             <option value="hindi">Hindi</option>
@@ -592,7 +592,7 @@
                         <label class="control-label">
                             Pincode
                         </label>
-                        <input type="text" placeholder="Enter Pin code" class="form-control" name="pinCode" ng-model="userInfo.addressDetails.perpinCode">
+                        <input type="text" placeholder="Enter Pin code" class="form-control" name="pinCode" ng-model="userInfo.EmployeeAddressDetails.perpinCode">
                     </div>
                 </div>
             </div>
@@ -611,19 +611,19 @@
                 <label class="control-label">
                     Ref Name & Address
                 </label>
-                <textarea type="text" cols="5" placeholder="Enter reference and address" class="form-control" name="refNameAndAddress" ng-model="userInfo.employeeinfo.refNameAndAddress" />
+                <textarea type="text" cols="5" placeholder="Enter reference and address" class="form-control" name="refNameAndAddress" ng-model="userInfo.EmployeeInfo.RefNameAndAddress1" />
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Ref Name & Address2
                 </label>
-                <textarea type="text" cols="5" placeholder="Enter reference and address2" class="form-control" name="refNameAndAddress2" ng-model="userInfo.employeeinfo.refNameAndAddress2" />
+                <textarea type="text" cols="5" placeholder="Enter reference and address2" class="form-control" name="refNameAndAddress2" ng-model="userInfo.EmployeeInfo.RefNameAndAddress2" />
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Blood Group
                 </label>
-                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.employeeinfo.bloodGroup">
+                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.EmployeeInfo.BloodGroup">
                     <option></option>
                     <option value="telugu">Telugu</option>
                     <option value="hindi">Hindi</option>
@@ -634,7 +634,7 @@
                 <label class="control-label">
                     Physical Remarks
                 </label>
-                <input type="text" placeholder="Enter Physical remarks" class="form-control" name="physicalRemarks" ng-model="userInfo.employeeinfo.physicalRemarks">
+                <input type="text" placeholder="Enter Physical remarks" class="form-control" name="physicalRemarks" ng-model="userInfo.EmployeeInfo.PhysicalRemarks">
             </div>
         </div>
         <div class="col-md-6">
@@ -643,7 +643,7 @@
                     <label class="control-label">
                         Identification Marks 1
                     </label>
-                    <input type="text" placeholder="Enter Identifiation marks1" class="form-control" name="identificationMarks1" ng-model="userInfo.employeeinfo.identificationMarks1">
+                    <input type="text" placeholder="Enter Identifiation marks1" class="form-control" name="identificationMarks1" ng-model="userInfo.EmployeeInfo.IdentificationMarks1">
                 </div>
             </div>
             <div class="col-md-6">
@@ -651,20 +651,20 @@
                     <label class="control-label">
                         Identification Marks 2
                     </label>
-                    <input type="text" placeholder="Enter Identification Marks " class="form-control" name="identificationMarks2" ng-model="userInfo.employeeinfo.identificationMarks2">
+                    <input type="text" placeholder="Enter Identification Marks " class="form-control" name="identificationMarks2" ng-model="userInfo.EmployeeInfo.IdentificationMarks2">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Remarks
                 </label>
-                <textarea type="text" cols="5" placeholder="Enter remarks" class="form-control" name="remarks" ng-model="userInfo.employeeinfo.remarks" />
+                <textarea type="text" cols="5" placeholder="Enter remarks" class="form-control" name="remarks" ng-model="userInfo.EmployeeInfo.Remarks" />
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Applicant Category
                 </label>
-                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.employeeinfo.applicantCategory">
+                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.EmployeeInfo.ApplicationCategory">
                     <option></option>
                     <option value="telugu">Telugu</option>
                     <option value="hindi">Hindi</option>
@@ -673,7 +673,7 @@
             </div>
             <div class="form-group">
                 <label class="control-label"> Specially Abled</label>
-                <input type="checkbox" ng-model="userInfo.employeeinfo.speciallyAbled" name="speciallyAbled" />
+                <input type="checkbox" ng-model="userInfo.EmployeeInfo.SpeciallyAbled" name="speciallyAbled" />
 
             </div>
 
@@ -706,7 +706,7 @@
                                     <label class="control-label">
                                         Name
                                     </label>
-                                    <input type="text" placeholder="" class="form-control" name="familyMember.name" ng-model="userInfoLists.Proofs.familyMember.name">
+                                    <input type="text" placeholder="" class="form-control" name="familyMember.name" ng-model="userInfoLists.Proofs.familyMember.Name">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -714,7 +714,7 @@
                                     <label class="control-label">
                                         Date Of Birth
                                     </label>
-                                    <input type="text" placeholder="" class="form-control" name="familyMember.dob" ng-model="userInfoLists.Proofs.familyMember.dob" data-inputmask="'mask': '99/99/9999'">
+                                    <input type="text" placeholder="" class="form-control" name="familyMember.dob" ng-model="userInfoLists.Proofs.familyMember.DateofBirth" data-inputmask="'mask': '99/99/9999'">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -722,7 +722,7 @@
                                     <label class="control-label">
                                         Occupation
                                     </label>
-                                    <input type="text" placeholder="" class="form-control" name="familyMember.occupasion" ng-model="userInfoLists.Proofs.familyMember.occupasion">
+                                    <input type="text" placeholder="" class="form-control" name="familyMember.occupasion" ng-model="userInfoLists.Proofs.familyMember.Occupation">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -730,7 +730,7 @@
                                     <label class="control-label">
                                         Relationship
                                     </label>
-                                    <input type="text" placeholder="" class="form-control" name="familyMember.relationship" ng-model="userInfoLists.Proofs.familyMember.relationship">
+                                    <input type="text" placeholder="" class="form-control" name="familyMember.relationship" ng-model="userInfoLists.Proofs.familyMember.RelationShip">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -738,12 +738,12 @@
                                     <label class="control-label">
                                         Age
                                     </label>
-                                    <input type="text" placeholder="" class="form-control" name="familyMember.age" ng-model="userInfoLists.Proofs.familyMember.age">
+                                    <input type="text" placeholder="" class="form-control" name="familyMember.age" ng-model="userInfoLists.Proofs.familyMember.Age">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="checkbox" ng-model="userInfoLists.Proofs.familyMember.pfNominee" name="pfNominee" />
+                                    <input type="checkbox" ng-model="userInfoLists.Proofs.familyMember.PFNominee" name="pfNominee" />
                                     <label for="pfNominee">
                                         PM Nominee
                                     </label>
@@ -751,7 +751,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="checkbox" ng-model="userInfoLists.Proofs.familyMember.esiNominee" name="esiNominee" />
+                                    <input type="checkbox" ng-model="userInfoLists.Proofs.familyMember.ESiNominee" name="esiNominee" />
                                     <label for="esiNominee">
                                         ESI Nominee
                                     </label>
@@ -759,18 +759,18 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="checkbox" ng-model="userInfoLists.Proofs.familyMember.residingWithEmployee" name="residingWithEmployee" />
+                                    <input type="checkbox" ng-model="userInfoLists.Proofs.familyMember.ResidingWithRelation" name="residingWithEmployee" />
                                     <label for="residingWithEmployee">
                                         Residing With Employee
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-md-6" ng-hide="userInfoLists.Proofs.familyMember.residingWithEmployee">
+                            <div class="col-md-6" ng-hide="userInfoLists.Proofs.familyMember.ResidingWithRelation">
                                 <div class="form-group">
                                     <label class="control-label">
                                         If No- Address
                                     </label>
-                                    <textarea cols="5" placeholder="" class="form-control" name="familyMember.placeOfResidence" ng-model="userInfoLists.Proofs.familyMember.placeOfResidence" />
+                                    <textarea cols="5" placeholder="" class="form-control" name="familyMember.placeOfResidence" ng-model="userInfoLists.Proofs.familyMember.PlaceOfResidence" />
                                 </div>
                             </div>
 
@@ -799,21 +799,21 @@
                 <th>ESI Nominee </th>
                 <th>Residing with Him/Her </th>
                 <th>If No - Place of Residence </th>
-                <th>Delete</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="familyMember in userInfo.familyDetails">
+            <tr ng-repeat="familyMember in userInfo.EmployeeFamilyDetails">
                 <td>{{familyMember.no}}</td>
-                <td>{{familyMember.name}}</td>
-                <td>{{familyMember.dob}}</td>
-                <td>{{familyMember.age}}</td>
-                <td>{{familyMember.relationship}}</td>
-                <td>{{familyMember.occupasion}}</td>
-                <td>{{familyMember.pfNominee}}</td>
-                <td>{{familyMember.esiNominee}}</td>
-                <td>{{familyMember.residingWithEmployee}}</td>
-                <td>{{familyMember.placeOfResidence}}</td>
+                <td>{{familyMember.Name}}</td>
+                <td>{{familyMember.DateofBirth}}</td>
+                <td>{{familyMember.Age}}</td>
+                <td>{{familyMember.RelationShip}}</td>
+                <td>{{familyMember.Occupation}}</td>
+                <td>{{familyMember.PFNominee}}</td>
+                <td>{{familyMember.ESiNominee}}</td>
+                <td>{{familyMember.ResidingWithRelation}}</td>
+                <td>{{familyMember.PlaceOfResidence}}</td>
                 <td><button href="#" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" ng-click="removeFamilyMember(familyMember)"><i class="fa fa-trash-o"></i> Delete </button></td>
             </tr>
             <tr></tr>
@@ -837,13 +837,13 @@
                     <label class="control-label">
                         Bank Account No
                     </label>
-                    <input type="text" placeholder="Enter Bank Account Number" class="form-control" name="bankAccountNumber" ng-model="userInfo.bankDetails.bankAccountNumber">
+                    <input type="text" placeholder="Enter Bank Account Number" class="form-control" name="bankAccountNumber" ng-model="userInfo.EmployeeBankDetails.BankAccountNo">
                 </div>
                 <div class="form-group">
                     <label class="control-label">
                         Bank Name
                     </label>
-                    <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.bankDetails.bankName">
+                    <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.EmployeeBankDetails.BankName">
                         <option></option>
                         <option value="AK">Hyderabad</option>
                         <option value="HI">Bangalore</option>
@@ -855,19 +855,19 @@
                     <label class="control-label">
                         Branch Name
                     </label>
-                    <input type="text" placeholder="Enter branch name" class="form-control" name="branchName" ng-model="userInfo.bankDetails.branchName">
+                    <input type="text" placeholder="Enter branch name" class="form-control" name="branchName" ng-model="userInfo.EmployeeBankDetails.BranchName">
                 </div>
                 <div class="form-group">
                     <label class="control-label">
                         Branch Code
                     </label>
-                    <input type="text" placeholder="Enter branch code" class="form-control" name="weight" ng-model="userInfo.bankDetails.branchCode">
+                    <input type="text" placeholder="Enter branch code" class="form-control" name="weight" ng-model="userInfo.EmployeeBankDetails.BranchCode">
                 </div>
                 <div class="form-group">
                     <label class="control-label">
                         Branch App No
                     </label>
-                    <input type="text" placeholder="Enter bank app no" class="form-control" name="weight" ng-model="userInfo.bankDetails.bankAppNo">
+                    <input type="text" placeholder="Enter bank app no" class="form-control" name="weight" ng-model="userInfo.EmployeeBankDetails.BankAppNo">
                 </div>
 
             </div>
@@ -877,26 +877,26 @@
                     <label class="control-label">
                         Bank Code No
                     </label>
-                    <input type="text" placeholder="Enter Bank Code No" class="form-control" name="bankCodeNo" ng-model="userInfo.bankDetails.bankCodeNo">
+                    <input type="text" placeholder="Enter Bank Code No" class="form-control" name="bankCodeNo" ng-model="userInfo.EmployeeBankDetails.BankCodeNo">
                 </div>
                 <div class="form-group">
                     <label class="control-label">
                         Bank Card Reference
                     </label>
-                    <input type="text" placeholder="Enter Bank Card Reference" class="form-control" name="bankCardRefernce" ng-model="userInfo.bankDetails.bankCardRefernce">
+                    <input type="text" placeholder="Enter Bank Card Reference" class="form-control" name="bankCardRefernce" ng-model="userInfo.EmployeeBankDetails.BankCardReference">
                 </div>
                 <div class="form-group">
                     <label class="control-label">
                         IFSC Code
                     </label>
-                    <input type="text" placeholder="Enter IFSC Code" class="form-control" name="ifscCode" ng-model="userInfo.bankDetails.ifscCode">
+                    <input type="text" placeholder="Enter IFSC Code" class="form-control" name="ifscCode" ng-model="userInfo.EmployeeBankDetails.IFSCCode">
                 </div>
 
                 <div class="form-group">
                     <label class="control-label">
                         Region Code
                     </label>
-                    <input type="text" placeholder="Enter Region Code" class="form-control" name="regionCode" ng-model="userInfo.bankDetails.regionCode">
+                    <input type="text" placeholder="Enter Region Code" class="form-control" name="regionCode" ng-model="userInfo.EmployeeBankDetails.RegionCode">
                 </div>
 
 
@@ -904,7 +904,7 @@
                     <label class="control-label">
                         Ins Debt Amount
                     </label>
-                    <input type="text" placeholder="Enter Ins Debt Amount" class="form-control" name="insDebtAmount" ng-model="userInfo.bankDetails.insDebtAmount">
+                    <input type="text" placeholder="Enter Ins Debt Amount" class="form-control" name="insDebtAmount" ng-model="userInfo.EmployeeBankDetails.InsDebitAmount">
                 </div>
 
 
@@ -914,31 +914,31 @@
                     <label class="control-label">
                         Insurance Nominee
                     </label>
-                    <input type="text" placeholder="Enter Insurance nominee" class="form-control" name="insuranceNominee" ng-model="userInfo.bankDetails.insuranceNominee">
+                    <input type="text" placeholder="Enter Insurance nominee" class="form-control" name="insuranceNominee" ng-model="userInfo.EmployeeBankDetails.InsuranceNominee">
                 </div>
                 <div class="form-group">
                     <label class="control-label">
                         Nominee DOB
                     </label>
-                    <input type="text" placeholder="Enter nominee Date of birth" class="form-control" name="nomineeDOB" ng-model="userInfo.bankDetails.nomineeDOB">
+                    <input type="text" placeholder="Enter nominee Date of birth" class="form-control" name="nomineeDOB" ng-model="userInfo.EmployeeBankDetails.NomineeDateOfBirth">
                 </div>
                 <div class="form-group">
                     <label class="control-label">
                         Insurance Cover
                     </label>
-                    <input type="text" placeholder="Enter insurance cover" class="form-control" name="insuranceCover" ng-model="userInfo.bankDetails.insuranceCover">
+                    <input type="text" placeholder="Enter insurance cover" class="form-control" name="insuranceCover" ng-model="userInfo.EmployeeBankDetails.InsuranceCover">
                 </div>
                 <div class="form-group">
                     <label class="control-label">
                         Nominee RelationShip
                     </label>
-                    <input type="text" placeholder="Enter nominee relationship" class="form-control" name="nomineeRelationShip" ng-model="userInfo.bankDetails.nomineeRelationShip">
+                    <input type="text" placeholder="Enter nominee relationship" class="form-control" name="nomineeRelationShip" ng-model="userInfo.EmployeeBankDetails.NomineeRelation">
                 </div>
                 <div class="form-group">
                     <label class="control-label">
                         UAN No
                     </label>
-                    <input type="text" placeholder="Enter UAN no" class="form-control" name="UANNo" ng-model="userInfo.bankDetails.UANNo">
+                    <input type="text" placeholder="Enter UAN no" class="form-control" name="UANNo" ng-model="userInfo.EmployeeBankDetails.UANNo">
                 </div>
             </div>
         </div>
@@ -950,7 +950,7 @@
     </legend>
     <div class="row">
         <div class="col-md-6">
-            <input type="checkbox" ng-model="userInfo.PF.PFDeduct" name="PFDeduct" />
+            <input type="checkbox" ng-model="userInfo.EmployeeSalaryDetails.PFDeduct" name="PFDeduct" />
             <label for="PFDeduct">
                 PF Deduct
             </label>
@@ -958,11 +958,11 @@
                 <label class="control-label">
                     EPF No
                 </label>
-                <input type="text" placeholder="Enter EPF No" class="form-control" name="epfNo" ng-model="userInfo.PF.epfNo">
+                <input type="text" placeholder="Enter EPF No" class="form-control" name="epfNo" ng-model="userInfo.EmployeeSalaryDetails.EPFNo">
             </div>
         </div>
         <div class="col-md-6">
-            <input type="checkbox" ng-model="userInfo.PF.PTDeduct" name="PTDeduct" />
+            <input type="checkbox" ng-model="userInfo.EmployeeSalaryDetails.PTDeduct" name="PTDeduct" />
             <label for="PTDeduct">
                 PT Deduct
             </label>
@@ -970,7 +970,7 @@
                 <label class="control-label">
                     PF Enroll Date
                 </label>
-                <input type="text" placeholder="Enter PF Enroll Date" class="form-control" name="pfEnrollDate" ng-model="userInfo.PF.pfEnrollDate">
+                <input type="text" placeholder="Enter PF Enroll Date" class="form-control" name="pfEnrollDate" ng-model="userInfo.EmployeeSalaryDetails.PFEnrollDate">
             </div>
         </div>
     </div>
@@ -981,7 +981,7 @@
     </legend>
     <div class="row">
         <div class="col-md-12">
-            <input type="checkbox" ng-model="userInfo.ESI.ESIDeduct" name="ESIDeduct" />
+            <input type="checkbox" ng-model="userInfo.EmployeeSalaryDetails.ESIDeduct" name="ESIDeduct" />
             <label for="ESIDeduct">
                 ESI Deduct
             </label>
@@ -992,7 +992,7 @@
                     <label class="control-label">
                         ESI No
                     </label>
-                    <input type="text" placeholder="Enter ESI No" class="form-control" name="esiNo" ng-model="userInfo.ESI.esiNo">
+                    <input type="text" placeholder="Enter ESI No" class="form-control" name="esiNo" ng-model="userInfo.EmployeeSalaryDetails.ESINo">
                 </div>
             </div>
             <div class="col-md-6">
@@ -1000,7 +1000,7 @@
                     <label class="control-label">
                         ESI Disp Name
                     </label>
-                    <input type="text" placeholder="Enter ESI disp Name" class="form-control" name="esiDispName" ng-model="userInfo.ESI.esiDispName">
+                    <input type="text" placeholder="Enter ESI disp Name" class="form-control" name="esiDispName" ng-model="userInfo.EmployeeSalaryDetails.ESIDispName">
                 </div>
             </div>
         </div>
@@ -1018,7 +1018,7 @@
                     <label class="control-label">
                         Additional Amount
                     </label>
-                    <input type="text" placeholder="Enter Additional Amount" class="form-control" name="additionalAmount" ng-model="userInfo.salaryDetails.additionalAmount">
+                    <input type="text" placeholder="Enter Additional Amount" class="form-control" name="additionalAmount" ng-model="userInfo.EmployeeSalaryDetails.AdditionalAmount">
                 </div>
             </div>
             <div class="col-md-6">
@@ -1026,7 +1026,7 @@
                     <label class="control-label">
                         Food Allowance
                     </label>
-                    <input type="text" placeholder="Enter Food Allowance" class="form-control" name="foodAllowance" ng-model="userInfo.salaryDetails.foodAllowance">
+                    <input type="text" placeholder="Enter Food Allowance" class="form-control" name="foodAllowance" ng-model="userInfo.EmployeeSalaryDetails.FoodAllowance">
                 </div>
             </div>
         </div>
@@ -1042,7 +1042,7 @@
                 <label class="control-label">
                     No.Of Days
                 </label>
-                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.SalaryStructure.noOfDays">
+                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.EmployeeSalaryDetails.NoOfDays">
                     <option></option>
                     <option value="telugu">Telugu</option>
                     <option value="hindi">Hindi</option>
@@ -1053,61 +1053,61 @@
                 <label class="control-label">
                     Basic
                 </label>
-                <input type="text" placeholder="Enter Basic Amount" class="form-control" name="basicAmount" ng-model="userInfo.SalaryStructure.Basic" />
+                <input type="text" placeholder="Enter Basic Amount" class="form-control" name="basicAmount" ng-model="userInfo.EmployeeSalaryDetails.Basic" />
             </div>
             <div class="form-group">
                 <label class="control-label">
                     HRA
                 </label>
-                <input type="text" placeholder="Enter HRA" class="form-control" name="HRA" ng-model="userInfo.SalaryStructure.HRA" />
+                <input type="text" placeholder="Enter HRA" class="form-control" name="HRA" ng-model="userInfo.EmployeeSalaryDetails.HRA" />
             </div>
             <div class="form-group">
                 <label class="control-label">
                     CCA
                 </label>
-                <input type="text" placeholder="Enter CCA" class="form-control" name="CCA" ng-model="userInfo.SalaryStructure.CCA">
+                <input type="text" placeholder="Enter CCA" class="form-control" name="CCA" ng-model="userInfo.EmployeeSalaryDetails.CCA">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Gratutity
                 </label>
-                <input type="text" placeholder="Enter Gratutity" class="form-control" name="Gratutity" ng-model="userInfo.SalaryStructure.gratutity" />
+                <input type="text" placeholder="Enter Gratutity" class="form-control" name="Gratutity" ng-model="userInfo.EmployeeSalaryDetails.Gratuity" />
             </div>
             <div class="form-group">
                 <label class="control-label">
                     WA
                 </label>
-                <input type="text" placeholder="Enter WA" class="form-control" name="WA" ng-model="userInfo.SalaryStructure.WA" />
+                <input type="text" placeholder="Enter WA" class="form-control" name="WA" ng-model="userInfo.EmployeeSalaryDetails.WA" />
             </div>
             <div class="form-group">
                 <label class="control-label">
                     NFHs
                 </label>
-                <input type="text" placeholder="Enter NFHs" class="form-control" name="NFHs" ng-model="userInfo.SalaryStructure.NFHs">
+                <input type="text" placeholder="Enter NFHs" class="form-control" name="NFHs" ng-model="userInfo.EmployeeSalaryDetails.NFHs">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     RC
                 </label>
-                <input type="text" placeholder="Enter RC" class="form-control" name="RC" ng-model="userInfo.SalaryStructure.RC">
+                <input type="text" placeholder="Enter RC" class="form-control" name="RC" ng-model="userInfo.EmployeeSalaryDetails.RC">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     OT Rate
                 </label>
-                <input type="text" placeholder="Enter OT Rate" class="form-control" name="otRate" ng-model="userInfo.SalaryStructure.OTRate" />
+                <input type="text" placeholder="Enter OT Rate" class="form-control" name="otRate" ng-model="userInfo.EmployeeSalaryDetails.OTRate" />
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Travelling Allowance
                 </label>
-                <input type="text" placeholder="Enter Travelling Allowance" class="form-control" name="TA" ng-model="userInfo.SalaryStructure.travellingAllowance" />
+                <input type="text" placeholder="Enter Travelling Allowance" class="form-control" name="TA" ng-model="userInfo.EmployeeSalaryDetails.TravellingAllowance" />
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Mobile Allowance
                 </label>
-                <input type="text" placeholder="Enter Mobile allowance" class="form-control" name="mobileAllowance" ng-model="userInfo.SalaryStructure.mobileAllowance">
+                <input type="text" placeholder="Enter Mobile allowance" class="form-control" name="mobileAllowance" ng-model="userInfo.EmployeeSalaryDetails.MobileAllowance">
             </div>
         </div>
         <div class="col-md-6">
@@ -1115,7 +1115,7 @@
                 <label class="control-label">
                     DA
                 </label>
-                <input type="text" placeholder="Enter DA" class="form-control" name="da" ng-model="userInfo.SalaryStructure.DA" />
+                <input type="text" placeholder="Enter DA" class="form-control" name="da" ng-model="userInfo.EmployeeSalaryDetails.DA" />
             </div>
 
 
@@ -1123,43 +1123,43 @@
                 <label class="control-label">
                     Conveyance
                 </label>
-                <input type="text" placeholder="Enter Conveyance" class="form-control" name="Conveyance" ng-model="userInfo.SalaryStructure.Conveyance" />
+                <input type="text" placeholder="Enter Conveyance" class="form-control" name="Conveyance" ng-model="userInfo.EmployeeSalaryDetails.Conveyance" />
             </div>
             <div class="form-group">
                 <label class="control-label">
                     LA
                 </label>
-                <input type="text" placeholder="Enter LA" class="form-control" name="LA" ng-model="userInfo.SalaryStructure.LA">
+                <input type="text" placeholder="Enter LA" class="form-control" name="LA" ng-model="userInfo.EmployeeSalaryDetails.LA">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Bonus
                 </label>
-                <input type="text" placeholder="Enter Bonus" class="form-control" name="bonus" ng-model="userInfo.SalaryStructure.bonus" />
+                <input type="text" placeholder="Enter Bonus" class="form-control" name="bonus" ng-model="userInfo.EmployeeSalaryDetails.Bonus" />
             </div>
             <div class="form-group">
                 <label class="control-label">
                     OA
                 </label>
-                <input type="text" placeholder="Enter OA" class="form-control" name="OA" ng-model="userInfo.SalaryStructure.OA" />
+                <input type="text" placeholder="Enter OA" class="form-control" name="OA" ng-model="userInfo.EmployeeSalaryDetails.OA" />
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Spl. Allowance
                 </label>
-                <input type="text" placeholder="Enter Spl. Allowance" class="form-control" name="splAllowance" ng-model="userInfo.SalaryStructure.splAllowance">
+                <input type="text" placeholder="Enter Spl. Allowance" class="form-control" name="splAllowance" ng-model="userInfo.EmployeeSalaryDetails.SplAllowance">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     CS
                 </label>
-                <input type="text" placeholder="Enter CS" class="form-control" name="CS" ng-model="userInfo.SalaryStructure.CS">
+                <input type="text" placeholder="Enter CS" class="form-control" name="CS" ng-model="userInfo.EmployeeSalaryDetails.CS">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Nots
                 </label>
-                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.SalaryStructure.Nots">
+                <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.EmployeeSalaryDetails.Nots">
                     <option></option>
                     <option value="telugu">Telugu</option>
                     <option value="hindi">Hindi</option>
@@ -1170,13 +1170,13 @@
                 <label class="control-label">
                     Performace Allowance
                 </label>
-                <input type="text" placeholder="Enter Performance allowance" class="form-control" name="performanceAllowance" ng-model="userInfo.SalaryStructure.performanceAllowance" />
+                <input type="text" placeholder="Enter Performance allowance" class="form-control" name="performanceAllowance" ng-model="userInfo.EmployeeSalaryDetails.PerformanceAllowance" />
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Medical Allowance
                 </label>
-                <input type="text" placeholder="Enter Medical Allowance" class="form-control" name="medical Allowance" ng-model="userInfo.SalaryStructure.medicalAllowance" />
+                <input type="text" placeholder="Enter Medical Allowance" class="form-control" name="medical Allowance" ng-model="userInfo.EmployeeSalaryDetails.MedicalAllowance" />
             </div>
         </div>
     </div>
@@ -1401,35 +1401,35 @@
                 <label class="control-label">
                     Service No.
                 </label>
-                <input type="text" placeholder="" class="form-control" name="serviceNo" ng-model="userInfo.govProofs.ExServiceNumber">
+                <input type="text" placeholder="" class="form-control" name="serviceNo" ng-model="userInfo.EmployeeExService.ServiceNo">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Date Of Enrollment
                 </label>
-                <input type="text" placeholder="" class="form-control" name="dateOfEnrollment" ng-model="userInfo.govProofs.ExServicedateOfEnrollment">
+                <input type="text" placeholder="" class="form-control" name="dateOfEnrollment" ng-model="userInfo.EmployeeExService.DateOfEnrollment">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Crops
                 </label>
-                <input type="text" placeholder="" class="form-control" name="crops" ng-model="userInfo.govProofs.ExServiceCrops">
+                <input type="text" placeholder="" class="form-control" name="crops" ng-model="userInfo.EmployeeExService.Crops">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Medical Category
                 </label>
-                <input type="text" placeholder="" class="form-control" name="medicalCategory" ng-model="userInfo.govProofs.ExServicemedicalCategory">
+                <input type="text" placeholder="" class="form-control" name="medicalCategory" ng-model="userInfo.EmployeeExService.MedicalCategory">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Conduct
                 </label>
-                <input type="text" placeholder="" class="form-control" name="conduct" ng-model="userInfo.govProofs.ExServiceconduct">
+                <input type="text" placeholder="" class="form-control" name="conduct" ng-model="userInfo.EmployeeExService.Conduct">
             </div>
         </div>
         <div class="col-md-4">
-            <input type="checkbox" ng-model="userInfo.govProofs.EMPExService" name="EMPExService" />
+            <input type="checkbox" ng-model="userInfo.EmployeeExService.EMPExService" name="EMPExService" />
             <label for="EMPExService">
                 EMP Ex-Service
             </label>
@@ -1437,25 +1437,25 @@
                 <label class="control-label">
                     Rank
                 </label>
-                <input type="text" placeholder="" class="form-control" name="rank" ng-model="userInfo.govProofs.ExServiceRank">
+                <input type="text" placeholder="" class="form-control" name="rank" ng-model="userInfo.EmployeeExService.Rank">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Date Of Discharge
                 </label>
-                <input type="text" placeholder="" class="form-control" name="dateOfDischarge" ng-model="userInfo.govProofs.ExServicedateOfDischarge">
+                <input type="text" placeholder="" class="form-control" name="dateOfDischarge" ng-model="userInfo.EmployeeExService.DateOfDischarge">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Trade
                 </label>
-                <input type="text" placeholder="" class="form-control" name="trade" ng-model="userInfo.govProofs.ExServiceTrade">
+                <input type="text" placeholder="" class="form-control" name="trade" ng-model="userInfo.EmployeeExService.Trade">
             </div>
             <div class="form-group">
                 <label class="control-label">
                     Reason Of Discharge
                 </label>
-                <input type="text" placeholder="" class="form-control" name="reason of Discharge" ng-model="userInfo.govProofs.ExServiceReasonOfDischarge">
+                <input type="text" placeholder="" class="form-control" name="reason of Discharge" ng-model="userInfo.EmployeeExService.ReasonOfDischarge">
             </div>
         </div>
 
@@ -1509,7 +1509,7 @@
                                     <label class="control-label">
                                         Qualification
                                     </label>
-                                    <input type="text" placeholder="" class="form-control" name="qualification.name" ng-model="userInfoLists.Proofs.qualification.name">
+                                    <input type="text" placeholder="" class="form-control" name="qualification.name" ng-model="userInfoLists.Proofs.qualification.Qualification">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -1517,7 +1517,7 @@
                                     <label class="control-label">
                                         Description
                                     </label>
-                                    <input type="text" placeholder="" class="form-control" name="qualification.Description" ng-model="userInfoLists.Proofs.qualification.description">
+                                    <input type="text" placeholder="" class="form-control" name="qualification.Description" ng-model="userInfoLists.Proofs.qualification.Description">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -1525,7 +1525,7 @@
                                     <label class="control-label">
                                         Board/Univesity
                                     </label>
-                                    <input type="text" placeholder="" class="form-control" name="qualification.board" ng-model="userInfoLists.Proofs.qualification.board">
+                                    <input type="text" placeholder="" class="form-control" name="qualification.board" ng-model="userInfoLists.Proofs.qualification.Board">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -1533,7 +1533,7 @@
                                     <label class="control-label">
                                         Year Of Study
                                     </label>
-                                    <input type="text" placeholder="" class="form-control" name="qualification.yearOfStudy" ng-model="userInfoLists.Proofs.qualification.yearOfStudy">
+                                    <input type="text" placeholder="" class="form-control" name="qualification.yearOfStudy" ng-model="userInfoLists.Proofs.qualification.YearOfStudy">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -1541,7 +1541,7 @@
                                     <label class="control-label">
                                         Percentage Of Marks
                                     </label>
-                                    <input type="text" placeholder="" class="form-control" name="qualification.percentageOfMarks" ng-model="userInfoLists.Proofs.qualification.percentageOfMarks">
+                                    <input type="text" placeholder="" class="form-control" name="qualification.percentageOfMarks" ng-model="userInfoLists.Proofs.qualification.Percentage">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -1549,7 +1549,7 @@
                                     <label class="control-label">
                                         Name & Address of School/College
                                     </label>
-                                    <textarea cols="5" placeholder="" class="form-control" name="qualification.placeOfResidence" ng-model="userInfoLists.Proofs.qualification.nameAndAddressOfSchool" />
+                                    <textarea cols="5" placeholder="" class="form-control" name="qualification.placeOfResidence" ng-model="userInfoLists.Proofs.qualification.NameAndAddressOfCollege" />
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -1558,11 +1558,11 @@
                                         Result
                                     </label>
                                     <div class="clip-radio radio-primary">
-                                        <input type="radio" id="resultSuccess" name="examResult" value="pass" ng-model="userInfoLists.Proofs.qualification.result">
+                                        <input type="radio" id="resultSuccess" name="examResult" value="pass" ng-model="userInfoLists.Proofs.qualification.Result">
                                         <label for="us-Single">
                                             Pass
                                         </label>
-                                        <input type="radio" id="resultfail" name="examResult" value="fail" ng-model="userInfoLists.Proofs.qualification.result">
+                                        <input type="radio" id="resultfail" name="examResult" value="fail" ng-model="userInfoLists.Proofs.qualification.Result">
                                         <label for="us-Married">
                                             Fail
                                         </label>
@@ -1596,15 +1596,15 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="qualification in userInfo.educationDetails">
+            <tr ng-repeat="qualification in userInfo.EmployeeEducationDetails">
                 <td>{{qualification.no}}</td>
-                <td>{{qualification.name}}</td>
-                <td>{{qualification.description}}</td>
-                <td>{{qualification.board}}</td>
-                <td>{{qualification.yearOfStudy}}</td>
-                <td>{{qualification.result}}</td>
-                <td>{{qualification.percentageOfMarks}}</td>
-                <td>{{qualification.nameAndAddressOfSchool}}</td>
+                <td>{{qualification.Qualification}}</td>
+                <td>{{qualification.Description}}</td>
+                <td>{{qualification.Board}}</td>
+                <td>{{qualification.YearOfStudy}}</td>
+                <td>{{qualification.Result}}</td>
+                <td>{{qualification.Percentage}}</td>
+                <td>{{qualification.NameAndAddressOfCollege}}</td>
                 <td><button href="#" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" ng-click="removeQualification(qualification)"><i class="fa fa-trash-o"></i> Delete </button></td>
             </tr>
             <tr></tr>
@@ -1636,7 +1636,7 @@
                                     <label class="control-label">
                                         Company Name
                                     </label>
-                                    <input type="text" placeholder="" class="form-control" name="previousExperience.companyName" ng-model="userInfoLists.Proofs.previousExperience.companyName">
+                                    <input type="text" placeholder="" class="form-control" name="previousExperience.companyName" ng-model="userInfoLists.Proofs.previousExperience.CompanyName">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -1644,7 +1644,7 @@
                                     <label class="control-label">
                                         Region Code
                                     </label>
-                                    <input type="text" placeholder="" class="form-control" name="previousExperience.regionCode" ng-model="userInfoLists.Proofs.previousExperience.regionCode">
+                                    <input type="text" placeholder="" class="form-control" name="previousExperience.regionCode" ng-model="userInfoLists.Proofs.previousExperience.RegionCode">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -1652,7 +1652,7 @@
                                     <label class="control-label">
                                         Employer Code
                                     </label>
-                                    <input type="text" placeholder="" class="form-control" name="previousExperience.employerCode" ng-model="userInfoLists.Proofs.previousExperience.employerCode">
+                                    <input type="text" placeholder="" class="form-control" name="previousExperience.employerCode" ng-model="userInfoLists.Proofs.previousExperience.EmployeeCode">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -1660,7 +1660,7 @@
                                     <label class="control-label">
                                         Extension
                                     </label>
-                                    <input type="text" placeholder="" class="form-control" name="previousExperience.extension" ng-model="userInfoLists.Proofs.previousExperience.extension">
+                                    <input type="text" placeholder="" class="form-control" name="previousExperience.extension" ng-model="userInfoLists.Proofs.previousExperience.Extension">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -1676,7 +1676,7 @@
                                     <label class="control-label">
                                         year Of Experience
                                     </label>
-                                    <input type="text" placeholder="" class="form-control" name="previousExperience.yearsOfExperience" ng-model="userInfoLists.Proofs.previousExperience.yearsOfExperience">
+                                    <input type="text" placeholder="" class="form-control" name="previousExperience.yearsOfExperience" ng-model="userInfoLists.Proofs.previousExperience.YearsOfExperience">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -1700,7 +1700,7 @@
                                     <label class="control-label">
                                         Date Of Resigned
                                     </label>
-                                    <input type="text" placeholder="" class="form-control" name="previousExperience.dateOfResigned" ng-model="userInfoLists.Proofs.previousExperience.dateOfResigned">
+                                    <input type="text" placeholder="" class="form-control" name="previousExperience.dateOfResigned" ng-model="userInfoLists.Proofs.previousExperience.DateOfResignation">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -1708,7 +1708,7 @@
                                     <label class="control-label">
                                         Name & Address of Company
                                     </label>
-                                    <textarea cols="5" placeholder="" class="form-control" name="previousExperience.nameAndAddress" ng-model="userInfoLists.Proofs.previousExperience.nameAndAddress" />
+                                    <textarea cols="5" placeholder="" class="form-control" name="previousExperience.nameAndAddress" ng-model="userInfoLists.Proofs.previousExperience.CompanyNameAndAddress" />
                                 </div>
                             </div>
 
@@ -1742,18 +1742,18 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="previous in userInfo.previousExperiences">
+            <tr ng-repeat="previous in userInfo.EmployeePreviousExperience">
                 <td>{{previous.no}}</td>
-                <td>{{previous.companyName}}</td>
-                <td>{{previous.regionCode}}</td>
-                <td>{{previous.employerCode}}</td>
-                <td>{{previous.extension}}</td>
+                <td>{{previous.CompanyName}}</td>
+                <td>{{previous.RegionCode}}</td>
+                <td>{{previous.EmployeeCode}}</td>
+                <td>{{previous.Extension}}</td>
                 <td>{{previous.Designation}}</td>
-                <td>{{previous.yearsOfExperience}}</td>
+                <td>{{previous.YearsOfExperience}}</td>
                 <td>{{previous.PFNo}}</td>
                 <td>{{previous.ESINo}}</td>
-                <td>{{previous.dateOfResigned}}</td>
-                <td>{{previous.nameAndAddress}}</td>
+                <td>{{previous.DateOfResignation}}</td>
+                <td>{{previous.CompanyNameAndAddress}}</td>
                 <td><button href="#" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" ng-click="removePreviousExp(previous)"><i class="fa fa-trash-o"></i> Delete </button></td>
             </tr>
             <tr></tr>
@@ -1769,123 +1769,123 @@
     <div class="row">
         <div class="col-md-12">
             <div class="col-md-4">
-                <input type="checkbox" ng-model="userInfo.policeRecords.policeVerification" name="policeVerificationNo" />
+                <input type="checkbox" ng-model="userInfo.EmployeePolicyRecord.IsVerfied" name="policeVerificationNo" />
                 <label for="policeVerificationNo">
                     Police Verification
                 </label>
             </div>
-            <div class="col-md-4" ng-show="userInfo.policeRecords.policeVerification">
+            <div class="col-md-4" ng-show="userInfo.EmployeePolicyRecord.IsVerfied">
                 <div class="form-group">
                     <label class="control-label">
                         Verification No
                     </label>
-                    <input type="text" placeholder="" class="form-control" name="addressLine2" ng-model="userInfo.policeRecords.policeVerificationNo">
+                    <input type="text" placeholder="" class="form-control" name="addressLine2" ng-model="userInfo.EmployeePolicyRecord.PoliceVerificationNumber">
                 </div>
             </div>
-            <div class="col-md-4" ng-show="userInfo.policeRecords.policeVerification">
+            <div class="col-md-4" ng-show="userInfo.EmployeePolicyRecord.IsVerfied">
                 <div class="form-group">
                     <label class="control-label">
                         Nearest Police Station
                     </label>
-                    <input type="text" placeholder="" class="form-control" name="aadharCardName" ng-model="userInfo.policeRecords.nearestPoliceStation">
+                    <input type="text" placeholder="" class="form-control" name="aadharCardName" ng-model="userInfo.EmployeePolicyRecord.NearestPoliceStation">
                 </div>
             </div>
         </div>
         <div class="col-md-12">
             <div class="col-md-3">
-                <input type="checkbox" ng-model="userInfo.policeRecords.criminalOffenceYesNo" name="criminalOffence" />
+                <input type="checkbox" ng-model="userInfo.EmployeePolicyRecord.IsCriminalOffence" name="criminalOffence" />
                 <label for="criminalOffence">
                     Criminal Offence
                 </label>
             </div>
-            <div class="col-md-3" ng-show="userInfo.policeRecords.criminalOffenceYesNo">
+            <div class="col-md-3" ng-show="userInfo.EmployeePolicyRecord.IsCriminalOffence">
                 <div class="form-group">
                     <label class="control-label">
                         Court Name
                     </label>
-                    <input type="text" placeholder="" class="form-control" name="criminalOffenceCounrtName" ng-model="userInfo.policeRecords.criminalOffenceCourtName">
+                    <input type="text" placeholder="" class="form-control" name="criminalOffenceCounrtName" ng-model="userInfo.EmployeePolicyRecord.CriminalOffCourtName">
                 </div>
             </div>
-            <div class="col-md-3" ng-show="userInfo.policeRecords.criminalOffenceYesNo">
+            <div class="col-md-3" ng-show="userInfo.EmployeePolicyRecord.IsCriminalOffence">
                 <div class="form-group">
                     <label class="control-label">
                         Case No
                     </label>
-                    <input type="text" placeholder="" class="form-control" name="criminalOffenceCaseNo" ng-model="userInfo.policeRecords.criminalOffenceCaseNo">
+                    <input type="text" placeholder="" class="form-control" name="criminalOffenceCaseNo" ng-model="userInfo.EmployeePolicyRecord.CriminalOffCaseNo">
                 </div>
             </div>
-            <div class="col-md-3" ng-show="userInfo.policeRecords.criminalOffenceYesNo">
+            <div class="col-md-3" ng-show="userInfo.EmployeePolicyRecord.IsCriminalOffence">
                 <div class="form-group">
                     <label class="control-label">
                         Offence
                     </label>
-                    <input type="text" placeholder="" class="form-control" name="criminalOffenceoffence" ng-model="userInfo.policeRecords.criminalOffence">
+                    <input type="text" placeholder="" class="form-control" name="criminalOffenceoffence" ng-model="userInfo.EmployeePolicyRecord.CriminalOffence">
                 </div>
             </div>
 
         </div>
         <div class="col-md-12">
             <div class="col-md-3">
-                <input type="checkbox" ng-model="userInfo.policeRecords.criminalProceedingYesNo" name="criminalproceeding" />
+                <input type="checkbox" ng-model="userInfo.EmployeePolicyRecord.IsCrimianalProceeding" name="criminalproceeding" />
                 <label for="criminalproceeding">
                     Criminal Proceeding
                 </label>
             </div>
-            <div class="col-md-3" ng-show="userInfo.policeRecords.criminalProceedingYesNo">
+            <div class="col-md-3" ng-show="userInfo.EmployeePolicyRecord.IsCrimianalProceeding">
                 <div class="form-group">
                     <label class="control-label">
                         Court Name
                     </label>
-                    <input type="text" placeholder="" class="form-control" name="criminalProceedingCounrtName" ng-model="userInfo.policeRecords.criminalProceedingCourtName">
+                    <input type="text" placeholder="" class="form-control" name="criminalProceedingCounrtName" ng-model="userInfo.EmployeePolicyRecord.CriminalProCourtName">
                 </div>
             </div>
-            <div class="col-md-3" ng-show="userInfo.policeRecords.criminalProceedingYesNo">
+            <div class="col-md-3" ng-show="userInfo.EmployeePolicyRecord.IsCrimianalProceeding">
                 <div class="form-group">
                     <label class="control-label">
                         Case No
                     </label>
-                    <input type="text" placeholder="" class="form-control" name="criminalProceedingCaseNo" ng-model="userInfo.policeRecords.criminalProceedingCaseNo">
+                    <input type="text" placeholder="" class="form-control" name="criminalProceedingCaseNo" ng-model="userInfo.EmployeePolicyRecord.CriminalProCaseNo">
                 </div>
             </div>
-            <div class="col-md-3" ng-show="userInfo.policeRecords.criminalProceedingYesNo">
+            <div class="col-md-3" ng-show="userInfo.EmployeePolicyRecord.IsCrimianalProceeding">
                 <div class="form-group">
                     <label class="control-label">
                         Offence
                     </label>
-                    <input type="text" placeholder="" class="form-control" name="criminalProceedingOffence" ng-model="userInfo.policeRecords.criminalProceedingOffence">
+                    <input type="text" placeholder="" class="form-control" name="criminalProceedingOffence" ng-model="userInfo.EmployeePolicyRecord.CriminalProOffence">
                 </div>
             </div>
 
         </div>
         <div class="col-md-12">
             <div class="col-md-3">
-                <input type="checkbox" ng-model="userInfo.policeRecords.criminalArrestWarrantYesNo" name="criminalArrestWarrant" />
+                <input type="checkbox" ng-model="userInfo.EmployeePolicyRecord.IsCriminalArrestWarrant" name="criminalArrestWarrant" />
                 <label for="criminalOffence">
                     Criminal Arrest Warrant
                 </label>
             </div>
-            <div class="col-md-3" ng-show="userInfo.policeRecords.criminalArrestWarrantYesNo">
+            <div class="col-md-3" ng-show="userInfo.EmployeePolicyRecord.IsCriminalArrestWarrant">
                 <div class="form-group">
                     <label class="control-label">
                         Court Name
                     </label>
-                    <input type="text" placeholder="" class="form-control" name="criminalArrestWarrantCounrtName" ng-model="userInfo.policeRecords.criminalArrestWarrantCourtName">
+                    <input type="text" placeholder="" class="form-control" name="criminalArrestWarrantCounrtName" ng-model="userInfo.EmployeePolicyRecord.CriminalArrestCourtName">
                 </div>
             </div>
-            <div class="col-md-3" ng-show="userInfo.policeRecords.criminalArrestWarrantYesNo">
+            <div class="col-md-3" ng-show="userInfo.EmployeePolicyRecord.IsCriminalArrestWarrant">
                 <div class="form-group">
                     <label class="control-label">
                         Case No
                     </label>
-                    <input type="text" placeholder="" class="form-control" name="criminalArrestWarrantCaseNo" ng-model="userInfo.policeRecords.criminalArrestWarrantCaseNo">
+                    <input type="text" placeholder="" class="form-control" name="criminalArrestWarrantCaseNo" ng-model="userInfo.EmployeePolicyRecord.CriminalArrestCaseNo">
                 </div>
             </div>
-            <div class="col-md-3" ng-show="userInfo.policeRecords.criminalArrestWarrantYesNo">
+            <div class="col-md-3" ng-show="userInfo.EmployeePolicyRecord.IsCriminalArrestWarrant">
                 <div class="form-group">
                     <label class="control-label">
                         Offence
                     </label>
-                    <input type="text" placeholder="" class="form-control" name="criminalArrestWarrantoffence" ng-model="userInfo.policeRecords.criminalArrestWarrantOffence">
+                    <input type="text" placeholder="" class="form-control" name="criminalArrestWarrantoffence" ng-model="userInfo.EmployeePolicyRecord.CriminalArrestOffence">
                 </div>
             </div>
 

@@ -79,7 +79,7 @@
         if ($scope.userSearchText) {
             $scope.usersGrid.data = _.filter(usersList,
                 function (user) {
-                    return user.name.toLowerCase().indexOf($scope.userSearchText.toLowerCase()) > -1;
+                    return user.EmployeeName.toLowerCase().indexOf($scope.userSearchText.toLowerCase()) > -1;
                 });
         } else {
             $scope.usersGrid.data = usersList;
