@@ -109,7 +109,7 @@
             <label class="control-label">
                 Nationality
             </label>
-            <input type="text" placeholder="INDIAN" class="form-control" name="url" ng-model="userInfo.EmployeePersonalInfo.Nationality" disabled="true">
+            <input type="text"  class="form-control" name="url" ng-model="userInfo.EmployeePersonalInfo.Nationality">
         </div>
         <div class="form-group">
             <label class="control-label">
@@ -141,19 +141,19 @@
                 Marital Status
             </label>
             <div class="clip-radio radio-primary">
-                <input type="radio" id="us-Single" name="maritalStatus" ng-value="single" ng-model="userInfo.EmployeePersonalInfo.MaritalStatus">
+                <input type="radio" id="us-Single" name="maritalStatus" value="single" ng-model="userInfo.EmployeePersonalInfo.MaritalStatus">
                 <label for="us-Single">
                     Single
                 </label>
-                <input type="radio" id="us-Married" name="maritalStatus" ng-value="married" ng-model="userInfo.EmployeePersonalInfo.MaritalStatus">
+                <input type="radio" id="us-Married" name="maritalStatus" value="married" ng-model="userInfo.EmployeePersonalInfo.MaritalStatus">
                 <label for="us-Married">
                     Married
                 </label>
-                <input type="radio" id="us-Divorcee" name="maritalStatus" ng-value="divorcee" ng-model="userInfo.EmployeePersonalInfo.MaritalStatus">
+                <input type="radio" id="us-Divorcee" name="maritalStatus" value="divorcee" ng-model="userInfo.EmployeePersonalInfo.MaritalStatus">
                 <label for="us-Divorcee">
                     Divorcee
                 </label>
-                <input type="radio" id="us-Widower" name="maritalStatus" ng-value="widower" ng-model="userInfo.EmployeePersonalInfo.MaritalStatus">
+                <input type="radio" id="us-Widower" name="maritalStatus" value="widower" ng-model="userInfo.EmployeePersonalInfo.MaritalStatus">
                 <label for="us-Widower">
                     Widower
                 </label>
@@ -218,6 +218,16 @@
         <input id="tags_1" type="text" class="tags form-control" value="hindi, telugu, urdu" ng-model="userInfo.EmployeePersonalInfo.LanguagesKnown" />
 
     </div>
+    <div class="form-group">
+        <label class="control-label">
+            Status
+        </label>
+        <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.EmployeePersonalInfo.Status">
+            <option></option>
+            <option value="active">Active</option>
+            <option value="inactive">InActive</option>
+        </select>
+    </div>
 </div>
 <div class="col-md-6">
     <div class="form-group">
@@ -241,6 +251,13 @@
             Data of Join
         </label>
         <input type="text" ng-model="userInfo.EmployeePersonalInfo.DateOfJoining" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened3" ng-init="inputopened3 = false" ng-click="inputopened3 = !inputopened3" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
+    </div>
+    <div class="form-group">
+        <label class="control-label">
+            Client Employee Id
+        </label>
+        <input id="tags_1" type="text" class="tags form-control" value="" ng-model="userInfo.EmployeePersonalInfo.ClientEmployeeId" />
+
     </div>
 </div>
 
@@ -361,13 +378,13 @@
                 <label class="control-label">
                     ID Card Issued Date
                 </label>
-                <input type="text" ng-model="userInfo.EmployeePersonalInfo.IdCardIssuedDate" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened" ng-init="inputopened = false" ng-click="inputopened = !inputopened" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
+                <input type="text" ng-model="userInfo.EmployeePersonalInfo.IdCardIssuedDate" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened4" ng-init="inputopened4 = false" ng-click="inputopened4 = !inputopened4" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
             </div>
             <div class="form-group">
                 <label class="control-label">
                     ID Card Valid Till
                 </label>
-                <input type="text" ng-model="userInfo.EmployeePersonalInfo.IdCardValidTill" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened" ng-init="inputopened = false" ng-click="inputopened = !inputopened" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
+                <input type="text" ng-model="userInfo.EmployeePersonalInfo.IdCardValidTill" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened5" ng-init="inputopened5 = false" ng-click="inputopened5 = !inputopened5" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
             </div>
             <div class="form-group">
                 <label class="control-label">
@@ -375,6 +392,12 @@
                 </label>
                 <input id="tags_1" type="text" class="tags form-control" value="" ng-model="userInfo.EmployeePersonalInfo.PreviousEmployer" />
                 <div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">
+                    Date Of Leaving
+                </label>
+                <input type="text" ng-model="userInfo.EmployeePersonalInfo.DateOfLeaving" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened6" ng-init="inputopened6 = false" ng-click="inputopened6 = !inputopened6" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
             </div>
         </div>
     </div>
@@ -1231,7 +1254,7 @@
                 <label class="control-label">
                     Aadhar Card Number
                 </label>
-                <input type="text" placeholder="" class="form-control" name="addressLine2" ng-model="userInfo.govProofs.aadharCardNumber">
+                <input type="text" placeholder="" class="form-control" name="addressLine2" ng-model="userInfo.EmployeeProofs.aadharCardNumber">
             </div>
         </div>
         <div class="col-md-4">
@@ -1239,7 +1262,7 @@
                 <label class="control-label">
                     KYC Name
                 </label>
-                <input type="text" placeholder="" class="form-control" name="aadharCardName" ng-model="userInfo.govProofs.aadharCardName">
+                <input type="text" placeholder="" class="form-control" name="aadharCardName" ng-model="userInfo.EmployeeProofs.aadharCardName">
             </div>
         </div>
 
@@ -1253,7 +1276,7 @@
                 <label class="control-label">
                     Driving License Number
                 </label>
-                <input type="text" placeholder="" class="form-control" name="drivingLicenseid" ng-model="userInfo.govProofs.drivingLicenseNumber">
+                <input type="text" placeholder="" class="form-control" name="drivingLicenseid" ng-model="userInfo.EmployeeProofs.drivingLicenseNumber">
             </div>
         </div>
         <div class="col-md-4">
@@ -1261,7 +1284,7 @@
                 <label class="control-label">
                     KYC Name
                 </label>
-                <input type="text" placeholder="" class="form-control" name="voterIDName" ng-model="userInfo.govProofs.drivingLicenseName">
+                <input type="text" placeholder="" class="form-control" name="voterIDName" ng-model="userInfo.EmployeeProofs.drivingLicenseName">
             </div>
         </div>
 
@@ -1274,7 +1297,7 @@
                 <label class="control-label">
                     Voter ID Number
                 </label>
-                <input type="text" placeholder="" class="form-control" name="voterIDid" ng-model="userInfo.govProofs.voterIDNumber">
+                <input type="text" placeholder="" class="form-control" name="voterIDid" ng-model="userInfo.EmployeeProofs.voterIDNumber">
             </div>
         </div>
         <div class="col-md-4">
@@ -1282,7 +1305,7 @@
                 <label class="control-label">
                     KYC Name
                 </label>
-                <input type="text" placeholder="" class="form-control" name="voterIDName" ng-model="userInfo.govProofs.voterIDName">
+                <input type="text" placeholder="" class="form-control" name="voterIDName" ng-model="userInfo.EmployeeProofs.voterIDName">
             </div>
         </div>
 
@@ -1296,7 +1319,7 @@
                 <label class="control-label">
                     Ration Card Number
                 </label>
-                <input type="text" placeholder="" class="form-control" name="rationCardID" ng-model="userInfo.govProofs.rationCardNumber">
+                <input type="text" placeholder="" class="form-control" name="rationCardID" ng-model="userInfo.EmployeeProofs.rationCardNumber">
             </div>
         </div>
         <div class="col-md-4">
@@ -1304,7 +1327,7 @@
                 <label class="control-label">
                     KYC Name
                 </label>
-                <input type="text" placeholder="" class="form-control" name="rationCardName" ng-model="userInfo.govProofs.rationCardName">
+                <input type="text" placeholder="" class="form-control" name="rationCardName" ng-model="userInfo.EmployeeProofs.rationCardName">
             </div>
         </div>
 
@@ -1317,7 +1340,7 @@
                 <label class="control-label">
                     PAN Card Number
                 </label>
-                <input type="text" placeholder="" class="form-control" name="pancardID" ng-model="userInfo.govProofs.pancardNumber">
+                <input type="text" placeholder="" class="form-control" name="pancardID" ng-model="userInfo.EmployeeProofs.pancardNumber">
             </div>
         </div>
         <div class="col-md-4">
@@ -1325,7 +1348,7 @@
                 <label class="control-label">
                     KYC Name
                 </label>
-                <input type="text" placeholder="" class="form-control" name="apancardName" ng-model="userInfo.govProofs.pancardName">
+                <input type="text" placeholder="" class="form-control" name="apancardName" ng-model="userInfo.EmployeeProofs.pancardName">
             </div>
         </div>
 
@@ -1338,7 +1361,7 @@
                 <label class="control-label">
                     Bank Pass Book Number
                 </label>
-                <input type="text" placeholder="" class="form-control" name="bankPassBookId" ng-model="userInfo.govProofs.bankPassBookNumber">
+                <input type="text" placeholder="" class="form-control" name="bankPassBookId" ng-model="userInfo.EmployeeProofs.bankPassBookNumber">
             </div>
         </div>
         <div class="col-md-4">
@@ -1346,7 +1369,7 @@
                 <label class="control-label">
                     KYC Name
                 </label>
-                <input type="text" placeholder="" class="form-control" name="bankPassBookName" ng-model="userInfo.govProofs.bankPassBookName">
+                <input type="text" placeholder="" class="form-control" name="bankPassBookName" ng-model="userInfo.EmployeeProofs.bankPassBookName">
             </div>
         </div>
 
@@ -1359,7 +1382,7 @@
                 <label class="control-label">
                     Electricity Bill Number
                 </label>
-                <input type="text" placeholder="" class="form-control" name="electricityBill2" ng-model="userInfo.govProofs.electricityBillNumber">
+                <input type="text" placeholder="" class="form-control" name="electricityBill2" ng-model="userInfo.EmployeeProofs.electricityBillNumber">
             </div>
         </div>
         <div class="col-md-4">
@@ -1367,7 +1390,7 @@
                 <label class="control-label">
                     KYC Name
                 </label>
-                <input type="text" placeholder="" class="form-control" name="electricityBillName" ng-model="userInfo.govProofs.electricityBillName">
+                <input type="text" placeholder="" class="form-control" name="electricityBillName" ng-model="userInfo.EmployeeProofs.electricityBillName">
             </div>
         </div>
 
@@ -1380,7 +1403,7 @@
                 <label class="control-label">
                     ESIC Card Number
                 </label>
-                <input type="text" placeholder="" class="form-control" name="addressLine2" ng-model="userInfo.govProofs.esicCardNumber">
+                <input type="text" placeholder="" class="form-control" name="addressLine2" ng-model="userInfo.EmployeeProofs.esicCardNumber">
             </div>
         </div>
         <div class="col-md-4">
@@ -1388,7 +1411,7 @@
                 <label class="control-label">
                     KYC Name
                 </label>
-                <input type="text" placeholder="" class="form-control" name="aadharCardName" ng-model="userInfo.govProofs.esicCardName">
+                <input type="text" placeholder="" class="form-control" name="aadharCardName" ng-model="userInfo.EmployeeProofs.esicCardName">
             </div>
         </div>
 
@@ -1468,7 +1491,7 @@
                 <label class="control-label">
                     Other Card Number
                 </label>
-                <input type="text" placeholder="" class="form-control" name="otherCardsid" ng-model="userInfo.govProofs.otherCardsNumber">
+                <input type="text" placeholder="" class="form-control" name="otherCardsid" ng-model="userInfo.EmployeeProofs.otherCardsNumber">
             </div>
         </div>
         <div class="col-md-4">
@@ -1476,7 +1499,7 @@
                 <label class="control-label">
                     KYC Name
                 </label>
-                <input type="text" placeholder="" class="form-control" name="otherCardsName" ng-model="userInfo.govProofs.otherCardsName">
+                <input type="text" placeholder="" class="form-control" name="otherCardsName" ng-model="userInfo.EmployeeProofs.otherCardsName">
             </div>
         </div>
 
