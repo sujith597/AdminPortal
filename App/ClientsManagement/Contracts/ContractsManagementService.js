@@ -2,7 +2,7 @@
     this.getAllContracts = function () {
         var defer = $q.defer();
 
-        $http.get('http://fmsapi.sujithkumar.in\api\Contract\GetAll')
+        $http.get('http://fmsapi.sujithkumar.in/api/Contract/GetAll')
             .then(function (data) {
                 defer.resolve(data.data);
             });
@@ -11,7 +11,7 @@
     };
     this.addContract = function (contractInfo) {
         var defer = $q.defer();
-        $http.post('http://fmsapi.sujithkumar.in\api\Contract\Create', clientInfo)
+        $http.post('http://fmsapi.sujithkumar.in/api/Contract/Create', contractInfo)
             .then(function (data) {
                 defer.resolve(data.data);
             });
@@ -22,7 +22,7 @@
     this.getUsersForDesignation = function (designation) {
         var defer = $q.defer();
 
-        $http.get('App/ClientsManagement/Users.txt')
+        $http.get('http://fmsapi.sujithkumar.in/api/Employee/GetEmployeeByDesignation?designation=' + designation)
             .then(function (data) {
                 defer.resolve(data.data);
             });
@@ -33,7 +33,7 @@
     this.getContractInformation = function (contractId) {
         var defer = $q.defer();
 
-        $http.get('http://fmsapi.sujithkumar.in\api\Contract\GetBy?contractId=' + contractId)
+        $http.get('http://fmsapi.sujithkumar.in/api/Contract/GetBy?contractId=' + contractId)
             .then(function (data) {
                 defer.resolve(data.data);
             });
@@ -44,7 +44,7 @@
 
     this.updateContractInfo = function (contractInfo) {
         var defer = $q.defer();
-        $http.update('http://fmsapi.sujithkumar.in\api\Contract\Update', contractInfo)
+        $http.update('http://fmsapi.sujithkumar.in/api/Contract/Update', contractInfo)
             .then(function (data) {
                 defer.resolve(data.data);
             });
@@ -52,10 +52,10 @@
         return defer.promise;
     };
 
-    this.deleteContract = function (contractId) {
+    this.deletecontract = function (contractId) {
 
         var defer = $q.defer();
-        $http.delete('http://fmsapi.sujithkumar.in\api\Contract\Delete?contractId=', contractId)
+        $http.get('http://fmsapi.sujithkumar.in/api/Contract/Delete?contractId='+contractId)
             .then(function (data) {
                 defer.resolve(data.data);
             });

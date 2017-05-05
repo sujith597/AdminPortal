@@ -608,7 +608,7 @@
                                                                     </label>
                                                                     <select class="select2_single form-control" tabindex="1" ng-model="resourceInfo.Designation" ng-change="getUsersForDesignation()">
                                                                         <option selected="selected" value="--Select--">--Select--</option>
-                                                                        <option value="3">ACCONTS EXECUTIVE</option>
+                                                                        <option value="ACCONTS EXECUTIVE">ACCONTS EXECUTIVE</option>
                                                                         <option value="4">ACCOUNTANT</option>
                                                                         <option value="183">ACCOUNTANT RS.16587/-(DEEPTHI)</option>
                                                                         <option value="2">ACCOUNTS ASSISTANT</option>
@@ -1151,7 +1151,7 @@
                                                         <div ng-show="usersList.length>0">
                                                             <div class="clearfix"></div>
                                                             <hr />
-                                                            <select ng-options="user as user.name for user in usersList"
+                                                            <select ng-options="user as user.EmployeeName for user in usersList"
                                                                     multiple
                                                                     ng-model=" resourceInfo.users"
                                                                     bs-duallistbox></select>

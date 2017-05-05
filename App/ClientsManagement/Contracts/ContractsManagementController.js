@@ -36,9 +36,11 @@
                 contractsList = data;
                 $scope.contractsGrid.data = data;
                 $scope.contractsGrid.columnDefs = [
-                    { name: 'name', field: 'name' },
-                    { name: 'gender', field: 'gender' },
-                    { name: 'company', field: 'company' },
+                    { name: 'Name', field: 'Name' },
+                    { name: 'ClientId', field: 'ClientId' },
+                    { name: 'ContractId', field: 'ContractId' },
+                    { name: 'ContractStartDate', field: 'ContractStartDate' },
+                    { name: 'ContractEndDate', field: 'ContractEndDate' },
                     {
                         name: 'Actions',
                         cellTemplate:
@@ -65,7 +67,7 @@
             $scope.selectedContract = contract;
         };
         $scope.deletecontract = function () {
-            ContractManagementService.deletecontract($scope.selectedContract.name).then(function () {
+            ContractManagementService.deletecontract($scope.selectedContract.ContractId).then(function () {
                 ngNotify.set('contract deleted successfully',
                         {
                             theme: 'pure',
