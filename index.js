@@ -81,13 +81,13 @@ securityApp.config(function ($stateProvider, $urlRouterProvider) {
         .state('EditContract',
         {
             url: '/EditContract/:ContractId',
-            templateUrl: 'App/ClientsManagement/Contract/AddContract.html',
+            templateUrl: 'App/ClientsManagement/Contracts/AddContract.html',
             controller: 'AddContractController'
         })
         .state('ViewContract',
         {
             url: '/ViewContract/:ContractId',
-            templateUrl: 'App/ClientsManagement/ViewContract.html',
+            templateUrl: 'App/ClientsManagement/Contracts/ViewContract.html',
             controller: 'ViewContractController'
         });
 });

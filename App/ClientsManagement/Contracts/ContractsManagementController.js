@@ -45,8 +45,8 @@
                         name: 'Actions',
                         cellTemplate:
                                 '<center><div class="ui-grid-cell"><div class="ui-grid-cell-contents" style="text-align:center">' +
-                                    '<button href="#" class="btn btn-primary btn-xs" ng-click="grid.appScope.viewcontract(row.entity)"><i class="fa fa-folder"></i> View </button>' +
-                                ' <button href="#" class="btn btn-info btn-xs" ng-click="grid.appScope.editcontract(row.entity)"><i class="fa fa-pencil"></i> Edit </button>' +
+                                    '<button href="#" class="btn btn-primary btn-xs" ng-click="grid.appScope.viewContract(row.entity)"><i class="fa fa-folder"></i> View </button>' +
+                                ' <button href="#" class="btn btn-info btn-xs" ng-click="grid.appScope.editContract(row.entity)"><i class="fa fa-pencil"></i> Edit </button>' +
                                 '<button href="#" class="btn btn-danger btn-xs" data-title="Delete" ng-click ="grid.appScope.delete(row.entity)"  data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i> Delete </button>' +
                                     '</div></div></center>'
                     }
@@ -56,11 +56,11 @@
 
         loadContracts();
 
-        $scope.editcontract = function (contract) {
-            $location.path('/Editcontract/' + contract.name);
+        $scope.editContract = function (contract) {
+            $location.path('/EditContract/' + contract.Id);
         };
-        $scope.viewcontract = function (contract) {
-            $location.path('/Viewcontract/' + contract.name);
+        $scope.viewContract = function (contract) {
+            $location.path('/ViewContract/' + contract.Id);
         };
         $scope.delete = function (contract) {
 

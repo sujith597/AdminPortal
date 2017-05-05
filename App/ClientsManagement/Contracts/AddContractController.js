@@ -6,6 +6,7 @@
     $scope.contractInfo = {};
     $scope.resourceInfo.users = [{ "id": 1, "name": "One" }];
     $scope.contractInfo.ContractHumanResourceNeeds = [];
+
     if ($state.current.name == "EditContract" && $stateParams.ContractId) {
         $scope.contractId = $stateParams.ContractId;
         $scope.editMode = true;
