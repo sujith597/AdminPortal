@@ -1,4 +1,6 @@
-﻿var securityApp = angular.module('SecurityApp', ['ngAnimate', 'ngLoadScript', 'ui.bootstrap', 'ui.router', 'ui.grid', 'ui.grid.selection', 'ui.grid.exporter', 'ui.grid.pagination', 'ngNotify', 'flow.provider', 'ngStorage']);
+﻿var securityApp = angular.module('SecurityApp', ['ngAnimate', 'ngLoadScript', 'ui.bootstrap', 'ui.router',
+                                                'ui.grid', 'ui.grid.selection', 'ui.grid.exporter', 'ui.grid.pagination',
+                                                'ngNotify', 'flow.provider', 'ngStorage', 'frapontillo.bootstrap-duallistbox']);
 
 securityApp.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/Login');
@@ -64,9 +66,28 @@ securityApp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'App/ClientsManagement/ViewClient.html',
             controller: 'ViewClientController'
         })
-        .state('AddUserToClient',
+        .state('ContractsManagement',
         {
-            url: '/AddUserToClient',
-            templateUrl: 'App/ClientsManagement/AddUserToClient.html'
+            url: '/ContractsManagement',
+            templateUrl: 'App/ClientsManagement/Contracts/ContractsManagement.html',
+            controller: 'ContractsManagementController'
+        })
+        .state('AddContract',
+        {
+            url: '/AddContract',
+            templateUrl: 'App/ClientsManagement/Contracts/AddContract.html',
+            controller: 'AddContractController'
+        })
+        .state('EditContract',
+        {
+            url: '/EditContract/:ContractId',
+            templateUrl: 'App/ClientsManagement/Contract/AddContract.html',
+            controller: 'AddContractController'
+        })
+        .state('ViewContract',
+        {
+            url: '/ViewContract/:ContractId',
+            templateUrl: 'App/ClientsManagement/ViewContract.html',
+            controller: 'ViewContractController'
         });
 });

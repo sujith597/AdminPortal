@@ -1,0 +1,1277 @@
+﻿<div class="darkBackGround">
+    <div ng-include="'App/Partials/Header.html'"></div>
+
+    <div class="right_col" role="main">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>Add Contract</h3>
+            </div>
+            <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 pull-right">
+                    <button type="button" class="btn btn-round btn-success" ng-click="addContract()">Save Contract Information</button>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <uib-tabset class="tabbable">
+
+                        <!-- start: TAB Personal Information -->
+                        <uib-tab heading="Contract Information" active="editActive">
+                            <fieldset>
+                                <legend>
+                                    Contract Information
+                                </legend>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Client Name
+                                            </label>
+                                            <select class="select2_single form-control" tabindex="-1" ng-model="contractInfo.ContractInformation.ClientName">
+                                                <option></option>
+                                                <option value="clientName1">Client Name 1</option>
+                                                <option value="clientName2">Client Name 2</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Contract Id's
+                                            </label>
+                                            <select class="select2_single form-control" tabindex="-1" ng-model="contractInfo.ContractInformation.ContractIds">
+                                                <option></option>
+                                                <option value="contractId1">Contract Id 1</option>
+                                                <option value="contractId1">Contract Id 2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Client Id
+                                            </label>
+                                            <select class="select2_single form-control" tabindex="-1" ng-model="contractInfo.ContractInformation.ClientId">
+                                                <option></option>
+                                                <option value="clientId1">Client Id 1</option>
+                                                <option value="clientId2">Client Id 2</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Client Name ID
+                                            </label>
+                                            <select class="select2_single form-control" tabindex="-1" ng-model="contractInfo.ContractInformation.ClientIdName">
+                                                <option></option>
+                                                <option value="contractNameId1">Contract Name Id 1</option>
+                                                <option value="contractNameId1">Contract Name Id 2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Start Date
+                                            </label>
+                                            <input type="text" ng-model="contractInfo.ContractInformation.StartDate" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopenedDate" ng-init="inputopenedDate = false" ng-click="inputopenedDate = !inputopenedDate" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Ending Date
+                                            </label>
+                                            <input type="text" ng-model="contractInfo.ContractInformation.EndDate" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopenedEDate" ng-init="inputopenedEDate = false" ng-click="inputopenedEDate = !inputopenedEDate" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                BG Amount
+                                            </label>
+                                            <input type="text" placeholder="Enter BG Amount" class="form-control" name="url" ng-model="contractInfo.ContractInformation.BGAmount">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Type Of Work
+                                            </label>
+                                            <input type="text" placeholder="Enter type of work" class="form-control" name="url" ng-model="contractInfo.ContractInformation.TypeOfWork">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Validity Date
+                                            </label>
+                                            <input type="text" ng-model="contractInfo.ContractInformation.ValidityDate" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopenedVDate" ng-init="inputopenedVDate = false" ng-click="inputopenedVDate = !inputopenedVDate" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Billing Dates
+                                            </label>
+                                            <select class="select2_single form-control" tabindex="-1" ng-model="contractInfo.ContractInformation.BillingDates">
+                                                <option></option>
+                                                <option value="firstToFirst">First to First</option>
+                                                <option value="startToOneMonth">Start to One Month</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="block">
+                                                Payment
+                                            </label>
+                                            <div class="clip-radio radio-primary">
+                                                <input type="radio" id="Lumpsum" name="payment" value="Lumpsum" ng-model="contractInfo.ContractInformation.Payment">
+                                                <label for="generalEnrollment">
+                                                    Lumpsum
+                                                </label>
+                                                <input type="radio" id="ManPower" name="payment" value="manPower" ng-model="contractInfo.ContractInformation.Payment">
+                                                <label for="staff">
+                                                    Man Power
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                PaySheet Dates
+                                            </label>
+                                            <select class="select2_single form-control" tabindex="-1" ng-model="contractInfo.ContractInformation.PaySheetDates">
+                                                <option></option>
+                                                <option value="firstToFirst">First to First</option>
+                                                <option value="startToOneMonth">Start to One Month</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="block">
+                                                Wages
+                                            </label>
+                                            <div class="clip-radio radio-primary">
+                                                <input type="radio" id="Lumpsum" name="paysheet" value="client" ng-model="contractInfo.ContractInformation.Wages">
+                                                <label for="generalEnrollment">
+                                                    Client
+                                                </label>
+                                                <input type="radio" id="ManPower" name="paysheet" value="special" ng-model="contractInfo.ContractInformation.Wages">
+                                                <label for="staff">
+                                                    Special
+                                                </label>
+                                                <input type="radio" id="Lumpsum" name="paysheet" value="individual" ng-model="contractInfo.ContractInformation.Wages">
+                                                <label for="generalEnrollment">
+                                                    Individual
+                                                </label>
+                                                <input type="radio" id="ManPower" name="paysheet" value="profTax" ng-model="contractInfo.ContractInformation.Wages">
+                                                <label for="staff">
+                                                    Prof Tax
+                                                </label>
+                                                <input type="radio" id="ManPower" name="paysheet" value="spPT" ng-model="contractInfo.ContractInformation.Wages">
+                                                <label for="staff">
+                                                    SP PT
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Contract Id
+                                            </label>
+                                            <input type="text" placeholder="Enter Contract Id" class="form-control" name="url" ng-model="contractInfo.ContractInformation.ContractId">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </uib-tab>
+                        <!-- end: TAB Personal Information -->
+                        <!-- start: TAB Address and Physical Details -->
+                        <uib-tab heading="Billing and Paysheet">
+                            <fieldset>
+                                <legend>
+                                    Billing Information
+                                </legend>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Material Cost for month
+                                            </label>
+                                            <input type="text" placeholder="Enter material cost for month" class="form-control" name="height" ng-model="contractInfo.ContractBilling.MaterialCostForMonth">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Mechinery Cost for month
+                                            </label>
+                                            <input type="text" placeholder="Enter Mechinery cost for month" class="form-control" name="height" ng-model="contractInfo.ContractBilling.MachineryCostForMonth">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="block">
+                                                Service Charge
+                                            </label>
+                                            <div class="clip-radio radio-primary">
+                                                <input type="radio" id="yes" name="serviceCharge" value="yes" ng-model="contractInfo.ContractBilling.ServiceCharge">
+                                                <label for="yes">
+                                                    Yes
+                                                </label>
+                                                <input type="radio" id="no" name="serviceCharge" value="no" ng-model="contractInfo.ContractBilling.ServiceCharge">
+                                                <label for="no">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Contract Description
+                                            </label>
+                                            <textarea placeholder="Enter contract description" class="form-control" cols="3" ng-model="contractInfo.ContractBilling.ContractDescription" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="block">
+                                                Service Tax
+                                            </label>
+                                            <div class="clip-radio radio-primary">
+                                                <input type="radio" id="with" name="serviceTax" value="with" ng-model="contractInfo.ContractBilling.ServiceTax">
+                                                <label for="with">
+                                                    With
+                                                </label>
+                                                <input type="radio" id="without" name="serviceTax" value="without" ng-model="contractInfo.ContractBilling.ServiceTax">
+                                                <label for="without">
+                                                    without
+                                                </label>
+                                                <input type="radio" id="stException" name="serviceTax" value="stException" ng-model="contractInfo.ContractBilling.ServiceTax">
+                                                <label for="stException">
+                                                    ST Exception
+                                                </label>
+                                                <input type="Checkbox" id="75perc" name="stByClient" value="true" ng-model="contractInfo.ContractBilling.75PercentOfSTByClient">
+                                                <label for="75perc">
+                                                    75% of ST By Client
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Invoice Description
+                                            </label>
+                                            <textarea placeholder="Enter invoice description" class="form-control" cols="3" ng-model="contractInfo.ContractBilling.InvoiceDescription" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>
+                                    PaySheet Information
+                                </legend>
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+
+                                            <div class="col-md-3">
+                                                <label class="control-label">
+                                                    PF
+                                                </label>
+                                                <input type="text" placeholder="100%" class="form-control" name="pfPerc" ng-model="contractInfo.ContractPaySheet.PFPercentage">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label class="control-label">
+                                                    Type
+                                                </label>
+                                                <select class="select2_single form-control" tabindex="-1" name="DdlPf" id="DdlPf" ng-model="contractInfo.ContractPaySheet.PFPercentageOf">
+                                                    <option selected="selected" value="Basic">Basic</option>
+                                                    <option value="Basic+DA">Basic+DA</option>
+                                                    <option value="Basic+DA+HRA+WA">Basic+DA+HRA+WA</option>
+                                                    <option value="Gross">Gross</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label class="control-label">
+                                                    PF On
+                                                </label>
+                                                <select class="select2_single form-control" tabindex="-1" name="pfOn" id="pfOn" ng-model="contractInfo.ContractPaySheet.PFPercentageOn">
+                                                    <option selected="selected" value="none">None</option>
+                                                    <option value="Ot">OT's</option>
+                                                    <option value="Op">Op's</option>
+                                                    <option value="NPOT">NPOT</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input type="checkbox" ng-model="contractInfo.ContractPaySheet.PFLimit" name="PFLimit" />
+                                                <label for="PFLimit">
+                                                    PF Limit
+                                                </label>
+                                                <div class="form-group" ng-show="contractInfo.ContractPaySheet.PFLimit">
+                                                    <label class="control-label">
+                                                        PF Limit Amount
+                                                    </label>
+                                                    <input type="text" placeholder="PF Limit Amount" class="form-control" name="pfLimitAmpount" ng-model="contractInfo.ContractPaySheet.PFLimitValue">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr />
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="col-md-3">
+                                                <label class="control-label">
+                                                    ESI
+                                                </label>
+                                                <input type="text" placeholder="100%" class="form-control" name="esiPerc" ng-model="contractInfo.ContractPaySheet.ESIPercentage">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label class="control-label">
+                                                    Type
+                                                </label>
+
+                                                <select class="select2_single form-control" tabindex="-1" name="esci" id="esci" ng-model="contractInfo.ContractPaySheet.ESIPercentageOf">
+                                                    <option selected="selected" value="Basic">Basic</option>
+                                                    <option value="Basic+DA">Basic+DA</option>
+                                                    <option value="Basic+DA+HRA+WA">Basic+DA+HRA+WA</option>
+                                                    <option value="Gross">Gross</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label class="control-label">
+                                                    ESI On
+                                                </label>
+                                                <select class="select2_single form-control" tabindex="-1" name="esiOn" id="esiOn" ng-model="contractInfo.ContractPaySheet.ESIPercentageOn">
+                                                    <option selected="selected" value="none">None</option>
+                                                    <option value="Ot">OT's</option>
+                                                    <option value="Op">Op's</option>
+                                                    <option value="NPOT">NPOT</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input type="checkbox" ng-model="contractInfo.ContractPaySheet.ESILimit" name="ESILimit" />
+                                                <label for="ESILimit">
+                                                    ESI Limit
+                                                </label>
+                                                <div class="form-group" ng-show="contractInfo.ContractPaySheet.ESILimit">
+                                                    <label class="control-label">
+                                                        ESI Limit Amount
+                                                    </label>
+                                                    <input type="text" placeholder="ESI Limit Amount" class="form-control" name="esiLimitAmpount" ng-model="contractInfo.ContractPaySheet.ESILimitValue">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr />
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <label class="control-label">
+                                                    OT Percentage
+                                                </label>
+                                                <select class="select2_single form-control" name="otPer" id="otPer" ng-model="contractInfo.ContractPaySheet.OTPercentage">
+                                                    <option selected="selected" value="100%">100%</option>
+                                                    <option value="200%">200%</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="block">
+                                                    OT Amount
+                                                </label>
+                                                <div class="clip-radio radio-primary">
+                                                    <input type="radio" id="regular" name="otAmpunt" value="regular" ng-model="contractInfo.ContractPaySheet.OTAmount">
+                                                    <label for="regular">
+                                                        Regular
+                                                    </label>
+                                                    <input type="radio" id="special" name="otAmpunt" value="special" ng-model="contractInfo.ContractPaySheet.OTAmount">
+                                                    <label for="special">
+                                                        Special
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr />
+                                    <div class="col-md-12">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    OFW Value
+                                                </label>
+                                                <input type="text" placeholder="Enter OWF Value" class="form-control" name="owfvalue" ng-model="contractInfo.ContractPaySheet.OWF">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    TDs Value
+                                                </label>
+                                                <input type="text" placeholder="Enter TDs Value" class="form-control" name="TDvalue" ng-model="contractInfo.ContractPaySheet.Tds">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    TDs On
+                                                </label>
+                                                <select class="select2_single form-control" tabindex="-1" name="ddlTDSon" id="ddlTDSon" ng-model="contractInfo.ContractPaySheet.TDSOn">
+                                                    <option selected="selected" value="0">Gross</option>
+                                                    <option value="1">Net Amount</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    PO No
+                                                </label>
+                                                <input type="text" placeholder="Enter PO No" class="form-control" name="PONovalue" ng-model="contractInfo.ContractPaySheet.PONO">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Expected Date of Receipt
+                                                </label>
+                                                <input type="text" ng-model="contractInfo.ContractPaySheet.ExpectedDateOfReceipt" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopenedEDOR" ng-init="inputopenedEDOR = false" ng-click="inputopenedEDOR = !inputopenedEDOR" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    ESI Branch
+                                                </label>
+                                                <select class="select2_single form-control" tabindex="-1" name="ddlEsibranch" id="ddlEsibranch" ng-model="contractInfo.ContractPaySheet.ESIBranch">
+                                                    <option selected="selected" value="-Select-">-Select-</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="clip-radio radio-primary">
+                                                    <input type="Checkbox" id="OJT" name="OJT" value="true" ng-model="contractInfo.ContractPaySheet.OJT">
+                                                    <label for="OJT">
+                                                        OJT
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="clip-radio radio-primary">
+                                                    <input type="Checkbox" id="1n6ReliverCharges" name="1n6ReliverCharges" value="true" ng-model="contractInfo.ContractBilling.OneSixthReliverCharges">
+                                                    <label for="1n6ReliverCharges">
+                                                        1/6 Reliver Charges
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="clip-radio radio-primary">
+                                                    <input type="Checkbox" id="PDFs" name="PDFs" value="true" ng-model="contractInfo.ContractBilling.PDFS">
+                                                    <label for="PDFs">
+                                                        PDFs
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="clip-radio radio-primary">
+                                                    <input type="Checkbox" id="PL" name="PL" ng-model="contractInfo.ContractPaySheet.PL">
+                                                    <label for="PL">
+                                                        PL
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4" ng-if="contractInfo.ContractPaySheet.PL">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    PL Value
+                                                </label>
+                                                <input type="text" placeholder="Enter PL Value" class="form-control" name="plvalue" ng-model="contractInfo.ContractPaySheet.PLValue">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>
+                                    Invoice Heading Text
+                                </legend>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="clip-radio radio-primary">
+                                                    <input type="Checkbox" id="Description" name="Description" ng-model="contractInfo.ContractInvoiceHeadingText.DescriptionVisible">
+                                                    <label for="Description">
+                                                        Description
+                                                    </label>
+                                                    <input type="text" ng-if="contractInfo.ContractInvoiceHeadingText.DescriptionVisible" placeholder="Enter Description" class="form-control" name="plvalue" ng-model="contractInfo.InvoiceHeadingText.DescriptionValue">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="clip-radio radio-primary">
+                                                    <input type="Checkbox" id="NoOfEmpsVisible" name="NoOfEmpsVisible" ng-model="contractInfo.ContractInvoiceHeadingText.NoOfEmpsVisible">
+                                                    <label for="NoOfEmpsVisible">
+                                                        No Of Employees
+                                                    </label>
+                                                    <input type="text" ng-if="contractInfo.ContractInvoiceHeadingText.NoOfEmpsVisible" placeholder="Enter No Of Employees" class="form-control" name="plvalue" ng-model="contractInfo.InvoiceHeadingText.NoOfEmpsValue">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="clip-radio radio-primary">
+                                                <input type="Checkbox" id="NoOfDutiesVisible" name="NoOfDutiesVisible" ng-model="contractInfo.ContractInvoiceHeadingText.NoOfDutiesVisible">
+                                                <label for="NoOfDutiesVisible">
+                                                    No Of Duties
+                                                </label>
+                                                <input type="text" ng-if="contractInfo.ContractInvoiceHeadingText.NoOfDutiesVisible" placeholder="Enter  No Of Duties" class="form-control" name="plvalue" ng-model="contractInfo.InvoiceHeadingText.NoOfDutiesValue">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="clip-radio radio-primary">
+                                                <input type="Checkbox" id="PayrateVisible" name="PayrateVisible" ng-model="contractInfo.ContractInvoiceHeadingText.PayrateVisible">
+                                                <label for="PayrateVisible">
+                                                    Pay Rates
+                                                </label>
+                                                <input type="text" ng-if="contractInfo.ContractInvoiceHeadingText.PayrateVisible" placeholder="Enter Payrates" class="form-control" name="plvalue" ng-model="contractInfo.InvoiceHeadingText.PayrateValue">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="clip-radio radio-primary">
+                                                <input type="Checkbox" id="AmountVisible" name="AmountVisible" ng-model="contractInfo.ContractInvoiceHeadingText.AmountVisible">
+                                                <label for="AmountVisible">
+                                                    Amount
+                                                </label>
+                                                <input type="text" ng-if="contractInfo.ContractInvoiceHeadingText.AmountVisible" placeholder="Enter Amount" class="form-control" name="plvalue" ng-model="contractInfo.InvoiceHeadingText.AmountValue">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+
+
+                        </uib-tab>
+                        <!-- end: TAB -->
+                        <!-- start: TAB Address and Physical Details -->
+                        <uib-tab heading="Human Resource Needs & Mapping">
+                            <fieldset>
+                                <legend>
+                                    Human Resource and Mapping
+                                </legend>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-lg-offset-9">
+                                            <button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target=".bs-example-modal-lgFM">Add Resources</button>
+                                        </div><br />
+                                        <div class="modal fade bs-example-modal-lgFM" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">
+                                                            <span aria-hidden="true">×</span>
+                                                        </button>
+                                                        <h4cl class="modal-title" id="myModalLabel3">Add Resource</h4cl>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-2">
+                                                                <div class="form-group">
+                                                                    <label class="control-label">
+                                                                        Designation
+                                                                    </label>
+                                                                    <select class="select2_single form-control" tabindex="1" ng-model="resourceInfo.Designation" ng-change="getUsersForDesignation()">
+                                                                        <option selected="selected" value="--Select--">--Select--</option>
+                                                                        <option value="3">ACCONTS EXECUTIVE</option>
+                                                                        <option value="4">ACCOUNTANT</option>
+                                                                        <option value="183">ACCOUNTANT RS.16587/-(DEEPTHI)</option>
+                                                                        <option value="2">ACCOUNTS ASSISTANT</option>
+                                                                        <option value="5">ACCOUNTS EXECUTIVE</option>
+                                                                        <option value="6">ACCOUNTS MANAGER</option>
+                                                                        <option value="7">ADMIN</option>
+                                                                        <option value="8">ADMIN ASST</option>
+                                                                        <option value="9">AIRBOY</option>
+                                                                        <option value="199">AMBULANCE DRIVER</option>
+                                                                        <option value="10">ANIMAL CARE TAKER</option>
+                                                                        <option value="11">ANIMAL FACILITY ASST</option>
+                                                                        <option value="160">ARREAR SEMI SKILLED</option>
+                                                                        <option value="158">ARREAR SKILLED</option>
+                                                                        <option value="159">ARREAR UN SKILLED</option>
+                                                                        <option value="12">ASS - COOK</option>
+                                                                        <option value="261">ASST COOK</option>
+                                                                        <option value="147">ASST GEOTECH</option>
+                                                                        <option value="13">ASST/COOK</option>
+                                                                        <option value="14">ATTENDANT</option>
+                                                                        <option value="15">ATTENDER</option>
+                                                                        <option value="16">ATTN</option>
+                                                                        <option value="17">B/S UN SKILLED</option>
+                                                                        <option value="237">BATH TOWEL</option>
+                                                                        <option value="273">BIG TOWEL</option>
+                                                                        <option value="234">CALL VISIT ELECTRICIAN</option>
+                                                                        <option value="18">CARE TAKER</option>
+                                                                        <option value="19">CARP</option>
+                                                                        <option value="20">CARPENTOR</option>
+                                                                        <option value="21">CASHIER</option>
+                                                                        <option value="207">CHANPATNA (601) 8HRS</option>
+                                                                        <option value="265">CHAPATHI MAKER</option>
+                                                                        <option value="208">CHIKBALLAPURA(606) 8HRS</option>
+                                                                        <option value="200">CIVIL STATION (612) 4HRS</option>
+                                                                        <option value="201">CIVIL STATION EAST (9603) 4HRS</option>
+                                                                        <option value="22">CLRK</option>
+                                                                        <option value="213">CML BUILDING( COMMON AREA MAINTENANCE) 8HRS</option>
+                                                                        <option value="190">CONSUMABLE TOOLS</option>
+                                                                        <option value="23">COOK</option>
+                                                                        <option value="210">CUSTOMER ZONE - 4HRS</option>
+                                                                        <option value="195">DATA ENTRY OPERATOR</option>
+                                                                        <option value="275">DIESEL TRANSPORT</option>
+                                                                        <option value="212">DIVISIONAL OFFICE 8HRS INDIRANAGAR</option>
+                                                                        <option value="209">DODDBALLAPURA(61E) 8HRS</option>
+                                                                        <option value="235">DOUBLE BED SHEET</option>
+                                                                        <option value="278">DOUBLE BLANKET</option>
+                                                                        <option value="24">DRIVER</option>
+                                                                        <option value="177">DRIVER RS.19561/-</option>
+                                                                        <option value="25">ELE</option>
+                                                                        <option value="26">ELECTRICIAN</option>
+                                                                        <option value="27">EL-SUP</option>
+                                                                        <option value="161">EXECUTIVE</option>
+                                                                        <option value="136">EXECUTIVE HR</option>
+                                                                        <option value="175">EXECUTIVE HR ADMIN</option>
+                                                                        <option value="145">EXECUTIVE LAB</option>
+                                                                        <option value="146">EXECUTIVE LAB 2</option>
+                                                                        <option value="138">EXECUTIVE QA</option>
+                                                                        <option value="139">EXECUTIVE QA 1</option>
+                                                                        <option value="178">EXECUTIVE QA RS.16659/-(VALLI)</option>
+                                                                        <option value="179">EXECUTIVE QA RS.19006/-(RANJITHA)</option>
+                                                                        <option value="28">FACILITY MANAGER</option>
+                                                                        <option value="29">FECILITY MANAGER</option>
+                                                                        <option value="168">FIELD ASSISTANT</option>
+                                                                        <option value="30">FIELD EXECUTIVE</option>
+                                                                        <option value="31">FINANCE MANAGER</option>
+                                                                        <option value="32">FISH FACILITY ASST</option>
+                                                                        <option value="33">FORKLIFT DRIVER</option>
+                                                                        <option value="197">FORKLIFT DRIVER-2</option>
+                                                                        <option value="202">FRAZER TOWN(61M) 4HRS</option>
+                                                                        <option value="288">GARBAGE DISPOSAL</option>
+                                                                        <option value="34">GARDENER</option>
+                                                                        <option value="35">GCO/ROOM BEARER</option>
+                                                                        <option value="36">GENERAL ASST</option>
+                                                                        <option value="153">GRADE 1</option>
+                                                                        <option value="154">GRADE 2</option>
+                                                                        <option value="155">GRADE 3</option>
+                                                                        <option value="37">GROUP D</option>
+                                                                        <option value="38">H.KEEPING</option>
+                                                                        <option value="39">H/K</option>
+                                                                        <option value="40">H/K BOY</option>
+                                                                        <option value="149">H/K JANITER JUNIOR</option>
+                                                                        <option value="150">H/K JANITER OT</option>
+                                                                        <option value="148">H/K JANITER SENIOR</option>
+                                                                        <option value="41">H/K JANITORS</option>
+                                                                        <option value="157">H/K JUNIOR</option>
+                                                                        <option value="42">H/K JUNIORS</option>
+                                                                        <option value="43">H/K LADY</option>
+                                                                        <option value="156">H/K SENIOR</option>
+                                                                        <option value="44">H/K/BOY</option>
+                                                                        <option value="45">H/K/L</option>
+                                                                        <option value="238">HAND TOWEL</option>
+                                                                        <option value="260">HEAD COOK</option>
+                                                                        <option value="46">HELPER</option>
+                                                                        <option value="119">HELPER 1</option>
+                                                                        <option value="120">HELPER 2</option>
+                                                                        <option value="121">HELPER 3</option>
+                                                                        <option value="47">HIGH SKILLED</option>
+                                                                        <option value="48">HIGHLY SKILLED</option>
+                                                                        <option value="49">HK</option>
+                                                                        <option value="50">HK/BOY</option>
+                                                                        <option value="51">HK-ASST</option>
+                                                                        <option value="52">HOUSE KEEPING</option>
+                                                                        <option value="174">HOUSE KEEPING RS.10878/-</option>
+                                                                        <option value="169">HOUSE KEEPING RS.11108/-</option>
+                                                                        <option value="170">HOUSE KEEPING RS.12963/-</option>
+                                                                        <option value="53">HOUSEKEEPING</option>
+                                                                        <option value="162">HOUSEKEEPING A</option>
+                                                                        <option value="163">HOUSEKEEPING B</option>
+                                                                        <option value="54">HR EXECUTIVE</option>
+                                                                        <option value="203">JEEVAN BIMANAGAR (61P) 4HRS</option>
+                                                                        <option value="214">JEEVAN MANGALA BUILDING COMMON AREA MAINT</option>
+                                                                        <option value="211">JEEVAN MANGALA BUILDING OFFICE 8HRS</option>
+                                                                        <option value="280">JUNIOR   ASSISTANT</option>
+                                                                        <option value="204">KORAMANAGALA (61L) 4HRS</option>
+                                                                        <option value="55">L/ BOY</option>
+                                                                        <option value="128">LAB ASSISTANT</option>
+                                                                        <option value="129">LAB ASSISTANT 2</option>
+                                                                        <option value="130">LAB ASSISTANT 3</option>
+                                                                        <option value="185">LAB ASSISTANT RS.14115/-(ABIJITH)</option>
+                                                                        <option value="187">LAB ASSISTANT RS.15511/-(RAHUL C)</option>
+                                                                        <option value="184">LAB ASSISTANT RS.16976/-(RANJITH)</option>
+                                                                        <option value="141">LAB ATTENDER</option>
+                                                                        <option value="142">LAB ATTENDER 1</option>
+                                                                        <option value="172">LAB ATTENDER OT RS.12883/-</option>
+                                                                        <option value="173">LAB ATTENDER RS.12249/-</option>
+                                                                        <option value="171">LAB ATTENDER RS.12883/-</option>
+                                                                        <option value="182">LAB ATTENDER RS.15296/-(KIRAN)</option>
+                                                                        <option value="151">LAB BOY JUNIOR</option>
+                                                                        <option value="152">LAB BOY SENIOR</option>
+                                                                        <option value="56">LAB CHEMIST</option>
+                                                                        <option value="57">LAB EXECUTIVE</option>
+                                                                        <option value="131">LAB EXECUTIVE 2</option>
+                                                                        <option value="186">LAB EXECUTIVE RS.18747(AKHIL NJ)</option>
+                                                                        <option value="188">LAB EXECUTIVE RS.22624(SARATH VS)</option>
+                                                                        <option value="58">LAB/BOY</option>
+                                                                        <option value="59">LIFT OPERATOR</option>
+                                                                        <option value="60">LOADERS</option>
+                                                                        <option value="198">LOADERS-2</option>
+                                                                        <option value="205">M G ROAD (61W) 8HRS</option>
+                                                                        <option value="61">MACHINE OPERATOR</option>
+                                                                        <option value="62">MAINTAINENECE</option>
+                                                                        <option value="63">MAINTENANCE</option>
+                                                                        <option value="64">MANAGER</option>
+                                                                        <option value="117">MANAGER</option>
+                                                                        <option value="268">MANAGER-ADMINISTRATION</option>
+                                                                        <option value="65">MARKETING CORDINATOR</option>
+                                                                        <option value="271">MARKETING EXE</option>
+                                                                        <option value="66">MARKETING MANAGER</option>
+                                                                        <option value="294">MASON</option>
+                                                                        <option value="67">MD DRIVER</option>
+                                                                        <option value="68">MESS KEEPER</option>
+                                                                        <option value="277">NAPKINS</option>
+                                                                        <option value="69">O/A</option>
+                                                                        <option value="116">OFF-ASST</option>
+                                                                        <option value="70">OFF-BOY</option>
+                                                                        <option value="71">OFFICE ASSISTANT</option>
+                                                                        <option value="140">OFFICE ASSISTANT 2</option>
+                                                                        <option value="180">OFFICE ASSISTANT RS.13580(MANI CS)</option>
+                                                                        <option value="181">OFFICE ASSISTANT RS.15591/-(NAGASHREE)</option>
+                                                                        <option value="72">OFFICE ASST</option>
+                                                                        <option value="73">OFFICE BOY</option>
+                                                                        <option value="249">OFFICE BOY JUNIOR @ 10651</option>
+                                                                        <option value="281">OFFICE SUBORDINATE</option>
+                                                                        <option value="74">OFFICE/BOY</option>
+                                                                        <option value="75">OPERATION MANAGER</option>
+                                                                        <option value="269">OPERATIONS EXECUTIVE</option>
+                                                                        <option value="76">OPERATOR</option>
+                                                                        <option value="122">OPERATOR 1</option>
+                                                                        <option value="123">OPERATOR 2</option>
+                                                                        <option value="124">OPERATOR 3</option>
+                                                                        <option value="125">OPERATOR 4</option>
+                                                                        <option value="215">ORIENTAL BUILDING (COMMON AREA MIANT) 4HRS</option>
+                                                                        <option value="241">OT ACCOUNTANT RS.16587/-</option>
+                                                                        <option value="243">OT DRIVER RS.19561/-</option>
+                                                                        <option value="191">OT OTHER</option>
+                                                                        <option value="193">OT PANTRY</option>
+                                                                        <option value="126">OT RATE</option>
+                                                                        <option value="194">OT SENIOUR</option>
+                                                                        <option value="192">OT SUPERVISOR</option>
+                                                                        <option value="293">P.E.D. ASSISTANT</option>
+                                                                        <option value="77">P.MED</option>
+                                                                        <option value="78">P/BOY</option>
+                                                                        <option value="79">PANTRY</option>
+                                                                        <option value="80">PANTRY BOY</option>
+                                                                        <option value="81">PANTRY SUPPORT</option>
+                                                                        <option value="189">PETROL CONVINENCE</option>
+                                                                        <option value="291">PHARAMACIST</option>
+                                                                        <option value="82">PICK UP BOY</option>
+                                                                        <option value="239">PILLOW COVER</option>
+                                                                        <option value="83">PLU</option>
+                                                                        <option value="84">PLU.ASST</option>
+                                                                        <option value="85">PLUMBER</option>
+                                                                        <option value="86">PROGRAME EXE</option>
+                                                                        <option value="270">PURCHASE MANAGER</option>
+                                                                        <option value="206">R T NAGARA(6011) 4 HRS</option>
+                                                                        <option value="144">REC</option>
+                                                                        <option value="87">RECEPTIONIST</option>
+                                                                        <option value="88">ROOM BOY</option>
+                                                                        <option value="89">RUNNER BOY</option>
+                                                                        <option value="118">RUNNER BOY 2</option>
+                                                                        <option value="90">SAFAIWALA/HK</option>
+                                                                        <option value="292">SCAVANGER</option>
+                                                                        <option value="284">SCAVENGER</option>
+                                                                        <option value="246">SCRUBING MACHINE RENT</option>
+                                                                        <option value="245">SCRUBING MACHINE SINGAL DISK</option>
+                                                                        <option value="1">SECURITY GUARD</option>
+                                                                        <option value="91">SEMI SKILL</option>
+                                                                        <option value="92">SEMI SKILL- 2</option>
+                                                                        <option value="93">SEMI SKILLED</option>
+                                                                        <option value="252">SEMI SKILLED - FORK LIFT</option>
+                                                                        <option value="196">SEMI SKILLED 1</option>
+                                                                        <option value="242">SEMI SKILLED 3</option>
+                                                                        <option value="165">SEMI SKILLED AKILESH</option>
+                                                                        <option value="167">SEMI SKILLED AKILESH OT</option>
+                                                                        <option value="164">SEMI SKILLED CHETAN</option>
+                                                                        <option value="226">SEMI SKILLED- FOD</option>
+                                                                        <option value="227">SEMI SKILLED- FOD1</option>
+                                                                        <option value="266">SEMI SKILLED FOD-3</option>
+                                                                        <option value="255">SEMI SKILLED HOSPITALITY</option>
+                                                                        <option value="166">SEMI SKILLED MARLINGAPPA</option>
+                                                                        <option value="228">SEMI SKILLED- MO</option>
+                                                                        <option value="127">SEMI SKILLED OT</option>
+                                                                        <option value="224">SEMI SKILLED- PAN</option>
+                                                                        <option value="225">SEMI SKILLED- PAN1</option>
+                                                                        <option value="94">SEMISKILLED</option>
+                                                                        <option value="132">SEMISKILLED OT</option>
+                                                                        <option value="263">SERVICE BOY</option>
+                                                                        <option value="236">SINGLE BED SHEET</option>
+                                                                        <option value="248">SINGLE DISC SCRUBBER</option>
+                                                                        <option value="95">SK</option>
+                                                                        <option value="96">SKILLED</option>
+                                                                        <option value="258">SKILLED - AMB DRI</option>
+                                                                        <option value="256">SKILLED - CARPENTER</option>
+                                                                        <option value="253">SKILLED - GA</option>
+                                                                        <option value="257">SKILLED - MD DRI</option>
+                                                                        <option value="135">SKILLED 1</option>
+                                                                        <option value="267">SKILLED CARP</option>
+                                                                        <option value="223">SKILLED-DR</option>
+                                                                        <option value="222">SKILLED-GA</option>
+                                                                        <option value="221">SKILLED-REC</option>
+                                                                        <option value="220">SKILLED-SUP</option>
+                                                                        <option value="274">SMALL TOWEL</option>
+                                                                        <option value="97">SPHARE</option>
+                                                                        <option value="137">SR EXECUTIVE LAB</option>
+                                                                        <option value="143">SR EXECUTIVE LAB 2</option>
+                                                                        <option value="176">SR EXECUTIVE LAB RS.22444(NITYANANDA)</option>
+                                                                        <option value="98">SR SUPERVISOR</option>
+                                                                        <option value="244">SR.SUPERVISOR</option>
+                                                                        <option value="99">SS</option>
+                                                                        <option value="100">SSK</option>
+                                                                        <option value="289">STAMP PAPER</option>
+                                                                        <option value="101">STORE ASSISTANT</option>
+                                                                        <option value="102">STORES MANAGER</option>
+                                                                        <option value="103">SUP</option>
+                                                                        <option value="104">SUP(H-SKI)</option>
+                                                                        <option value="105">SUP.CUM COOK</option>
+                                                                        <option value="106">SUPERVISOR</option>
+                                                                        <option value="283">SWEEPER</option>
+                                                                        <option value="287">SWEEPER-1</option>
+                                                                        <option value="279">SYSTEM ADMINISTRATOR</option>
+                                                                        <option value="240">TABLE FRILLS</option>
+                                                                        <option value="264">TEA MAKER</option>
+                                                                        <option value="107">TECHNICIAN</option>
+                                                                        <option value="108">TRAINING ASST</option>
+                                                                        <option value="231">TRAINING ASST-A</option>
+                                                                        <option value="109">UN SKILL</option>
+                                                                        <option value="110">UN SKILLED</option>
+                                                                        <option value="259">UN SKILLED - FINISHING</option>
+                                                                        <option value="233">UN SKILLED 4 HRS</option>
+                                                                        <option value="232">UN SKILLED 8 HRS</option>
+                                                                        <option value="229">UN SKILLED- ADR</option>
+                                                                        <option value="272">UN SKILLED HK-2</option>
+                                                                        <option value="254">UN SKILLED MECHANISED HK</option>
+                                                                        <option value="133">UN SKILLED OT</option>
+                                                                        <option value="250">UN SKILLED-1</option>
+                                                                        <option value="251">UN SKILLED-2</option>
+                                                                        <option value="230">UN SKILLED-MO</option>
+                                                                        <option value="111">UNSKILLED</option>
+                                                                        <option value="134">UNSKILLED OT</option>
+                                                                        <option value="218">UNSKILLED-HK</option>
+                                                                        <option value="219">UNSKILLED-HK1</option>
+                                                                        <option value="216">UNSKILLED-LO</option>
+                                                                        <option value="217">UNSKILLED-LOA</option>
+                                                                        <option value="112">US</option>
+                                                                        <option value="113">USKILLED</option>
+                                                                        <option value="262">UTILITY</option>
+                                                                        <option value="276">VACCUM CLEANER MACHINE RENT</option>
+                                                                        <option value="282">WATCH MAN</option>
+                                                                        <option value="285">WATCH MAN-1</option>
+                                                                        <option value="286">WATCH MAN-2</option>
+                                                                        <option value="247">WET &amp; DRY VACCUM CLEANER RENT</option>
+                                                                        <option value="114">WINDSHELD</option>
+                                                                        <option value="290">WORK INSPECTOR</option>
+                                                                        <option value="115">WORKER</option>
+
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form-group">
+                                                                    <label class="control-label">
+                                                                        Type
+                                                                    </label>
+                                                                    <select class="select2_single form-control" tabindex="1" ng-model="resourceInfo.Type">
+                                                                        <option selected="selected" value="0"></option>
+                                                                        <option value="1">Regular</option>
+                                                                        <option value="2">NFHs</option>
+                                                                        <option value="3">Addl</option>
+                                                                        <option value="4">Night Shift</option>
+                                                                        <option value="5">Less</option>
+                                                                        <option value="6">-</option>
+
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form-group">
+                                                                    <label class="control-label">
+                                                                        Duty Hours
+                                                                    </label>
+                                                                    <input type="text" placeholder="" class="form-control" name="familyMember.occupasion" ng-model="resourceInfo.DutyHrs">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <div class="form-group">
+                                                                    <label class="control-label">
+                                                                        Qty
+                                                                    </label>
+                                                                    <input type="text" placeholder="" class="form-control" name="familyMember.relationship" ng-model="resourceInfo.Qty">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <div class="form-group">
+                                                                    <label class="control-label">
+                                                                        P.R
+                                                                    </label>
+                                                                    <input type="text" placeholder="" class="form-control" name="familyMember.relationship" ng-model="resourceInfo.PR">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form-group">
+                                                                    <label class="control-label">
+                                                                        D.T
+                                                                    </label>
+                                                                    <select class="select2_single form-control" tabindex="1" ng-model="resourceInfo.DT">
+                                                                        <option selected="selected" value="P.M">P.M</option>
+                                                                        <option value="P.D">P.D</option>
+                                                                        <option value="P.Hr">P.Hr</option>
+                                                                        <option value="P.Sft">P.Sft</option>
+                                                                        <option value="Fixed">Fixed</option>
+                                                                        <option value="P.M(8Hrs)">P.M(8Hrs)</option>
+
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label class="control-label">
+                                                                    No Of Days
+                                                                </label>
+                                                                <select class="select2_single form-control" tabindex="1" ng-model="resourceInfo.NoOfDays">
+                                                                    <option selected="selected" value="P.M">P.M</option>
+                                                                    <option value="P.D">P.D</option>
+                                                                    <option value="P.Hr">P.Hr</option>
+                                                                    <option value="P.Sft">P.Sft</option>
+                                                                    <option value="Fixed">Fixed</option>
+                                                                    <option value="P.M(8Hrs)">P.M(8Hrs)</option>
+
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label class="control-label">
+                                                                    Nots
+                                                                </label>
+                                                                <select class="select2_single form-control" tabindex="1" ng-model="resourceInfo.nots">
+                                                                    <option selected="selected" value="Gen">Gen</option>
+                                                                    <option value="G-S">G-S</option>
+                                                                    <option value="G-4">G-4</option>
+                                                                    <option value="22">22</option>
+                                                                    <option value="23">23</option>
+                                                                    <option value="24">24</option>
+                                                                    <option value="25">25</option>
+                                                                    <option value="26">26</option>
+                                                                    <option value="27">27</option>
+                                                                    <option value="30">30</option>
+                                                                    <option value="31">31</option>
+
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <div class="form-group">
+                                                                <label class="control-label">
+                                                                    Basic
+                                                                </label>
+                                                                <input type="text" placeholder="" class="form-control" name="resourceInfo.Basic" ng-model="resourceInfo.Basic">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <div class="form-group">
+                                                                <label class="control-label">
+                                                                    DA
+                                                                </label>
+                                                                <input type="text" placeholder="" class="form-control" name="resourceInfo.DA" ng-model="resourceInfo.DA">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <div class="form-group">
+                                                                <label class="control-label">
+                                                                    HRA
+                                                                </label>
+                                                                <input type="text" placeholder="" class="form-control" name="resourceInfo.Basic" ng-model="resourceInfo.HRA">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <div class="form-group">
+                                                                <label class="control-label">
+                                                                    Conv
+                                                                </label>
+                                                                <input type="text" placeholder="" class="form-control" name="resourceInfo.Basic" ng-model="resourceInfo.Conv">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <div class="form-group">
+                                                                <label class="control-label">
+                                                                    CCA
+                                                                </label>
+                                                                <input type="text" placeholder="" class="form-control" name="resourceInfo.Basic" ng-model="resourceInfo.CCA">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <div class="form-group">
+                                                                <label class="control-label">
+                                                                    L A
+                                                                </label>
+                                                                <input type="text" placeholder="" class="form-control" name="resourceInfo.Basic" ng-model="resourceInfo.LA">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <div class="form-group">
+                                                                <label class="control-label">
+                                                                    Gratuity
+                                                                </label>
+                                                                <input type="text" placeholder="" class="form-control" name="resourceInfo.Basic" ng-model="resourceInfo.Gratuity">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <div class="form-group">
+                                                                <label class="control-label">
+                                                                    Bonus
+                                                                </label>
+                                                                <input type="text" placeholder="" class="form-control" name="resourceInfo.Basic" ng-model="resourceInfo.Bonus">
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="col-md-1">
+                                                            <div class="form-group">
+                                                                <label class="control-label">
+                                                                    W A
+                                                                </label>
+                                                                <input type="text" placeholder="" class="form-control" name="resourceInfo.Basic" ng-model="resourceInfo.WA">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <div class="form-group">
+                                                                <label class="control-label">
+                                                                    O A
+                                                                </label>
+                                                                <input type="text" placeholder="" class="form-control" name="resourceInfo.Basic" ng-model="resourceInfo.OA">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <div class="form-group">
+                                                                <label class="control-label">
+                                                                    NFHs
+                                                                </label>
+                                                                <input type="text" placeholder="" class="form-control" name="resourceInfo.Basic" ng-model="resourceInfo.NFHs">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <div class="form-group">
+                                                                <label class="control-label">
+                                                                    R.C
+                                                                </label>
+                                                                <input type="text" placeholder="" class="form-control" name="resourceInfo.Basic" ng-model="resourceInfo.RC">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <div class="form-group">
+                                                                <label class="control-label">
+                                                                    Srv.Chargs
+                                                                </label>
+                                                                <input type="text" placeholder="" class="form-control" name="resourceInfo.Basic" ng-model="resourceInfo.SrvChrgs">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <div class="form-group">
+                                                                <label class="control-label">
+                                                                    Srv.Chargs%
+                                                                </label>
+                                                                <input type="text" placeholder="" class="form-control" name="resourceInfo.Basic" ng-model="resourceInfo.SrvChrgsPer">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <div class="form-group">
+                                                                <label class="control-label">
+                                                                    OTRate
+                                                                </label>
+                                                                <input type="text" placeholder="" class="form-control" name="resourceInfo.Basic" ng-model="resourceInfo.OTRate">
+                                                            </div>
+                                                        </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form-group">
+                                                                    <label class="control-label">
+                                                                        Att Bonus
+                                                                    </label>
+                                                                    <input type="text" placeholder="" class="form-control" name="resourceInfo.Basic" ng-model="resourceInfo.AttBonus">
+                                                                </div>
+                                                            </div>
+                                                             <div class="col-md-3">
+                                                                <div class="form-group">
+                                                                    <label class="control-label">
+                                                                      Summary
+                                                                    </label>
+                                                                    <input type="text" placeholder="" class="form-control" name="familyMember.relationship" ng-model="resourceInfo.Summary">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <div class="form-group">
+                                                                    <input type="checkbox" ng-model="resourceInfo.RCApplicable" name="resourceInfoRCapplicable" />
+                                                                    <label for="resourceInfoRCapplicable">
+                                                                      RC Applicable
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                           
+
+                                                        </div>
+                                                        <div ng-show="usersList.length>0">
+                                                            <div class="clearfix"></div>
+                                                            <hr />
+                                                            <select ng-options="user as user.name for user in usersList"
+                                                                    multiple
+                                                                    ng-model=" resourceInfo.users"
+                                                                    bs-duallistbox></select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-lg btn-danger" data-dismiss="modal">Close</button>
+                                                        <button class="btn btn-lg btn-success" ng-click="addResource()"> Add Resource</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade bs-example-modal-lgRS" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">
+                                                            <span aria-hidden="true">×</span>
+                                                        </button>
+                                                        <h4cl class="modal-title" id="myModalLabel3">Add Resource</h4cl>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <table class="table table-responsive table-striped">
+                                                            <tr ng-repeat="user in selectedResourceUsers">
+                                                                <td>{{user.name}}</td>
+                                                                <td>{{user.gender}}</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-lg btn-danger" data-dismiss="modal">Close</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <br />
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-responsive jambo_table ">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Designation</th>
+                                                        <th>Type</th>
+                                                        <th>DutyHrs</th>
+                                                        <th>Qty</th>
+                                                        <th>PR</th>
+                                                        <th>DT</th>
+                                                        <th>NoOfDays </th>
+                                                        <th>Summary</th>
+                                                        <th>Nots </th>
+                                                        <th>RCApplicable</th>
+                                                        <th>Basic</th>
+                                                        <th>DA</th>
+                                                        <th>HRA</th>
+                                                        <th>Conv</th>
+                                                        <th>CCA</th>
+                                                        <th>LA </th>
+                                                        <th>Gratuity</th>
+                                                        <th>Bonus </th>
+                                                        <th>AttBonus</th>
+                                                        <th>WA</th>
+                                                        <th>OA</th>
+                                                        <th>NFHs</th>
+                                                        <th>RC</th>
+                                                        <th>SrvChrgs</th>
+                                                        <th>SrvChrgsPerc </th>
+                                                        <th>OTRate</th>
+                                                        <th># </th>
+                                                        <th># </th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="humanResource in contractInfo.ContractHumanResourceNeeds">
+                                                        <td>{{humanResource.no}}</td>
+                                                        <td>{{humanResource.Designation}}</td>
+                                                        <td>{{humanResource.Type}}</td>
+                                                        <td>{{humanResource.DutyHrs}}</td>
+                                                        <td>{{humanResource.Qty}}</td>
+                                                        <td>{{humanResource.PR}}</td>
+                                                        <td>{{humanResource.DT}}</td>
+                                                        <td>{{humanResource.NoOfDays}}</td>
+                                                        <td>{{humanResource.Summary}}</td>
+                                                        <td>{{humanResource.Nots}}</td>
+                                                        <td>{{humanResource.RCApplicable}}</td>
+                                                        <td>{{humanResource.Basic}}</td>
+                                                        <td>{{humanResource.DA}}</td>
+                                                        <td>{{humanResource.HRA}}</td>
+                                                        <td>{{humanResource.Conv}}</td>
+                                                        <td>{{humanResource.CCA}}</td>
+                                                        <td>{{humanResource.LA}}</td>
+                                                        <td>{{humanResource.Gratuity}}</td>
+                                                        <td>{{humanResource.Bonus}}</td>
+                                                        <td>{{humanResource.AttBonus}}</td>
+                                                        <td>{{humanResource.WA}}</td>
+                                                        <td>{{humanResource.OA}}</td>
+                                                        <td>{{humanResource.NFHs}}</td>
+                                                        <td>{{humanResource.RC}}</td>
+                                                        <td>{{humanResource.SrvChrgs}}</td>
+                                                        <td>{{humanResource.SrvChrgsPerc}}</td>
+                                                        <td>{{humanResource.OTRate}}</td>
+                                                        <td><button href="#" class="btn btn-danger btn-xs" data-title="View Resources" type="button" data-toggle="modal" data-target=".bs-example-modal-lgRS" ng-click="viewResources(humanResource)"><i class="fa fa-trash-o"></i> View Resources </button></td>
+                                                        <td><button href="#" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" ng-click="removeHumanResource(humanResource)"><i class="fa fa-trash-o"></i> Delete </button></td>
+                                                    </tr>
+                                                    <tr></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </uib-tab>
+                        <!-- end: TAB -->
+                    </uib-tabset>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-include="'App/Partials/Footer.html'"></div>
+</div>
