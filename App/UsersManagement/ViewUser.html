@@ -16,7 +16,7 @@
 <div class="col-md-4">
     <div class="user-left">
         <div class="center">
-            <h4>{{userInfo.EmployeePersonalInfo.firstName}} {{userInfo.EmployeePersonalInfo.middleName}} {{userInfo.EmployeePersonalInfo.lastName}}</h4>
+            <h4>{{userInfo.EmployeePersonalInfo.FirstName}} {{userInfo.EmployeePersonalInfo.MiddleName}} {{userInfo.EmployeePersonalInfo.LastName}}</h4>
             <div flow-init="{singleFile:true}" flow-name="obj.flow" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
                 <div class="user-image">
                     <div class="thumbnail">
@@ -38,33 +38,33 @@
             </tr>
             <tr>
                 <td>Designation</td>
-                <td><span class="label label-sm label-info">{{userInfo.EmployeePersonalInfo.designation}}</span></td>
+                <td><span class="label label-sm label-info">{{userInfo.EmployeePersonalInfo.Designation}}</span></td>
             </tr>
             <tr>
                 <td>Gender</td>
-                <td>{{userInfo.EmployeePersonalInfo.gender}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.Gender}}</td>
             </tr>
             <tr>
                 <td>Qualification</td>
-                <td>{{userInfo.EmployeePersonalInfo.qualification}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.Qualification}}</td>
             </tr>
             <tr>
                 <td>Email:</td>
-                <td>{{userInfo.EmployeePersonalInfo.email}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.Email}}</td>
             </tr>
             <tr>
                 <td>Date Of Birth:</td>
                 <td>
-                    {{userInfo.EmployeePersonalInfo.email}}
+                    {{userInfo.EmployeePersonalInfo.DateOfBirth}}
                 </td>
             </tr>
             <tr>
                 <td>phone:</td>
-                <td>{{userInfo.EmployeePersonalInfo.phone}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.Phone}}</td>
             </tr>
             <tr>
                 <td>Date Of Birth:</td>
-                <td>{{userInfo.EmployeePersonalInfo.dateOfBirth}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.DateOfBirth}}</td>
             </tr>
             </tbody>
         </table>
@@ -77,27 +77,27 @@
             <tbody>
             <tr>
                 <td>Father Name</td>
-                <td>{{userInfo.EmployeePersonalInfo.fatherName}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.FatherName}}</td>
             </tr>
             <tr>
                 <td>Father Occupation</td>
-                <td>{{userInfo.EmployeePersonalInfo.fatherOccupation}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.FatherOccupation}}</td>
             </tr>
             <tr>
                 <td>Mother Name</td>
-                <td>{{userInfo.EmployeePersonalInfo.motherName}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.MotherName}}</td>
             </tr>
             <tr>
                 <td>Spouse Name</td>
-                <td>{{userInfo.EmployeePersonalInfo.spouseName}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.SpouseName}}</td>
             </tr>
             <tr>
                 <td>Mother Tongue</td>
-                <td>{{userInfo.EmployeePersonalInfo.motherTongue}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.MotherTongue}}</td>
             </tr>
             <tr>
                 <td>Languages known</td>
-                <td>{{userInfo.EmployeePersonalInfo.languagesKnown}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.LanguagesKnown}}</td>
             </tr>
             </tbody>
         </table>
@@ -110,11 +110,11 @@
             <tbody>
             <tr>
                 <td>Date Of Interview</td>
-                <td>{{userInfo.EmployeePersonalInfo.dateOfInterview}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.DateOfInterview}}</td>
             </tr>
             <tr>
                 <td>Date of Join</td>
-                <td>{{userInfo.EmployeePersonalInfo.dateOfJoin}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.DateOfJoin}}</td>
             </tr>
             </tbody>
         </table>
@@ -164,43 +164,43 @@
             <tbody>
             <tr>
                 <td>Branch</td>
-                <td>{{userInfo.additionalInformation.branch}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.Branch}}</td>
             </tr>
             <tr>
                 <td>Division</td>
-                <td>{{userInfo.additionalInformation.division}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.Division}}</td>
             </tr>
             <tr>
                 <td>Department</td>
-                <td>{{userInfo.additionalInformation.department}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.Department}}</td>
             </tr>
             <tr>
                 <td>Reporting Manager</td>
-                <td>{{userInfo.additionalInformation.reportingManager}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.ReportingManager}}</td>
             </tr>
             <tr>
                 <td>Site Posted To</td>
-                <td>{{userInfo.additionalInformation.sitePostedTo}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.SitePostedTo}}</td>
             </tr>
             <tr>
                 <td>Gross Salary</td>
-                <td>{{userInfo.additionalInformation.grossSalary}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.GrossSalary}}</td>
             </tr>
             <tr>
                 <td>PSARA Code</td>
-                <td>{{userInfo.additionalInformation.psaraCode}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.PsaraCode}}</td>
             </tr>
             <tr>
                 <td>ID Card Issued Date</td>
-                <td>{{userInfo.additionalInformation.idCardIssuedDate}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.IdCardIssuedDate}}</td>
             </tr>
             <tr>
                 <td>ID Card Valid Till Date</td>
-                <td>{{userInfo.additionalInformation.idCardValidTillDate}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.IdCardValidTillDate}}</td>
             </tr>
             <tr>
                 <td>Previous Employee</td>
-                <td>{{userInfo.additionalInformation.previousEmployee}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.PreviousEmployee}}</td>
             </tr>
             </tbody>
         </table>
@@ -216,27 +216,27 @@
             <tbody>
             <tr>
                 <td>Height</td>
-                <td>{{userInfo.physicalStandard.height}}</td>
+                <td>{{userInfo.EmployeePhysicalStandard.Height}}</td>
             </tr>
             <tr>
                 <td>Weight</td>
-                <td>{{userInfo.physicalStandard.weigth}}</td>
+                <td>{{userInfo.EmployeePhysicalStandard.Weigth}}</td>
             </tr>
             <tr>
                 <td>Chest Unexpanded</td>
-                <td>{{userInfo.physicalStandard.chestUnExpanded}}</td>
+                <td>{{userInfo.EmployeePhysicalStandard.ChestUnExpanded}}</td>
             </tr>
             <tr>
                 <td>Chest Expanded</td>
-                <td>{{userInfo.physicalStandard.chestExpanded}}</td>
+                <td>{{userInfo.EmployeePhysicalStandard.ChestExpanded}}</td>
             </tr>
             <tr>
                 <td>Hair Color</td>
-                <td>{{userInfo.physicalStandard.hariColor}}</td>
+                <td>{{userInfo.EmployeePhysicalStandard.HariColour}}</td>
             </tr>
             <tr>
                 <td>Eyes Color</td>
-                <td>{{userInfo.physicalStandard.eyesColor}}</td>
+                <td>{{userInfo.EmployeePhysicalStandard.EyeColour}}</td>
             </tr>
             </tbody>
         </table>
@@ -252,26 +252,26 @@
             <form>
                 <legend><span class="glyphicon glyphicon-globe"></span> Temporary Address</legend>
                 <address>
-                    <strong>{{userInfo.EmployeePersonalInfo.firstName}} {{userInfo.EmployeePersonalInfo.middleName}}</strong><br>
-                    {{userInfo.addressDetails.tmpaddressLine1}}, {{userInfo.addressDetails.tmpaddressLine2}}<br>
+                    <strong>{{userInfo.EmployeePersonalInfo.FirstName}} {{userInfo.EmployeePersonalInfo.MiddleName}}</strong><br>
+                    {{userInfo.EmployeeAddressDetails.TmpAddressLine1}}, {{userInfo.EmployeeAddressDetails.TmpAddressLine2}}<br>
 
-                    {{userInfo.addressDetails.tmpdistrict}}, {{userInfo.addressDetails.tmpstate}}<br>
+                    {{userInfo.EmployeeAddressDetails.TmpDistrict}}, {{userInfo.EmployeeAddressDetails.TmpState}}<br>
                     <abbr title="PinCode">
                         PinCode:
                     </abbr>
-                    {{userInfo.addressDetails.tmppinCode}}
+                    {{userInfo.EmployeeAddressDetails.TmpPincode}}
                     <abbr title="PinCode">
                         LandMark:
                     </abbr>
-                    {{userInfo.addressDetails.tmplandMark}}
+                        {{userInfo.EmployeeAddressDetails.TmpLandMark}}
                 </address>
                 <address>
                     <strong>Post Office</strong><br>
-                    {{userInfo.addressDetails.tmppostOffice}}
+                    {{userInfo.EmployeeAddressDetails.TmpPostOffice}}
                 </address>
                 <address>
                     <strong>Police Station</strong><br>
-                    {{userInfo.addressDetails.tmppoliceStation}}
+                    {{userInfo.EmployeeAddressDetails.TmpPoliceStation}}
                 </address>
             </form>
         </div>
@@ -279,26 +279,26 @@
             <form>
                 <legend><span class="glyphicon glyphicon-globe"></span> Permanent Address</legend>
                 <address>
-                    <strong>{{userInfo.EmployeePersonalInfo.firstName}} {{userInfo.EmployeePersonalInfo.middleName}}</strong><br>
-                    {{userInfo.addressDetails.peraddressLine1}}, {{userInfo.addressDetails.peraddressLine2}}<br>
+                    <strong>{{userInfo.EmployeePersonalInfo.FirstName}} {{userInfo.EmployeePersonalInfo.MiddleName}}</strong><br>
+                    {{userInfo.EmployeeAddressDetails.PerAddressLine1}}, {{userInfo.EmployeeAddressDetails.PerAddressLine2}}<br>
 
-                    {{userInfo.addressDetails.perdistrict}}, {{userInfo.addressDetails.perstate}}<br>
+                    {{userInfo.EmployeeAddressDetails.PerDistrict}}, {{userInfo.EmployeeAddressDetails.PerState}}<br>
                     <abbr title="PinCode">
                         PinCode:
                     </abbr>
-                    {{userInfo.addressDetails.perpinCode}}<br />
+                    {{userInfo.EmployeeAddressDetails.PerPincode}}<br />
                     <abbr title="PinCode">
                         LandMark:
                     </abbr>
-                    {{userInfo.addressDetails.perlandMark}}
+                    {{userInfo.EmployeeAddressDetails.PerLandMark}}
                 </address>
                 <address>
                     <strong>Post Office</strong><br>
-                    {{userInfo.addressDetails.perpostOffice}}
+                    {{userInfo.EmployeeAddressDetails.TmpPostOffice}}
                 </address>
                 <address>
                     <strong>Police Station</strong><br>
-                    {{userInfo.addressDetails.perpoliceStation}}
+                    {{userInfo.EmployeeAddressDetails.TmpPoliceStation}}
                 </address>
             </form>
         </div>
@@ -314,39 +314,39 @@
             <tbody>
             <tr>
                 <td>Reference  Name and Address</td>
-                <td>{{userInfo.employeeinfo.refNameAndAddress}}</td>
+                <td>{{userInfo.EmployeeInfo.RefNameAndAddress}}</td>
             </tr>
             <tr>
                 <td>Reference Name and Address 2</td>
-                <td>{{userInfo.employeeinfo.refNameAndAddress2}}</td>
+                <td>{{userInfo.EmployeeInfo.RefNameAndAddress2}}</td>
             </tr>
             <tr>
                 <td>Blood Group</td>
-                <td>{{userInfo.employeeinfo.bloodGroup}}</td>
+                <td>{{userInfo.EmployeeInfo.BloodGroup}}</td>
             </tr>
             <tr>
                 <td>Physical Remarks</td>
-                <td>{{userInfo.employeeinfo.physicalRemarks}}</td>
+                <td>{{userInfo.EmployeeInfo.PhysicalRemarks}}</td>
             </tr>
             <tr>
                 <td>Identification Mark 1</td>
-                <td>{{userInfo.employeeinfo.identificationMarks1}}</td>
+                <td>{{userInfo.EmployeeInfo.IdentificationMarks1}}</td>
             </tr>
             <tr>
                 <td>Identification Mark 2</td>
-                <td>{{userInfo.employeeinfo.identificationMarks2}}</td>
+                <td>{{userInfo.EmployeeInfo.IdentificationMarks2}}</td>
             </tr>
             <tr>
                 <td>Remarks</td>
-                <td>{{userInfo.employeeinfo.remarks}}</td>
+                <td>{{userInfo.EmployeeInfo.Remarks}}</td>
             </tr>
             <tr>
                 <td>Specially Abled</td>
-                <td>{{userInfo.employeeinfo.speciallyAbled}}</td>
+                <td>{{userInfo.EmployeeInfo.SpeciallyAbled}}</td>
             </tr>
             <tr>
                 <td>Applicant Category</td>
-                <td>{{userInfo.employeeinfo.applicantCategory}}</td>
+                <td>{{userInfo.EmployeeInfo.ApplicantCategory}}</td>
             </tr>
             </tbody>
         </table>
@@ -374,7 +374,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="familyMember in userInfo.familyDetails">
+            <tr ng-repeat="familyMember in userInfo.EmployeeFamilyDetails">
                 <td>{{familyMember.no}}</td>
                 <td>{{familyMember.name}}</td>
                 <td>{{familyMember.dob}}</td>
@@ -401,63 +401,63 @@
             <tbody>
             <tr>
                 <td>Bank Account Number</td>
-                <td>{{userInfo.bankDetails.bankAccountNumber}}</td>
+                <td>{{userInfo.EmployeeBankDetails.BankAccountNumber}}</td>
             </tr>
             <tr>
                 <td>Bank Name</td>
-                <td>{{userInfo.bankDetails.bankName}}</td>
+                <td>{{userInfo.EmployeeBankDetails.BankName}}</td>
             </tr>
             <tr>
                 <td>Branch Name</td>
-                <td>{{userInfo.bankDetails.branchName}}</td>
+                <td>{{userInfo.EmployeeBankDetails.BranchName}}</td>
             </tr>
             <tr>
                 <td>Branch Code</td>
-                <td>{{userInfo.bankDetails.branchCode}}</td>
+                <td>{{userInfo.EmployeeBankDetails.BranchCode}}</td>
             </tr>
             <tr>
                 <td>Bank App No</td>
-                <td>{{userInfo.bankDetails.bankAppNo}}</td>
+                <td>{{userInfo.EmployeeBankDetails.BankAppNo}}</td>
             </tr>
             <tr>
                 <td>Bank Code No</td>
-                <td>{{userInfo.bankDetails.bankCodeNo}}</td>
+                <td>{{userInfo.EmployeeBankDetails.BankCodeNo}}</td>
             </tr>
             <tr>
                 <td>Bank Card Reference</td>
-                <td>{{userInfo.bankDetails.bankCardRefernce}}</td>
+                <td>{{userInfo.EmployeeBankDetails.BankCardRefernce}}</td>
             </tr>
             <tr>
                 <td>IFSC Code</td>
-                <td>{{userInfo.bankDetails.ifscCode}}</td>
+                <td>{{userInfo.EmployeeBankDetails.IfscCode}}</td>
             </tr>
             <tr>
                 <td>Region Code</td>
-                <td>{{userInfo.bankDetails.regionCode}}</td>
+                <td>{{userInfo.EmployeeBankDetails.RegionCode}}</td>
             </tr>
             <tr>
                 <td>InDebt Amount</td>
-                <td>{{userInfo.bankDetails.insDebtAmount}}</td>
+                <td>{{userInfo.EmployeeBankDetails.InsDebtAmount}}</td>
             </tr>
             <tr>
                 <td>Insurance Nominee</td>
-                <td>{{userInfo.bankDetails.insuranceNominee}}</td>
+                <td>{{userInfo.EmployeeBankDetails.InsuranceNominee}}</td>
             </tr>
             <tr>
                 <td>Nominee DOB</td>
-                <td>{{userInfo.bankDetails.nomineeDOB}}</td>
+                <td>{{userInfo.EmployeeBankDetails.NomineeDOB}}</td>
             </tr>
             <tr>
                 <td>Insurance Cover</td>
-                <td>{{userInfo.bankDetails.insuranceCover}}</td>
+                <td>{{userInfo.EmployeeBankDetails.InsuranceCover}}</td>
             </tr>
             <tr>
                 <td>Nominee RelationShip</td>
-                <td>{{userInfo.bankDetails.nomineeRelationShip}}</td>
+                <td>{{userInfo.EmployeeBankDetails.NomineeRelationShip}}</td>
             </tr>
             <tr>
                 <td>UAN No</td>
-                <td>{{userInfo.bankDetails.UANNo}}</td>
+                <td>{{userInfo.EmployeeBankDetails.UANNo}}</td>
             </tr>
             </tbody>
         </table>
@@ -472,39 +472,39 @@
             <tbody>
             <tr>
                 <td>PF Deduct</td>
-                <td>{{userInfo.PF.PFDeduct}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.PFDeduct}}</td>
             </tr>
             <tr>
                 <td>EPF No</td>
-                <td>{{userInfo.PF.epfNo}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.EPFNo}}</td>
             </tr>
             <tr>
                 <td>PT Deduct</td>
-                <td>{{userInfo.PF.PTDeduct}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.PTDeduct}}</td>
             </tr>
             <tr>
                 <td>PF Enrollment Date</td>
-                <td>{{userInfo.PF.pfEnrollDate}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.PFEnrollDate}}</td>
             </tr>
             <tr>
                 <td>ESI Deduct</td>
-                <td>{{userInfo.ESI.ESIDeduct}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.ESIDeduct}}</td>
             </tr>
             <tr>
                 <td>ESI No</td>
-                <td>{{userInfo.ESI.esiNo}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.ESINo}}</td>
             </tr>
             <tr>
                 <td>ESI Display Name</td>
-                <td>{{userInfo.ESI.esiDispName}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.ESIDispName}}</td>
             </tr>
             <tr>
                 <td>Salary Additional Amount</td>
-                <td>{{userInfo.salaryDetails.additionalAmount}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.AdditionalAmount}}</td>
             </tr>
             <tr>
                 <td>Salary Food Allowance</td>
-                <td>{{userInfo.salaryDetails.foodAllowance}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.FoodAllowance}}</td>
             </tr>
             </tbody>
         </table>
@@ -520,43 +520,43 @@
             <tbody>
             <tr>
                 <td>Bank Account Number</td>
-                <td>{{userInfo.SalaryStructure.noOfDays}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.NoOfDays}}</td>
                 <td>Bank Account Number</td>
-                <td>{{userInfo.SalaryStructure.Basic}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.Basic}}</td>
             </tr>
             <tr>
                 <td>Bank Name</td>
-                <td>{{userInfo.SalaryStructure.HRA}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.HRA}}</td>
                 <td>Bank Account Number</td>
-                <td>{{userInfo.SalaryStructure.CCA}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.CCA}}</td>
             </tr>
             <tr>
                 <td>Branch Name</td>
-                <td>{{userInfo.SalaryStructure.gratutity}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.Gratutity}}</td>
                 <td>Bank Account Number</td>
-                <td>{{userInfo.SalaryStructure.WA}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.WA}}</td>
             </tr>
             <tr>
                 <td>Branch Code</td>
-                <td>{{userInfo.SalaryStructure.NFHs}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.NFHs}}</td>
                 <td>Bank Account Number</td>
-                <td>{{userInfo.SalaryStructure.RC}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.RC}}</td>
             </tr>
             <tr>
                 <td>Bank App No</td>
-                <td>{{userInfo.SalaryStructure.Nots}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.Nots}}</td>
                 <td>Bank Account Number</td>
-                <td>{{userInfo.SalaryStructure.CS}}</td>
+                <td>{{userInfo.EmployeeSalaryDetails.CS}}</td>
             </tr>
             <tr>
                 <td>Bank Code No</td>
-                <td>{{userInfo.SalaryStructure.splAllowance}}</td>
+                <td>{{userInfo.SalaryStructure.SplAllowance}}</td>
                 <td>Bank Account Number</td>
                 <td>{{userInfo.SalaryStructure.OA}}</td>
             </tr>
             <tr>
                 <td>Bank Card Reference</td>
-                <td>{{userInfo.SalaryStructure.bonus}}</td>
+                <td>{{userInfo.SalaryStructure.Bonus}}</td>
                 <td>Bank Account Number</td>
                 <td>{{userInfo.SalaryStructure.LA}}</td>
             </tr>
@@ -568,9 +568,9 @@
             </tr>
             <tr>
                 <td>Region Code</td>
-                <td>{{userInfo.SalaryStructure.mobileAllowance}}</td>
+                <td>{{userInfo.SalaryStructure.MobileAllowance}}</td>
                 <td>Bank Account Number</td>
-                <td>{{userInfo.SalaryStructure.travellingAllowance}}</td>
+                <td>{{userInfo.SalaryStructure.TravellingAllowance}}</td>
             </tr>
 
             </tbody>
@@ -611,7 +611,7 @@
                         <label class="control-label">
                             Aadhar Card Number
                         </label>
-                        <span>{{userInfo.govProofs.aadharCardNumber}}</span>
+                        <span>{{userInfo.EmployeeProofs.AadharCardNumber}}</span>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -620,7 +620,7 @@
                             KYC Name
                         </label>
 
-                        <span>{{userInfo.govProofs.aadharCardNumber}}</span>
+                        <span>{{userInfo.EmployeeProofs.AadharCardNumber}}</span>
                     </div>
                 </div>
 
@@ -635,7 +635,7 @@
                             Driving License Number
                         </label>
 
-                        <span>{{userInfo.govProofs.drivingLicenseNumber}}</span>
+                        <span>{{userInfo.EmployeeProofs.DrivingLicenseNumber}}</span>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -644,7 +644,7 @@
                             KYC Name
                         </label>
 
-                        <span>{{userInfo.govProofs.drivingLicenseName}}</span>
+                        <span>{{userInfo.EmployeeProofs.DrivingLicenseName}}</span>
                     </div>
                 </div>
 
@@ -658,7 +658,7 @@
                             Voter ID Number
                         </label>
 
-                        <span>{{userInfo.govProofs.voterIDNumber}}</span>
+                        <span>{{userInfo.EmployeeProofs.VoterIDNumber}}</span>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -667,7 +667,7 @@
                             KYC Name
                         </label>
 
-                        <span>{{userInfo.govProofs.voterIDName}}</span>
+                        <span>{{userInfo.EmployeeProofs.VoterIDName}}</span>
                     </div>
                 </div>
 
@@ -682,7 +682,7 @@
                             Ration Card Number
                         </label>
 
-                        <span>{{userInfo.govProofs.rationCardNumber}}</span>
+                        <span>{{userInfo.EmployeeProofs.RationCardNumber}}</span>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -691,7 +691,7 @@
                             KYC Name
                         </label>
 
-                        <span>{{userInfo.govProofs.rationCardName}}</span>
+                        <span>{{userInfo.EmployeeProofs.RationCardName}}</span>
                     </div>
                 </div>
 
@@ -705,7 +705,7 @@
                             PAN Card Number
                         </label>
 
-                        <span>{{userInfo.govProofs.pancardNumber}}</span>
+                        <span>{{userInfo.EmployeeProofs.PancardNumber}}</span>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -714,7 +714,7 @@
                             KYC Name
                         </label>
 
-                        <span>{{userInfo.govProofs.pancardName}}</span>
+                        <span>{{userInfo.EmployeeProofs.PancardName}}</span>
                     </div>
                 </div>
 
@@ -751,7 +751,7 @@
                             Bank Pass Book Number
                         </label>
 
-                        <span>{{userInfo.govProofs.bankPassBookNumber}}</span>
+                        <span>{{userInfo.EmployeeProofs.BankPassBookNumber}}</span>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -760,7 +760,7 @@
                             KYC Name
                         </label>
 
-                        <span>{{userInfo.govProofs.bankPassBookName}}</span>
+                        <span>{{userInfo.EmployeeProofs.BankPassBookName}}</span>
                     </div>
                 </div>
 
@@ -774,7 +774,7 @@
                             Electricity Bill Number
                         </label>
 
-                        <span>{{userInfo.govProofs.electricityBillNumber}}</span>
+                        <span>{{userInfo.EmployeeProofs.ElectricityBillNumber}}</span>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -783,7 +783,7 @@
                             KYC Name
                         </label>
 
-                        <span>{{userInfo.govProofs.electricityBillName}}</span>
+                        <span>{{userInfo.EmployeeProofs.ElectricityBillName}}</span>
                     </div>
                 </div>
 
@@ -797,7 +797,7 @@
                             ESIC Card Number
                         </label>
 
-                        <span>{{userInfo.govProofs.esicCardNumber}}</span>
+                        <span>{{userInfo.EmployeeProofs.EsicCardNumber}}</span>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -806,7 +806,7 @@
                             KYC Name
                         </label>
 
-                        <span>{{userInfo.govProofs.esicCardName}}</span>
+                        <span>{{userInfo.EmployeeProofs.EsicCardName}}</span>
                     </div>
                 </div>
 
@@ -820,35 +820,35 @@
                             Service No.
                         </label>
 
-                        <span>{{userInfo.govProofs.ExServiceNumber}}</span>
+                        <span>{{userInfo.EmployeeProofs.ExServiceNumber}}</span>
                     </div>
                     <div class="form-group">
                         <label class="control-label">
                             Date Of Enrollment
                         </label>
 
-                        <span>{{userInfo.govProofs.ExServicedateOfEnrollment}}</span>
+                        <span>{{userInfo.EmployeeProofs.ExServicedateOfEnrollment}}</span>
                     </div>
                     <div class="form-group">
                         <label class="control-label">
                             Crops
                         </label>
 
-                        <span>{{userInfo.govProofs.ExServiceCrops}}</span>
+                        <span>{{userInfo.EmployeeProofs.ExServiceCrops}}</span>
                     </div>
                     <div class="form-group">
                         <label class="control-label">
                             Medical Category
                         </label>
 
-                        <span>{{userInfo.govProofs.ExServicemedicalCategory}}</span>
+                        <span>{{userInfo.EmployeeProofs.ExServicemedicalCategory}}</span>
                     </div>
                     <div class="form-group">
                         <label class="control-label">
                             Conduct
                         </label>
 
-                        <span>{{userInfo.govProofs.ExServiceconduct}}</span>
+                        <span>{{userInfo.EmployeeProofs.ExServiceconduct}}</span>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -861,28 +861,28 @@
                             Rank
                         </label>
 
-                        <span>{{userInfo.govProofs.ExServiceRank}}</span>
+                        <span>{{userInfo.EmployeeProofs.ExServiceRank}}</span>
                     </div>
                     <div class="form-group">
                         <label class="control-label">
                             Date Of Discharge
                         </label>
 
-                        <span>{{userInfo.govProofs.ExServicedateOfDischarge}}</span>
+                        <span>{{userInfo.EmployeeProofs.ExServicedateOfDischarge}}</span>
                     </div>
                     <div class="form-group">
                         <label class="control-label">
                             Trade
                         </label>
 
-                        <span>{{userInfo.govProofs.ExServiceTrade}}</span>
+                        <span>{{userInfo.EmployeeProofs.ExServiceTrade}}</span>
                     </div>
                     <div class="form-group">
                         <label class="control-label">
                             Reason Of Discharge
                         </label>
 
-                        <span>{{userInfo.govProofs.ExServiceReasonOfDischarge}}</span>
+                        <span>{{userInfo.EmployeeProofs.ExServiceReasonOfDischarge}}</span>
                     </div>
                 </div>
 
@@ -896,7 +896,7 @@
                             Other Card Number
                         </label>
 
-                        <span>{{userInfo.govProofs.otherCardsNumber}}</span>
+                        <span>{{userInfo.EmployeeProofs.OtherCardsNumber}}</span>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -905,7 +905,7 @@
                             KYC Name
                         </label>
 
-                        <span>{{userInfo.govProofs.otherCardsName}}</span>
+                        <span>{{userInfo.EmployeeProofs.OtherCardsName}}</span>
                     </div>
                 </div>
 
@@ -937,15 +937,15 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="qualification in userInfo.educationDetails">
-                <td>{{qualification.no}}</td>
+            <tr ng-repeat="qualification in userInfo.EmployeeEducationDetails">
+                <td>{{qualification.No}}</td>
                 <td>{{qualification.name}}</td>
-                <td>{{qualification.description}}</td>
-                <td>{{qualification.board}}</td>
-                <td>{{qualification.yearOfStudy}}</td>
-                <td>{{qualification.result}}</td>
-                <td>{{qualification.percentageOfMarks}}</td>
-                <td>{{qualification.nameAndAddressOfSchool}}</td>
+                <td>{{qualification.Description}}</td>
+                <td>{{qualification.Board}}</td>
+                <td>{{qualification.YearOfStudy}}</td>
+                <td>{{qualification.Result}}</td>
+                <td>{{qualification.Percentage}}</td>
+                <td>{{qualification.NameAndAddressOfCollege}}</td>
                 <td><button href="#" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" ng-click="removeQualification(qualification)"><i class="fa fa-trash-o"></i> Delete </button></td>
             </tr>
             <tr></tr>
@@ -976,18 +976,18 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="previous in userInfo.previousExperiences">
+            <tr ng-repeat="previous in userInfo.EmployeePreviousExperience">
                 <td>{{previous.no}}</td>
-                <td>{{previous.companyName}}</td>
-                <td>{{previous.regionCode}}</td>
-                <td>{{previous.employerCode}}</td>
-                <td>{{previous.extension}}</td>
+                <td>{{previous.CompanyNameAndAddress}}</td>
+                <td>{{previous.RegionCode}}</td>
+                <td>{{previous.EmployerCode}}</td>
+                <td>{{previous.Extension}}</td>
                 <td>{{previous.Designation}}</td>
-                <td>{{previous.yearsOfExperience}}</td>
+                <td>{{previous.YearsOfExperience}}</td>
                 <td>{{previous.PFNo}}</td>
                 <td>{{previous.ESINo}}</td>
-                <td>{{previous.dateOfResigned}}</td>
-                <td>{{previous.nameAndAddress}}</td>
+                <td>{{previous.DateOfResigned}}</td>
+                <td>{{previous.NameAndAddress}}</td>
                 <td><button href="#" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" ng-click="removePreviousExp(previous)"><i class="fa fa-trash-o"></i> Delete </button></td>
             </tr>
             <tr></tr>
@@ -1026,36 +1026,36 @@
                     <div class="tab-pane active" id="home">
                         <p class="lead"></p>
                         <p>
-                            Police Verification : {{userInfo.policeRecords.policeVerification}}<br />
-                            Verification No : {{userInfo.policeRecords.policeVerificationNo}} <br />
-                            Nearest Police Station : {{userInfo.policeRecords.nearestPoliceStation}}
+                            Police Verification : {{userInfo.EmployeePolicyRecord.PoliceVerification}}<br />
+                            Verification No : {{userInfo.EmployeePolicyRecord.PoliceVerificationNo}} <br />
+                            Nearest Police Station : {{userInfo.EmployeePolicyRecord.NearestPoliceStation}}
                         </p>
                     </div>
                     <div class="tab-pane" id="profile">
                         <p class="lead"></p>
                         <p>
-                            Criminal Offence : {{userInfo.policeRecords.criminalOffenceYesNo}}<br />
-                            Court Name: {{userInfo.policeRecords.criminalOffenceCourtName}}<br />
-                            Case No: {{userInfo.policeRecords.criminalOffenceCaseNo}} <br />
-                            Offence : {{userInfo.policeRecords.criminalOffence}}
+                            Criminal Offence : {{userInfo.EmployeePolicyRecord.CriminalOffenceYesNo}}<br />
+                            Court Name: {{userInfo.EmployeePolicyRecord.CriminalOffenceCourtName}}<br />
+                            Case No: {{userInfo.EmployeePolicyRecord.CriminalOffenceCaseNo}} <br />
+                            Offence : {{userInfo.EmployeePolicyRecord.CriminalOffence}}
                         </p>
                     </div>
                     <div class="tab-pane" id="messages">
                         <p class="lead"></p>
                         <p>
-                            Criminal Proceeding : {{userInfo.policeRecords.criminalProceedingYesNo}}<br />
-                            Court Name: {{userInfo.policeRecords.criminalProceedingCourtName}}<br />
-                            Case No: {{userInfo.policeRecords.criminalProceedingCaseNo}} <br />
-                            Offence : {{userInfo.policeRecords.criminalProceedingOffence}}
+                            Criminal Proceeding : {{userInfo.EmployeePolicyRecord.CriminalProceedingYesNo}}<br />
+                            Court Name: {{userInfo.EmployeePolicyRecord.CriminalProceedingCourtName}}<br />
+                            Case No: {{userInfo.EmployeePolicyRecord.CriminalProceedingCaseNo}} <br />
+                            Offence : {{userInfo.EmployeePolicyRecord.CiminalProceedingOffence}}
                         </p>
                     </div>
                     <div class="tab-pane" id="settings">
                         <p class="lead"></p>
                         <p>
-                            Criminal Arrest Warrant : {{userInfo.policeRecords.criminalArrestWarrantYesNo}}<br />
-                            Court Name: {{userInfo.policeRecords.criminalArrestWarrantCourtName}}<br />
-                            Case No: {{userInfo.policeRecords.criminalArrestWarrantCaseNo}} <br />
-                            Offence : {{userInfo.policeRecords.criminalArrestWarrantOffence}}
+                            Criminal Arrest Warrant : {{userInfo.EmployeePolicyRecord.CriminalArrestWarrantYesNo}}<br />
+                            Court Name: {{userInfo.EmployeePolicyRecord.CriminalArrestWarrantCourtName}}<br />
+                            Case No: {{userInfo.EmployeePolicyRecord.CriminalArrestWarrantCaseNo}} <br />
+                            Offence : {{userInfo.EmployeePolicyRecord.CriminalArrestWarrantOffence}}
                         </p>
                     </div>
                 </div>
