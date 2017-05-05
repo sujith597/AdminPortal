@@ -16,7 +16,8 @@
     };
     this.addUser = function (userInfo) {
         var defer = $q.defer();
-        $http.post('App/UsersManagement/userInfo.txt', userInfo)
+
+        $http.post('http://fmsapi.sujithkumar.in/api/Employee/Create', userInfo)
             .then(function (data) {
                 defer.resolve(data.data);
             });
@@ -27,7 +28,7 @@
     this.getUserInformation = function(userId) {
         var defer = $q.defer();
 
-        $http.get('App/UsersManagement/userInfo.txt')
+        $http.get('http://fmsapi.sujithkumar.in/api/Employee/GetBy?EmpId='+userId)
             .then(function (data) {
                 defer.resolve(data.data);
             });
@@ -38,7 +39,7 @@
 
     this.updateUserInfo = function(userInfo) {
         var defer = $q.defer();
-        $http.update('App/UsersManagement/userInfo.txt', userInfo)
+        $http.post('http://fmsapi.sujithkumar.in/api/Employee/Update', userInfo)
             .then(function (data) {
                 defer.resolve(data.data);
             });
@@ -49,7 +50,7 @@
     this.deleteUser = function(userId) {
         
         var defer = $q.defer();
-        $http.delete('App/UsersManagement/GetUserInformation/', userId)
+        $http.get('http://fmsapi.sujithkumar.in/api/Employee/Delete?EmpId='+ userId)
             .then(function (data) {
                 defer.resolve(data.data);
             });

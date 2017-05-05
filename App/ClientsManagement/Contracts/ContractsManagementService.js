@@ -2,7 +2,7 @@
     this.getAllContracts = function () {
         var defer = $q.defer();
 
-        $http.get('App/ClientsManagement/Users.txt')
+        $http.get('http://fmsapi.sujithkumar.in\api\Contract\GetAll')
             .then(function (data) {
                 defer.resolve(data.data);
             });
@@ -11,7 +11,7 @@
     };
     this.addContract = function (contractInfo) {
         var defer = $q.defer();
-        $http.post('App/ClientsManagement/contractsInfo.txt', clientInfo)
+        $http.post('http://fmsapi.sujithkumar.in\api\Contract\Create', clientInfo)
             .then(function (data) {
                 defer.resolve(data.data);
             });
@@ -33,7 +33,7 @@
     this.getContractInformation = function (contractId) {
         var defer = $q.defer();
 
-        $http.get('App/ClientsManagement/clientInfo.txt')
+        $http.get('http://fmsapi.sujithkumar.in\api\Contract\GetBy?contractId=' + contractId)
             .then(function (data) {
                 defer.resolve(data.data);
             });
@@ -44,7 +44,7 @@
 
     this.updateContractInfo = function (contractInfo) {
         var defer = $q.defer();
-        $http.update('App/ClientsManagement/clientInfo.txt', clientInfo)
+        $http.update('http://fmsapi.sujithkumar.in\api\Contract\Update', contractInfo)
             .then(function (data) {
                 defer.resolve(data.data);
             });
@@ -55,7 +55,7 @@
     this.deleteContract = function (contractId) {
 
         var defer = $q.defer();
-        $http.delete('App/ClientsManagement/DeleteClient', userId)
+        $http.delete('http://fmsapi.sujithkumar.in\api\Contract\Delete?contractId=', contractId)
             .then(function (data) {
                 defer.resolve(data.data);
             });

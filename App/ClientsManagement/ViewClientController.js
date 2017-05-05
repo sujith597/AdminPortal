@@ -5,6 +5,8 @@
    
     ClientManagementService.getClientInformation($scope.clientId).then(function (result) {
         if (result) {
+            console.log(result);
+
             $scope.clientInfo = result;
         } else {
             ngNotify.set('Unable to get client details',

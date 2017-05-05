@@ -31,6 +31,7 @@
         }
     };
 
+var loadUserGrid = function(){
     UserManagementService.getAllUsers().then(function (data) {
         usersList = data;
         var EmpId = 0;
@@ -41,7 +42,7 @@
                 '<center><div class="ui-grid-cell"><div class="ui-grid-cell-contents" style="text-align:center">' +
                     '<button href="#" class="btn btn-primary btn-xs" ng-click="grid.appScope.ViewUser(row.entity)"><i class="fa fa-folder"></i> View </button>' +
                     ' <button href="#" class="btn btn-info btn-xs" ng-click="grid.appScope.EditUser(row.entity)"><i class="fa fa-pencil"></i> Edit </button>' +
-                    '<button href="#" class="btn btn-danger btn-xs" ng-click="selectedUser = row.entity" data-title="Delete"  data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i> Delete </button>' +
+                    '<button href="#" class="btn btn-danger btn-xs" ng-click="grid.appScope.Delete(row.entity)" data-title="Delete"  data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i> Delete </button>' +
                     '</div></div></center>'
         };
        
@@ -55,16 +56,20 @@
         ];
         $scope.usersGrid.columnDefs.push(newColumn);
     });
-
+};
+loadUserGrid();
     $scope.ViewUser = function (user){
-        $location.path('/ViewUser/'+user.name);
+        $location.path('/ViewUser/'+user.EmpId);
     };
     $scope.EditUser = function (user) {
-        $location.path('/EditUser/' + user.name);
+        $location.path('/EditUser/' + user.EmpId);
+    };
+    $scope.Delete = function(user){
+        $scope.selectedUser = user;
     };
 
     $scope.DeleteUser = function () {
-        UserManagementService.deleteUser($scope.selectedUser.name).then(function() {
+        UserManagementService.deleteUser($scope.selectedUser.EmpId).then(function() {
             ngNotify.set('User deleted successfully',
                     {
                         theme: 'pure',
@@ -73,6 +78,8 @@
                         button: 'true',
                         sticky: 'false',
                     });
+loadUserGrid();
+                    
         });
     };
     $scope.updateUsersGrid = function () {

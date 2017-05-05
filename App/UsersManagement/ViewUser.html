@@ -16,11 +16,11 @@
 <div class="col-md-4">
     <div class="user-left">
         <div class="center">
-            <h4>{{userInfo.personalInformation.firstName}} {{userInfo.personalInformation.middleName}} {{userInfo.personalInformation.lastName}}</h4>
+            <h4>{{userInfo.EmployeePersonalInfo.firstName}} {{userInfo.EmployeePersonalInfo.middleName}} {{userInfo.EmployeePersonalInfo.lastName}}</h4>
             <div flow-init="{singleFile:true}" flow-name="obj.flow" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
                 <div class="user-image">
                     <div class="thumbnail">
-                        <img ng-src={{userInfo.personalInformation.avatar}} alt="">
+                        <img ng-src={{userInfo.EmployeePersonalInfo.avatar}} alt="">
                     </div>
                 </div>
             </div>
@@ -34,37 +34,37 @@
             <tbody>
             <tr>
                 <td>Enrollment Type</td>
-                <td><span class="label label-sm label-success">{{userInfo.personalInformation.enrollment}}</span></td>
+                <td><span class="label label-sm label-success">{{userInfo.EmployeePersonalInfo.enrollment}}</span></td>
             </tr>
             <tr>
                 <td>Designation</td>
-                <td><span class="label label-sm label-info">{{userInfo.personalInformation.designation}}</span></td>
+                <td><span class="label label-sm label-info">{{userInfo.EmployeePersonalInfo.designation}}</span></td>
             </tr>
             <tr>
                 <td>Gender</td>
-                <td>{{userInfo.personalInformation.gender}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.gender}}</td>
             </tr>
             <tr>
                 <td>Qualification</td>
-                <td>{{userInfo.personalInformation.qualification}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.qualification}}</td>
             </tr>
             <tr>
                 <td>Email:</td>
-                <td>{{userInfo.personalInformation.email}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.email}}</td>
             </tr>
             <tr>
                 <td>Date Of Birth:</td>
                 <td>
-                    {{userInfo.personalInformation.email}}
+                    {{userInfo.EmployeePersonalInfo.email}}
                 </td>
             </tr>
             <tr>
                 <td>phone:</td>
-                <td>{{userInfo.personalInformation.phone}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.phone}}</td>
             </tr>
             <tr>
                 <td>Date Of Birth:</td>
-                <td>{{userInfo.personalInformation.dateOfBirth}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.dateOfBirth}}</td>
             </tr>
             </tbody>
         </table>
@@ -77,27 +77,27 @@
             <tbody>
             <tr>
                 <td>Father Name</td>
-                <td>{{userInfo.personalInformation.fatherName}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.fatherName}}</td>
             </tr>
             <tr>
                 <td>Father Occupation</td>
-                <td>{{userInfo.personalInformation.fatherOccupation}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.fatherOccupation}}</td>
             </tr>
             <tr>
                 <td>Mother Name</td>
-                <td>{{userInfo.personalInformation.motherName}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.motherName}}</td>
             </tr>
             <tr>
                 <td>Spouse Name</td>
-                <td>{{userInfo.personalInformation.spouseName}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.spouseName}}</td>
             </tr>
             <tr>
                 <td>Mother Tongue</td>
-                <td>{{userInfo.personalInformation.motherTongue}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.motherTongue}}</td>
             </tr>
             <tr>
                 <td>Languages known</td>
-                <td>{{userInfo.personalInformation.languagesKnown}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.languagesKnown}}</td>
             </tr>
             </tbody>
         </table>
@@ -110,11 +110,11 @@
             <tbody>
             <tr>
                 <td>Date Of Interview</td>
-                <td>{{userInfo.personalInformation.dateOfInterview}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.dateOfInterview}}</td>
             </tr>
             <tr>
                 <td>Date of Join</td>
-                <td>{{userInfo.personalInformation.dateOfJoin}}</td>
+                <td>{{userInfo.EmployeePersonalInfo.dateOfJoin}}</td>
             </tr>
             </tbody>
         </table>
@@ -252,7 +252,7 @@
             <form>
                 <legend><span class="glyphicon glyphicon-globe"></span> Temporary Address</legend>
                 <address>
-                    <strong>{{userInfo.personalInformation.firstName}} {{userInfo.personalInformation.middleName}}</strong><br>
+                    <strong>{{userInfo.EmployeePersonalInfo.firstName}} {{userInfo.EmployeePersonalInfo.middleName}}</strong><br>
                     {{userInfo.addressDetails.tmpaddressLine1}}, {{userInfo.addressDetails.tmpaddressLine2}}<br>
 
                     {{userInfo.addressDetails.tmpdistrict}}, {{userInfo.addressDetails.tmpstate}}<br>
@@ -279,7 +279,7 @@
             <form>
                 <legend><span class="glyphicon glyphicon-globe"></span> Permanent Address</legend>
                 <address>
-                    <strong>{{userInfo.personalInformation.firstName}} {{userInfo.personalInformation.middleName}}</strong><br>
+                    <strong>{{userInfo.EmployeePersonalInfo.firstName}} {{userInfo.EmployeePersonalInfo.middleName}}</strong><br>
                     {{userInfo.addressDetails.peraddressLine1}}, {{userInfo.addressDetails.peraddressLine2}}<br>
 
                     {{userInfo.addressDetails.perdistrict}}, {{userInfo.addressDetails.perstate}}<br>
