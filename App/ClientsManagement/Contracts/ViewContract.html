@@ -16,7 +16,144 @@
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
-                    
+                    <div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="user-left">
+                                    <div class="center">
+                                        <h4>{{contractInfo.ContractInformation.ClientName}} - {{contractInfo.ContractInformation.ContractIds}}</h4>
+                                    </div>
+                                    <table class="table table-condensed">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="3">Details</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Client ID</td>
+                                                <td><span class="label label-sm label-success">{{contractInfo.ContractInformation.ClientId}}</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Start Date</td>
+                                                <td><span class="label label-sm label-info">{{contractInfo.ContractInformation.StartDate}}</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>End Date</td>
+                                                <td>{{contractInfo.contractInformation.EndDate}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>BG Amount</td>
+                                                <td>{{contractInfo.contractInformation.BGAmount}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Type Of Work</td>
+                                                <td>{{contractInfo.contractInformation.TypeOfWork}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Validatity Date</td>
+                                                <td>
+                                                    {{contractInfo.contractInformation.ValidityDate}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Billing Dates</td>
+                                                <td>{{contractInfo.contractInformation.BillingDates}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Payment</td>
+                                                <td>{{contractInfo.contractInformation.Payment}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>PaySheet Dates</td>
+                                                <td>
+                                                    {{contractInfo.contractInformation.PaySheetDates}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Wages</td>
+                                                <td>{{contractInfo.contractInformation.Wages}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Contract Id</td>
+                                                <td>{{contractInfo.contractInformation.ContractId}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="text-right">
+                                        <a class="btn btn-primary btn-o btn-wide" href="#" ng-click="editActive = true">
+                                            Edit Account
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+
+                                <div class="panel panel-white space20">
+                                    <div class="panel-body">
+                                        <table class="table table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="3">Billing Information</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Branch</td>
+                                                    <td>{{contractInfo.billingDetails.lineOne}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Division</td>
+                                                    <td>{{contractInfo.billingDetails.lineTwo}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Department</td>
+                                                    <td>{{contractInfo.billingDetails.lineThree}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Reporting Manager</td>
+                                                    <td>{{contractInfo.billingDetails.lineFour}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Site Posted To</td>
+                                                    <td>{{contractInfo.billingDetails.lineFive}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gross Salary</td>
+                                                    <td>{{contractInfo.billingDetails.lineSix}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>PSARA Code</td>
+                                                    <td>{{contractInfo.billingDetails.location}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ID Card Issued Date</td>
+                                                    <td>{{contractInfo.billingDetails.subUnit}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ID Card Valid Till Date</td>
+                                                    <td>{{contractInfo.billingDetails.description}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Previous Employee</td>
+                                                    <td>{{contractInfo.billingDetails.mainUnit}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Previous Employee</td>
+                                                    <td>{{contractInfo.billingDetails.invoice}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Previous Employee</td>
+                                                    <td>{{contractInfo.billingDetails.paysheet}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
