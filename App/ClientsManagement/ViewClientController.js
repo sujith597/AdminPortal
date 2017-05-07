@@ -1,5 +1,5 @@
 ﻿securityApp.controller('ViewClientController', function ($scope, $stateParams, ClientManagementService, ngNotify) {
-    $scope.clientId = $stateParams.UserId;
+    $scope.clientId = $stateParams.ClientId;
     $scope.clientInfo = {};
    
    

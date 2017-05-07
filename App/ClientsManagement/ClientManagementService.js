@@ -2,7 +2,7 @@
     this.getAllClients = function () {
         var defer = $q.defer();
 
-        $http.get('http://fmsapi.sujithkumar.in/api/Client/GetAll')
+        $http.get('http://localhost:1713/api/Client/GetAll')
             .then(function (data) {
                 defer.resolve(data.data);
             });
@@ -11,7 +11,7 @@
     };
     this.addClient = function (clientInfo) {
         var defer = $q.defer();
-        $http.post('http://fmsapi.sujithkumar.in/api/Client/Create', clientInfo)
+        $http.post('http://localhost:1713/api/Client/Create', clientInfo)
             .then(function (data) {
                 defer.resolve(data.data);
             });
@@ -22,7 +22,7 @@
     this.getClientInformation = function (clientId) {
         var defer = $q.defer();
 
-        $http.get('http://fmsapi.sujithkumar.in/api/Client/GetBy?clientId='+clientId)
+        $http.get('http://localhost:1713/api/Client/GetBy?clientId='+clientId)
             .then(function (data) {
                 defer.resolve(data.data);
             });
@@ -33,7 +33,7 @@
 
     this.updateClientInfo = function (clientInfo) {
         var defer = $q.defer();
-        $http.update('App/ClientsManagement/clientInfo.txt', clientInfo)
+        $http.post('http://localhost:1713/api/Client/Update', clientInfo)
             .then(function (data) {
                 defer.resolve(data.data);
             });
@@ -44,7 +44,7 @@
     this.deleteClient = function (clientId) {
 
         var defer = $q.defer();
-        $http.get('http://fmsapi.sujithkumar.in/api/Client/Delete?clientId='+clientId)
+        $http.get('http://localhost:1713/api/Client/Delete?clientId='+clientId)
             .then(function (data) {
                 defer.resolve(data.data);
             });

@@ -38,10 +38,11 @@
         $scope.clientsGrid.data = data;
         console.log('data :'+$scope.clientsGrid.data);
         $scope.clientsGrid.columnDefs = [
-            { name: 'Name', field: 'Name' },
-            { name: 'Segment', field: 'Segment' },
-            { name: 'PhoneNos', field: 'PhoneNos' },
-            {name:'EmailId', field:'EmailId'},
+            {name: 'ClientId',field: 'ClientId'},
+            { name: 'ClientName', field: 'ClientName' },
+            { name: 'City', field: 'City' },
+            { name: 'PhoneNo', field: 'PhoneNo' },
+            {name:'Status', field:'Status'},
             {
                 name: 'Actions',
                 cellTemplate:
