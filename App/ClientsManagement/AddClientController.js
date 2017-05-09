@@ -10,7 +10,7 @@
     $scope.addClient = function () {
         if ($scope.editMode) {
             ClientManagementService.updateClientInfo($scope.clientInfo).then(function (result) {
-                if (result) {
+                if (result != null) {
                     ngNotify.set('Client updated successfully',
                     {
                         theme: 'pure',
@@ -19,7 +19,7 @@
                         button: 'true',
                         sticky: 'false',
                     });
-                    $location.path('/ClientsManagement');
+                   
                 } else {
                     ngNotify.set('Client addition failed',
                     {
@@ -30,11 +30,12 @@
                         sticky: 'false',
                     });
                 }
+                $location.path('/ClientsManagement');
             });
         } else {
 
             ClientManagementService.addClient($scope.clientInfo).then(function (result) {
-                if (result) {
+                if (result != null) {
                     ngNotify.set('Client added successfully',
                     {
                         theme: 'pure',
@@ -43,7 +44,6 @@
                         button: 'true',
                         sticky: 'false',
                     });
-                    $location.path('/ClientsManagement');
                 } else {
                     ngNotify.set('Client addition failed',
                     {
@@ -54,13 +54,14 @@
                         sticky: 'false',
                     });
                 }
+                $location.path('/ClientsManagement');
             });
         }
     };
 
     if ($scope.editMode) {
         ClientManagementService.getClientInformation($scope.clientId).then(function (result) {
-            if (result) {
+            if (result != null) {
                 $scope.clientInfo = result;
             } else {
                 ngNotify.set('Unable to get user details', {

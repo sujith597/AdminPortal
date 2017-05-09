@@ -108,8 +108,8 @@
     $scope.addUser = function () {
         if ($scope.editMode) {
             UserManagementService.updateUserInfo($scope.userInfo).then(function (result) {
-                if (result) {
-                    ngNotify.set('User updated successfully',
+                if (result != null) {
+                    ngNotify.set('Employee updated successfully',
                     {
                         theme: 'pure',
                         position: 'top',
@@ -117,9 +117,9 @@
                         button: 'true',
                         sticky: 'false',
                     });
-                    $location.path('/UsersManagement');
+                   
                 } else {
-                    ngNotify.set('User addition failed',
+                    ngNotify.set('Employee addition failed',
                     {
                         theme: 'pure',
                         position: 'top',
@@ -128,12 +128,13 @@
                         sticky: 'false',
                     });
                 }
+                $location.path('/UsersManagement');
             });
         } else {
 
             UserManagementService.addUser($scope.userInfo).then(function(result) {
-                if (result) {
-                    ngNotify.set('User added successfully',
+                if (result != null) {
+                    ngNotify.set('Employee added successfully',
                     {
                         theme: 'pure',
                         position: 'top',
@@ -141,9 +142,9 @@
                         button: 'true',
                         sticky: 'false',
                     });
-                    $location.path('/UsersManagement');
+                   
                 } else {
-                    ngNotify.set('User addition failed',
+                    ngNotify.set('Employee addition failed',
                     {
                         theme: 'pure',
                         position: 'top',
@@ -152,13 +153,15 @@
                         sticky: 'false',
                     });
                 }
+
+                $location.path('/UsersManagement');
             });
         }
     };
 
     if ($scope.editMode) {
         UserManagementService.getUserInformation($scope.userId).then(function (result) {
-            if (result) {
+            if (result != null) {
                 $scope.userInfo = result;
             } else {
                 ngNotify.set('Unable to get user details', {

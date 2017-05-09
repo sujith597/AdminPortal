@@ -16,7 +16,7 @@
     $scope.addContract = function () {
         if ($scope.editMode) {
             ContractManagementService.updateContractInfo($scope.contractInfo).then(function (result) {
-                if (result) {
+                if (result != null) {
                     ngNotify.set('Contract updated successfully',
                     {
                         theme: 'pure',
@@ -36,11 +36,12 @@
                         sticky: 'false',
                     });
                 }
+                $location.path('/ContractsManagement');
             });
         } else {
 
             ContractManagementService.addContract($scope.contractInfo).then(function (result) {
-                if (result) {
+                if (result != null) {
                     ngNotify.set('Contract added successfully',
                     {
                         theme: 'pure',
@@ -60,6 +61,7 @@
                         sticky: 'false',
                     });
                 }
+                $location.path('/ContractsManagement');
             });
         }
     };
@@ -68,7 +70,7 @@
         $scope.usersList = null;
         if ($scope.resourceInfo.Designation) {
             ContractManagementService.getUsersForDesignation($scope.resourceInfo.Designation).then(function (result) {
-                if (result) {
+                if (result != null) {
                     $scope.usersList = result;
                 }
                 else {
@@ -110,7 +112,7 @@
 
     if ($scope.editMode) {
         ContractManagementService.getContractInformation($scope.contractId).then(function (result) {
-            if (result) {
+            if (result != null) {
                 $scope.contractInfo = result;
             } else {
                 ngNotify.set('Unable to get user details', {
