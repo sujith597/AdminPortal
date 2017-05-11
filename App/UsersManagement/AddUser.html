@@ -91,7 +91,7 @@
             <label class="control-label">
                 Data of Birth
             </label>
-            <input type="text" ng-model="userInfo.EmployeePersonalInfo.DateOfBirth" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopened4" ng-init="inputopened4 = false" ng-click="inputopened4 = !inputopened4" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
+            <input type="text" ng-model="userInfo.EmployeePersonalInfo.DateOfBirth" class="form-control" uib-datepicker-popup="{{format}}" is-open="inputopeneddov" ng-init="inputopeneddov = false" ng-click="inputopeneddov = !inputopeneddov" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" />
         </div>
     </div>
     <div class="col-md-4">
@@ -589,11 +589,44 @@
                         <label class="control-label">
                             State
                         </label>
-                        <select class="select2_single form-control" tabindex="-1" ng-model="userInfo.EmployeeAddressDetails.perstate">
-                            <option></option>
-                            <option value="telugu">Telugu</option>
-                            <option value="hindi">Hindi</option>
-                            <option value="urdu">Urdu</option>
+                        <select class="select2_single form-control" tabindex="1" ng-model="userInfo.EmployeeAddressDetails.perstate" ng-chage="updateDistricts()">
+                            <option value="1">Andaman &amp; Nicobar Islands</option>
+                            <option value="2">Andhra Pradesh</option>
+                            <option value="3">Arunachal Pradesh</option>
+                            <option value="4">Assam</option>
+                            <option value="5">Bihar</option>
+                            <option value="6">Chandigarh</option>
+                            <option value="7">Chhattisgarh</option>
+                            <option value="8">Dadra &amp; Nagar Haveli</option>
+                            <option value="9">Daman &amp; Diu</option>
+                            <option value="10">Delhi</option>
+                            <option value="11">Goa</option>
+                            <option value="12">Gujarat</option>
+                            <option value="13">Haryana</option>
+                            <option value="14">Himachal Pradesh</option>
+                            <option value="15">Jammu and Kashmir</option>
+                            <option value="16">Jharkhand</option>
+                            <option value="17">Karnataka</option>
+                            <option value="18">Kerala</option>
+                            <option value="19">Lakshadweep</option>
+                            <option value="20">Madhya Pradesh</option>
+                            <option value="21">Maharashtra</option>
+                            <option value="22">Manipur</option>
+                            <option value="23">Meghalaya</option>
+                            <option value="24">Mizoram</option>
+                            <option value="25">Nagaland</option>
+                            <option value="26">Orissa</option>
+                            <option value="27">Puducherry</option>
+                            <option value="28">Punjab</option>
+                            <option value="29">Rajasthan</option>
+                            <option value="30">Sikkim</option>
+                            <option value="31">Tamil Nadu</option>
+                            <option value="36">Telangana </option>
+                            <option value="32">Tripura</option>
+                            <option value="33">Uttar Pradesh</option>
+                            <option value="34">Uttarakhand</option>
+                            <option value="35">West Bengal</option>
+
                         </select>
                     </div>
                 </div>
@@ -848,7 +881,7 @@
 </uib-tab>
 <!-- end: TAB -->
 <!-- start: TAB Address and Physical Details -->
-<uib-tab heading="Bank/PF/ESI">
+<uib-tab heading="Bank/PF/ESI & Salary Structure">
 <fieldset>
     <legend>
         Bank Details

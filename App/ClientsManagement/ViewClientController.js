@@ -4,7 +4,7 @@
    
    
     ClientManagementService.getClientInformation($scope.clientId).then(function (result) {
-        if (result) {
+        if (result != null) {
             console.log(result);
 
             $scope.clientInfo = result;

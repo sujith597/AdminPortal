@@ -6,11 +6,7 @@
             <div class="title_left">
                 <h3>View Contract</h3>
             </div>
-            <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 pull-right">
-                    <button type="button" class="btn btn-round btn-success" ng-click="addContract()">Save Contract Information</button>
-                </div>
-            </div>
+           
         </div>
         <div class="clearfix"></div>
         <div class="row">
@@ -40,43 +36,43 @@
                                             </tr>
                                             <tr>
                                                 <td>End Date</td>
-                                                <td>{{contractInfo.contractInformation.EndDate}}</td>
+                                                <td>{{contractInfo.ContractInformation.EndDate}}</td>
                                             </tr>
                                             <tr>
                                                 <td>BG Amount</td>
-                                                <td>{{contractInfo.contractInformation.BGAmount}}</td>
+                                                <td>{{contractInfo.ContractInformation.BGAmount}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Type Of Work</td>
-                                                <td>{{contractInfo.contractInformation.TypeOfWork}}</td>
+                                                <td>{{contractInfo.ContractInformation.TypeOfWork}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Validatity Date</td>
                                                 <td>
-                                                    {{contractInfo.contractInformation.ValidityDate}}
+                                                    {{contractInfo.ContractInformation.ValidityDate}}
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>Billing Dates</td>
-                                                <td>{{contractInfo.contractInformation.BillingDates}}</td>
+                                                <td>{{contractInfo.ContractInformation.BillingDates}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Payment</td>
-                                                <td>{{contractInfo.contractInformation.Payment}}</td>
+                                                <td>{{contractInfo.ContractInformation.Payment}}</td>
                                             </tr>
                                             <tr>
                                                 <td>PaySheet Dates</td>
                                                 <td>
-                                                    {{contractInfo.contractInformation.PaySheetDates}}
+                                                    {{contractInfo.ContractInformation.PaySheetDates}}
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>Wages</td>
-                                                <td>{{contractInfo.contractInformation.Wages}}</td>
+                                                <td>{{contractInfo.ContractInformation.Wages}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Contract Id</td>
-                                                <td>{{contractInfo.contractInformation.ContractId}}</td>
+                                                <td>{{contractInfo.ContractInformation.ContractId}}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -94,63 +90,332 @@
                                         <table class="table table-condensed">
                                             <thead>
                                                 <tr>
-                                                    <th colspan="3">Billing Information</th>
+                                                    <th colspan="3">Billing and Paysheet</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>Branch</td>
-                                                    <td>{{contractInfo.billingDetails.lineOne}}</td>
+                                                    <td> Material Cost for month</td>
+                                                    <td>{{contractInfo.ContractBilling.MaterialCostForMonth}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Division</td>
-                                                    <td>{{contractInfo.billingDetails.lineTwo}}</td>
+                                                    <td>Mechinery Cost for month</td>
+                                                    <td>{{contractInfo.ContractBilling.MachineryCostForMonth}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Department</td>
-                                                    <td>{{contractInfo.billingDetails.lineThree}}</td>
+                                                    <td>Service Charge</td>
+                                                    <td>{{contractInfo.ContractBilling.ServiceCharge}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Reporting Manager</td>
-                                                    <td>{{contractInfo.billingDetails.lineFour}}</td>
+                                                    <td>Contract Description</td>
+                                                    <td>{{contractInfo.ContractBilling.ContractDescription}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Site Posted To</td>
-                                                    <td>{{contractInfo.billingDetails.lineFive}}</td>
+                                                    <td> Service Tax</td>
+                                                    <td>{{contractInfo.ContractBilling.ServiceTax}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Gross Salary</td>
-                                                    <td>{{contractInfo.billingDetails.lineSix}}</td>
+                                                    <td>Invoice Description</td>
+                                                    <td>{{contractInfo.ContractBilling.InvoiceDescription}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>PSARA Code</td>
-                                                    <td>{{contractInfo.billingDetails.location}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>ID Card Issued Date</td>
-                                                    <td>{{contractInfo.billingDetails.subUnit}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>ID Card Valid Till Date</td>
-                                                    <td>{{contractInfo.billingDetails.description}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Previous Employee</td>
-                                                    <td>{{contractInfo.billingDetails.mainUnit}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Previous Employee</td>
-                                                    <td>{{contractInfo.billingDetails.invoice}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Previous Employee</td>
-                                                    <td>{{contractInfo.billingDetails.paysheet}}</td>
+                                                    <td>75% of ST By Client</td>
+                                                    <td>{{contractInfo.ContractBilling.SeventyFiveercentOfSTByClient}}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
+                                <div class="panel panel-white space20">
+                                    <div class="panel-body">
+                                        <div class="col-md-6">
+                                            <table class="table table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="3">PaySheet Information</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td> PF</td>
+                                                        <td>{{contractInfo.ContractPaySheet.PFPercentage}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Type</td>
+                                                        <td>{{contractInfo.ContractPaySheet.PFPercentageOf}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> PF On</td>
+                                                        <td>{{contractInfo.ContractPaySheet.PFPercentageOn}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> PF Limit</td>
+                                                        <td>{{contractInfo.ContractPaySheet.PFLimit}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> PF Limit Amount</td>
+                                                        <td>{{contractInfo.ContractPaySheet.PFLimitValue}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> ESI</td>
+                                                        <td>{{contractInfo.ContractPaySheet.ESIPercentage}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ESI Type</td>
+                                                        <td>{{contractInfo.ContractPaySheet.ESIPercentageOf}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> ESI On</td>
+                                                        <td>{{contractInfo.ContractPaySheet.ESIPercentageOn}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> ESI Limit</td>
+                                                        <td>{{contractInfo.ContractPaySheet.ESILimit}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> ESI Limit Amount</td>
+                                                        <td>{{contractInfo.ContractPaySheet.ESILimitValue}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <table class="table table-condensed">
 
+                                                <tbody>
+                                                    <tr>
+                                                        <td>  OT Percentage</td>
+                                                        <td>{{contractInfo.ContractPaySheet.OTPercentage}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>OT Amount</td>
+                                                        <td>{{contractInfo.ContractPaySheet.OTAmount}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> OFW Value</td>
+                                                        <td>{{contractInfo.ContractPaySheet.OWF}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>TDs Value</td>
+                                                        <td>{{contractInfo.ContractPaySheet.Tds}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>  TDs On</td>
+                                                        <td>{{contractInfo.ContractPaySheet.TDSOn}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>PO No</td>
+                                                        <td>{{contractInfo.ContractPaySheet.PONO}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Expected Date of Receipt</td>
+                                                        <td>{{contractInfo.ContractPaySheet.ExpectedDateOfReceipt}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> ESI Branch</td>
+                                                        <td>{{contractInfo.ContractPaySheet.ESIBranch}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> OJT</td>
+                                                        <td>{{contractInfo.ContractPaySheet.OJT}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>  1/6 Reliver Charges</td>
+                                                        <td>{{contractInfo.ContractBilling.OneSixthReliverCharges}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>PDFs</td>
+                                                        <td>{{contractInfo.ContractBilling.PDFS}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>PL</td>
+                                                        <td>{{contractInfo.ContractPaySheet.PL}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> PL Value</td>
+                                                        <td>{{contractInfo.ContractPaySheet.PLValue}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="panel panel-white space20">
+                                    <div class="panel-body">
+                                        <div class="col-md-6">
+                                            <table class="table table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="3">Invoice Heading Text Yes Or No</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td> Description</td>
+                                                        <td>{{contractInfo.ContractInvoiceHeadingText.DescriptionVisible}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> No Of Employees</td>
+                                                        <td>{{contractInfo.ContractInvoiceHeadingText.NoOfEmpsVisible}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> No Of Duties</td>
+                                                        <td>{{contractInfo.ContractInvoiceHeadingText.NoOfDutiesVisible}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Pay Rates</td>
+                                                        <td>{{contractInfo.ContractInvoiceHeadingText.PayrateVisible}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Amount</td>
+                                                        <td>{{contractInfo.ContractInvoiceHeadingText.AmountVisible}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <table class="table table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="3">Invoice Heading Text</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td> Description Text</td>
+                                                        <td>{{contractInfo.ContractInvoiceHeadingText.DescriptionValue}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> No Of Employees Text</td>
+                                                        <td>{{contractInfo.ContractInvoiceHeadingText.NoOfEmpsValue}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> No Of Duties Text</td>
+                                                        <td>{{contractInfo.ContractInvoiceHeadingText.NoOfDutiesValue}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Pay Rates Text</td>
+                                                        <td>{{contractInfo.ContractInvoiceHeadingText.PayrateVisible}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Amount Text</td>
+                                                        <td>{{contractInfo.ContractInvoiceHeadingText.AmountVisible}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="panel panel-white space20">
+                                    <div class="panel-body">
+                                        <table class="table table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="3">Human Resources and Mapping</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                        <div class="modal fade bs-example-modal-lgRS" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">
+                                                            <span aria-hidden="true">×</span>
+                                                        </button>
+                                                        <h4cl class="modal-title" id="myModalLabel3">Add Resource</h4cl>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <table class="table table-responsive table-striped">
+                                                            <tr ng-repeat="user in selectedResourceUsers">
+                                                                <td>{{user.name}}</td>
+                                                                <td>{{user.gender}}</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-lg btn-danger" data-dismiss="modal">Close</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-responsive jambo_table ">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Designation</th>
+                                                        <th>Type</th>
+                                                        <th>DutyHrs</th>
+                                                        <th>Qty</th>
+                                                        <th>PR</th>
+                                                        <th>DT</th>
+                                                        <th>NoOfDays </th>
+                                                        <th>Summary</th>
+                                                        <th>Nots </th>
+                                                        <th>RCApplicable</th>
+                                                        <th>Basic</th>
+                                                        <th>DA</th>
+                                                        <th>HRA</th>
+                                                        <th>Conv</th>
+                                                        <th>CCA</th>
+                                                        <th>LA </th>
+                                                        <th>Gratuity</th>
+                                                        <th>Bonus </th>
+                                                        <th>AttBonus</th>
+                                                        <th>WA</th>
+                                                        <th>OA</th>
+                                                        <th>NFHs</th>
+                                                        <th>RC</th>
+                                                        <th>SrvChrgs</th>
+                                                        <th>SrvChrgsPerc </th>
+                                                        <th>OTRate</th>
+                                                        <th># </th>
+                                                       
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="humanResource in contractInfo.ContractHumanResourceNeeds">
+                                                        <td>{{humanResource.no}}</td>
+                                                        <td>{{humanResource.Designation}}</td>
+                                                        <td>{{humanResource.Type}}</td>
+                                                        <td>{{humanResource.DutyHrs}}</td>
+                                                        <td>{{humanResource.Qty}}</td>
+                                                        <td>{{humanResource.PR}}</td>
+                                                        <td>{{humanResource.DT}}</td>
+                                                        <td>{{humanResource.NoOfDays}}</td>
+                                                        <td>{{humanResource.Summary}}</td>
+                                                        <td>{{humanResource.Nots}}</td>
+                                                        <td>{{humanResource.RCApplicable}}</td>
+                                                        <td>{{humanResource.Basic}}</td>
+                                                        <td>{{humanResource.DA}}</td>
+                                                        <td>{{humanResource.HRA}}</td>
+                                                        <td>{{humanResource.Conv}}</td>
+                                                        <td>{{humanResource.CCA}}</td>
+                                                        <td>{{humanResource.LA}}</td>
+                                                        <td>{{humanResource.Gratuity}}</td>
+                                                        <td>{{humanResource.Bonus}}</td>
+                                                        <td>{{humanResource.AttBonus}}</td>
+                                                        <td>{{humanResource.WA}}</td>
+                                                        <td>{{humanResource.OA}}</td>
+                                                        <td>{{humanResource.NFHs}}</td>
+                                                        <td>{{humanResource.RC}}</td>
+                                                        <td>{{humanResource.SrvChrgs}}</td>
+                                                        <td>{{humanResource.SrvChrgsPerc}}</td>
+                                                        <td>{{humanResource.OTRate}}</td>
+                                                        <td><button href="#" class="btn btn-danger btn-xs" data-title="View Resources" type="button" data-toggle="modal" data-target=".bs-example-modal-lgRS" ng-click="viewResources(humanResource)"><i class="fa fa-trash-o"></i> View Resources </button></td>
+                                                        
+                                                    </tr>
+                                                    <tr></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -2,10 +2,10 @@
 
     $scope.ContractId = $stateParams.ContractId;
     $scope.contractInfo = {};
-
+    $scope.selectedResourceUsers = [];
 
     ContractManagementService.getContractInformation($scope.ContractId).then(function (result) {
-        if (result) {
+        if (result != null) {
             console.log(result);
 
             $scope.contractInfo = result;
@@ -20,4 +20,9 @@
                     });
         }
     });
+
+    $scope.viewResources = function (selectedContractItem) {
+        $scope.selectedResourceUsers = [];
+        $scope.selectedResourceUsers = selectedContractItem.users;
+    };
 });

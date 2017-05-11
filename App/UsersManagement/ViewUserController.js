@@ -6,7 +6,7 @@
         $scope.noImage = true;
     }
     UserManagementService.getUserInformation($scope.userId).then(function (result) {
-        if (result) {
+        if (result != null) {
             $scope.userInfo = result;
         } else {
             ngNotify.set('Unable to get user details',
