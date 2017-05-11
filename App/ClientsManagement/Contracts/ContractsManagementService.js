@@ -30,10 +30,10 @@
         return defer.promise;
     };
 
-    this.getContractInformation = function (contractId) {
+    this.getContractInformation = function (Id) {
         var defer = $q.defer();
 
-        $http.get('http://localhost:1713/api/Contract/GetBy?contractId=' + contractId)
+        $http.get('http://localhost:1713/api/Contract/GetBy?Id=' + Id)
             .then(function (data) {
                 defer.resolve(data.data);
             });
