@@ -39,10 +39,10 @@
         return defer.promise;
     };
 
-    this.getContractInformation = function (contractId) {
+    this.getContractInformation = function (id) {
         var defer = $q.defer();
 
-        $http.get('http://fmsapi.sujithkumar.in/api/Contract/GetBy?contractId=' + contractId)
+        $http.get('http://fmsapi.sujithkumar.in/api/Contract/GetBy?Id=' + id)
             .then(function (data) {
                 defer.resolve(data.data);
             })
