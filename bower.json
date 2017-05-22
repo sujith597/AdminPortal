@@ -86,6 +86,8 @@
     "ng-flow": "^2.7.4",
     "flow.js": "^2.11.2",
     "angularjs-imageupload-directive": "*",
-    "ngstorage": "^0.3.11"
+    "ngstorage": "^0.3.11",
+    "bootstrap-datepicker": "^1.6.4",
+    "moment": "^2.18.1"
   }
 }

@@ -80,4 +80,64 @@
         return defer.promise;
 
     };
+
+    this.getUsersForContract = function (id,selectedDate) {
+        var defer = $q.defer();
+        var testObj = [{
+                            "Id": 1,
+                            "ContractId": "C4/2",
+                            "EmployeeId": 2,
+                            "EmployeeName": "Avi",
+                            "EmployeeDesignation":"TestDesignation",
+                            "AttendanceDate": "2017-02-02",
+                            "Attendance": true,
+                            "NoOfHours": 8
+                        },
+                        {
+                            "Id": 2,
+                            "ContractId": "C4/2",
+                            "EmployeeId": 2,
+                            "EmployeeName": "Avi",
+                            "EmployeeDesignation": "TestDesignation",
+                            "AttendanceDate": "2017-02-02",
+                            "Attendance": true,
+                            "NoOfHours": 8
+                        }];
+        $http.get('http://fmsapi.sujithkumar.in/api/Attendance/contractId=' + id+'&date='+selectedDate)
+            .then(function (data) {
+                defer.resolve(testObj);
+            })
+         .catch(function (fallback) {
+             defer.resolve(testObj);
+         });
+        return defer.promise;
+    };
+
+    this.saveAttendance = function (usersList) {
+        var defer = $q.defer();
+        $http.post('http://fmsapi.sujithkumar.in/api/Attendance/entry', usersList)
+            .then(function (data) {
+                defer.resolve(data.data);
+            })
+         .catch(function (fallback) {
+             defer.resolve(null);
+         });
+
+        return defer.promise;
+
+    };
+    this.submitAttendance = function (usersList) {
+        var defer = $q.defer();
+        $http.post('http://fmsapi.sujithkumar.in/api/Attendance/submit', usersList)
+            .then(function (data) {
+                defer.resolve(data.data);
+            })
+         .catch(function (fallback) {
+             defer.resolve(null);
+         });
+
+        return defer.promise;
+
+    };
+    
 });

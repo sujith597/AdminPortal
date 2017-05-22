@@ -1,6 +1,7 @@
 ﻿var securityApp = angular.module('SecurityApp', ['ngAnimate', 'ngLoadScript', 'ui.bootstrap', 'ui.router',
                                                 'ui.grid', 'ui.grid.selection', 'ui.grid.exporter', 'ui.grid.pagination',
-                                                'ngNotify', 'flow.provider', 'ngStorage', 'frapontillo.bootstrap-duallistbox']);
+                                                'ngNotify', 'flow.provider', 'ngStorage', 'frapontillo.bootstrap-duallistbox',
+                                                'uiSwitch']);
 
 securityApp.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/Login');
@@ -65,6 +66,12 @@ securityApp.config(function ($stateProvider, $urlRouterProvider) {
             url: '/ViewClient/:ClientId',
             templateUrl: 'App/ClientsManagement/ViewClient.html',
             controller: 'ViewClientController'
+        })
+        .state('AttendenceManagement',
+        {
+            url: '/AttendenceManagement',
+            templateUrl: 'App/ClientsManagement/AttendenceManagement.html',
+            controller: 'AttendenceManagementController'
         })
         .state('ContractsManagement',
         {
