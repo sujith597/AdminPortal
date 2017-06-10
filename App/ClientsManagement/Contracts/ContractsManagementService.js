@@ -103,9 +103,12 @@
                             "Attendance": true,
                             "NoOfHours": 8
                         }];
-        $http.get('http://fmsapi.sujithkumar.in/api/Attendance/contractId=' + id+'&date='+selectedDate)
+        var d = Date.parse(selectedDate);
+        var date = new Date(d);
+        var D = date.getFullYear()+'-'+(date.getMonth() + 1)+'-'+date.getDate();
+        $http.get('http://fmsapi.sujithkumar.in/api/Attendance/GetAttendanceDetailsByDate?id=' + id+'&date='+D)
             .then(function (data) {
-                defer.resolve(testObj);
+                defer.resolve(data);
             })
          .catch(function (fallback) {
              defer.resolve(testObj);
@@ -115,7 +118,7 @@
 
     this.saveAttendance = function (usersList) {
         var defer = $q.defer();
-        $http.post('http://fmsapi.sujithkumar.in/api/Attendance/entry', usersList)
+        $http.post('http://fmsapi.sujithkumar.in/api/Attendance/SaveAttendance', usersList)
             .then(function (data) {
                 defer.resolve(data.data);
             })
@@ -128,7 +131,7 @@
     };
     this.submitAttendance = function (usersList) {
         var defer = $q.defer();
-        $http.post('http://fmsapi.sujithkumar.in/api/Attendance/submit', usersList)
+        $http.post('http://fmsapi.sujithkumar.in/api/Attendance/SubmitAttendance', usersList)
             .then(function (data) {
                 defer.resolve(data.data);
             })

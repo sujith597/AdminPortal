@@ -13,11 +13,12 @@
     });
     $scope.getUsersList = function () {
         $scope.listOfUsers = [];
+        console.log($scope.selectedDate);
         ContractManagementService.getUsersForContract($scope.selectedContract, $scope.selectedDate).then(function (result) {
             
             if (result != null) {
-                console.log(result);
-                $scope.listOfUsers = result;
+                console.log(result.data);
+                $scope.listOfUsers = result.data;
             } else {
                 ngNotify.set('Unable to get client details',
                         {
