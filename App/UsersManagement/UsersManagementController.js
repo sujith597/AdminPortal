@@ -48,7 +48,7 @@ var loadUserGrid = function(){
             };
 
             $scope.usersGrid.columnDefs = [
-              { name: 'Employee Id', field: 'EmpId' },
+              { name: 'Employee Id', field: 'Id' },
                 { name: 'Employee Name', field: 'EmployeeName' },
                 { name: 'SitePosted To', field: 'SitePostedTo' },
             { name: 'Status', feild: 'Status' },
