@@ -72,10 +72,10 @@ var loadUserGrid = function(){
 };
 loadUserGrid();
     $scope.ViewUser = function (user){
-        $location.path('/ViewUser/'+user.EmpId);
+        $location.path('/ViewUser/'+user.Id);
     };
     $scope.EditUser = function (user) {
-        $location.path('/EditUser/' + user.EmpId);
+        $location.path('/EditUser/' + user.Id);
     };
     $scope.Delete = function(user){
         $scope.selectedUser = user;
