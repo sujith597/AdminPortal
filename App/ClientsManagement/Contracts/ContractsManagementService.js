@@ -103,8 +103,8 @@
                             "Attendance": true,
                             "NoOfHours": 8
                         }];
-        var d = Date.parse(selectedDate);
-        var date = new Date(d);
+      //  var d = Date.parse(selectedDate);
+        var date = new Date(selectedDate);
         var D = date.getFullYear()+'-'+(date.getMonth() + 1)+'-'+date.getDate();
         $http.get('http://fmsapi.sujithkumar.in/api/Attendance/GetAttendanceDetailsByDate?id=' + id+'&date='+D)
             .then(function (data) {

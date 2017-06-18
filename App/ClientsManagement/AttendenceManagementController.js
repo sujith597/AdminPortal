@@ -44,6 +44,7 @@
                             button: 'true',
                             sticky: 'false',
                         });
+                $scope.getUsersList();
             } else {
                 ngNotify.set('Saving Attendance Details Failed',
                         {
@@ -53,8 +54,10 @@
                             button: 'true',
                             sticky: 'false',
                         });
+                $scope.getUsersList();
             }
         });
+
 
     };
 
@@ -69,6 +72,7 @@
                             button: 'true',
                             sticky: 'false',
                         });
+                $scope.getUsersList();
             } else {
                 ngNotify.set('Attendance Submittin Failed',
                         {
@@ -78,6 +82,7 @@
                             button: 'true',
                             sticky: 'false',
                         });
+                $scope.getUsersList();
             }
         });
 
