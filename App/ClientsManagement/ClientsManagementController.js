@@ -34,7 +34,6 @@
     var loadClients = function(){
         ClientManagementService.getAllClients().then(function (data) {
             if (data != null) {
-                console.log(data);
                 clientsList = data;
                 $scope.clientsGrid.data = data;
                 console.log('data :' + $scope.clientsGrid.data);

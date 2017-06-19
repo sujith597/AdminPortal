@@ -1,4 +1,4 @@
-﻿securityApp.controller('AddContractController', function ($scope, $state, $stateParams, $location, ContractManagementService, ngNotify, flowFactory) {
+﻿securityApp.controller('AddContractController', function ($scope, $state, $stateParams, $location, ContractManagementService,ClientManagementService, ngNotify, flowFactory) {
     $scope.contractInfo = {};
     $scope.editMode = false;
     $scope.usersList = null;
@@ -6,6 +6,7 @@
     $scope.contractInfo = {};
     $scope.resourceInfo.users = [{ "id": 1, "name": "One" }];
     $scope.contractInfo.ContractHumanResourceNeeds = [];
+    $scope.listofClients =[];
 
     if ($state.current.name == "EditContract" && $stateParams.ContractId) {
         $scope.contractId = $stateParams.ContractId;
@@ -125,4 +126,23 @@
             }
         });
     }
+
+    var Initialize = function() {
+        ClientManagementService.getAllClients().then(function (result) {
+            if(result != null) {
+                $scope.listofClients = result;
+            } else {
+                ngNotify.set('Unable to get user details', {
+                    theme: 'pure',
+                    position: 'top',
+                    type: 'error',
+                    button: 'true',
+                    sticky: 'false',
+                });
+            }
+        });   
+    };
+
+Initialize();
+
 });

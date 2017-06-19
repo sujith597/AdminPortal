@@ -31,9 +31,7 @@
                                                 Client Name
                                             </label>
                                             <select class="select2_single form-control" tabindex="-1" ng-model="contractInfo.ContractInformation.ClientName">
-                                                <option></option>
-                                                <option value="C4">C4</option>
-                                                <option value="clientName2">Client Name 2</option>
+                                                <option ng-repeat="client in listofClients" value="{{client.ClientId}}">{{client.ClientName}}</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -53,9 +51,7 @@
                                                 Client Id
                                             </label>
                                             <select class="select2_single form-control" tabindex="-1" ng-model="contractInfo.ContractInformation.ClientId">
-                                                <option></option>
-                                                <option value="C4">C4</option>
-                                                <option value="clientId2">Client Id 2</option>
+                                                <option ng-repeat="client in listofClients" value="{{client.ClientId}}">{{client.ClientId}}</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
