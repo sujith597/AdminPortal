@@ -31,7 +31,9 @@
                                                 Client Name
                                             </label>
                                             <select class="select2_single form-control" tabindex="-1" ng-model="contractInfo.ContractInformation.ClientName">
-                                                <option ng-repeat="client in listofClients" value="{{client.ClientId}}">{{client.ClientName}}</option>
+                                                <option></option>
+                                                <option value="C4">C4</option>
+                                                <option value="clientName2">Client Name 2</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -51,7 +53,9 @@
                                                 Client Id
                                             </label>
                                             <select class="select2_single form-control" tabindex="-1" ng-model="contractInfo.ContractInformation.ClientId">
-                                                <option ng-repeat="client in listofClients" value="{{client.ClientId}}">{{client.ClientId}}</option>
+                                                <option></option>
+                                                <option value="C4">C4</option>
+                                                <option value="clientId2">Client Id 2</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -975,7 +979,7 @@
                                                         <td>{{humanResource.SrvChrgs}}</td>
                                                         <td>{{humanResource.SrvChrgsPerc}}</td>
                                                         <td>{{humanResource.OTRate}}</td>
-                                                        <td><button href="#" class="btn btn-danger btn-xs" data-title="View Resources" type="button" data-toggle="modal" data-target=".bs-example-modal-lgRS" ng-click="viewResources(humanResource)"><i class="fa fa-trash-o"></i> View Resources </button></td>
+                                                        <td><button href="#" class="btn btn-info btn-xs" data-title="View Resources" type="button" data-toggle="modal" data-target=".bs-example-modal-lgRS" ng-click="viewResources(humanResource)"></i> View Resources </button></td>
                                                         <td><button href="#" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" ng-click="removeHumanResource(humanResource)"><i class="fa fa-trash-o"></i> Delete </button></td>
                                                     </tr>
                                                     <tr></tr>
