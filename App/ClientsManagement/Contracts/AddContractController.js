@@ -106,6 +106,12 @@
        
     };
 
+    $scope.removeHumanResource = function (humanResource) {
+        $scope.contractInfo.ContractHumanResourceNeeds.pop(humanResource);
+    };
+
+
+
     $scope.viewResources = function (selectedContractItem) {
         $scope.selectedResourceUsers = [];
         $scope.selectedResourceUsers = selectedContractItem.users;

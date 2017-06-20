@@ -887,9 +887,17 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <table class="table table-responsive table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                <td>Employee Name</td>
+                                                                <td>Employee Id</td>
+                                                                <td>Employee Joining Date </td>
+                                                                </tr>
+                                                            </thead>
                                                             <tr ng-repeat="user in selectedResourceUsers">
-                                                                <td>{{user.name}}</td>
-                                                                <td>{{user.gender}}</td>
+                                                                <td>{{user.EmployeeName}}</td>
+                                                                <td>{{user.EmployeeId}}</td>
+                                                                <td>{{user.DateOfJoining}}</td>
                                                             </tr>
                                                         </table>
                                                     </div>
