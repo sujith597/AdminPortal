@@ -56,7 +56,7 @@
 
     this.updateContractInfo = function (contractInfo) {
         var defer = $q.defer();
-        $http.update('http://fmsapi.sujithkumar.in/api/Contract/Update', contractInfo)
+        $http.post('http://fmsapi.sujithkumar.in/api/Contract/Update', contractInfo)
             .then(function (data) {
                 defer.resolve(data.data);
             })
@@ -103,7 +103,6 @@
                             "Attendance": true,
                             "NoOfHours": 8
                         }];
-      //  var d = Date.parse(selectedDate);
         var date = new Date(selectedDate);
         var D = date.getFullYear()+'-'+(date.getMonth() + 1)+'-'+date.getDate();
         $http.get('http://fmsapi.sujithkumar.in/api/Attendance/GetAttendanceDetailsByDate?id=' + id+'&date='+D)

@@ -82,7 +82,7 @@ loadUserGrid();
     };
 
     $scope.DeleteUser = function () {
-        UserManagementService.deleteUser($scope.selectedUser.EmpId).then(function (result) {
+        UserManagementService.deleteUser($scope.selectedUser.Id).then(function (result) {
             if (result != null) {
                 ngNotify.set('User deleted successfully',
                         {
